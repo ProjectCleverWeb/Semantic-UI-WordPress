@@ -158,10 +158,10 @@ ul > li:before {
 	font-size: 0.95rem;
 }
 #main-content {
+	margin-top: -1em;/* #main-content has this implied bc of semantic */
 	float:left;
 }
 #sidebar-content {
-	margin-top: 1em;/* #main-content has this implied bc of semantic */
 	float: right;
 }
 
@@ -170,11 +170,19 @@ ul > li:before {
 	padding-left: 1em;
 }
 
-.ui.stacked.teal.segment.widget{
+.ui.segment.widget{
 	font-size: 0.95em;
 }
 
-.ui.teal.ribbon.label.widget.title {
+.ui.search.segment{
+	margin-top: 1em;
+}
+
+.search.content {
+	padding-bottom: 1em;
+}
+
+.ui.ribbon.label.widget.title {
 	display: block;
 }
 

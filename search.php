@@ -3,15 +3,12 @@
 				<div class="ui stackable grid" id="page-grid" role="main">
 					<div class="eleven wide column" id="main-content">
 						<article>
-							<div class="ui top attached primary segment" >
-								<section class="article content">
+							<div class="ui primary search segment" >
+								<section class="search content">
 									<h4><?php _e( 'Search Results', 'bonestheme' ); ?></h4>
 								</section>
+								<div class="ui bottom attached label">"<?php echo esc_attr(get_search_query()); ?>"</div>
 							</div>
-							
-							<footer class="ui bottom attached stacked secondary segment article footer">
-								"<?php echo esc_attr(get_search_query()); ?>"
-							</footer> <!-- /.article.footer -->
 						</article> <!-- /article -->
 						<?php
 						$article_count = 0;
