@@ -48,7 +48,7 @@
 										unset($fstr);
 									}
 									?>
-									<p class="the-content"><?php the_content(); ?></p>
+									<p class="the-content"><?php echo $_sui->post->the_content(); ?></p>
 								</section><!-- ./article.content -->
 							</div>
 							

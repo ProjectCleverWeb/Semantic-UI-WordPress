@@ -31,13 +31,20 @@ class post {
 		return the_title();
 	}
 	
-	
+	/**
+	 * Get the content for a post based on the document type
+	 * 
+	 * @param  integer $id  The post ID
+	 * @return string       Post content, either excerpt OR full content (HTML)
+	 */
 	public function the_content($id = FALSE) {
 		$ref = &$this->ref;
 		$settings = &$this->settings;
 		
-		
-		return $ref->data_class->post_excerpt();
+		if ($this->data_class->document_type($id) == 'POST') {
+			return $ref->data_class->post_content($id);
+		}
+		return $ref->data_class->post_excerpt($id);
 	}
 	
 	

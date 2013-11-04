@@ -26,11 +26,29 @@ class wp implements data_class {
 		// [comeback] limited for now, add more once a few templates are in.
 		if (is_page($id)) {
 			return 'PAGE';
+		} elseif (is_home($id)) {
+			return 'HOME';
 		} elseif (is_attachment($id)) {
 			return 'ATTACHMENT';
 		} else {
 			return 'POST'; // most common, default until more options added
 		}
+	}
+	
+	/**
+	 * 
+	 * 
+	 * @param  string $menu_id  The menu id
+	 * @return array            The menu items array
+	 */
+	public function get_menu($menu_id) {
+		$menu_id = (string) $menu_id;
+		if (($menus = get_nav_menu_locations()) && isset($menus[$menu_id])) {
+			$menu = wp_get_nav_menu_object($locations[$menu_id]);
+		} else {
+			return FALSE;
+		}
+		
 	}
 	
 	public function page_title($id = FALSE) {
@@ -51,14 +69,14 @@ class wp implements data_class {
 		if (!$id) {
 			$id = get_the_id();
 		}
-		return get_the_content($id);
+		return apply_filters( 'the_content', get_the_content($id) );
 	}
 	
 	public function post_content($id = FALSE) {
 		if (!$id) {
 			$id = get_the_id();
 		}
-		return get_the_content($id);
+		return apply_filters( 'the_content', get_the_content($id) );
 	}
 	
 	public function post_excerpt($id = FALSE) {
