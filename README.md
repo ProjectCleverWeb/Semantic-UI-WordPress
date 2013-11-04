@@ -20,6 +20,7 @@ The [Semantic UI](https://github.com/jlukic/semantic-ui) WordPress Theme.
 
 ####Requirements
 
+* PHP 5.3.7 or later
 * WordPress 3.7.1 or later
 * [Options Framework](http://wordpress.org/plugins/options-framework/) Plugin
 
