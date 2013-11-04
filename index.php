@@ -46,7 +46,16 @@
 									if ($post_img) {
 										$fstr = '<a href="%2$s"><img class="article featured image" src="%1$s" title="%3$s" ></a>';
 										echo sprintf($fstr,$post_img['url'], get_permalink(), the_title_attribute(array('echo' => FALSE)));
-										unset($fstr);
+										
+										?>
+										
+										<pre>
+											<?php var_dump($post_img); ?>
+										</pre>
+										
+										<?php
+										
+										unset($fstr, $post_img);
 									}
 									?>
 									<p><?php echo $_sui->post->the_content(); ?></p>

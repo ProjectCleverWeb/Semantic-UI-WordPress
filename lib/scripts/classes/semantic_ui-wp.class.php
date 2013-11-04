@@ -74,18 +74,31 @@ class wp implements data_class {
 		}
 	}
 	
+	/**
+	 * This function returns a detailed array of
+	 * information for a post's featured image if it
+	 * exists. If the post does not have a featured
+	 * image, returns FALSE;
+	 * 
+	 * @param  int $id  The post id
+	 * @return [type]   Information array OR false
+	 */
 	public function post_img_info($id = FALSE) {
 		if (!$id) {
 			$id = get_the_id();
 		}
-		if (has_post_thumbnail($id)) { 
-			$img = wp_get_attachment_image_src(get_post_thumbnail_id( $id ),'full');
-			return array(
+		if (has_post_thumbnail($id)) {
+			$img = wp_get_attachment_image_src(get_post_thumbnail_id($id), 'full');
+			$img_info = array(
 				'url'     => $img[0],
 				'width'   => $img[1],
 				'height'  => $img[2],
 				'resized' => $img[3]
 			);
+			$parsed_url = parse_url($img[0]);
+			$pathinfo = pathinfo($parsed_url['path']);
+			
+			return $img_info + $parsed_url + $pathinfo;
 		} else {
 			return FALSE;
 		}
