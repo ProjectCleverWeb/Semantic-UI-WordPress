@@ -89,19 +89,45 @@
 						sui_page_navi();
 						
 						else : // for IF(have_posts()) ?>
-						<article id="post-not-found" class="hentry">
-							<header class="article-header">
-								<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-							</header>
+						<article>
+							<div class="ui top attached primary segment">
+								<header class="article header">
+									<h2 class="ui dividing header">
+										No Content Found
+									</h2>
+								</header><!-- /.article.header -->
+								
+								<section class="article content">
+									<h4>
+										The content you were looking for could not be found
+									</h4>
+									<div class="ui two column middle aligned relaxed grid basic segment">
+										<div class="center aligned not found column">
+											<p class="ui basic segment">
+												You can try searching for the page you were looking for:
+											</p>
+											<?php echo sui_search(); ?>
+										</div>
+										<div class="ui vertical divider">
+											OR
+										</div>
+										<div class="center aligned not found column">
+											<p class="ui basic segment">
+												You can go back to the homepage:
+											</p>
+											<a class="small medium blue ui button" href="<?php echo home_url('/'); ?>">Go To Homepage</a>
+										</div>
+									</div>
+								</section><!-- ./article.content -->
+							</div>
 							
-							<section class="entry-content">
-								<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-							</section>
-							
-							<footer class="article-footer">
-								<p><?php _e( 'This is the error message in the single.php template.', 'bonestheme' ); ?></p>
-							</footer>
-						</article>
+							<footer class="ui bottom attached stacked secondary segment article footer">
+								<p>
+									<!-- [comeback] add support email option -->
+									If you would like to report an error, you can email us at <a href="mailto:support@localhost.com">support@localhost.com</a>
+								</p>
+							</footer> <!-- /.article.footer -->
+						</article> <!-- /article -->
 						<?php endif; // for IF(have_posts()) ?>
 						
 						

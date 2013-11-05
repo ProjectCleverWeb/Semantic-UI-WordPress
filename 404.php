@@ -41,7 +41,6 @@
 									If you would like to report an error, you can email us at <a href="mailto:support@localhost.com">support@localhost.com</a>
 								</p>
 							</footer> <!-- /.article.footer -->
-							<?php // comments_template(); // uncomment if you want to use them ?>
 						</article> <!-- /article -->
 					</div><!-- /#main-content -->
 				</div><!-- /#page-grid -->

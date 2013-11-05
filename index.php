@@ -90,19 +90,26 @@
 						sui_page_navi();
 						
 						else : // for IF(have_posts()) ?>
-						<article id="post-not-found" class="hentry">
-							<header class="article-header">
-								<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-							</header>
+						<article>
+							<div class="ui top attached primary segment">
+								<header class="article header">
+									<h2 class="ui dividing header">
+										No Post Yet
+									</h2>
+								</header><!-- /.article.header -->
+								
+								<section class="article content">
+									<p>No articles have been written yet</p>
+								</section><!-- ./article.content -->
+							</div>
 							
-							<section class="entry-content">
-								<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-							</section>
-							
-							<footer class="article-footer">
-								<p><?php _e( 'This is the error message in the index.php template.', 'bonestheme' ); ?></p>
-							</footer>
-						</article>
+							<footer class="ui bottom attached stacked secondary segment article footer">
+								<p>
+									<!-- [comeback] add support email option -->
+									If you would like to report an error, you can email us at <a href="mailto:support@localhost.com">support@localhost.com</a>
+								</p>
+							</footer> <!-- /.article.footer -->
+						</article> <!-- /article -->
 						<?php endif; // for IF(have_posts()) ?>
 						
 						
