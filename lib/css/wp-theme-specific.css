@@ -1,83 +1,26 @@
+/**
+ * ORDER:
+ *   Tags [a-z]
+ *   Classes [a-z]
+ *   IDs [a-z]
+ *   WordPress [a-z]
+ * 
+ * The placement is determined by the first part of
+ * the identifier
+ */
+
+
+/************************************************\
+|                      TAGS                      |
+\************************************************/
+
 *, *:before, *:after {
-  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
- }
-
-body {
-	font-family: "Droid Sans", sans-serif;
-	text-shadow: 1px 1px 0px rgba(180, 180, 180, 0.35); /* improves reading when using similar colors */
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	background: url(../images/grunge.jpg) repeat;
-	margin: 0;
+	/* Makes life easier */
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, .ui.header {
-	font-family: "Roboto", sans-serif;
-	font-weight: 300;
-	margin-top: 0.2em;
-	margin-bottom: 0.5em;
-	line-height: 1.2125em;
-}
-
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-	font-family: "Droid Sans", sans-serif;
-	color: #555;
-}
-
-h1, h1.ui.header {
-	font-size: 2.65rem;
-}
-	
-h2, h2.ui.header {
-	font-size: 2.1rem;
-}
-	
-h3, h3.ui.header {
-	font-size: 1.7rem;
-}
-	
-h4, h4.ui.header {
-	font-size: 1.4rem;
-}
-	
-h5, h5.ui.header {
-	font-family: "Droid Sans", sans-serif;
-	font-size: 1.2rem;
-}
-	
-h6, h6.ui.header {
-	font-family: "Droid Sans", sans-serif;
-	font-size: 1rem;
-}
-
-.ui.message .header {
-	font-weight: inherit;
-}
-
-code,pre {
-	font-family: "Droid Sans Mono", "Courier New", monospace;
-	word-break:break-all !important;
-}
-
-pre {
-	overflow: auto;
-}
-
-kbd {
-	background-color:#dddddd;
-	background-image:-moz-linear-gradient(#f1f1f1, #ddd);
-	background-image:-webkit-linear-gradient(#f1f1f1, #ddd);
-	background-image:linear-gradient(#f1f1f1, #ddd);
-	background-repeat:repeat-x;
-	border-radius:2px;
-	border:1px solid #ddd;
-	border-bottom-color:#ccc;
-	border-right-color:#ccc;
-	padding:1px 4px;
-	line-height:1.35em;
-	display: inline-block;
-	font-family: "Droid Sans Mono", "Courier New", monospace;
-}
 
 a, a:link, a:visited {
 	text-decoration: none;
@@ -99,19 +42,97 @@ a:hover.inverted, a:active.inverted, a:focus.inverted{
 	color: #fafafa;
 }
 
+body {
+	/* Android Addict */
+	font-family: "Droid Sans", sans-serif;
+	/*
+	This improves reading when using similar colors
+	without creating a visiable effect on other text
+	*/
+	text-shadow: 1px 1px 0px rgba(180, 180, 180, 0.35);
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	background: url(../images/grunge.jpg) repeat;
+	margin: 0;
+}
+
+code,pre {
+	font-family: "Droid Sans Mono", "Courier New", monospace;
+	word-break:break-all !important;
+}
+
+h1, h2, h3, h4, h5, h6, .ui.header {
+	font-family: "Roboto", sans-serif;
+	font-weight: 300;
+	margin-top: 0.2em;
+	margin-bottom: 0.5em;
+	line-height: 1.2125em;
+}
+
+h1, h1.ui.header {
+	font-size: 2.65rem;
+}
+
+h2, h2.ui.header {
+	font-size: 2.1rem;
+}
+
+h3, h3.ui.header {
+	font-size: 1.7rem;
+}
+
+h4, h4.ui.header {
+	font-size: 1.4rem;
+}
+
+h5, h5.ui.header {
+	font-family: "Droid Sans", sans-serif;
+	font-size: 1.2rem;
+}
+
+h6, h6.ui.header {
+	font-family: "Droid Sans", sans-serif;
+	font-size: 1rem;
+}
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+	font-family: "Droid Sans", sans-serif;
+	color: #555;
+}
+
 img {
 	max-width: 100%;
 	height: auto;
+}
+
+kbd {
+	background-color:#dddddd;
+	background-image:-moz-linear-gradient(#f1f1f1, #ddd);
+	background-image:-webkit-linear-gradient(#f1f1f1, #ddd);
+	background-image:linear-gradient(#f1f1f1, #ddd);
+	background-repeat:repeat-x;
+	border-radius:2px;
+	border:1px solid #ddd;
+	border-bottom-color:#ccc;
+	border-right-color:#ccc;
+	padding:1px 4px;
+	line-height:1.35em;
+	display: inline-block;
+	font-family: "Droid Sans Mono", "Courier New", monospace;
+}
+
+li {
+	margin-top: 0.25em;
+}
+
+pre {
+	overflow: auto;
 }
 
 ul {
 	list-style: none;
 	margin-left: 0;
 	padding-left: 1em;
-}
-
-li {
-	margin-top: 0.25em;
 }
 
 ul li {
@@ -144,63 +165,17 @@ ul > li:before {
 	content: "\f054";
 }
 
-#page-container{
-	max-width:1280px;
-	margin: 0 auto;
+
+/************************************************\
+|                    CLASSES                     |
+\************************************************/
+
+.article.content img{
+	padding: 1em;
 }
 
-#page-column {
-	margin-top: 1.5rem;
-	padding-bottom: 1.5rem;
-}
-#page-grid {
-	margin-top: 1.5rem;
-	font-size: 0.95rem;
-}
-#main-content {
-	margin-top: -1em;/* #main-content has this implied bc of semantic */
-	float:left;
-}
-#sidebar-content {
-	float: right;
-}
-
-#blog-desc{
-	font-size: 0.45em;
-	padding-left: 1em;
-}
-
-.ui.segment.widget{
-	font-size: 0.95em;
-}
-
-.ui.search.segment{
-	margin-top: 1em;
-}
-
-.search.content {
-	padding-bottom: 1em;
-}
-
-.ui.ribbon.label.widget.title {
-	display: block;
-}
-
-
-.post.avatar{
-	display: inline-block;
-}
-
-.not.found.column {
-	padding-top:2em;
-	padding-bottom:2em;
-}
-
-.article.read.more{
-	display: block;
-	float: right;
-	margin-top: 2em;
-	text-transform: none;
+.article.header{
+	overflow: hidden;
 }
 
 .article.featured.image{
@@ -211,12 +186,20 @@ ul > li:before {
 	display: block;
 }
 
-.article.header{
-	overflow: hidden;
+.article.read.more{
+	display: block;
+	float: right;
+	margin-top: 2em;
+	text-transform: none;
 }
 
-.article.content img{
-	padding: 1em;
+.not.found.column {
+	padding-top:2em;
+	padding-bottom:2em;
+}
+
+.post.avatar{
+	display: inline-block;
 }
 
 .search.bar{
@@ -225,8 +208,61 @@ ul > li:before {
 	text-align: center;
 }
 
+.search.content {
+	padding-bottom: 1em;
+}
+
+.ui.message .header {
+	font-weight: inherit;
+}
+
+.ui.search.segment{
+	margin-top: 1em;
+}
+
+.ui.ribbon.label.widget.title {
+	display: block;
+}
+
+.ui.segment.widget{
+	font-size: 0.95em;
+}
+
+/************************************************\
+|                      IDs                       |
+\************************************************/
+
+#blog-desc{
+	font-size: 0.45em;
+	padding-left: 1em;
+}
+
 #copyright,#theme-info{
 	font-size: 12px;
+}
+
+#main-content {
+	margin-top: -1em;/* #main-content has this implied bc of semantic */
+	float:left;
+}
+
+#page-column {
+	margin-top: 1.5rem;
+	padding-bottom: 1.5rem;
+}
+
+#page-container{
+	max-width:1280px;
+	margin: 0 auto;
+}
+
+#page-grid {
+	margin-top: 1.5rem;
+	font-size: 0.95rem;
+}
+
+#sidebar-content {
+	float: right;
 }
 
 #theme-info{
@@ -234,9 +270,10 @@ ul > li:before {
 }
 
 
-/***
-For WordPress Compat
-***/
+/************************************************\
+|                   WordPress                    |
+\************************************************/
+
 .alignleft {
 	float:left;
 }
