@@ -52,7 +52,7 @@ body {
 	text-shadow: 1px 1px 0px rgba(180, 180, 180, 0.35);
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
-	background: url(../images/grunge.jpg) repeat;
+	background: url(../images/subtle_patterns/white_wall_hash.png) repeat;
 	margin: 0;
 }
 
