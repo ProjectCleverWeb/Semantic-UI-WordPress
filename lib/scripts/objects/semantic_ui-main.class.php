@@ -64,6 +64,8 @@ class main {
 		// no global declaring these, makes it easier to swap the top level var
 		require_once __DIR__.'/semantic_ui-tools.class.php';
 		$t->tools = new tools($t->settings->general,$t);
+		require_once __DIR__.'/semantic_ui-menu.class.php';
+		$t->menu = new menu($t->settings->general,$t);
 		require_once __DIR__.'/semantic_ui-post.class.php';
 		$t->post = new post($t->settings->post,$t);
 		require_once __DIR__.'/semantic_ui-page.class.php';

@@ -105,45 +105,10 @@ require_once __DIR__.'/lib/scripts/sui.php';
 						</div>
 					</div>
 					
-					
-					<nav role="navigation">
-						<div class="ui inverted blue menu" id="main-nav">
-							
-							<?php
-							// [comeback] this menu implementation sucks =/
-							if (($locations = get_nav_menu_locations()) && isset($locations['main-nav'])) {
-								$menu = wp_get_nav_menu_object($locations['main-nav']);
-								
-								foreach (wp_get_nav_menu_items($menu->term_id) as $menu_item) {
-									if (!empty($menu_item->post_name) || !empty($menu_item->title)){
-										if (empty($menu_item->title)) {
-											$item_name = ucwords($menu_item->post_name);
-										} else {
-											$item_name = ucwords($menu_item->title);
-										}
-										$attr_title = '';
-										if (!empty($menu_item->attr_title)){
-											$attr_title = ' title="'.$menu_item->attr_title.'"';
-										}
-										if ($post->ID == $menu_item->object_id) {
-											echo '<a class="item active"'.$attr_title.' alt="'.$item_name.'" href="'.$menu_item->url.'" >'.$item_name.'</a>';
-										} else {
-											echo '<a class="item"'.$attr_title.' alt="'.$item_name.'" href="'.$menu_item->url.'" >'.$item_name.'</a>';
-										}
-									}
-								}
-								
-								
-							}
-							?>
-							
-							<div class="right menu">
-								<a class="item" href="#">Search <i class="search link icon"></i></a>
-							</div>
-						</div><!-- /#main-nav -->
-						
-						<?php // bones_main_nav(); ?>
-					</nav>
+					<?php
+					// Navigation that doesn't suck
+					echo $output = $_sui->menu->display('main-nav');
+					?>
 					
 				</header> <!-- /#page-header -->
 				
