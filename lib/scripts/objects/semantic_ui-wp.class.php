@@ -36,7 +36,8 @@ class wp implements data_class {
 	}
 	
 	/**
-	 * 
+	 * This gets a menu by its id and returns its items
+	 * in a multi-layered array (for menu children).
 	 * 
 	 * @param  string $menu_id  The menu id
 	 * @return array            The menu items array
@@ -44,11 +45,54 @@ class wp implements data_class {
 	public function get_menu($menu_id) {
 		$menu_id = (string) $menu_id;
 		if (($menus = get_nav_menu_locations()) && isset($menus[$menu_id])) {
-			$menu = wp_get_nav_menu_object($locations[$menu_id]);
+			$menu = wp_get_nav_menu_object($menus[$menu_id]);
+			$menu_items = wp_get_nav_menu_items($menu->term_id);
+			
+			// make menu items easier to use:
+			// NOTE: magic and dragons ahead
+			
+			$return = array(); // Asexual Adam
+			$parents = array(); // Asexual Children
+			foreach ($menu_items as $menu_item_obj) {
+				$menu_item = (array) $menu_item_obj;
+				$item_parent_id = $menu_item['menu_item_parent'];
+				if (isset($prev_item) && (int) $item_parent_id !== 0){
+					if ($item_parent_id == $prev_item['ID']) {
+						$parent = &$prev_item;
+						$ref = &$parent['children'][]; // Make Asexual Babies
+					} elseif ($item_parent_id == $prev_parent['ID']) {
+						$parent = &$prev_parent;
+						$ref = &$parent['children'][];
+					} else {
+						// search for parent
+						if (isset($parents[$item_parent_id])) {
+							$parent = &$parents[$item_parent_id];
+							$ref = &$parent['children'][];
+						} else {
+							$ref = &$return[]; // Orphan
+							$parent = &$ref;
+						}
+					}
+				} else {
+					$ref = &$return[]; // Son Of Adam
+					$parent = &$ref;
+				}
+				
+				// Give Birth
+				$ref = $menu_item;
+				
+				$prev_item = &$ref;
+				$prev_parent = &$parent;
+				if (!isset($parents[$parent['ID']])) {
+					$parents[$parent['ID']] = &$parent;
+				}
+			}
+			unset($parents); // Does this make me a serial killer?
+			
+			return $return;
 		} else {
-			return FALSE;
+			return FALSE; // doesn't exist
 		}
-		
 	}
 	
 	public function page_title($id = FALSE) {
