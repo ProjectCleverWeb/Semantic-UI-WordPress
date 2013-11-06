@@ -174,7 +174,7 @@ ul > li:before {
 	padding: 1em;
 }
 
-.article.header{
+.article.header, .article.content{
 	overflow: hidden;
 }
 
@@ -282,10 +282,18 @@ ul > li:before {
 	float:right;
 }
 
+.wp-caption{ /* The default captions in wp suck */
+	max-width: 100%;
+	width: auto !important;
+	text-align: center;
+}
 
-
-
-
-
-
+.wp-caption p{
+	display: block;
+	margin: -0.75em auto 0.25em auto;
+	padding: 0.25em 1em;
+	width: 85%;
+	border-radius: 0.5em;
+	background: rgba(150,150,150,0.2);
+}
 
