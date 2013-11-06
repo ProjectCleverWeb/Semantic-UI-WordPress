@@ -42,7 +42,7 @@ class menu {
 		}
 		
 		$the_id = trim(sprintf($conf['id'],str_replace(' ', '-', $menu_id)));
-		$the_class = trim(sprintf($conf['class'], "ui blue inverted menu"));
+		$the_class = trim(sprintf($conf['class'], "ui inverted menu"));
 		
 		$menu = $data_class->get_menu($menu_id);
 		
@@ -115,7 +115,6 @@ class menu {
 				$fmt = '<div %1$s%2$s>'.$conf['before_item'].'<span %3$s>%4$s</span>'.$conf['after_item'].'%5$s</div>';
 				if (isset($menu_item['children'])) {
 					$children = $this->_display_get_children($menu_item['children'],$conf);
-					$text = $text.'<i class="dropdown icon"></i>';
 				}
 				
 				$items .= sprintf($fmt,
@@ -135,7 +134,6 @@ class menu {
 				$fmt = '<div %1$s%2$s>'.$conf['before_item'].'<a %3$s>%4$s</a>'.$conf['after_item'].'%5$s</div>';
 				if (isset($menu_item['children'])) {
 					$children = $this->_display_get_children($menu_item['children'],$conf);
-					$text = $text.'<i class="dropdown icon"></i>';
 				}
 				
 				$items .= sprintf($fmt,
@@ -263,7 +261,7 @@ class menu {
 		
 		
 		$depth--;
-		return "<div class=\"menu\" id=\"$the_id\">$items</div>".PHP_EOL;
+		return PHP_EOL."<div class=\"menu\">$items</div>".PHP_EOL;
 	}
 	
 	public function get($menu_id = FALSE) {

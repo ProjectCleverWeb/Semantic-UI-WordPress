@@ -49,7 +49,7 @@ body {
 	This improves reading when using similar colors
 	without creating a visiable effect on other text
 	*/
-	text-shadow: 1px 1px 0px rgba(180, 180, 180, 0.35);
+	text-shadow: 1px 1px 0px rgba(180, 180, 180, 0.2);
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	background: url(../images/subtle_patterns/white_wall_hash.png) repeat;

@@ -15,7 +15,7 @@ function sui_register_sidebars() {
 		'description' => __( 'The sidebar widget area.', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="ui stacked blue segment widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="ui blue ribbon label widget title">',
+		'before_title' => '<h4 class="ui ribbon label widget title">',
 		'after_title' => '</h4>',
 	));
 	register_sidebar(array(
@@ -24,7 +24,7 @@ function sui_register_sidebars() {
 		'description' => __( 'The footer widget area.', 'bonestheme' ),
 		'before_widget' => '<div class="four wide column"><div id="%1$s" class="ui stacked blue segment widget %2$s">',
 		'after_widget' => '</div></div>',
-		'before_title' => '<h4 class="ui blue label widget title">',
+		'before_title' => '<h4 class="ui label widget title">',
 		'after_title' => '</h4>',
 	));
 	// To call the sidebar in your template, you can just copy
@@ -83,12 +83,6 @@ function sui_search() {
 
 // [comeback]
 // require_once __DIR__.'/lib/scripts/functions/sui_paginate_links.php';
-
-// alt readmore link
-function alt_readmore( $more ) {
-	return ' <a class="ui mini blue button article read more" href="'. get_permalink( get_the_ID() ) . '">Continue Reading</a>';
-}
-add_filter( 'excerpt_more', 'alt_readmore' );
 
 
 

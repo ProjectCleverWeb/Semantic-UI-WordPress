@@ -67,7 +67,7 @@
 								<p class="article tags">
 									Tags:
 									<?php
-										$fmt = '<a href="%2$s" id="tag-%3$s" title="%4$s"><span class="mini ui blue button">%1$s</span></a>';
+										$fmt = '<a href="%2$s" id="tag-%3$s" title="%4$s"><span class="mini ui button">%1$s</span></a>';
 										echo $_sui->post->tags(0,0,' ',0,$fmt);
 									?>
 								</p>
