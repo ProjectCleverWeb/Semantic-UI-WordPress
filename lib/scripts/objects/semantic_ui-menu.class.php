@@ -27,7 +27,7 @@ class menu {
 			'id'          => 'menu-%1$s',
 			'class'       => '%1$s',
 			'item_id'     => 'id-%1$s',
-			'item_class'  => '%1$s item',
+			'item_class'  => '%1$s',
 			'before_text' => '',
 			'after_text'  => '',
 			'before_item' => '',
@@ -35,12 +35,14 @@ class menu {
 			'no_target'   => FALSE
 		);
 		
-		$the_id = trim(sprintf($conf['id'],str_replace(' ', '-', $menu_id)));
-		$the_class = trim(sprintf($conf['class'], "ui blue inverted menu"));
-		
 		if ($options) {
 			$conf = array_replace_recursive($defaults, $options);
+		} else {
+			$conf = $defaults;
 		}
+		
+		$the_id = trim(sprintf($conf['id'],str_replace(' ', '-', $menu_id)));
+		$the_class = trim(sprintf($conf['class'], "ui blue inverted menu"));
 		
 		$menu = $data_class->get_menu($menu_id);
 		
@@ -62,13 +64,15 @@ class menu {
 						$classes .= $class.' ';
 					}
 				}
-				// needs debbugging
-				// $classes = trim(sprintf('%1$s item', trim($classes)));
-				$classes = trim(sprintf('%1$s item', trim($classes)));
+				$classes = trim(sprintf($conf['item_class'], trim($classes)));
 				
-				if (!empty($classes)) {
-					$classes = "class=\"$classes\" ";
+				if (isset($menu_item['children'])) {
+					$classes = trim('ui simple dropdown item '.$classes);
+				} else {
+					$classes = trim('item '.$classes);
 				}
+				
+				$classes = "class=\"$classes\" ";
 			}
 			
 			if (!$conf['no_target'] && !empty($menu_item['target'])) {
@@ -99,14 +103,32 @@ class menu {
 				$title = 'title="'.esc_attr__($menu_item['post_title']).'" ';
 			}
 			
+			$children = '';
+			
+			if (isset($menu_item['children'])) {
+				// handle children
+			}
+			
 			// Build item
-			$fmt = $conf['before_item'].'<a %1$sid="id-%2$s" %3$s%5$shref="%6$s">%4$s</a>'.$conf['after_item'];
-			$items .= sprintf($fmt,$classes,$id,$target,$conf['before_text'].$text.$conf['after_text'],$title,$url).PHP_EOL;
+			if (empty($url) || isset($menu_item['children'])) {
+				$fmt = $conf['before_item'].'<div %1$sid="id-%2$s" %3$s%5$s>%4$s%7$s</div>'.$conf['after_item'];
+			} else {
+				$fmt = $conf['before_item'].'<a %1$sid="id-%2$s" %3$s%5$shref="%6$s">%4$s</a>'.$conf['after_item'];
+			}
+			$items .= sprintf($fmt,
+				$classes,
+				$id,
+				$target,
+				$conf['before_text'].$text.$conf['after_text'],
+				$title,
+				$url,
+				$children
+			).PHP_EOL;
 			
 		}
 		
 		// now display
-		echo "<nav class=\"ui blue inverted menu\" id=\"$menu_id\" role=\"navigation\">$items</nav>".PHP_EOL;
+		echo "<nav class=\"$the_class\" id=\"$the_id\" role=\"navigation\">$items</nav>".PHP_EOL;
 		
 	}
 	
