@@ -85,6 +85,3 @@ function sui_search() {
 // [comeback]
 // require_once __DIR__.'/lib/scripts/functions/sui_paginate_links.php';
 
-
-
-require_once __DIR__.'/lib/scripts/sui.php';
