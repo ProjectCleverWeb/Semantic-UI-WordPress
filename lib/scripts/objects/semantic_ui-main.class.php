@@ -32,7 +32,8 @@ class main {
 		// why have $this when you can have $t
 		$t = $this;
 		$ref = $t;
-		$t->data_class = $data_class;
+		
+		$t->data_class = $t->get_data_class();
 		
 		// quick way to do multi-layer stdClass's
 		$t->settings = $data_class->settings;
@@ -66,7 +67,18 @@ class main {
 		// });
 	}
 	
-	
+	/**
+	 * This determines which $data_class to get
+	 * 
+	 * Currently only supports WordPress
+	 * 
+	 * @return void
+	 */
+	private function get_data_class() {
+		require_once __DIR__.'/semantic_ui-data_class.interface.php';
+		require_once __DIR__.'/semantic_ui-wp.class.php';
+		return new \semantic_ui\wp;
+	}
 	
 	/**
 	 * Returns all info for a post from wordpress
