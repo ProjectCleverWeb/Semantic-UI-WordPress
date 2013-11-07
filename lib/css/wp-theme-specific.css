@@ -42,6 +42,10 @@ a:hover.inverted, a:active.inverted, a:focus.inverted{
 	color: #fafafa;
 }
 
+article {
+	margin-bottom: 1.5rem;
+}
+
 body {
 	/* Android Addict */
 	font-family: "Droid Sans", sans-serif;
@@ -217,10 +221,6 @@ ul > li:before {
 	font-weight: inherit;
 }
 
-.ui.search.segment{
-	margin-top: 1em;
-}
-
 .ui.ribbon.label.widget.title {
 	display: block;
 }
@@ -242,7 +242,6 @@ ul > li:before {
 }
 
 #main-content {
-	margin-top: -1em;/* #main-content has this implied bc of semantic */
 	float:left;
 }
 
@@ -253,7 +252,7 @@ ul > li:before {
 
 #page-container{
 	max-width:1280px;
-	margin: 0 auto;
+	margin: 0 auto !important;
 }
 
 #page-grid {
