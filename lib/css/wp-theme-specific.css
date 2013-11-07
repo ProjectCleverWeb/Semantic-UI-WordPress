@@ -64,8 +64,9 @@ code,pre {
 h1, h2, h3, h4, h5, h6, .ui.header {
 	font-family: "Roboto", sans-serif;
 	font-weight: 300;
-	margin-top: 0.2em;
-	margin-bottom: 0.5em;
+	padding: 0;
+	margin-top: 0.2rem;
+	margin-bottom: 0.5rem;
 	line-height: 1.2125em;
 }
 
@@ -233,7 +234,6 @@ ul > li:before {
 \************************************************/
 
 #blog-desc{
-	font-size: 0.45em;
 	padding-left: 1em;
 }
 

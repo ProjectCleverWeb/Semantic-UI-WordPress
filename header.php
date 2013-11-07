@@ -99,8 +99,9 @@ require_once __DIR__.'/lib/scripts/sui.php';
 						<div class="row">
 							<div class="sixteen wide column">
 								<a href="<?php echo home_url(); ?>" rel="nofollow">
-									<h1 id="blog-title"><?php bloginfo('name'); ?><br><small id="blog-desc"><?php bloginfo('description'); ?></small></h1>
+									<h1 id="blog-title"><?php bloginfo('name'); ?></h1>
 								</a>
+								<span id="blog-desc"><?php bloginfo('description'); ?></span>
 							</div>
 						</div>
 					</div>
