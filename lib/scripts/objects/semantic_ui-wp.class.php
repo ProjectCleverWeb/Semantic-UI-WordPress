@@ -7,8 +7,31 @@ namespace semantic_ui;
 class wp implements data_class {
 	
 	public function __construct() {
-		
-		
+		$this->settings = (object) array(
+			'general' => (object) array(
+				'color'               => 'blue',
+				'menu_type'           => 'primary',
+				'display_max_tags'    => 10,
+				'display_tagline'     => TRUE,
+				'display_post_img'    => TRUE,
+				'display_post_tags'   => TRUE,
+				'display_post_cat'    => TRUE,
+				'display_post_author' => TRUE,
+			),
+			'post' => (object) array(
+				'content_type'        => 'excerpt',
+				'display_comments'    => TRUE,
+				'display_img'         => TRUE,
+				'display_tags'        => TRUE,
+				'display_all_tags'    => TRUE,
+				'display_cat'         => TRUE,
+				'display_author'      => TRUE
+				
+			),
+			'page' => (object) array(
+				'display_comments'    => FALSE
+			)
+		);
 	}
 	
 	public function document_title($id = FALSE) {
