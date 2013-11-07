@@ -5,16 +5,10 @@ namespace semantic_ui;
  * This class handles all menus
  */
 class menu {
-	
-	public $ref; // top level class (semantic_ui-main.class.php)
-	public $data_class; // the data_class (default: semantic_ui-wp.class.php)
-	public $settings;
-	
-	public function __construct(&$settings,&$ref) {
-		$this->ref = &$ref;
+	public function __construct(&$settings) {
 		$this->settings = &$settings;
-		$this->data_class = &$ref->data_class;
-		
+		$this->ref = vars::$ref;
+		$this->data_class = vars::$data_class;
 	}
 	
 	

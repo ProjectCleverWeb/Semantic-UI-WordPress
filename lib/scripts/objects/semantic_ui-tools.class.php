@@ -11,7 +11,7 @@ class tools {
 	public $ref; // top level class (semantic_ui-main.class.php)
 	public $settings;
 	
-	public function __construct(&$settings,&$ref) {
+	public function __construct(&$settings) {
 		
 		$this->ref = &$ref;
 		$this->settings = &$settings;

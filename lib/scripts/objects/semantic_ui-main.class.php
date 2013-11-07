@@ -62,14 +62,18 @@ class main {
 		);
 		
 		// no global declaring these, makes it easier to swap the top level var
+		require_once __DIR__.'/semantic_ui-vars.class.php';
+		new vars($t);
 		require_once __DIR__.'/semantic_ui-tools.class.php';
-		$t->tools = new tools($t->settings->general,$t);
+		$t->tools = new tools($t->settings->general);
 		require_once __DIR__.'/semantic_ui-menu.class.php';
-		$t->menu = new menu($t->settings->general,$t);
+		$t->menu = new menu($t->settings->general);
 		require_once __DIR__.'/semantic_ui-post.class.php';
-		$t->post = new post($t->settings->post,$t);
+		$t->post = new post($t->settings->post);
 		require_once __DIR__.'/semantic_ui-page.class.php';
-		$t->page = new page($t->settings->page,$t);
+		$t->page = new page($t->settings->page);
+		require_once __DIR__.'/semantic_ui-widget.class.php';
+		new widget($t->settings->page);
 		
 	}
 	
@@ -80,7 +84,10 @@ class main {
 	 * @since 1.0.0
 	 */
 	public function init() {
-		
+		require_once __DIR__.'/semantic_ui-widget-add_menu.class.php';
+		add_action('widgets_init', function(){
+			register_widget('\semantic_ui\widget\add_menu');
+		});
 	}
 	
 	
