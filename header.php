@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/lib/scripts/sui.php';
+$_sui = \semantic_ui\vars::$ref;
 ?><!doctype html>
 
 <!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -108,7 +108,7 @@ require_once __DIR__.'/lib/scripts/sui.php';
 					
 					<?php
 					// Navigation that doesn't suck
-					echo $output = $_sui->menu->display('main-nav');
+					echo $_sui->menu->display('main-nav');
 					?>
 					
 				</header> <!-- /#page-header -->

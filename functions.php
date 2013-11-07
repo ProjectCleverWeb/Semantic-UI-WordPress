@@ -86,3 +86,4 @@ function sui_search() {
 
 
 
+require_once __DIR__.'/lib/scripts/sui.php';
