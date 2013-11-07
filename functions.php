@@ -3,8 +3,9 @@
 Author: Nicholas Jordon
 */
 
-require_once( __DIR__.'/lib/scripts/general.php' );
-require_once( __DIR__.'/lib/scripts/admin.php' );
+require_once( __DIR__.'/lib/scripts/init/sui.php' );
+require_once( __DIR__.'/lib/scripts/init/general.php' );
+require_once( __DIR__.'/lib/scripts/init/admin.php' );
 
 
 // Sidebars & Widgetizes Areas
