@@ -34,6 +34,13 @@ class wp implements data_class {
 		);
 	}
 	
+	public function load_widgets() {
+		require_once __DIR__.'/semantic_ui-widget-add_menu.class.php';
+		register_widget(new \semantic_ui\widget\add_menu);
+	}
+	
+	
+	
 	public function document_title($id = FALSE) {
 		if (!$id) {
 			$id = get_the_id();

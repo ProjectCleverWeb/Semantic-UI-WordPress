@@ -17,4 +17,8 @@ class widget extends \WP_Widget {
 		}
 		return FALSE;
 	}
+	
+	public function meta_data($a,$b,$c) {
+		parent::__construct($a,$b,$c);
+	}
 }
