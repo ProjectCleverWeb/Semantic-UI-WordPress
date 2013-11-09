@@ -61,10 +61,7 @@ class main {
 	 * @since 1.0.0
 	 */
 	public function init() {
-		// require_once __DIR__.'/semantic_ui-widget-add_menu.class.php';
-		// add_action('widgets_init', function(){
-		// 	register_widget('\semantic_ui\widget\add_menu');
-		// });
+		$this->data_class->load_widgets();
 	}
 	
 	/**

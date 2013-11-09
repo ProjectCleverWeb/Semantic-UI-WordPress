@@ -1,22 +1,22 @@
 <?php
-namespace semantic_ui\widget;
 
-/**
- * Allows users to easily add Semantic UI menus as
- * widgets within the theme.
- */
-class add_menu extends \semantic_ui\widget {
+// Creating the widget 
+class add_menu extends WP_Widget {
+	
 	function __construct() {
 		$this->settings = &$settings;
 		$this->ref = \semantic_ui\vars::$ref;
 		$this->data_class = \semantic_ui\vars::$data_class;
-		parent::meta_data(
-			// ID of your widget
-			'semantic_ui-widget-add_menu', 
-			// Title
-			'Semantic UI Menu',
-			// Description
-			array('description' => 'Allows you to add a Semantic UI menu as a widget')
+		parent::__construct(
+		// Base ID of your widget
+		'semantic_ui-widget-add_meu', 
+		
+		// Widget name will appear in UI
+		__('Semantic UI Menu', 'semantic_ui'), 
+		
+		// Widget description
+		array(
+			'description' => __( 'Allows you to use SUI menus as widgets', 'semantic_ui' ), )
 		);
 	}
 	
@@ -72,4 +72,10 @@ class add_menu extends \semantic_ui\widget {
 
 		return $instance;
 	}
+} // Class wpb_widget ends here
+
+// Register and load the widget
+function wpb_load_widget() {
+	register_widget( 'add_menu' );
 }
+add_action( 'widgets_init', 'wpb_load_widget' );
