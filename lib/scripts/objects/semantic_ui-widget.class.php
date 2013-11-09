@@ -11,14 +11,14 @@ class widget extends \WP_Widget {
 		$this->data_class = vars::$data_class;
 	}
 	
-	public function get_settings($id) {
+	public function settings($id) {
 		if (isset($this->settings[$id])) {
 			return $this->settings[$id];
 		}
 		return FALSE;
 	}
 	
-	public function meta_data($a,$b,$c) {
+	public function meta_data($a,$b,$c = false) {
 		parent::__construct($a,$b,$c);
 	}
 }

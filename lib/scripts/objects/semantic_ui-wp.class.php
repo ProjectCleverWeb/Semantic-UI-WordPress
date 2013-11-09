@@ -36,9 +36,14 @@ class wp implements data_class {
 	
 	public function load_widgets() {
 		require_once __DIR__.'/semantic_ui-widget-add_menu.class.php';
-		register_widget(new \semantic_ui\widget\add_menu);
+		
+		// Now load them all
+		add_action( 'widgets_init', array($this, '_load_widgets'));
 	}
 	
+	public function _load_widgets() {
+		register_widget( '\semantic_ui\widget\add_menu' );
+	}
 	
 	
 	public function document_title($id = FALSE) {

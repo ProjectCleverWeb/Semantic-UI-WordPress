@@ -5,16 +5,18 @@ namespace semantic_ui\widget;
  * Allows users to easily add Semantic UI menus as
  * widgets within the theme.
  */
-class add_menu extends \WP_Widget {
+class add_menu extends \semantic_ui\widget {
 	function __construct() {
 		$this->settings = &$settings;
 		$this->ref = \semantic_ui\vars::$ref;
 		$this->data_class = \semantic_ui\vars::$data_class;
-		parent::__construct(
+		parent::meta_data(
 			// ID of your widget
 			'semantic_ui-widget-add_menu', 
 			// Title
-			'Semantic UI Menu'
+			'Semantic UI Menu',
+			// Description
+			array('description' => 'Allows you to add a Semantic UI menu as a widget')
 		);
 	}
 	
