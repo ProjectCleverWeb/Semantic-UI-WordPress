@@ -35,10 +35,12 @@ class wp implements data_class {
 	}
 	
 	public function load_widgets() {
+		$tools = vars::$ref->tools;
+		
 		require_once __DIR__.'/semantic_ui-widget-add_menu.class.php';
 		
 		// Now load them all
-		add_action( 'widgets_init', array($this, '_load_widgets'));
+		add_action( 'widgets_init', $tools->obj_callback('wp', '_load_widgets'));
 	}
 	
 	public function _load_widgets() {

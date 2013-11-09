@@ -21,7 +21,14 @@ class tools {
 	}
 	
 	
-	
+	/**
+	 * Determines if $value is a default
+	 * 
+	 * @param  mixed   $value        The value to chack
+	 * @param  mixed   $compare      An additional value to compair (optional)
+	 * @param  boolean $invert_bool  Check for FALSE instead of TRUE
+	 * @return boolean               TRUE if is a know default; FALSE otherwise
+	 */
 	public function is_default($value, $compare = NULL, $invert_bool = FALSE) {
 		$ref = &$this->ref;
 		$settings = &$this->settings;
@@ -71,6 +78,16 @@ class tools {
 		}
 		
 		return $is_default;
+	}
+	
+	/**
+	 * Makes calling sui objects a little easier
+	 * @param  [type] $class [description]
+	 * @param  [type] $func  [description]
+	 * @return [type]        [description]
+	 */
+	public function obj_callback($class,$func) {
+		return array('\\semantic_ui\\'.((string) $class), (string) $func);
 	}
 	
 	
