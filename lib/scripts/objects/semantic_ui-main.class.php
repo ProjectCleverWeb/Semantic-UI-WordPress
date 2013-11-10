@@ -51,7 +51,6 @@ class main {
 		$t->page = new page($t->settings->page);
 		require_once __DIR__.'/semantic_ui-widget.class.php';
 		new widget($t->settings->page);
-		
 	}
 	
 	/**
@@ -61,7 +60,7 @@ class main {
 	 * @since 1.0.0
 	 */
 	public function init() {
-		$this->data_class->load_widgets();
+		$this->data_class->init();
 	}
 	
 	/**

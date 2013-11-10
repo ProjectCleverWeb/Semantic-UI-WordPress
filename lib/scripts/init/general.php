@@ -1,93 +1,30 @@
 <?php
-/*
-This files does the setup for SUI.
-[comeback] switch to Object callbacks, and get away
-from Bones prefixed functions
+/**
+ * This handles giving WP additional functionality
+ * and allows you to easily modify/disable/enable
+ * individual features
+ * 
+ * Author: Nicholas Jordon
+ */
 
-Author: Nicholas Jordon
-*/
+use \semantic_ui\wp\general as general;
+$ref   = \semantic_ui\vars::$ref;
+$tools = $ref->tools;
 
-// we're firing all out initial functions at the start
-add_action( 'after_setup_theme', 'sui_cleanup', 16 );
+$widget_areas = array(
+	array(
+		'id'   => 'sidebar',
+		'name' => 'Sidebar Widgets',
+		'desc' => 'The sidebar widget area.',
+	),
+	array(
+		'id'   => 'footer',
+		'name' => 'Footer Widgets',
+		'desc' => 'The footer widget area.',
+	)
+);
 
-function sui_cleanup() {
-
-		// launching operation cleanup
-		add_action( 'init', 'sui_head_cleanup' );
-		// remove WP version from RSS
-		add_filter( 'the_generator', 'sui_rss_version' );
-		// remove pesky injected css for recent comments widget
-		add_filter( 'wp_head', 'sui_widget_recent_comments_style', 1 );
-		// clean up comment styles in the head
-		add_action( 'wp_head', 'sui_remove_recent_comments_style', 1 );
-		// clean up gallery output in wp
-		add_filter( 'gallery_style', 'sui_gallery_style' );
-
-		// enqueue base scripts and styles
-		add_action( 'wp_enqueue_scripts', 'sui_scripts_and_styles', 999 );
-		// ie conditional wrapper
-
-		// launching this stuff after theme setup
-		sui_theme_support();
-
-		// adding sidebars to Wordpress (these are created in functions.php)
-		add_action( 'widgets_init', 'sui_register_sidebars' );
-		// adding the bones search form (created in functions.php)
-		add_filter( 'get_search_form', 'sui_search' );
-
-		// cleaning up random code around images
-		add_filter( 'the_content', 'sui_filter_ptags_on_images' );
-		// cleaning up excerpt
-		add_filter( 'excerpt_more', 'sui_excerpt_more' );
-
-} /* end bones ahoy */
-
-/*********************
-WP_HEAD GOODNESS
-The default wordpress head is
-a mess. Let's clean it up by
-removing all the junk we don't
-need.
-*********************/
-
-function sui_head_cleanup() {
-	// EditURI link
-	remove_action( 'wp_head', 'rsd_link' );
-	// windows live writer
-	remove_action( 'wp_head', 'wlwmanifest_link' );
-	// index link
-	remove_action( 'wp_head', 'index_rel_link' );
-	// previous link
-	remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
-	// start link
-	remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
-	// links for adjacent posts
-	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
-	// WP version
-	remove_action( 'wp_head', 'wp_generator' );
-	// remove WP version from css
-	add_filter( 'style_loader_src', 'sui_remove_wp_ver_css_js', 9999 );
-	// remove Wp version from scripts
-	add_filter( 'script_loader_src', 'sui_remove_wp_ver_css_js', 9999 );
-
-} /* end bones head cleanup */
-
-// remove WP version from RSS
-function sui_rss_version() { return ''; }
-
-// remove WP version from scripts
-function sui_remove_wp_ver_css_js( $src ) {
-		if ( strpos( $src, 'ver=' ) )
-				$src = remove_query_arg( 'ver', $src );
-		return $src;
-}
-
-// remove injected CSS for recent comments widget
-function sui_widget_recent_comments_style() {
-	 if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
-			remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
-	 }
-}
+general::add_widget_areas($widget_areas);
 
 // remove injected CSS from recent comments widget
 function sui_remove_recent_comments_style() {

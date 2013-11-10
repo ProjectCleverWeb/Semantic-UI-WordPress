@@ -34,6 +34,19 @@ class wp implements data_class {
 		);
 	}
 	
+	public function init() {
+		$this->load_widgets();
+		
+		// Finally: load addtional functionality
+		require_once (__DIR__.'/semantic_ui-general.class.php');
+		require_once (__DIR__.'/semantic_ui-admin.class.php');
+		require_once( __DIR__.'/../init/admin.php' );
+		require_once( __DIR__.'/../init/general.php' );
+		
+		// Now make it all work
+		add_action( 'after_setup_theme', $tools->obj_callback('wp\general', 'init'), 16 );
+	}
+	
 	public function load_widgets() {
 		$tools = vars::$ref->tools;
 		
