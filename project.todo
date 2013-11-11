@@ -1,0 +1,38 @@
+This document uses the PlainTasks package for Sublime Text
+Ongoing:
+  ☐ Keep semantic up-to-date @high-priority
+Bugs:
+  ☐ -more- Function @high-priority
+  ☐ Page/Post Pagination @high-priority
+  ☐ 
+Style:
+  ☐ Password Protected Posts/Pages @secondary
+  ☐ <blockquote> @secondary
+  ☐ <table> @secondary
+  ☐ WP Gallery @secondary
+  ☐ 
+Integration:
+  ☐ Comments @high-priority
+  ☐ Pingbacks/Trackbacks @tertiary
+  ☐ Configure "Options Framework" @high-priority
+  ☐ 
+Improvements:
+  ☐ Captions Style @tertiary
+  ☐ Rework functions.php @high-priority @in-progress
+  ☐ Center post/page videos/iframes @tertiary
+  ☐ Calendar widget style @tertiary
+  ☐ More subtle patterns @tertiary
+  ☐ Rework <head> JavaScript @tertiary
+  ☐ 
+Additions:
+  ☐ Custom Field - Post Image Caption @tertiary
+  ☐ $_sui->layout @secondary
+    Not sure if this will exist yet. This functionality may end up being handled by WordPress & Options Framework; depends largely on how much functionality is specific to layouts.
+  ☐ Layout: Minimalist @high-priority
+  ☐ Layout: Call To Action @high-priority
+  ☐ Layout: Call To Action @high-priority
+  ☐ 
+Other:
+  ☐ Test load-time: sui VS no-theme VS wp- @secondary
+  ☐ Test for SEO improvements @secondary
+  ☐ 
