@@ -26,8 +26,11 @@ Improvements:
   ☐ 
 Additions:
   ☐ Custom Field - Post Image Caption @tertiary
+  ☐ Custom Field - Guest Author @tertiary
   ☐ $_sui->layout @secondary
     Not sure if this will exist yet. This functionality may end up being handled by WordPress & Options Framework; depends largely on how much functionality is specific to layouts.
+  ☐ Google Analytics @tertiary @OF
+  ☐ Share Buttons @secondary
   ☐ Layout: Minimalist @high-priority
   ☐ Layout: Call To Action @high-priority
   ☐ 
