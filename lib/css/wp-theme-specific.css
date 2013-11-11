@@ -105,6 +105,13 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 	color: #555;
 }
 
+iframe, embed {
+	display: block;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 1em;
+}
+
 img {
 	max-width: 100%;
 	height: auto;

@@ -19,13 +19,13 @@ Integration:
 Improvements:
   ☐ Captions Style @tertiary
   ☐ Rework functions.php @high-priority @in-progress
-  ☐ Center post/page videos/iframes @tertiary
   ☐ More subtle patterns @tertiary
   ☐ Rework <head> JavaScript @tertiary
   ☐ 
 Additions:
   ☐ Custom Field - Post Image Caption @tertiary
   ☐ Custom Field - Guest Author @tertiary
+  ☐ Custom Field - featured-video @tertiary
   ☐ $_sui->layout @secondary
     Not sure if this will exist yet. This functionality may end up being handled by WordPress & Options Framework; depends largely on how much functionality is specific to layouts.
   ☐ Google Analytics @tertiary @OF
@@ -41,4 +41,5 @@ Other:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Center post/page videos/iframes @tertiary @done (13-11-10 22:49) @project(Improvements)
  ✔ Calendar widget style @tertiary @done (13-11-10 22:36) @project(Improvements)
