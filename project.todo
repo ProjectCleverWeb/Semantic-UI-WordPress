@@ -30,9 +30,8 @@ Additions:
     Not sure if this will exist yet. This functionality may end up being handled by WordPress & Options Framework; depends largely on how much functionality is specific to layouts.
   ☐ Layout: Minimalist @high-priority
   ☐ Layout: Call To Action @high-priority
-  ☐ Layout: Call To Action @high-priority
   ☐ 
 Other:
-  ☐ Test load-time: sui VS no-theme VS wp- @secondary
+  ☐ Test load-time: sui VS no-theme VS wp-default @secondary
   ☐ Test for SEO improvements @secondary
   ☐ 
