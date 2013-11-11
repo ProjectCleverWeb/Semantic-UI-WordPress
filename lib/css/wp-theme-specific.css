@@ -296,3 +296,23 @@ ul > li:before {
 	background: rgba(150,150,150,0.2);
 }
 
+#calendar_wrap{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+#wp-calendar {
+	display: inline-block;
+	font-size: 1.05em;
+}
+
+#wp-calendar, .tagcloud {
+	margin-top: 1em;
+}
+
+.tagcloud {
+	text-align: center;
+}
+
+

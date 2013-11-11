@@ -20,7 +20,6 @@ Improvements:
   ☐ Captions Style @tertiary
   ☐ Rework functions.php @high-priority @in-progress
   ☐ Center post/page videos/iframes @tertiary
-  ☐ Calendar widget style @tertiary
   ☐ More subtle patterns @tertiary
   ☐ Rework <head> JavaScript @tertiary
   ☐ 
@@ -38,3 +37,8 @@ Other:
   ☐ Test load-time: sui VS no-theme VS wp-default @secondary
   ☐ Test for SEO improvements @secondary
   ☐ 
+
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ Calendar widget style @tertiary @done (13-11-10 22:36) @project(Improvements)
