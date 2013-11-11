@@ -26,6 +26,8 @@ Additions:
   ☐ Custom Field - Post Image Caption @tertiary
   ☐ Custom Field - Guest Author @tertiary
   ☐ Custom Field - featured-video @tertiary
+  ☐ Model - Search @secondary
+  ☐ Model - Related Posts @secondary
   ☐ $_sui->layout @secondary
     Not sure if this will exist yet. This functionality may end up being handled by WordPress & Options Framework; depends largely on how much functionality is specific to layouts.
   ☐ Google Analytics @tertiary @OF

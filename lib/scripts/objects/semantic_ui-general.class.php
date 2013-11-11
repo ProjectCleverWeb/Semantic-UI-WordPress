@@ -26,16 +26,16 @@ class general {
 		// remove pesky injected css for recent comments widget
 		add_filter( 'wp_head', $tools->obj_callback('wp\general', 'widget_recent_comments_style'), 1 );
 		// clean up comment styles in the head
-		add_action( 'wp_head', 'sui_remove_recent_comments_style', 1 );
+		add_action( 'wp_head', $tools->obj_callback('wp\general', 'recent_comments_style'), 1 );
 		// clean up gallery output in wp
-		add_filter( 'gallery_style', 'sui_gallery_style' );
+		add_filter( 'gallery_style', function ($css) {return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css );});
 		
 		// enqueue base scripts and styles
-		add_action( 'wp_enqueue_scripts', 'sui_scripts_and_styles', 999 );
+		add_action( 'wp_enqueue_scripts', $tools->obj_callback('wp\general', 'scripts_and_styles'), 999 );
 		// ie conditional wrapper
 		
 		// launching this stuff after theme setup
-		sui_theme_support();
+		self::theme_support();
 		
 		// register the widget areas
 		add_action( 'widgets_init', $tools->obj_callback('wp\general', 'register_widget_areas'));
@@ -43,7 +43,7 @@ class general {
 		add_filter( 'get_search_form', 'sui_search' );
 		
 		// cleaning up random code around images
-		add_filter( 'the_content', 'sui_filter_ptags_on_images' );
+		add_filter( 'the_content', function ($content) {return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);});
 		// cleaning up excerpt
 		add_filter( 'excerpt_more', 'sui_excerpt_more' );
 		
@@ -110,10 +110,85 @@ class general {
 		return $src;
 	}
 	
+	public static function recent_comments_style() {
+		global $wp_widget_factory;
+		if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
+			remove_action( 'wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style') );
+		}
+	}
+	
 	public static function widget_recent_comments_style() {
 		if (has_filter('wp_head', 'wp_widget_recent_comments_style')) {
 			remove_filter('wp_head', 'wp_widget_recent_comments_style');
 		}
+	}
+	
+	public static function scripts_and_styles() {
+		global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
+		if (!is_admin()) {
+			
+			// css
+			wp_register_style( 'semantic-css', get_stylesheet_directory_uri() . '/lib/css/semantic.min.css', array(), '', 'all' );
+			wp_register_style( 'theme-specific', get_stylesheet_directory_uri() . '/lib/css/wp-theme-specific.css', array(), '', 'all' );
+			
+			// js
+			wp_register_script( 'head.js', get_stylesheet_directory_uri() . '/lib/javascript/head.min.js', array(), '0.99', false );
+			wp_register_script( 'modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
+			wp_register_script( 'semantic-js', get_stylesheet_directory_uri() . '/lib/javascript/semantic.min.js', array(), '', false );
+			
+			// ie-only
+			// wp_register_style( 'ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
+			
+			// enqueue styles and scripts
+			// wp_enqueue_style( 'ie-only' );
+			wp_enqueue_style( 'semantic-css' );
+			wp_enqueue_style( 'theme-specific' );
+			wp_enqueue_script( 'head.js'); // This will fetch the other js
+			// wp_enqueue_script( 'modernizr' );
+			// wp_enqueue_script( 'jquery-1.10.2');
+			// wp_enqueue_script( 'semantic-js' );
+			
+			
+			// $wp_styles->add_data( 'ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
+			
+		}
+	}
+	
+	public function theme_support() {
+		// wp thumbnails (sizes handled in functions.php)
+		add_theme_support( 'post-thumbnails' );
+		
+		// default thumb size
+		set_post_thumbnail_size(150, 150, true);
+		
+		// rss thingy
+		add_theme_support('automatic-feed-links');
+		
+		// adding post format support
+		add_theme_support( 'post-formats',
+			array(
+				'aside',             // title less blurb
+				'gallery',           // gallery of images
+				'link',              // quick link to other site
+				'image',             // an image
+				'quote',             // a quick quote
+				'status',            // a Facebook like status update
+				'video',             // video
+				'audio',             // audio
+				'chat'               // chat transcript
+			)
+		);
+		
+		// wp menus
+		add_theme_support( 'menus' );
+		
+		// registering wp3+ menus
+		register_nav_menus(
+			array(
+				'main-nav' => __( 'The Main Menu', 'bonestheme' ),   // main nav in header
+				'footer-links' => __( 'Footer Links', 'bonestheme' ) // secondary nav in footer
+			)
+		);
 	}
 	
 	/**
