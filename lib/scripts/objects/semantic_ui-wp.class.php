@@ -96,11 +96,15 @@ class wp implements data_class {
 		$menu_id = (string) $menu_id;
 		if (($menus = get_nav_menu_locations()) && isset($menus[$menu_id])) {
 			$menu = wp_get_nav_menu_object($menus[$menu_id]);
-			$menu_items = wp_get_nav_menu_items($menu->term_id);
 			
 			// make menu items easier to use:
 			// NOTE: magic and dragons ahead
 			
+			if (!$menu) {
+				return FALSE;
+			}
+			
+			$menu_items = wp_get_nav_menu_items($menu->term_id);
 			$return = array(); // Asexual Adam
 			$parents = array(); // Asexual Children
 			foreach ($menu_items as $menu_item_obj) {

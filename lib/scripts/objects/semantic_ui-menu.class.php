@@ -40,6 +40,10 @@ class menu {
 		
 		$menu = $data_class->get_menu($menu_id);
 		
+		if (!$menu) {
+			return FALSE;
+		}
+		
 		$items   = PHP_EOL;
 		foreach ($menu as $menu_item) {
 			// build attributes
