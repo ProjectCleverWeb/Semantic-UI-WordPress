@@ -22,13 +22,13 @@ class general {
 		// launching operation cleanup
 		add_action( 'init', $tools->obj_callback('wp\general', 'clean_head'));
 		// remove WP version from RSS
-		add_filter( 'the_generator', function () {return '';} );
+		add_filter( 'the_generator', $tools->obj_callback('wp\general', 'generator'));
 		// remove pesky injected css for recent comments widget
 		add_filter( 'wp_head', $tools->obj_callback('wp\general', 'widget_recent_comments_style'), 1 );
 		// clean up comment styles in the head
 		add_action( 'wp_head', $tools->obj_callback('wp\general', 'recent_comments_style'), 1 );
 		// clean up gallery output in wp
-		add_filter( 'gallery_style', function ($css) {return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css );});
+		add_filter( 'gallery_style', $tools->obj_callback('wp\general', 'gallery_style'));
 		
 		// enqueue base scripts and styles
 		add_action( 'wp_enqueue_scripts', $tools->obj_callback('wp\general', 'scripts_and_styles'), 999 );
@@ -43,10 +43,22 @@ class general {
 		add_filter( 'get_search_form', 'sui_search' );
 		
 		// cleaning up random code around images
-		add_filter( 'the_content', function ($content) {return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);});
+		add_filter( 'the_content', $tools->obj_callback('wp\general', 'del_img_ptag'));
 		// cleaning up excerpt
 		add_filter( 'excerpt_more', 'sui_excerpt_more' );
 		
+	}
+	
+	public static function del_img_ptag($content) {
+		return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+	}
+	
+	public static function generator() {
+		return '';
+	}
+	
+	public static function gallery_style($css) {
+		return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
 	}
 	
 	public static function add_widget_areas($areas_array = FALSE) {
