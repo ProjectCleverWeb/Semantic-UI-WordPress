@@ -57,6 +57,7 @@ blockquote {
 }
 
 blockquote:before {
+	content: "\f10d";
 	opacity: 0.2;
 	font-family: 'Icons';
 	font-style: normal;
@@ -66,7 +67,6 @@ blockquote:before {
 	text-align: center;
 	speak: none;
 	position: absolute;
-	content: "\f10d";
 	font-size: 2.3em;
 	margin-left:-1.3em;
 	margin-top: 0.23em;
@@ -74,6 +74,11 @@ blockquote:before {
 
 blockquote cite {
 	margin-left: 2.6em;
+	display: block;
+	margin-top: 0.7em;
+	font-size: 0.87em;
+	width: 100%;
+	text-align: right;
 }
 
 
@@ -89,14 +94,6 @@ body {
 	-webkit-font-smoothing: antialiased;
 	background: url(../images/subtle_patterns/white_wall_hash.png) repeat;
 	margin: 0;
-}
-
-cite {
-	display: block;
-	margin-top: 0.7em;
-	font-size: 0.87em;
-	width: 100%;
-	text-align: right;
 }
 
 code,pre {
