@@ -1,0 +1,26 @@
+This document uses the PlainTasks package for Sublime Text
+General:
+	☐ Display <n> tags
+	☐ Primary/Secondary color
+	☐ Toggle site tagline
+	☐ 
+Post:
+	☐ Switch: the_content, the_excerpt, advanced excerpt
+	☐ Toggle comments
+	☐ Toggle excerpt/full tags
+	☐ Toggle excerpt/full cats
+	☐ Toggle excerpt/full author
+	☐ Toggle excerpt/full img
+	☐ 
+Page:
+	☐ 
+Comments:
+	☐ 
+Code:
+	☐ Google analytics ID
+	☐ Insert HTML
+		Applies to: head, before/after header, before/after content, before/after comments, before/after footer, footer scripts
+	☐ 
+Misc:
+	☐ Toggle social media buttons
+	☐ 

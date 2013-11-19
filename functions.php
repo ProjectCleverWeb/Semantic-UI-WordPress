@@ -194,7 +194,7 @@ function sui_page_navi($before = '', $after = '') {
 function sui_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-	return '...  <a class="ui mini blue button article read more" href="'. get_permalink($post->ID) . '" title="'. __( 'Read', 'bonestheme' ) . get_the_title($post->ID).'">'. __( 'Continue Reading &raquo;', 'bonestheme' ) .'</a>';
+	return '&hellip;';
 }
 
 /*

@@ -78,6 +78,8 @@ class wp implements data_class {
 			return 'PAGE';
 		} elseif (is_home($id)) {
 			return 'HOME';
+		} elseif (is_search($id)) {
+			return 'SEARCH';
 		} elseif (is_attachment($id)) {
 			return 'ATTACHMENT';
 		} else {
@@ -181,7 +183,9 @@ class wp implements data_class {
 		if (!$id) {
 			$id = get_the_id();
 		}
-		return get_the_excerpt($id);
+		$excerpt  = get_the_excerpt($id);
+		$excerpt .= '<a class="ui mini blue button article read more" href="'.get_permalink($id).'#more-'.$id.'" title="'. __( 'Read', 'bonestheme' ) . esc_attr("Read '".get_the_title($id)."'").'">'.__( 'Continue Reading &raquo;').'</a>';
+		return $excerpt;
 	}
 	
 	public function post_has_img($id = FALSE) {

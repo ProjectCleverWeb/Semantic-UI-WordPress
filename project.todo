@@ -2,7 +2,6 @@ This document uses the PlainTasks package for Sublime Text
 Ongoing:
   ☐ Keep semantic up-to-date @high-priority
 Bugs:
-  ☐ -more- Function @high-priority
   ☐ Page/Post Pagination @high-priority
   ☐ 
 Style:
@@ -42,6 +41,7 @@ Other:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ -more- Function @high-priority @done (13-11-19 10:20) @project(Bugs)
   ✔ Rework functions.php @high-priority @done (13-11-12 10:52) @project(Improvements)
   ✔ Center post/page videos/iframes @tertiary @done (13-11-10 22:49) @project(Improvements)
   ✔ Calendar widget style @tertiary @done (13-11-10 22:36) @project(Improvements)

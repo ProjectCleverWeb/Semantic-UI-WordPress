@@ -56,7 +56,7 @@
 										unset($fstr);
 									}
 									?>
-									<p><?php echo get_the_excerpt(); ?></p>
+									<p><?php echo $_sui->post->the_content(); ?></p>
 								</section><!-- ./article.content -->
 							</div>
 							
