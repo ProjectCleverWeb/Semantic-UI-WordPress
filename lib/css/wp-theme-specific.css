@@ -46,6 +46,37 @@ article {
 	margin-bottom: 1.5rem;
 }
 
+blockquote {
+	background: #f2f2f2;
+	display: block;
+	width:94%;
+	margin: 1em auto;
+	padding: 0.1em 3.8em 0.1em 3.8em;
+	color: #333;
+	border-radius: 0.4em;
+}
+
+blockquote:before {
+	opacity: 0.2;
+	font-family: 'Icons';
+	font-style: normal;
+	line-height: 1;
+	font-weight: normal;
+	text-decoration: inherit;
+	text-align: center;
+	speak: none;
+	position: absolute;
+	content: "\f10d";
+	font-size: 2.3em;
+	margin-left:-1.3em;
+	margin-top: 0.23em;
+}
+
+blockquote cite {
+	margin-left: 2.6em;
+}
+
+
 body {
 	/* Android Addict */
 	font-family: "Droid Sans", sans-serif;
@@ -58,6 +89,14 @@ body {
 	-webkit-font-smoothing: antialiased;
 	background: url(../images/subtle_patterns/white_wall_hash.png) repeat;
 	margin: 0;
+}
+
+cite {
+	display: block;
+	margin-top: 0.7em;
+	font-size: 0.87em;
+	width: 100%;
+	text-align: right;
 }
 
 code,pre {
@@ -139,6 +178,31 @@ li {
 
 pre {
 	overflow: auto;
+}
+
+table {
+	width: 100%;
+	border:1px solid #ccc;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: 1em 0;
+}
+
+table tr:nth-child(odd) {
+	background: #f7f7f7;
+}
+
+td {
+	padding: 0.2em 0.6em;
+	border:1px solid #e5e5e5;
+	font-size: 0.9em;
+}
+
+th {
+	padding: 0.3em;
+	border:1px solid #d9d9d9;
+	background: #f0f0f0;
+	font-size: 0.95em;
 }
 
 ul {

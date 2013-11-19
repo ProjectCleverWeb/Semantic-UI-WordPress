@@ -6,8 +6,6 @@ Bugs:
   ☐ 
 Style:
   ☐ Password Protected Posts/Pages @secondary
-  ☐ <blockquote> @secondary
-  ☐ <table> @secondary
   ☐ WP Gallery @secondary
   ☐ 
 Integration:
@@ -41,6 +39,8 @@ Other:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ <blockquote> @secondary @done (13-11-19 12:17) @project(Style)
+  ✔ <table> @secondary @done (13-11-19 12:17) @project(Style)
   ✔ -more- Function @high-priority @done (13-11-19 10:20) @project(Bugs)
   ✔ Rework functions.php @high-priority @done (13-11-12 10:52) @project(Improvements)
   ✔ Center post/page videos/iframes @tertiary @done (13-11-10 22:49) @project(Improvements)
