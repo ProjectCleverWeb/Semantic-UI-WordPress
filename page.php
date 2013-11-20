@@ -49,7 +49,7 @@
 										unset($fstr);
 									}
 									?>
-									<p><?php echo $_sui->post->the_content(); ?></p>
+									<p><?php echo $_sui->page->the_content(); ?></p>
 								</section><!-- ./article.content -->
 							</div>
 							
