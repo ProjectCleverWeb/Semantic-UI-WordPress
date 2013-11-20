@@ -47,10 +47,22 @@ class general {
 		// cleaning up excerpt
 		add_filter( 'excerpt_more', 'sui_excerpt_more' );
 		
+		// Password Form (posts/pages)
+		add_filter( 'the_password_form', $tools->obj_callback('wp\general', 'password_form'));
 	}
 	
 	public static function del_img_ptag($content) {
 		return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+	}
+	
+	public static function password_form($content) {
+		$action = get_option('siteurl').'/wp-login.php?action=postpass';
+		$method = 'post';
+		$name   = 'post_password';
+		
+		// NOTE: wp will add extra </p> tags to line breaks... again WP sucks
+		$form = '<form action="%1$s" method="%2$s"><div class="ui warning form"><div class="ui warning icon message"><i class="hide icon"></i><div class="content"><div class="header">Protected Content</div><p>You must enter a password to see this content.</p></div></div><div class="field"><label>Password</label><input type="password" name="%3$s"></div><input class="ui blue submit button" type="submit" name="Submit" value="Submit" /></div></form>';
+		return sprintf($form,$action,$method,$name);
 	}
 	
 	public static function generator() {
