@@ -11,6 +11,15 @@ require_once( __DIR__.'/lib/scripts/init/sui.php' );
 /*** Add custom functions below this line ***/
 
 
+add_filter( 'the_password_form', 'custom_password_form' );  
+function custom_password_form() {
+	$action = get_option('siteurl').'/wp-login.php?action=postpass';
+	$method = 'post';
+	$name   = 'post_password';
+	
+	$form = '<form action="%1$s" method="%2$s"><div class="ui warning form"><div class="ui warning icon message"><i class="hide icon"></i><div class="content"><div class="header">Protected Content</div><p>You must enter a password to see this content.</p></div></div><div class="field"><label>Password</label><input type="password" name="%3$s"></div><input class="ui blue submit button" type="submit" name="Submit" value="Submit" /></div></form>';
+	return sprintf($form,$action,$method,$name);
+}
 
 
 /**

@@ -8,9 +8,9 @@ The comments page, [comback]
 		die ('Please do not load this page directly. Thanks!');
 
 	if ( post_password_required() ) { ?>
-		<div class="alert alert-help">
-			<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', 'bonestheme' ); ?></p>
-		</div>
+	<div class="ui warning message">
+		<p>You must enter the password to see comments.</p>
+	</div>
 	<?php
 		return;
 	}
