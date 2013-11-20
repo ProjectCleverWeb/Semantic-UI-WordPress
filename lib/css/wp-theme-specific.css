@@ -182,11 +182,26 @@ table {
 	border:1px solid #ccc;
 	border-collapse: collapse;
 	border-spacing: 0;
+	overflow: auto;
 	margin: 1em 0;
 }
 
 table tr:nth-child(odd) {
-	background: #f7f7f7;
+	background: #f8f8f8;
+}
+
+table tr:first-child td {
+	border-top:none;
+}
+
+table tr:last-child td {
+	border-bottom:none;
+}
+
+table > caption {
+	padding: 0.4em 0.5em;
+	font-size: 0.9em;
+	color:#555;
 }
 
 td {
@@ -195,10 +210,18 @@ td {
 	font-size: 0.9em;
 }
 
+td:first-child, th:first-child {
+	border-left:none;
+}
+
+td:last-child, th:last-child {
+	border-right:none;
+}
+
 th {
 	padding: 0.3em;
 	border:1px solid #d9d9d9;
-	background: #f0f0f0;
+	background: #ededed;
 	font-size: 0.95em;
 }
 
@@ -349,6 +372,15 @@ ul > li:before {
 	float:right;
 }
 
+.pad, td#prev, td#next {
+	border-left: none;
+	border-right: none;
+}
+
+.tagcloud {
+	text-align: center;
+}
+
 .wp-caption{ /* The default captions in wp suck */
 	max-width: 100%;
 	width: auto !important;
@@ -377,10 +409,6 @@ ul > li:before {
 
 #wp-calendar, .tagcloud {
 	margin-top: 1em;
-}
-
-.tagcloud {
-	text-align: center;
 }
 
 
