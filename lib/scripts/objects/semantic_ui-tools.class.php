@@ -91,6 +91,40 @@ class tools {
 	}
 	
 	
+	public function rating($pos, $neg, $options = FALSE) {
+		$default = array(
+			'max_rating' => 5,
+			'full'       => 'X',
+			'half'       => '/',
+			'none'       => '-'
+		);
+		
+		if (is_array($options)) {
+			$o = $options + $default;
+		} else {
+			$o = $default;
+		}
+		
+		$total = (round((int) $neg) + round((int) $pos));
+		$half_stars = round(($pos/$total)*($o['max_rating']*2));
+		$stars = floor($half_stars/2);
+		
+		$done = 0;
+		$i = 1;
+		while ($i<($o['max_rating']+1) && $i++) {
+			if ((($stars+1) - $i) >= 0) {
+				echo $o['full'];
+			} else {
+				if ($half_stars & 1 && $done == 0) {
+					echo $o['half'];
+					$done = 1;
+				} else {
+					echo $o['none'];
+				}
+			}
+		}
+	}
+	
 	
 	/**
 	 * function template
