@@ -14,10 +14,9 @@ Integration:
   ☐ Port to another CMS @secondary @ver-2.0.0
   ☐ 
 Improvements:
-  ☐ Captions Style @tertiary
   ☐ More subtle patterns @tertiary
   ☐ Rework <head> JavaScript @tertiary
-  ☐ Rework css to Less @secondary
+  ☐ Rework css to LESS @secondary
   ☐ 
 Additions:
   ☐ Custom Field - Post Image Caption @tertiary
@@ -40,9 +39,10 @@ Other:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
- ✔ Password Protected Posts/Pages @secondary @done (13-11-19 22:38) @project(Style)
-  ✔ <blockquote> @secondary @done (13-11-19 12:17) @project(Style)
+  ✔ Captions Style @tertiary @done (13-11-19 23:58) @project(Improvements)
+  ✔ Password Protected Posts/Pages @secondary @done (13-11-19 22:38) @project(Style)
   ✔ <table> @secondary @done (13-11-19 12:17) @project(Style)
+  ✔ <blockquote> @secondary @done (13-11-19 12:17) @project(Style)
   ✔ -more- Function @high-priority @done (13-11-19 10:20) @project(Bugs)
   ✔ Rework functions.php @high-priority @done (13-11-12 10:52) @project(Improvements)
   ✔ Center post/page videos/iframes @tertiary @done (13-11-10 22:49) @project(Improvements)

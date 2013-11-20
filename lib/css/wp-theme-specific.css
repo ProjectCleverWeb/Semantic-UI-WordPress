@@ -387,13 +387,31 @@ ul > li:before {
 	text-align: center;
 }
 
-.wp-caption p{
-	display: block;
+.wp-caption-text{
 	margin: -0.75em auto 0.25em auto;
-	padding: 0.25em 1em;
-	width: 85%;
-	border-radius: 0.5em;
-	background: rgba(150,150,150,0.2);
+	padding: 0.25em 1em 0.25em 1.8em;
+	max-width: 90%;
+	font-size: 0.9em;
+	border-radius: 0.3em;
+	border: 1px solid #ccc;
+	background: #f6f6f6;
+}
+
+.wp-caption-text:before {
+	content: "\f05a";
+	font-family: 'Icons';
+	font-style: normal;
+	line-height: 1;
+	font-weight: normal;
+	text-decoration: inherit;
+	text-align: center;
+	speak: none;
+	display: block;
+	position: absolute;
+	font-size: 1.5em;
+	margin: -0.1em 0 0 -1.05em;
+	opacity: 0.5;
+	color: #000;
 }
 
 #calendar_wrap{
