@@ -88,6 +88,38 @@ class wp implements data_class {
 	}
 	
 	/**
+	 * Interface for _get_threaded_comments() and _get_comments()
+	 * 
+	 * @return array  The comments
+	 */
+	public function get_comments() {
+		$threaded = FALSE; // [comeback] determined by OF
+		if ($threaded) {
+			return $this->_get_threaded_comments();
+		} else {
+			return $this->_get_comments();
+		}
+	}
+	
+	/**
+	 * Gets comments from wordpress, and returns them in a mutlilayer array
+	 * 
+	 * @return array  The comments
+	 */
+	private function _get_threaded_comments() {
+		return array();
+	}
+	
+	/**
+	 * Gets comments from wordpress, and returns them in a flat array
+	 * 
+	 * @return array  The comments
+	 */
+	private function _get_comments() {
+		return array();
+	}
+	
+	/**
 	 * This gets a menu by its id and returns its items
 	 * in a multi-layered array (for menu children).
 	 * 

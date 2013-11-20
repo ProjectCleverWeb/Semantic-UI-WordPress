@@ -13,8 +13,14 @@ Post:
 	☐ Toggle excerpt/full img
 	☐ 
 Page:
+	☐ Toggle comments
+	☐ Toggle excerpt/full tags
+	☐ Toggle excerpt/full cats
+	☐ Toggle excerpt/full author
+	☐ Toggle excerpt/full img
 	☐ 
 Comments:
+	☐ msg: post/page "be the first to comment"
 	☐ 
 Code:
 	☐ Google analytics ID

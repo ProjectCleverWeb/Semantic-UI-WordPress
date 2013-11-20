@@ -16,78 +16,55 @@ The comments page, [comback]
 	}
 ?>
 
-
-
-
-<div class="ui one column grid">
-	<div class="column">
-		<div class="ui stacked blue segment">
-			<h2 class="ui header">
-				<i class="icon inverted circular blue comment"></i> Comments
-			</h2>
-			<div class="ui comments">
-				<div class="comment">
-					<a class="avatar">
-						<img src="http://placehold.it/100&text=Avatar">
-					</a>
-					<div class="content">
-						<a class="author">Dog Doggington</a>
-						<div class="metadata">
-							<span class="date">2 days ago</span>
-						</div>
-						<div class="text">
-							I think this is a great idea and i am voting on it
-						</div>
-						<div class="actions">
-							<a class="reply">Reply</a>
-							<a class="delete">Delete</a>
-						</div>
-					</div>
+<div class="ui top attached secondary segment">
+	<img class="ui avatar image" src="http://placehold.it/100&text=Avatar"> Commenting as <a href="/user">&lt;username&gt;</a> | <a href="/logout">Logout</a>
+</div>
+<div class="ui bottom attached segment">
+	<form class="ui reply form">
+		<div class="field">
+			<textarea></textarea>
+		</div>
+		<div class="ui fluid blue labeled submit icon button">
+			<i class="icon edit"></i> Add Reply
+		</div>
+	</form>
+</div>
+<div class="ui stacked segment">
+	<div class="ui top attached label">21 Comments</div>
+	<div class="ui comments">
+		<div class="comment">
+			<a class="avatar">
+				<img src="http://placehold.it/100&text=Avatar">
+			</a>
+			<div class="content">
+				<a class="author">Dog Doggington</a>
+				<div class="metadata">
+					<div class="date">2 days ago</div>
 				</div>
-				<div class="comment">
-					<a class="avatar">
-						<img src="http://placehold.it/100&text=Avatar">
-					</a>
-					<div class="content">
-						<a class="author">Pawfin Dog</a>
-						<div class="metadata">
-							<span class="date">2 days ago</span>
-						</div>
-						<div class="text">
-							I think this is a great idea and i am voting on it
-						</div>
-						<div class="actions">
-							<a class="reply">Reply</a>
-							<a class="delete">Delete</a>
-						</div>
-					</div>
+				<div class="text">
+					I think this is a great idea and i am voting on it
 				</div>
-				<div class="comment">
-					<a class="avatar">
-						<img src="http://placehold.it/100&text=Avatar">
-					</a>
-					<div class="content">
-						<a class="author">Dog Doggington</a>
-						<div class="metadata">
-							<span class="date">2 days ago</span>
-						</div>
-						<div class="text">
-							I think this is a great idea and i am voting on it
-						</div>
-						<div class="actions">
-							<a class="reply">Reply</a>
-							<a class="delete">Delete</a>
-						</div>
-					</div>
+				<div class="actions">
+					<a class="reply">Reply</a>
+					<a class="delete">Delete</a>
 				</div>
-				<form class="ui reply form">
-					<div class="field">
-						<textarea></textarea>
-					</div>
-					<div class="ui fluid blue labeled submit icon button">
-						<i class="icon edit"></i> Add Reply
-					</div>
-				</form>
+			</div>
+		</div>
+		<div class="comment">
+			<a class="avatar">
+				<img src="http://placehold.it/100&text=Avatar">
+			</a>
+			<div class="content">
+				<a class="author">Pawfin Dog</a>
+				<div class="metadata">
+					<div class="date">1 day ago</div>
+				</div>
+				<div class="text">
+					I think this is a great idea and i am voting on it
+				</div>
+				<div class="actions">
+					<a class="reply">Reply</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -97,7 +74,41 @@ The comments page, [comback]
 
 
 
+<?php
+$reply_options = array(
+	'author',
+	'author_img',
+	'author_url'
+);
 
+if (comments_open()) {
+	if (have_comments()) {
+		$_sui->model->fetch('comment_reply', $reply_options);
+		$_sui->model->fetch('comments');
+	} else {
+		?>
+		<div class="ui icon message">
+			<i class="chat icon"></i>
+			<div class="content">
+				<div class="header">
+					No comments yet
+				</div>
+				<p>You can be the first to comment on this!</p>
+			</div>
+		</div>
+		<?php
+		$_sui->model->fetch('comment_reply', $reply_options);
+	}
+} else { // comments are closed
+	if (have_comments()) {
+		$_sui->model->fetch('comments');
+	}
+	// don't display anyting if they are closed and no comments exist
+}
+
+
+
+?>
 
 
 
