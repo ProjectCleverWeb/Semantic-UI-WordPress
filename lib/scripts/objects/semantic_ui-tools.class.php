@@ -125,6 +125,62 @@ class tools {
 		}
 	}
 	
+	/**
+	 * Translates named varables in a formatted string, and returns the result.
+	 * 
+	 * Features:
+	 * - Array keys are always interpereted as lowercase
+	 * - Supports default values (optional)
+	 * - $replacements and $defaults are always interpreted as arrays (objects are converted)
+	 * - Empty variables are not touched
+	 * 
+	 * Example:
+	 *   $fmt      = 'my name is %name% and I like %color%. What is your %word% %empty%?';
+	 *   $arr      = array ( 'nAMe' => 'John', 'CoLOr' => 'green' );
+	 *   $defaults = array ( 'name' => 'Jane', 'color' => 'red', 'word' => 'name' );
+	 *   
+	 *   // Output: my name is John and I like green. What is your name %empty%?
+	 *   echo fmts_translate ( $fmt, $arr, $defaults );
+	 * 
+	 * $fmt          string        The formatted string to be translated
+	 * $replacements array/object  The replacements
+	 * $defaults     array/object  The default values (optional)
+	 * return        string        The resulting string
+	 */
+	public function fmts_translate($fmt, $replacements, $defaults = FALSE) {
+		if (!is_string($fmt)) {
+			return '';
+		}
+		
+		if (!is_array($replacements)) {
+			if (is_object($replacements)) {
+				$replacements = (array) $replacements;
+			} else {
+				$replacements = array();
+			}
+		}
+		
+		$trans_arr = array();
+		foreach ($replacements as $name => $replacement) {
+			$trans_arr['%'.strtolower($name).'%'] = (string) $replacement;
+		}
+		
+		if (is_array($defaults) || is_object($defaults)) {
+			if (is_object($defaults)) {
+				$defaults = (array) $defaults;
+			}
+			
+			$defaults_arr = array();
+			foreach ($defaults as $d_name => $d_replacement) {
+				$defaults_arr['%'.strtolower($d_name).'%'] = (string) $d_replacement;
+			}
+			
+			$trans_arr = $trans_arr + $defaults_arr;
+		}
+		
+		return strtr($fmt, $trans_arr);
+	}
+	
 	
 	/**
 	 * function template
