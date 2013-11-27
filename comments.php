@@ -76,9 +76,10 @@ The comments page, [comback]
 
 <?php
 $reply_options = array(
-	'author',
-	'author_img',
-	'author_url'
+	'username',
+	'user_avatar_src',
+	'user_url',
+	'logout_url'
 );
 
 if (comments_open()) {
