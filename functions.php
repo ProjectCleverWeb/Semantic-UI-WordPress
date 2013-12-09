@@ -33,15 +33,13 @@ function sui_comments( $comment, $args, $depth ) {
 
 // Search Form
 function sui_search() {
-	$form = '
-<form role="search" method="get" id="searchform" class="search bar" action="%2$s" >
-	<div class="ui icon input">
-		<input type="text" value="%1$s" name="s" id="s" placeholder="%3$s">
-		<button type="submit" id="searchsubmit" class="ui icon button"><i class="search icon"></i></input>
-	</div>
-</form>
-';
-	return sprintf($form,get_search_query(),home_url( '/' ),esc_attr__( 'Search...', 'bonestheme' ));
+	$ref = \semantic_ui\vars::$ref;
+	return $ref->model->fetch('search', array(
+		// Pass arguments
+		'action'      => home_url('/'),
+		'value'       => get_search_query(),
+		'placeholder' => esc_attr__( 'Search...', 'semantic_ui')
+	));
 }
 
 

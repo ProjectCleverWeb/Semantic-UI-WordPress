@@ -43,6 +43,8 @@ class main {
 		new vars($t);
 		require_once __DIR__.'/semantic_ui-tools.class.php';
 		$t->tools = new tools($t->settings->general);
+		require_once __DIR__.'/semantic_ui-model.class.php';
+		$t->model = new model($t->settings->general);
 		require_once __DIR__.'/semantic_ui-menu.class.php';
 		$t->menu = new menu($t->settings->general);
 		require_once __DIR__.'/semantic_ui-post.class.php';
@@ -61,6 +63,7 @@ class main {
 	 */
 	public function init() {
 		$this->data_class->init();
+		$this->model->init();
 	}
 	
 	/**

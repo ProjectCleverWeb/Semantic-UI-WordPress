@@ -16,7 +16,7 @@ Integration:
 Improvements:
   ☐ More subtle patterns @tertiary
   ☐ Rework <head> JavaScript @tertiary
-  ☐ Rework css to LESS @secondary
+  ☐ Rework css to SCSS @secondary
   ☐ Advanced excerpt  @secondary
     This will be like a regular excerpt except with some formatting
   ☐ 

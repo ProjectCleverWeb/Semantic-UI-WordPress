@@ -31,7 +31,12 @@ class model {
 		$ls = scandir($path);
 		
 		foreach ($ls as $file) {
-			$id = strtolower(str_replace(array(' ', '(', ')', '[', ']', '{', '}', '<', '>', ',', '|', '~'), '', $file));
+			$id = strtolower(str_replace(array(
+				// extensions
+				'.php', '.html',
+				// characters
+				' ', '(', ')', '[', ']', '{', '}', '<', '>', ',', '|', '~'
+			), '', $file));
 			$this->register($path.'/'.$file, $id); // register checks if it is actually a file
 		}
 	}
@@ -51,7 +56,7 @@ class model {
 		if (!is_string($id) || !isset($this->models[$id])) {
 			return FALSE;
 		}
-		$model = $this->model[$id];
+		$model = $this->models[$id];
 		
 		if (empty($args) && empty($defaults)) {
 			return $model;
