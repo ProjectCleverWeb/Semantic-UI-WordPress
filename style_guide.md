@@ -10,7 +10,7 @@
 - Objects get their own file with an appropriate suffix.
 - Minified filoe must have a "min" suffix.
 - Namespaces are reflected in filenames.
-- <kbd>\</kbd> and <kbd>/</kbd> are replaced with <kbd>-</kbd> in filenames &amp; string identifiers.
+- <kbd>\\</kbd> and <kbd>/</kbd> are replaced with <kbd>-</kbd> in filenames &amp; string identifiers.
 - Variable, constant, function, method, namespace, class, and interface names **must** be snake_case.
 - All constants, including bool and magic constants, **must** be all caps.
 - When defining multiple variables, the <kbd>=</kbd>'s should all line up.
