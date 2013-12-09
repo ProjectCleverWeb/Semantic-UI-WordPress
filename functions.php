@@ -53,7 +53,7 @@ function sui_main_nav() {
 		wp_nav_menu(array(
 			'container'       => false,                                    // remove nav container
 			'container_class' => '',                                       // class of container (should you choose to use it)
-			'menu'            => __( 'The Main Menu', 'bonestheme' ),      // nav name
+			'menu'            => __( 'The Main Menu', 'semantic_ui' ),      // nav name
 			'menu_class'      => 'ui secondary pointing menu',             // adding custom nav class
 			'theme_location'  => 'main-nav',                               // where it's located in the theme
 			'items_wrap'      => '<div id="%1$s" class="%2$s">%3$s</div>',
@@ -72,7 +72,7 @@ function sui_footer_links() {
 		wp_nav_menu(array(
 			'container' => '',                              // remove nav container
 			'container_class' => 'footer-links clearfix',   // class of container (should you choose to use it)
-			'menu' => __( 'Footer Links', 'bonestheme' ),   // nav name
+			'menu' => __( 'Footer Links', 'semantic_ui' ),   // nav name
 			'menu_class' => 'nav footer-nav clearfix',      // adding custom nav class
 			'theme_location' => 'footer-links',             // where it's located in the theme
 			'before' => '',                                 // before the menu
@@ -123,7 +123,7 @@ function sui_related_posts() {
 							<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 					<?php endforeach; }
 			else { ?>
-						<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'bonestheme' ) . '</li>'; ?>
+						<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'semantic_ui' ) . '</li>'; ?>
 		<?php }
 	}
 	wp_reset_query();
@@ -163,7 +163,7 @@ function sui_page_navi($before = '', $after = '') {
 	}
 	echo $before.'<nav class="ui pagination menu" role="navigation">';
 	if ($start_page >= 2 && $pages_to_show < $max_page) {
-		$first_page_text = __( "First", 'bonestheme' );
+		$first_page_text = __( "First", 'semantic_ui' );
 		echo '<a class="item" href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a>';
 	}
 	if ($start_page >= 3) {
@@ -180,7 +180,7 @@ function sui_page_navi($before = '', $after = '') {
 		echo '<a class="icon item" href="'.get_pagenum_link($i).'"><i class="icon right arrow"></i></a>';
 	}
 	if ($end_page < $max_page) {
-		$last_page_text = __( "Last", 'bonestheme' );
+		$last_page_text = __( "Last", 'semantic_ui' );
 		echo '<a class="item" href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">'.$last_page_text.'</a>';
 	}
 	echo '</nav>'.$after."";

@@ -5,15 +5,17 @@
 						
 						<?php
 						$article_count = 0;
-						if (have_posts()) : while (have_posts()) : the_post();
-						$is_sticky = is_sticky($post->ID);
-						
-						$article_count++;
+						if (have_posts()) {
+							while (have_posts()) {
+								the_post();
+								$post = $_sui->post;
+								
+								$article_count++;
 						
 						?>
 						<article id="post id <?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 							<div <?php
-								if($is_sticky) {
+								if($post->is_sticky()) {
 									echo "class=\"ui top attached segment\"";
 								} else {
 									echo "class=\"ui top attached primary segment\"";
@@ -21,13 +23,13 @@
 								?> >
 								<header class="article header">
 									<?php
-									$post_title = trim(get_the_title());
+									$post_title = $post->the_title();
 									$post_has_title = (!empty($post_title));
 									
 									if ($post_has_title) {
 									?>
 									<h2 class="ui dividing header" itemprop="headline">
-											<?php the_title(); ?>
+											<?php echo $post_title; ?>
 									</h2>
 									<?php
 									} else {
@@ -54,7 +56,7 @@
 							
 							<footer class="ui bottom attached stacked secondary segment article footer">
 								<?php
-								if (!$is_sticky && has_tag()) {
+								if (!$post->is_sticky() && has_tag()) {
 								?>
 								<p class="article tags">
 									Tags:
@@ -73,7 +75,7 @@
 											$fstr = 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> and filed under %4$s.';
 										}
 										printf(
-											__($fstr, 'bonestheme'),
+											__($fstr, 'semantic_ui'),
 											get_the_time('Y-m-j'),
 											get_the_time(get_option('date_format')),
 											sui_get_the_author_posts_link(),
@@ -84,11 +86,12 @@
 							</footer> <!-- /.article.footer -->
 							<?php comments_template(); // uncomment if you want to use them ?>
 						</article> <!-- /article -->
-						<?php endwhile;
+						<?php
+						} // while(have_posts())
 						
 						sui_page_navi();
 						
-						else : // for IF(have_posts()) ?>
+						} else { // for if(have_posts()) ?>
 						<article>
 							<div class="ui top attached primary segment">
 								<header class="article header">
@@ -128,7 +131,7 @@
 								</p>
 							</footer> <!-- /.article.footer -->
 						</article> <!-- /article -->
-						<?php endif; // for IF(have_posts()) ?>
+						<?php } // for IF(have_posts()) ?>
 						
 						
 						

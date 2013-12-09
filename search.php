@@ -5,7 +5,7 @@
 						<article>
 							<div class="ui primary search segment" >
 								<section class="search content">
-									<h4><?php _e( 'Search Results', 'bonestheme' ); ?></h4>
+									<h4><?php _e( 'Search Results', 'semantic_ui' ); ?></h4>
 								</section>
 								<div class="ui bottom attached label">"<?php echo esc_attr(get_search_query()); ?>"</div>
 							</div>
@@ -81,7 +81,7 @@
 											$fstr = 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> and filed under %4$s.';
 										}
 										printf(
-											__($fstr, 'bonestheme'),
+											__($fstr, 'semantic_ui'),
 											get_the_time('Y-m-j'),
 											get_the_time(get_option('date_format')),
 											sui_get_the_author_posts_link(),

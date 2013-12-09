@@ -74,7 +74,7 @@
 											$fstr = 'Created <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> and filed under %4$s.';
 										}
 										printf(
-											__($fstr, 'bonestheme'),
+											__($fstr, 'semantic_ui'),
 											get_the_time('Y-m-j'),
 											get_the_time(get_option('date_format')),
 											sui_get_the_author_posts_link(),

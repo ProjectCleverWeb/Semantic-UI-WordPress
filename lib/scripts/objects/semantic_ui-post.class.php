@@ -45,7 +45,7 @@ class post{
 		$ref = &$this->ref;
 		$settings = &$this->settings;
 		
-		
+		return is_sticky();
 		
 	}
 	
