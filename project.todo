@@ -24,7 +24,6 @@ Additions:
   ☐ Custom Field - Post Image Caption @tertiary
   ☐ Custom Field - Guest Author @tertiary
   ☐ Custom Field - featured-video @tertiary
-  ☐ Model - Search @secondary
   ☐ Model - Related Posts @secondary
   ☐ $_sui->layout @secondary
     Not sure if this will exist yet. This functionality may end up being handled by WordPress & Options Framework; depends largely on how much functionality is specific to layouts.
@@ -42,6 +41,7 @@ Other:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Model - Search @secondary @done (13-12-09 14:15) @project(Additions)
   ✔ Captions Style @tertiary @done (13-11-19 23:58) @project(Improvements)
   ✔ Password Protected Posts/Pages @secondary @done (13-11-19 22:38) @project(Style)
   ✔ <table> @secondary @done (13-11-19 12:17) @project(Style)
