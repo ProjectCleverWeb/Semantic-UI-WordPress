@@ -50,6 +50,7 @@
 									}
 									?>
 									<p><?php echo $_sui->post->the_content(); ?></p>
+									<?php echo $_sui->post->read_more(); ?>
 								</section><!-- ./article.content -->
 							</div>
 							
@@ -60,7 +61,7 @@
 								<p class="article tags">
 									Tags:
 									<?php
-										$fmt = '<a href="%2$s" id="tag-%3$s" title="%4$s"><span class="mini ui inverted button">%1$s</span></a>';
+										$fmt = '<a href="%2$s" id="tag-%3$s" title="%4$s"><span class="blue ui label">%1$s</span></a>';
 										echo $_sui->post->tags(0,0,' ',0,$fmt);
 									?>
 								</p>

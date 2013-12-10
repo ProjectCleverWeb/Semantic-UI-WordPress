@@ -100,5 +100,13 @@ class post{
 		return $str;
 	}
 	
+	public function read_more($id = FALSE) {
+		$ref = &$this->ref;
+		return $ref->model->fetch('read_more', array(
+			'url'        => get_permalink($id).'#more-'.$id,
+			'title_attr' => esc_attr("Read '".get_the_title($id)."'"),
+			'text'       => __('Continue Reading<i class="ui double angle right icon"></i>', 'semantic_ui')
+		));
+	}
 	
 }

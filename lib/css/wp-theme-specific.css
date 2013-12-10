@@ -85,6 +85,7 @@ blockquote cite {
 body {
 	/* Android Addict */
 	font-family: "Droid Sans", sans-serif;
+	font-size: 16px;
 	/*
 	This improves reading when using similar colors
 	without creating a visiable effect on other text
@@ -111,29 +112,27 @@ h1, h2, h3, h4, h5, h6, .ui.header {
 }
 
 h1, h1.ui.header {
-	font-size: 2.65rem;
+	font-size: 2.441rem;
 }
 
 h2, h2.ui.header {
-	font-size: 2.1rem;
+	font-size: 1.953rem;
 }
 
 h3, h3.ui.header {
-	font-size: 1.7rem;
+	font-size: 1.563rem;
 }
 
 h4, h4.ui.header {
-	font-size: 1.4rem;
+	font-size: 1.25rem;
 }
 
 h5, h5.ui.header {
-	font-family: "Droid Sans", sans-serif;
-	font-size: 1.2rem;
+	font-size: 1rem;
 }
 
 h6, h6.ui.header {
-	font-family: "Droid Sans", sans-serif;
-	font-size: 1rem;
+	font-size: 0.8rem;
 }
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
@@ -285,8 +284,6 @@ ul > li:before {
 .article.read.more{
 	display: block;
 	float: right;
-	margin-top: 2em;
-	text-transform: none;
 }
 
 .not.found.column {
