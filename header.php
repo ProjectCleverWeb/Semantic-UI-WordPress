@@ -59,7 +59,9 @@ $_sui = \semantic_ui\vars::$ref;
 					
 					// Semantic UI inits
 					$('.ui.accordion').accordion();
-					$('.ui.dropdown').dropdown();
+					$('.ui.dropdown').dropdown({
+						on: 'hover'
+					});
 					$('.ui.checkbox').checkbox();
 					$('.ui.modal').modal();
 					$('.ui.popup').popup();
