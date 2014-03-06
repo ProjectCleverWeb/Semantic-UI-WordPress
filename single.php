@@ -69,15 +69,13 @@
 								<p class="byline vcard">
 									<img class="ui avatar image post avatar" src="http://placehold.it/100&text=Avatar">
 									<?php
-										if ($is_sticky) {
-											$fstr = 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span>';
-										} else {
+										
 											$fstr = 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> and filed under %4$s.';
-										}
+						
 										printf(
 											__($fstr, 'semantic_ui'),
 											get_the_time('Y-m-j'),
-											get_the_time(get_option('date_format')),
+											get_the_time(get_option('date_format','Y-m-j')),
 											sui_get_the_author_posts_link(),
 											get_the_category_list(', ')
 										);
