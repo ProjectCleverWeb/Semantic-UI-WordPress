@@ -56,7 +56,7 @@ class wp implements data_class {
 		add_action( 'widgets_init', $tools->obj_callback('wp', '_load_widgets'));
 	}
 	
-	public function _load_widgets() {
+	public static function _load_widgets() {
 		register_widget( '\semantic_ui\widget\add_menu' );
 	}
 	

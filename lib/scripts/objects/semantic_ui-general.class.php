@@ -83,7 +83,7 @@ class general {
 		return $array;
 	}
 	
-	public function register_widget_areas(){
+	public static function register_widget_areas(){
 		$areas_array = self::add_widget_areas();
 		
 		if (is_array($areas_array)) {
@@ -178,7 +178,7 @@ class general {
 		}
 	}
 	
-	public function theme_support() {
+	public static function theme_support() {
 		// wp thumbnails (sizes handled in functions.php)
 		add_theme_support( 'post-thumbnails' );
 		
