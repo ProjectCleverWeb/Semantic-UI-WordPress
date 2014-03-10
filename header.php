@@ -32,16 +32,29 @@ $_sui = \semantic_ui\vars::$ref;
 		
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 		
-		<link href='http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Roboto:400,300,100' rel='stylesheet' type='text/css'>
-		
 		<!-- wp_head() -->
 		<?php wp_head(); ?>
 		<!-- /wp_head() -->
 		
 		<!-- head.js -->
 		<script type="text/javascript">
+			// Async Fonts (google)
+			WebFontConfig = {
+				google: { families: [ 'Droid+Sans+Mono::latin', 'Roboto:400,300,700:latin', 'Open+Sans:400,700,300:latin' ] }
+			};
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+					'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.type = 'text/javascript';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})();
+			
 			var theme_dir = "<?php echo get_template_directory_uri(); ?>";
 			
+			// Async Scripts
 			head.js(
 				// dependencies
 				"//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js",
@@ -71,7 +84,7 @@ $_sui = \semantic_ui\vars::$ref;
 				}
 			);
 			
-			head.ready(function() { // pade is ready
+			head.ready(function() { // page is ready
 				
 			});
 		</script>
