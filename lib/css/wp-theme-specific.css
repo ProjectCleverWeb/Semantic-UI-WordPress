@@ -83,8 +83,7 @@ blockquote cite {
 
 
 body {
-	/* Android Addict */
-	font-family: "Droid Sans", sans-serif;
+	font-family: "Open Sans", Arial, sans-serif;
 	font-size: 16px;
 	/*
 	This improves reading when using similar colors
@@ -103,7 +102,7 @@ code,pre {
 }
 
 h1, h2, h3, h4, h5, h6, .ui.header {
-	font-family: "Roboto", sans-serif;
+	font-family: "Roboto", Arial, sans-serif;
 	font-weight: 300;
 	padding: 0;
 	margin-top: 0.2rem;
@@ -136,7 +135,7 @@ h6, h6.ui.header {
 }
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-	font-family: "Droid Sans", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	color: #555;
 }
 
