@@ -1,4 +1,0 @@
-# Standards for multi-platform colaboration
-
-# Set default behaviour, in case users don't have core.autocrlf set.
-* text=auto

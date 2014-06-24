@@ -1,92 +1,149 @@
-#Semantic-UI-WordPress
+#Semantic UI for WordPress#
+The [Semantic UI](https://github.com/Semantic-Org/Semantic-UI) WordPress
+developer Theme.
 
-The [Semantic UI](https://github.com/jlukic/semantic-ui) WordPress Theme.
+###Current Version: 1.0.0-beta###
 
----
+This project incorperates Semantic UI into a developer theme for WordPress. This
+project also includes some of my favorite techniques for creating fast,
+responsive, and easy to maintain themes for WordPress. *Please keep in mind this
+theme is meant to be developed for your spcific application; and is not meant to
+be used "as-is."*
 
-##Table of Contents
+####Features####
+- Semantic UI
+- Google Web Fonts
+- Normalize CSS
+- jQuery 1.10.2 (CDN)
+- Font Awesome
+- Woocommerce Support
+- Structured Data Markup
+- Webicons
+- Resonsive Design
+- Highlight.js
+- Theme Options Page
+- Async Script Loading
+- Keyboard Shortcuts
+- Well Commented Code
+
+<br>
+
+##Table of Contents##
 * [Installation](#installation)
   * [Requirements](#requirements)
-  * [Install for WordPress](#install-for-wordpress)
-* [Configuring](#configuring)
+  * [Install Guide](#install-guide)
+* [Usage](#usage)
+  * [Features](#features)
+  * [Designing Pages](#designing-pages)
 * [Contributing](#contributing)
   * [Contributing to Semantic UI](contributing-to-semantic-ui)
   * [Contributing to The WordPress Theme](contributing-to-the-wordpress-theme)
 * [Copyright & Licensing](#copyright--licensing)
 
----
+<br>
 
-##Installation
 
-####Requirements
 
+##Installation##
+####Requirements####
 * PHP 5.3.7 or later
-* WordPress 3.7.1 or later
-* [Options Framework](http://wordpress.org/plugins/options-framework/) Plugin
+* WordPress 3.9.0 or later
 
-####Install for WordPress
-
-1. [Click here](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/master.zip) to download the theme
+####Install Guide####
+1. Download the theme
 2. Unzip to your `wp-content/themes` directory
 3. Set the theme to "active" in your WordPress dashboard
 
-[&#94; Table of Contents &#94;](#table-of-contents)
+[Table of Contents](#table-of-contents)
 
-##Configuring
 
-At the moment, most things are hardcoded in. **However** Future version will be configurable through the Theme Options page, in your WordPress dashboard.
 
-[&#94; Table of Contents &#94;](#table-of-contents)
+##Usage##
+This is a developer theme designed to be developed for your specific application.
+The default state of this theme is meant to be plain &amp; organized; while not
+being bias to any particular design. (thus everything defaults to black and
+white)
 
-##Contributing
-####Contributing to Semantic UI
 
-Visit [this page](http://semantic-ui.com/project/contributing.html#/contributing) to learn how to contribute to Semantic UI.
+####Designing Pages####
+In this developer theme there are 5 important parts to generate a page:
 
-####Contributing to The WordPress Theme
+- Templates
+- Includes
+- Layouts
+- Contents
+- Assets
 
-1. Fork the repo on Github: [github.com/ProjectCleverWeb/Semantic-UI-WordPress](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress)  
+**A template file** decides which layout to use based on the type of content
+that is being requested. A template file will typically have no HTML or very
+little HTML, but should get all the necessary includes for the page.
 
+**A include file** adds functionality to a page and should have no output unless
+a function or method is called in a template, layout, or content file. Include
+files are usually used for API classes and libararies, but can be used for
+anything related to functionality.
+
+**A layout file** decides where sidebars, and the content is inserted. Layout
+files should usually have a fair or large amount of HTML content, as well as a
+few functionality calls; such as calling a comments thread or specific form to
+be generated. The header and footer is usually inserted via the layout file.
+
+**A content file** generates a group of elements and often has functionality
+calls for specifc elements, such as dynamic text and images. Content files
+typically output the most text, and usually have a large amount of HTML.
+
+**Assets** are files that are typically static files that are commonly used.
+These files are usually images, stylesheets, fonts, and javascript files, and
+might also include other files that need to be precompiled before they can be
+used. (such as LESS and SASS/SCSS files)
+
+[Table of Contents](#table-of-contents)
+
+
+
+##Contributing##
+###Contributing to Semantic UI###
+Visit [this page](http://semantic-ui.com/project/contributing.html#/contributing)
+to learn how to contribute to Semantic UI.
+
+###Contributing to This WordPress Theme###
+**Contributing *via* Suggestions:** <br>
+The best way to submit a suggestion is to open an issue on Github and prefix the
+title with `[Suggestion]`. Alternatively, you can email your suggestions to
+projectcleverweb (at) gmail (dot) com.
+
+**Contributing *via* Reporting Problems:** <br>
+All problems must be reported via Github's
+[issue tracker](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/issues).
+
+**Contributing *via* Code:**
+
+1. Fork the repo on Github: [github.com/ProjectCleverWeb/Semantic-UI-WordPress](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress)
 2. Make your changes.
+3. Send a pull request to have your changes reviewed.
 
-3. Send a pull request to have your changes reviewed. Requests that don't in some way explain what has been done will not be accepted.  
+[Table of Contents](#table-of-contents)
 
 
-**NOTE:** Sending in your pull request does NOT mean I am obligated to apply your changes.
 
-[&#94; Table of Contents &#94;](#table-of-contents)
+##Copyright & Licensing##
+Copyright &copy; 2014 Nicholas Jordon - All Rights Reserved
 
-##Copyright & Licensing
+Source-Code License: MIT&#42;&#42; <br>
+Source-Code License URL:
+[opensource.org/licenses/MIT](http://opensource.org/licenses/MIT) <br>
+Displayed Content License: CC BY SA&#42;&#42; <br>
+Displayed Content License URL: 
+[creativecommons.org/licenses/by-sa/3.0/deed.en_US](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US)
 
-Copyright &copy; Nicholas Jordon - All Rights Reserved
+The displayed content (as appose to source-code) of this work, such as images
+and documentation (including its' "readme" files), are licensed under a
+[Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US).
 
-* **Source-code License:** Modified MIT&#42;&#42;  
-* **Displayed Content License:** CC BY SA&#42;&#42;  
-* **Displayed Content License URL:** [creativecommons.org/licenses/by-sa/3.0/deed.en_US](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US)  
+&#42;&#42; [Semantic UI](http://sematic-ui.com) is not subject to this work's
+copyright &amp; license(s). Other works that may also be included with this work
+are also not subject to this work's copyright &amp; license(s). Copyright &amp;
+licensing of all included works are determined by their respective owners.
 
-&#42;&#42; [Semantic UI](https://github.com/jlukic/Semantic-UI) is not subject to this work's copyright &amp; license(s). Other works that may be included within this work are also not subject to this work's copyright &amp; license(s). Copyright &amp; licensing of said items are determined by their respective owners.
 
-####Modified MIT License: 
-
-> Permission is hereby granted, free of charge, to any person obtaining a copy of
-> this software and associated documentation files (the "Software"), to deal in
-> the Software without restriction, including without limitation the rights to
-> use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-> the Software, and to permit persons to whom the Software is furnished to do so,
-> subject to the following conditions:
-> 
-> All copyright and licensing notices on this page, including this permission
-> notice shall be included in all copies or substantial portions of the Software.
-> 
-> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-> FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-> COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-> IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
-> CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-[![CC BY SA](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US)  
-
-The displayed content (as appose to source-code) of this work, such as images and documentation (including its' "readme" files), are licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US).
-
-[&#94; Table of Contents &#94;](#table-of-contents)
+[Table of Contents](#table-of-contents)
