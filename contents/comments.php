@@ -5,6 +5,10 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
+ * NOTICE: This page is currently based off of the comments page in "Underscores"
+ * and will see a rewrite within the next few commits to incorperate Semantic UI
+ * and possibly some additional features.
+ *
  * @package Semanitic UI for WordPress
  */
 
