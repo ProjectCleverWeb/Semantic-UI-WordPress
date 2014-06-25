@@ -13,6 +13,10 @@
  * @return void
  */
 function semantic_ui_init() {
+	// Set the max content width (used by wordpress)
+	global $content_width;
+	$content_width = 1200;
+	
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support('automatic-feed-links');
 	add_theme_support('post-thumbnails');
