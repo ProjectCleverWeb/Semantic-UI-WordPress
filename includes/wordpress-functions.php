@@ -130,11 +130,10 @@ function semantic_ui_options(){
 			wp_enqueue_script('script-main', theme::$scripts_uri.'/theme-options.js');
 		}
 		
-		add_submenu_page(
-			'themes.php',
+		add_theme_page(
 			'Theme Options',
 			'Theme Options',
-			'manage_options',
+			'edit_theme_options',
 			theme::$identifier.'_options',
 			theme::$identifier.'_options_page'
 		);
