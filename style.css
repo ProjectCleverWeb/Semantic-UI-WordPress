@@ -218,12 +218,21 @@ img {
 
 /*** Classes ***/
 
+.aligncenter {
+	display: block;
+	margin: 0 auto;
+}
+
 .alignleft {
 	float:left;
 }
 
 .alignright {
 	float:right;
+}
+
+.bypostauthor {
+	/* I think this has to do with a comment's author??? */
 }
 
 .entry, .wp-widget {
@@ -271,11 +280,6 @@ img {
 	text-overflow: ellipsis;
 }
 
-.pad, td#prev, td#next {
-	border-left: none;
-	border-right: none;
-}
-
 .entry-summery,
 .entry-content,
 .entry-summery p,
@@ -284,6 +288,19 @@ img {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	word-wrap: break-word;
+}
+
+.gallery-caption {
+	/* [todo] style gallery captions */
+}
+
+.pad, td#prev, td#next {
+	border-left: none;
+	border-right: none;
+}
+
+.sticky {
+	/* [todo] make sticky posts stick-out */
 }
 
 .tagcloud {
