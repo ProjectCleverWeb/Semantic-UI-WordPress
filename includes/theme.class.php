@@ -43,7 +43,7 @@ class theme {
 	 * 
 	 * @return void
 	 */
-	public function init() {
+	public static function init() {
 		// Absolute Paths
 		self::$path           = get_template_directory();
 		self::$assets_path    = self::$path.'/assets';
@@ -80,7 +80,7 @@ class theme {
 	 * 
 	 * @return mixed
 	 */
-	private function fetch_options() {
+	private static function fetch_options() {
 		$existing = get_option(self::$identifier.'_options');
 		if ($existing) {
 			$options = json_decode($existing);
@@ -97,7 +97,7 @@ class theme {
 	 * 
 	 * @return array The options
 	 */
-	private function default_options() {
+	private static function default_options() {
 		return array(
 			'first_run' => FALSE, // Will be TRUE on 1.0.0 Release
 			'mobile_meta' => TRUE,
@@ -112,7 +112,7 @@ class theme {
 	 * @param  string $name The option name
 	 * @return mixed        The value of the options or FALSE on failure.
 	 */
-	public function get_option($name) {
+	public static function get_option($name) {
 		$options = &self::$options;
 		if (isset($options[$name])) {
 			return $options[$name];
@@ -127,7 +127,7 @@ class theme {
 	 * @param  array $options The options to store in the database as a JSON array
 	 * @return void
 	 */
-	public function update_options($options) {
+	public static function update_options($options) {
 		if (current_user_can('edit_theme_options')) {
 			$json = json_encode((array) $options);
 			update_option(self::$identifier.'_options', $json);
@@ -140,7 +140,7 @@ class theme {
 	 * 
 	 * @return void
 	 */
-	private function update_options_via_post() {
+	private static function update_options_via_post() {
 		$post_id = self::$identifier.'_options';
 		$user_id = get_current_user_id();
 		if (
@@ -167,7 +167,7 @@ class theme {
 	 * @param  string $name The name to use
 	 * @return void
 	 */
-	public function option_form_name($name) {
+	public static function option_form_name($name) {
 		return sprintf(
 			'%1$s[%2$s]',
 			self::$identifier.'_options',
@@ -179,7 +179,7 @@ class theme {
 	 * Returns the URI of the theme options page in the WordPress Dashboard
 	 * @return string The URI of the theme options page
 	 */
-	public function options_uri() {
+	public static function options_uri() {
 		return admin_url().'themes.php?page='.self::$identifier.'_options';
 	}
 	
@@ -189,7 +189,7 @@ class theme {
 	 * 
 	 * @return void
 	 */
-	public function options_update_data() {
+	public static function options_update_data() {
 		$user_id = get_current_user_id();
 		if ($user_id) {
 			printf(
@@ -212,7 +212,7 @@ class theme {
 	 * @param  string $sub  [optional] The specific sub part identifier.
 	 * @return bool         True on success, false otherwise.
 	 */
-	public function part($slug, $type, $part, $sub = '') {
+	public static function part($slug, $type, $part, $sub = '') {
 		if (isset(self::$template_options[$slug])) {
 			extract(self::$template_options[$slug]);
 		}
@@ -287,7 +287,7 @@ class theme {
 	 * @param  string $sub  [optional] The specific sub part identifier.
 	 * @return bool         Returns TRUE on success, FALSE otherwise.
 	 */
-	public function use_part($slug, $type, $part, $sub = '') {
+	public static function use_part($slug, $type, $part, $sub = '') {
 		if (isset(self::$template_options[$slug])) {
 			return FALSE;
 		} else {
