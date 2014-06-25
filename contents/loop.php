@@ -28,7 +28,7 @@ if (have_posts()) {
 							$cat_array[] = sprintf(
 								'<a href="%1$s" title="%2$s">%3$s</a>',
 								get_category_link($category->term_id),
-								esc_attr(sprintf(__("View all posts in %s"), $category->name), 'semantic-ui'),
+								esc_attr(sprintf(__("View all posts in %s", 'semantic-ui'), $category->name)),
 								$category->cat_name
 							);
 						} else {
