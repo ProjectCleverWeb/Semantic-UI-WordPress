@@ -28,13 +28,13 @@ function semantic_ui_init() {
 		'footer-menu' => __('Footer Menu', 'semantic-ui')
 	));
 	
-	add_theme_support('post-formats', array(
-		'aside',
-		'image',
-		'link',
-		'quote',
-		'video'
-	));
+	// add_theme_support('post-formats', array(
+	// 	'aside',
+	// 	'image',
+	// 	'link',
+	// 	'quote',
+	// 	'video'
+	// ));
 	
 	add_theme_support('html5', array(
 		'caption',
