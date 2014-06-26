@@ -133,7 +133,7 @@ if (have_posts()) {
 					</span>
 					on
 					<time class="updated" datetime="<?php the_time('m-d-Y H:i'); ?>" itemprop="datePublished" content="<?php the_time('c'); ?>">
-						<?php get_option('date_format'); ?>
+						<?php the_time(get_option('date_format')); ?>
 					</time>
 				</div>
 			</div>
