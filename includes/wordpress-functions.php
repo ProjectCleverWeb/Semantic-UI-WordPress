@@ -17,17 +17,17 @@ function semantic_ui_init() {
 	global $content_width;
 	$content_width = 1200;
 	
-	// Add default posts and comments RSS feed links to head.
+	// Tell WordPress what this theme supports
 	add_theme_support('automatic-feed-links');
 	add_theme_support('post-thumbnails');
 	add_theme_support('woocommerce');
-	
-	// TIP: Use wp_nav_menu(array('theme_location' => 'menu-name')) to fetch these
-	register_nav_menus(array(
-		'main-menu'   => __('Main Menu', 'semantic-ui'),
-		'footer-menu' => __('Footer Menu', 'semantic-ui')
+	add_theme_support('html5', array(
+		'caption',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'search-form'
 	));
-	
 	// add_theme_support('post-formats', array(
 	// 	'aside',
 	// 	'image',
@@ -36,12 +36,10 @@ function semantic_ui_init() {
 	// 	'video'
 	// ));
 	
-	add_theme_support('html5', array(
-		'caption',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'search-form'
+	// TIP: Use wp_nav_menu(array('theme_location' => 'menu-name')) to fetch these
+	register_nav_menus(array(
+		'main-menu'   => __('Main Menu', 'semantic-ui'),
+		'footer-menu' => __('Footer Menu', 'semantic-ui')
 	));
 }
 
