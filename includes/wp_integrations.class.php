@@ -90,27 +90,57 @@ class wp_integrations {
 	
 	
 	/**
+	 * Registers all the theme styles/scripts
+	 * 
+	 * @return void
+	 */
+	public function register_enqueue() {
+		// Styles
+		wp_register_style('style-semantic', theme::$styles_uri.'/semantic.min.css', array(), '0.18.0', 'all');
+		wp_register_style('style-font-awesome', theme::$styles_uri.'/font-awesome.min.css', array(), '4.1.0', 'all');
+		wp_register_style('style-webicons', theme::$styles_uri.'/webicons.min.css', array(), NULL, 'all');
+		wp_register_style('style-highlightjs', theme::$styles_uri.'/highlight.js/github.css', array(), '8.0', 'all');
+		wp_register_style('style-main', get_stylesheet_uri(), array('style-semantic'), NULL, 'all');
+		// Scripts
+		wp_register_script('script-headjs', theme::$scripts_uri.'/head.load.min.js', array(), '1.0.3', FALSE);
+		wp_register_script('script-webfont', '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', array(), NULL, FALSE);
+		if (!is_admin()) {
+			// Use any version jQuery (without loading it twice)
+			wp_deregister_script('jquery');
+			wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', array(), '1.10.2', FALSE);
+		}
+		wp_register_script('script-semantic', theme::$scripts_uri.'/semantic.min.js', array('jquery'), '0.18.0', FALSE);
+		wp_register_script('script-highlight', theme::$scripts_uri.'/highlight.pack.min.js', array(), '8.0', FALSE);
+		wp_register_script('script-mousetrap', theme::$scripts_uri.'/mousetrap.min.js', array(), '1.4.6', FALSE);
+		wp_register_script('script-main', theme::$scripts_uri.'/main.js', array('script-headjs', 'jquery', 'script-semantic', 'script-highlight', 'script-moustrap'), NULL, FALSE);
+		wp_register_script('script-theme-options', theme::$scripts_uri.'/theme-options.js', array('script-headjs', 'jquery', 'script-semantic', 'script-highlight', 'script-moustrap'), NULL, FALSE);
+
+	}
+	
+	
+	
+	/**
 	 * Enqueues the theme styles/scripts
 	 * 
 	 * @return void
 	 */
 	public function enqueue() {
 		// Styles
-		wp_enqueue_style('style-semantic', theme::$styles_uri.'/semantic.min.css');
-		wp_enqueue_style('style-font-awesome', theme::$styles_uri.'/font-awesome.min.css');
-		wp_enqueue_style('style-webicons', theme::$styles_uri.'/webicons.min.css');
-		wp_enqueue_style('style-highlightjs', theme::$styles_uri.'/highlight.js/github.css');
-		wp_enqueue_style('style-main', get_stylesheet_uri());
+		wp_enqueue_style('style-semantic');
+		wp_enqueue_style('style-font-awesome');
+		wp_enqueue_style('style-webicons');
+		wp_enqueue_style('style-highlightjs');
+		wp_enqueue_style('style-main');
 		
 		// Scripts
 		wp_enqueue_script('script-headjs', theme::$scripts_uri.'/head.load.min.js');
 		/*** If no head.js uncomment the code below ***/
-		//wp_enqueue_script('script-webfont', '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js');
-		//wp_enqueue_script('script-jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
-		//wp_enqueue_script('script-semantic', theme::$scripts_uri.'/semantic.min.js');
-		//wp_enqueue_script('script-highlight', theme::$scripts_uri.'/highlight.pack.min.js');
-		//wp_enqueue_script('script-mousetrap', theme::$scripts_uri.'/mousetrap.min.js');
-		//wp_enqueue_script('script-main', theme::$scripts_uri.'/main.js');
+		//wp_enqueue_script('script-webfont');
+		//wp_enqueue_script('script-jquery');
+		//wp_enqueue_script('script-semantic');
+		//wp_enqueue_script('script-highlight');
+		//wp_enqueue_script('script-mousetrap');
+		//wp_enqueue_script('script-main');
 	}
 	
 	
@@ -124,23 +154,23 @@ class wp_integrations {
 	 */
 	public function options() {
 		if (current_user_can('edit_theme_options')) {
-			if (isset($_GET['page']) && $_GET['page'] === 'semantic_ui_options') {
+			if (isset($_GET['page']) && $_GET['page'] === theme::$identifier.'_options') {
 				// Styles
-				wp_enqueue_style('style-semantic', theme::$styles_uri.'/semantic.min.css');
-				wp_enqueue_style('style-font-awesome', theme::$styles_uri.'/font-awesome.min.css');
-				wp_enqueue_style('style-webicons', theme::$styles_uri.'/webicons.min.css');
-				wp_enqueue_style('style-highlight', theme::$styles_uri.'/highlight-github.css');
-				wp_enqueue_style('style-main', get_stylesheet_uri());
-				wp_enqueue_style('style-theme-options', theme::$styles_uri.'/theme-options.css');
+				wp_enqueue_style('style-semantic');
+				wp_enqueue_style('style-font-awesome');
+				wp_enqueue_style('style-webicons');
+				wp_enqueue_style('style-highlight');
+				wp_enqueue_style('style-main');
+				wp_enqueue_style('style-theme-options');
 				// Scripts
-				wp_enqueue_script('script-webfont', '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js');
-				wp_enqueue_script('script-semantic', theme::$scripts_uri.'/semantic.min.js');
-				wp_enqueue_script('script-highlight', theme::$scripts_uri.'/highlight.pack.min.js');
-				wp_enqueue_script('script-mousetrap', theme::$scripts_uri.'/mousetrap.min.js');
+				wp_enqueue_script('script-webfont');
+				wp_enqueue_script('script-semantic');
+				wp_enqueue_script('script-highlight');
+				wp_enqueue_script('script-mousetrap');
 				// There are a few good reasons that you should replace your main.js with
 				// the theme-options.js; such as, jQuery is already included in the
 				// dashboard and it runs in safe mode.
-				wp_enqueue_script('script-main', theme::$scripts_uri.'/theme-options.js');
+				wp_enqueue_script('script-theme-options');
 			}
 			
 			add_theme_page(
