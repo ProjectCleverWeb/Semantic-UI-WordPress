@@ -25,7 +25,6 @@ if (theme::get_option('mobile_meta')) {
 }
 ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<?php wp_head(); ?>
 <script type="text/javascript">
 // Google Fonts (async)
 WebFontConfig = {
@@ -35,16 +34,5 @@ WebFontConfig = {
 		'Droid+Sans+Mono::latin' // Monospace
 	] }
 };
-
-
-// Async Script Loading (headjs)
-var theme_dir = "<?php echo theme::$scripts_uri; ?>/";
-head.js(
-	"//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js", // Google Webfont
-	"//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", // jQuery
-	theme_dir + "semantic.min.js", // Semantic Lib
-	theme_dir + "highlight.pack.min.js", // Syntax Highlighter (highlight.js)
-	theme_dir + "mousetrap.min.js", // Keyboard Shortcuts Lib (mousetrap.js)
-	theme_dir + "main.js" // All Other JS
-);
 </script>
+<?php wp_head(); ?>

@@ -1,4 +1,4 @@
-head.ready(function() {
+$(document).ready(function() {
 	// Semantic UI inits
 	$('.ui.accordion').accordion();
 	$('.ui.dropdown').dropdown();
