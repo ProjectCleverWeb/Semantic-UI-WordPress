@@ -8,14 +8,17 @@
  * @package Semanitic UI for WordPress
  */
 
-add_filter('admin_footer_text',   'semantic_ui_dashboard_footer');
-add_action('after_setup_theme',   'semantic_ui_init');
-add_action('admin_menu',          'semantic_ui_options');
-add_action('admin_bar_menu',      'semantic_ui_admin_bar_links', 999);
-add_filter('get_search_form',     'semantic_ui_search_form');
-add_action('init',                'semantic_ui_editor_styles');
-add_filter('nav_menu_css_class' , 'semantic_ui_current_nav' , 10 , 2);
-add_filter('user_contactmethods', 'semantic_ui_google_author');
-add_action('widgets_init',        'semantic_ui_widgets_init');
-add_action('wp_enqueue_scripts',  'semantic_ui_enqueue');
-add_filter('wp_title',            'semantic_ui_wp_title', 10, 2);
+$integrations = new wp_integrations;
+
+// Alphebetical based on the callback (doesn't effect the order they are called)
+add_action('admin_bar_menu',      array($integrations, 'admin_bar_links'), 999);
+add_filter('nav_menu_css_class' , array($integrations, 'current_nav') , 10 , 2);
+add_filter('admin_footer_text',   array($integrations, 'dashboard_footer'));
+add_action('init',                array($integrations, 'editor_styles'));
+add_action('wp_enqueue_scripts',  array($integrations, 'enqueue'));
+add_filter('user_contactmethods', array($integrations, 'google_author'));
+add_action('after_setup_theme',   array($integrations, 'init'));
+add_action('admin_menu',          array($integrations, 'options'));
+add_filter('get_search_form',     array($integrations, 'search_form'));
+add_action('widgets_init',        array($integrations, 'widgets_init'));
+add_filter('wp_title',            array($integrations, 'wp_title'), 10, 2);
