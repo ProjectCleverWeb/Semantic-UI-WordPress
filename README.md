@@ -6,7 +6,7 @@ developer Theme.
 
 This project incorperates Semantic UI into a developer theme for WordPress. This
 project also includes some of my favorite techniques for creating fast,
-responsive, and easy to maintain themes for WordPress. *Please keep in mind this
+responsive, and easy-to-maintain themes for WordPress. *Please keep in mind this
 theme is meant to be developed for your spcific application; and is not meant to
 be used "as-is."*
 
