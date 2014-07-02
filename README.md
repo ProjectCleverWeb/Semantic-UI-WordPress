@@ -10,7 +10,9 @@ responsive, and easy-to-maintain themes for WordPress. *Please keep in mind this
 theme is meant to be developed for your spcific application; and is not meant to
 be used "as-is."*
 
-####Features####
+####Download: [1.0.0-beta](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/1.0.0-beta.zip)####
+
+###Features###
 - Semantic UI
 - Google Web Fonts
 - Normalize CSS
