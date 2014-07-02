@@ -10,7 +10,7 @@ get_header();
 ?>
 <div class="ui stackable grid">
 	<main class="eleven wide column">
-		<?php theme::part('loop', 'content', 'loop'); ?>
+		<?php theme::part('loop', 'content', 'loop', get_post_format()); ?>
 	</main>
 	<div class="five wide column">
 		<?php

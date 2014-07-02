@@ -19,7 +19,7 @@ get_header();
 		?>
 	</div>
 	<main class="eleven wide column">
-		<?php theme::part('loop', 'content', 'loop'); ?>
+		<?php theme::part('loop', 'content', 'loop', get_post_format()); ?>
 	</main>
 </div>
 <?php
