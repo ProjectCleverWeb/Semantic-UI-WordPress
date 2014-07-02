@@ -336,13 +336,14 @@ class wp_integrations {
 	
 	
 	/**
-	 * [post_thumbnail description]
-	 * @param  [type] $html          [description]
-	 * @param  [type] $post_id       [description]
-	 * @param  [type] $post_image_id [description]
-	 * @return [type]                [description]
+	 * Replaces the output of the_post_thumbnail()
+	 * 
+	 * @param  string  $html          The orginal HTML (ignored)
+	 * @param  integer $post_id       The Post ID as provided by WordPress
+	 * @param  integer $post_image_id The Attachment ID as provided by WordPress
+	 * @return string                 The replacement HTML
 	 */
-	public function post_thumbnail( $html, $post_id, $post_image_id ) {
+	public function post_thumbnail($html, $post_id, $post_image_id) {
 		$image = wp_get_attachment_image_src(get_post_thumbnail_id($post_id), 'single-post-thumbnail');
 		$alt = get_post_meta($post_image_id, '_wp_attachment_image_alt');
 		return sprintf(
