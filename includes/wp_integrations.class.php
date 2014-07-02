@@ -137,6 +137,9 @@ class wp_integrations {
 		wp_enqueue_script('highlight');
 		wp_enqueue_script('mousetrap');
 		wp_enqueue_script('main');
+		if (is_singular()) {
+			wp_enqueue_script('comment-reply');
+		}
 	}
 	
 	
