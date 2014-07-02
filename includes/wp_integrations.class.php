@@ -35,13 +35,13 @@ class wp_integrations {
 			'gallery',
 			'search-form'
 		));
-		// add_theme_support('post-formats', array(
-		// 	'aside',
-		// 	'image',
-		// 	'link',
-		// 	'quote',
-		// 	'video'
-		// ));
+		add_theme_support('post-formats', array(
+			'aside',
+			'image',
+			'link',
+			'quote',
+			'video'
+		));
 		
 		// TIP: Use wp_nav_menu(array('theme_location' => 'menu-name')) to fetch these
 		register_nav_menus(array(
@@ -103,7 +103,7 @@ class wp_integrations {
 		wp_register_style('main', get_stylesheet_uri(), array('semantic'), NULL);
 		// Scripts
 		wp_register_script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', array(), NULL);
-		if (!is_admin()) {
+		if (!(is_admin() || in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php')))) {
 			// Use a custom version of jQuery
 			wp_deregister_script('jquery');
 			wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', array(), '1.10.2');

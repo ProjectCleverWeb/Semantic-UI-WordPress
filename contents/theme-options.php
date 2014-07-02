@@ -63,14 +63,13 @@
 		<p>Thank you for using Semantic UI for WordPress. If you have any problems or discover any bugs, please let me know in the <a href="https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/issues">Github Issue Tracker</a>.</p>
 		<p>If you found this WordPress theme useful, please consider donating: (Paypal)</p>
 		<p>
-			<a class="ui small positive button" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=2WLFNB3UMSELN">
-				Donate $5
-			</a>
-			<a class="ui small positive button" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=J42MM3FSZTPPQ">
-				Donate $10
-			</a>
-			<a class="ui small positive button" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DPSN8V5VVMHTA">
-				Custom Donation
-			</a>
+			<?php
+			$fmt = '<a class="ui small positive button" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=%2$s">%1$s</a>';
+			
+			printf($fmt, 'Donate $5', '2WLFNB3UMSELN');
+			printf($fmt, 'Donate $10', 'J42MM3FSZTPPQ');
+			printf($fmt, 'Custom Donation', 'DPSN8V5VVMHTA');
+			
+			?>
 		</p>
 	</div>
