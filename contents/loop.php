@@ -46,12 +46,11 @@ if (have_posts()) {
 			<?php
 			if (is_singular()) {
 				if (has_post_thumbnail($post->ID)) {
-					$image = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail');
-					printf(
-						'<div class="ui basic center aligned segment entry-media"><img itemprop="image" src="%1$s" alt="%2$s"></div>',
-						$image[0],
-						the_title_attribute(array('echo' => FALSE))
-					);
+					?>
+					<div class="ui basic center aligned segment entry-media">
+						<?php the_post_thumbnail(); ?>
+					</div>
+					<?php
 				}
 				?><section itemprop="articleBody" class="ui basic segment entry-content"><?php
 				the_content();

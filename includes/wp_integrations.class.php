@@ -333,4 +333,25 @@ class wp_integrations {
 		echo '<b>Thank you for using Semantic UI for WordPress.</b> <br> If you found this WordPress theme useful, please consider <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F3WM94XKJH2LU" rel="nofollow" target="_blank">donating a few dollars</a> to help me pay rent.<br><br>';
 	}
 	
+	
+	
+	/**
+	 * [post_thumbnail description]
+	 * @param  [type] $html          [description]
+	 * @param  [type] $post_id       [description]
+	 * @param  [type] $post_image_id [description]
+	 * @return [type]                [description]
+	 */
+	public function post_thumbnail( $html, $post_id, $post_image_id ) {
+		$image = wp_get_attachment_image_src(get_post_thumbnail_id($post_id), 'single-post-thumbnail');
+		$alt = get_post_meta($post_image_id, '_wp_attachment_image_alt');
+		return sprintf(
+			'<img itemprop="image" src="%1$s" alt="%2$s">',
+			$image[0],
+			trim(strip_tags($alt[0]))
+		);
+	}
+	
+	
+	
 }

@@ -7,7 +7,7 @@ Features:
   ☐ Modify Content: [first-run] replace filler
   ☐ Modify Content: [loop] add no posts support
   ☐ Modify Include: [custom-functions] Finish breadcrumb function
-  ☐ Modify Include: [wordpress-functions] import functions into a class
+  ☐ Modify Include: [wp_integrations] import functions into a class
     ☐ Modify Include: [wp-init] switch function calls into method calls
   ☐ Modify Style: make sticky posts stick out
   ☐ Modify Style: gallery captions
