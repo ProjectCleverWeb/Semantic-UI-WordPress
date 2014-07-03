@@ -101,6 +101,7 @@ class wp_integrations {
 		wp_register_style('webicons', theme::$styles_uri.'/webicons.min.css', array(), NULL);
 		wp_register_style('highlightjs', theme::$styles_uri.'/highlight.js/github.css', array(), '8.0');
 		wp_register_style('main', get_stylesheet_uri(), array('semantic'), NULL);
+		wp_register_style('theme-options', theme::$styles_uri.'/theme-options.css', array('semantic'), NULL);
 		// Scripts
 		wp_register_script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', array(), NULL);
 		if (!(is_admin() || in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php')))) {
@@ -112,7 +113,7 @@ class wp_integrations {
 		wp_register_script('highlight', theme::$scripts_uri.'/highlight.pack.min.js', array(), '8.0');
 		wp_register_script('mousetrap', theme::$scripts_uri.'/mousetrap.min.js', array(), '1.4.6');
 		wp_register_script('main', theme::$scripts_uri.'/main.js', array('jquery', 'semantic', 'highlight', 'moustrap'), NULL);
-		wp_register_script('theme-options', theme::$scripts_uri.'/theme-options.js', array('jquery', 'semantic', 'highlight', 'moustrap'), NULL);
+		wp_register_script('theme-options', theme::$scripts_uri.'/theme-options.js', array('jquery', 'semantic'), NULL);
 
 	}
 	
@@ -159,7 +160,6 @@ class wp_integrations {
 				wp_enqueue_style('font-awesome');
 				wp_enqueue_style('webicons');
 				wp_enqueue_style('highlight');
-				wp_enqueue_style('main');
 				wp_enqueue_style('theme-options');
 				// Scripts
 				wp_enqueue_script('webfont');
