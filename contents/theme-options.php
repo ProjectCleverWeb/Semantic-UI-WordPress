@@ -18,7 +18,7 @@
 	// This makes sure that the changes will be accepted
 	theme::options_update_data();
 	?>
-	<section class="theme-options-section default" id="theme-options-general">
+	<section class="theme-options-section" id="theme-options-general">
 		<h3 class="ui inverted black block header section-header">General</h3>
 		<?php theme::part('content-general', 'content', 'theme-options-general'); ?>
 	</section>

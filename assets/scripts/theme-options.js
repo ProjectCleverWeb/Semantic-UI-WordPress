@@ -5,9 +5,17 @@
 function theme_options_display(name, is_default) {
 	is_default = typeof is_default !== 'undefined' ? is_default : false;
 	if (is_default) {
-		sections = jQuery('.theme-options-section:not(.default)');
-		sections.css('display', 'none');
-		jQuery('.theme-options-menu .' + name + '.item').addClass('active');
+		sections = jQuery('.theme-options-section');
+		the_default = jQuery('#theme-options-' + name);
+		if (the_default.length) {
+			jQuery('#theme-options-menu').css('display', 'block');
+			jQuery('h3.section-header').css('display', 'none');
+			sections.css('display', 'none');
+			the_default.css('display', '');
+			jQuery('.theme-options-menu .' + name + '.item').addClass('active');
+		} else {
+			console.log('theme_options_display() says: ".theme-options-section.' + name + '" does not exist! did nothing...');
+		}
 		return;
 	} else {
 		sections = jQuery('.theme-options-section');
@@ -16,7 +24,7 @@ function theme_options_display(name, is_default) {
 	if (section.length && !jQuery('.theme-options-menu .' + name + '.item.active').length) {
 		sections.css('display', 'none');
 		section.css('display', '');
-		section.transition('slide down in');
+		section.transition('fade in');
 		jQuery('.theme-options-menu .item').removeClass('active');
 		jQuery('.theme-options-menu .' + name + '.item').addClass('active');
 	};
@@ -40,8 +48,7 @@ jQuery(document).ready(function() {
 		jQuery(this).closest('.message').fadeOut();
 	});
 	
-	jQuery('#theme-options-menu').css('display', 'block');
-	jQuery('h3.section-header').remove();
+	
 	theme_options_display('general', true);
 	
 	
