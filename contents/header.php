@@ -15,9 +15,15 @@
 		<div id="page-container">
 			<header class="ui page stackable grid" id="main-header-grid">
 				<div class="four wide center aligned column">
-					<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-						<img src="http://placehold.it/170x120&amp;text=Logo">
-					</a>
+					<?php
+					if (theme::get_option('logo_url')) {
+						?>
+						<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+							<img src="<?php echo theme::get_option('logo_url'); ?>">
+						</a>
+						<?php
+					}
+					?>
 				</div>
 				<div class="twelve wide column">
 					<h1 class="ui huge inverted center aligned header">

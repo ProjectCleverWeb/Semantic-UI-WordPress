@@ -99,9 +99,10 @@ class theme {
 	 */
 	private static function default_options() {
 		return array(
-			'first_run' => FALSE, // Will be TRUE on 1.0.0 Release
+			'first_run'   => TRUE,
 			'mobile_meta' => TRUE,
-			'mobile_size' => '450'
+			'mobile_size' => '450',
+			'logo_url'    => 'http://placehold.it/200x125.png'
 		);
 	}
 	
