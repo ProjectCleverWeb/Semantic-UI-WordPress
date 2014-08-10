@@ -12,7 +12,7 @@
 		<p>If you found this WordPress theme useful, please consider donating: (Paypal)</p>
 		<p>
 			<?php
-			$fmt = '<a class="ui small positive button" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=%2$s">%1$s</a>'.PHP_EOL;
+			$fmt = '<a class="ui small blue button" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=%2$s">%1$s</a>'.PHP_EOL;
 			
 			printf($fmt, 'Donate $5', '2WLFNB3UMSELN');
 			printf($fmt, 'Donate $10', 'J42MM3FSZTPPQ');
