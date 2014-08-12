@@ -40,3 +40,7 @@ blockquote p {
 input {
 	line-height: normal;
 }
+
+#wpbody-content *.menu {
+	padding-top: 0;
+}

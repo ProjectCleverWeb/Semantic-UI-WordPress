@@ -160,7 +160,7 @@ class wp_integrations {
 	 */
 	public function options() {
 		if (current_user_can('edit_theme_options')) {
-			if (isset($_GET['page']) && $_GET['page'] === theme::$identifier.'_options') {
+			if (isset($_GET['page']) && ($_GET['page'] == theme::$identifier.'_options' || $_GET['page'] == 'dev_notes')) {
 				// Styles
 				wp_enqueue_style('semantic');
 				wp_enqueue_style('font-awesome');
@@ -177,13 +177,22 @@ class wp_integrations {
 				// dashboard and it runs in safe mode.
 				wp_enqueue_script('theme-options');
 			}
-			
+		}
+		add_theme_page(
+			'Theme Options',
+			'Theme Options',
+			'edit_theme_options',
+			theme::$identifier.'_options',
+			array($this, 'options_page')
+		);
+		
+		if (theme::get_option('dev_notes')) {
 			add_theme_page(
-				'Theme Options',
-				'Theme Options',
+				'Theme Dev Notes',
+				'Theme Dev Notes',
 				'edit_theme_options',
-				theme::$identifier.'_options',
-				array($this, 'options_page')
+				'dev_notes',
+				array($this, 'dev_notes_page')
 			);
 		}
 	}
@@ -197,6 +206,17 @@ class wp_integrations {
 	 */
 	public function options_page() {
 		theme::part('template', 'template', 'theme-options');
+	}
+	
+	
+	
+	/**
+	 * Displays the options page content when called
+	 * 
+	 * @return void
+	 */
+	public function dev_notes_page() {
+		theme::part('template', 'template', 'dev-notes');
 	}
 	
 	

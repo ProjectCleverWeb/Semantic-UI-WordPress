@@ -150,7 +150,7 @@
 							(theme::get_option('dev_notes') ? 'checked' : '')
 						);
 						?>
-						<label>Allow Dev Notes</label>
+						<label>Enable Developer Notes</label>
 					</div>
 				</div>
 				<h4 class="ui center aligned top attached red inverted header">WordPress Theme Editor</h4>
