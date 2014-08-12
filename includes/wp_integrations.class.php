@@ -48,6 +48,12 @@ class wp_integrations {
 			'main-menu'   => __('Main Menu', 'semantic-ui'),
 			'footer-menu' => __('Footer Menu', 'semantic-ui')
 		));
+		
+		if (in_array($GLOBALS['pagenow'], array('theme-editor.php'))) {
+			if (theme::get_option('theme_editor') == FALSE) {
+				wp_die('<p>'.__('In order to edit this theme, you must first re-enable the theme editor via the <a href="'.theme::options_uri().'">Theme Options</a> page').'</p>');
+			}
+		}
 	}
 	
 	

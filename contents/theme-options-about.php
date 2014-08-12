@@ -1,14 +1,14 @@
 <div class="ui three column doubling grid">
 	<div class="column">
-		<div class="ui segment">
-			<h4 class="ui center aligned block header">Theme Options Page</h4>
+		<h4 class="ui center aligned top attached black inverted header">Theme Options Page</h4>
+		<div class="ui bottom attached secondary segment">
 			<p>Theme options in Semantic UI for WordPress are stored similarly to the traditional way to store options, with one exception; All of the options are actually stored in a JSON<sup>&Dagger;</sup> string as 1 database value (rather than each as a seperate database row). Storing information like this is ideal because it means you can store multi-layer arrays as-is in the database.</p>
 			<p><sup>&Dagger;</sup> Since there are few cases where the extra features of <code>serialize()</code> are needed, and the JSON encode/decode functions <a target="_blank" href="http://stackoverflow.com/questions/804045/preferred-method-to-store-php-arrays-json-encode-vs-serialize">are about twice as fast</a>; a JSON string is the default storage method.</p>
 		</div>
 	</div>
 	<div class="column">
-		<div class="ui segment">
-			<h4 class="ui center aligned block header">Theme Developer</h4>
+		<h4 class="ui center aligned top attached black inverted header">Theme Developer</h4>
+		<div class="ui bottom attached secondary segment">
 			<p>I'm someone who believes the best things in life are free, and that code (no matter how well done) is no exception.</p>
 			<p>Everything I develop is meant to be shared and used by other people; when I code, I try and be mindful of what others would think. This means I always do my best to keep my code easy to read and understand.</p>
 			<div class="ui basic center aligned segment">
@@ -20,8 +20,8 @@
 		</div>
 	</div>
 	<div class="column">
-		<div class="ui segment">
-			<h4 class="ui center aligned block header">Semantic UI</h4>
+		<h4 class="ui center aligned top attached black inverted header">Semantic UI</h4>
+		<div class="ui bottom attached secondary segment">
 			<blockquote>
 				Semantic empowers designers and developers by creating a shared vocabulary for UI. <cite>&ndash; Semantic UI Team</cite>
 			</blockquote>

@@ -1,7 +1,7 @@
 <div class="ui three column doubling grid">
 	<div class="column">
-		<div class="ui segment">
-			<h4 class="ui center aligned block header">Mobile Meta</h4>
+		<h4 class="ui center aligned top attached black inverted header">Mobile Meta</h4>
+		<div class="ui bottom attached secondary segment">
 			<div class="ui form">
 				<div class="inline field">
 					<div class="ui toggle checkbox">

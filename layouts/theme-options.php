@@ -1,5 +1,5 @@
 <div id="theme-options-page" class="ui basic segment" style="max-width:99%;">
-	<div class="ui segment">
+	<div class="ui basic segment">
 		<h1 class="ui huge header">
 			Theme Options
 		</h1>
