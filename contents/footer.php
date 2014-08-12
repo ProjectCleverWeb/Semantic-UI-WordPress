@@ -26,7 +26,16 @@
 				?>
 				<div class="row">
 					<div class="eight wide column">
-						<div class="ui basic segment">
+						<div class="ui center aligned basic segment">
+							<?php
+							if (theme::get_option('powered_by')) {
+								?>Proudly Powered By <a class="inverted" href="http://wordpress.org/">WordPress</a> &amp; <a class="inverted" href="http://semantic-ui.com/">Semantic UI</a>.<?php
+							}
+							?>
+						</div>
+					</div>
+					<div class="eight wide column">
+						<div class="ui center aligned basic segment">
 							&copy; Copyright
 							<?php
 							$copyright_holder     = theme::get_option('copyright_holder');
@@ -57,15 +66,6 @@
 							}
 							if (theme::get_option('copyright_extra')) {
 								echo ' - All Rights Reserved';
-							}
-							?>
-						</div>
-					</div>
-					<div class="eight wide column">
-						<div class="ui right aligned basic segment">
-							<?php
-							if (theme::get_option('powered_by')) {
-								?>Proudly Powered By <a class="inverted" href="http://wordpress.org/">WordPress</a> &amp; <a class="inverted" href="http://semantic-ui.com/">Semantic UI</a>.<?php
 							}
 							?>
 						</div>
