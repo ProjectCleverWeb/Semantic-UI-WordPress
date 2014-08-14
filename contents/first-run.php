@@ -37,7 +37,7 @@ change everything to make it how <strong>you</strong> think it should be.
 				<li>Post Thumbnails &amp; Formats</li>
 				<li>Dynamic Sidebars/Widget Areas</li>
 				<li>Scripts &amp; Styles Enqueue</li>
-				<li>Admin Bar Links</li>
+				<li>WP Admin Bar Links</li>
 				<li>Custom Dashboard Footer</li>
 				<li>Semantic UI Search Form</li>
 			</ul>

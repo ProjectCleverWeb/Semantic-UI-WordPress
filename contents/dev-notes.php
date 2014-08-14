@@ -1,62 +1,143 @@
+<?php
 
-<h2 class="ui center aligned header">Theme Options Page</h2>
+$sections = array(
+	1 => array(
+		'Theme Templates' => array(
+			'Template Breakdown' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'How Templates Are Fetched' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'Designing New Templates' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'Making Sub-Templates' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			)
+		)
+	),
+	2 => array(
+		'Theme Options Page' => array(
+			'Modifying Options' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'Modifying Tabs' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'Options And The Database' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'Security' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			)
+		)
+	),
+	3 => array(
+		'The Theme Class' => array(
+			'Overview' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'Fetching Theme Parts' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'Identifier' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'Path Manager' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'Options Manager' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			)
+		)
+	),
+	4 => array(
+		'The Integration Classes' => array(
+			'Overview' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'wp-init and wp_integrations' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'Theme Support' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'Sidebars And Widget Areas' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'Enqueue' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'Post Editor Styles' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'Other' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			)
+		)
+	),
+	5 => array(
+		'Recommendations' => array(
+			'rec 1' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'rec 2' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			),
+			'rec 3' => array(
+				'img'  => 'placeholder.png',
+				'text' => ''
+			)
+		)
+	),
+);
 
-<div class="ui two column doubling grid">
-	<div class="column">
-		<h3 class="ui dividing header">The Template Breakdown</h3>
-		
-		<div class="ui center aligned basic segment">
-			<img src="http://placehold.it/350x170.png">
-		</div>
-		
-		<p>
-			By default, the theme options page is split across 5 different files (listed below).
-		</p>
-	</div>
-	<div class="column">
-		<h3 class="ui dividing header">Modifying Options</h3>
-		
-		<div class="ui center aligned basic segment">
-			<img src="http://placehold.it/350x170.png">
-		</div>
-		
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda ipsum qui, a exercitationem, iure aspernatur in suscipit tempora incidunt accusantium dolorum ab pariatur debitis earum voluptate temporibus sint dignissimos, minus, error voluptas id! Deserunt, sit.
-		</p>
-	</div>
-	<div class="column">
-		<h3 class="ui dividing header">Modifying Tabs</h3>
-		
-		<div class="ui center aligned basic segment">
-			<img src="http://placehold.it/350x170.png">
-		</div>
-		
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo suscipit id, natus assumenda amet rem mollitia exercitationem consectetur ullam saepe, sunt! Ratione commodi at, tempore non placeat omnis quidem atque quas, quam nobis qui vero.
-		</p>
-	</div>
-	<div class="column">
-		<h3 class="ui dividing header">Title</h3>
-		
-		<div class="ui center aligned basic segment">
-			<img src="http://placehold.it/350x170.png">
-		</div>
-		
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio molestias odit quam rerum nihil inventore qui, voluptate ipsum reprehenderit officia similique reiciendis sapiente dolorum at, minima vero omnis unde ipsam asperiores tempora consequatur voluptatum aspernatur.
-		</p>
-	</div>
-	<div class="column">
-		<h3 class="ui dividing header">Title</h3>
-		
-		<div class="ui center aligned basic segment">
-			<img src="http://placehold.it/350x170.png">
-		</div>
-		
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste totam dignissimos, perferendis quia. Minus aliquid iste consectetur fugiat ipsa molestias debitis, culpa consequuntur, nobis commodi deleniti consequatur ut blanditiis tempore nulla sapiente, tempora delectus necessitatibus!
-		</p>
-	</div>
-	
-	
-</div>
+
+foreach ($sections as $major => $section) {
+	foreach ($section as $title => $value) {
+		printf('<h2 class="ui top attached center aligned header">%2$s.0 - %1$s</h2>', $title, $major);
+		?><div class="ui bottom attached secondary segment"><div class="ui two column doubling grid"><?php
+		$minor = 1;
+		foreach ($value as $subsection => $info) {
+			$id = $major.'-'.$minor.'-'.str_replace(' ', '-', strtolower($subsection))
+			?>
+			<div class="column">
+				<?php
+				printf('<h3 class="ui dividing header" id="%2$s">%3$s.%4$s - %1$s</h3>', $subsection, $id, $major, $minor);
+				?>
+				<div class="ui center aligned basic segment">
+					<img src="<?php echo theme::$images_uri.'/dev-notes/'.$info['img']; ?>">
+				</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae asperiores eum facere repellendus sint ut minus, commodi consequatur porro quam praesentium, rerum error quisquam reiciendis blanditiis vel dignissimos maxime animi incidunt non ex consequuntur modi, veniam ducimus.
+				<br><br>
+				Architecto, obcaecati maxime reprehenderit officia ducimus tenetur, magni.<?php echo $info['text']; ?></p>
+			</div>
+			<?
+			$minor++;
+		}
+		?></div></div><?php
+	}
+}
