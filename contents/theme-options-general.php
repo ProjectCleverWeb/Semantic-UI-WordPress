@@ -40,7 +40,7 @@
 								</label>
 							</span>
 						</span>
-						<?
+						<?php
 					}
 					?>
 				</div>

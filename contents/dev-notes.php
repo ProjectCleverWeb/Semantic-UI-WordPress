@@ -135,7 +135,7 @@ foreach ($sections as $major => $section) {
 				<br><br>
 				Architecto, obcaecati maxime reprehenderit officia ducimus tenetur, magni.<?php echo $info['text']; ?></p>
 			</div>
-			<?
+			<?php
 			$minor++;
 		}
 		?></div></div><?php

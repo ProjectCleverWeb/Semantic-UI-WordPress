@@ -19,7 +19,7 @@ get_header();
 		} else {
 			?>
 			<div class="sub header">This is the first-run page, <strong>once you login</strong>, you can disable it from the Theme Options page.</div>
-			<?
+			<?php
 		}
 		?>
 	</h1>
