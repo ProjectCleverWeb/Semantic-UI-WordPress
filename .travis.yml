@@ -4,7 +4,7 @@ before_script:
   - composer install
   - cp testing/wp-config.php testing/vendor/wordpress/wp-config.php
   - mysql -uroot -e 'create database semantic;'
-  - mysql -uroot -p semantic < testing/database.sql
+  - mysql -uroot semantic < testing/database.sql
   - ln -s "$(pwd)/src" "$(pwd)/testing/vendor/wordpress/wp-content/themes/Semantic-UI-WordPress"
 php:
   - 5.6
