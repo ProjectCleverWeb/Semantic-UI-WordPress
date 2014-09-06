@@ -1,0 +1,7 @@
+<phpunit bootstrap="testing/bootstrap.php" colors="true">
+	<testsuites>
+		<testsuite name="projectcleverweb\semantic-ui-wordpress">
+			<directory>testing/tests</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>

@@ -1,0 +1,42 @@
+{
+	"name": "projectcleverweb/semantic-ui-wordpress",
+	"description": "",
+	"version": "1.0.0",
+	"keywords": [
+		"semantic",
+		"ui",
+		"wordpress"
+	],
+	"homepage": "https://github.com/ProjectCleverWeb/Semantic-UI-WordPress",
+	"type": "project",
+	"license": ["MIT", "CC-BY-SA-4.0"],
+	"authors": [
+		{
+			"name": "Nicholas Jordon",
+			"email": "projectcleverweb@gmail.com",
+			"homepage": "https://github.com/ProjectCleverWeb"
+		}
+	],
+	"require": {
+		"php": ">=5.4"
+	},
+	"require-dev": {
+		"wordpress": ">=3.9"
+	},
+	"config": {
+		"vendor-dir": "testing/vendor"
+	},
+	"repositories": [
+		{
+			"type": "package",
+			"package": {
+				"name": "wordpress",
+				"version": "3.9.2",
+				"dist": {
+					"url": "http://wordpress.org/wordpress-3.9.2.zip",
+					"type": "zip"
+				}
+			}
+		}
+	]
+}
