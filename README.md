@@ -2,11 +2,14 @@
 
 <p align="center">
 	The Semantic UI WordPress starter theme.<br>
+	<a target="_blank" href="https://travis-ci.org/ProjectCleverWeb/Semantic-UI-WordPress">
+		<img src="http://img.shields.io/travis/ProjectCleverWeb/Semantic-UI-WordPress.svg?style=flat" alt="Travis CI Badge">
+	</a>
 	<a target="_blank" href="https://raw.githubusercontent.com/ProjectCleverWeb/Semantic-UI-WordPress/master/LICENSE">
 		<img src="http://img.shields.io/badge/Licenses-CC--BY--SA%204.0%20and%20MIT-37BF79.svg?style=flat" alt="CC BY SA 4.0 and MIT License Badge">
 	</a>
-	<a target="_blank" href="https://travis-ci.org/ProjectCleverWeb/Semantic-UI-WordPress">
-		<img src="http://img.shields.io/travis/ProjectCleverWeb/Semantic-UI-WordPress.svg?style=flat" alt="CC BY SA 4.0 and MIT License Badge">
+	<a target="_blank" href="https://gratipay.com/ProjectCleverWeb/">
+		<img src="http://img.shields.io/gratipay/ProjectCleverWeb.svg?style=flat" alt="Gratipay Badge">
 	</a>
 </p>
 
