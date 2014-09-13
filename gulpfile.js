@@ -11,7 +11,7 @@
  *       slashes UNLESS they are absolute paths from PC's root path. Only then
  *       is a leading slash allowed.
  *   * When order is not required to complete a set of actions, the actions are
- *       ordered alphabetically. This mean that "LESS" will be compiled before
+ *       ordered alphabetically. This means that "LESS" will be compiled before
  *       "SASS" and files starting with "a" will be used before files that
  *       start with "b", "c", etc.
  */
@@ -25,33 +25,34 @@ var
 	concat_css_list = [ // paths are relative to build_styles_dir
 		'font-awesome.min.css',
 		'webicons.min.css',
-		'highlight.js/github.css',
+		'highlight.js/github.min.css',
 		'semantic.min.css',
-		'main.css'
+		'main.min.css'
 	],
 	concat_js       = false, // output is to "all.min.js" (each file must be specified below)
 	concat_js_list  = [ // paths are relative to build_scripts_dir
 		'semantic.min.js',
 		'highlight.pack.min.js',
 		'mousetrap.min.js',
-		'main.js'
+		'main.min.js'
 	];
 
 // Paths (no trailing or leading slashes!)
 var
-	source_dir   = 'src',
-	build_dir   = 'build',
-	source_styles_dir   = 'src/assets/styles',
-	build_styles_dir    = 'build/assets/styles',
-	source_scripts_dir  = 'src/assets/scripts',
-	build_scripts_dir   = 'build/assets/scripts';
+	cwd                 = process.cwd(),
+	source_dir          = 'src',
+	build_dir           = 'build',
+	source_styles_dir   = source_dir + '/assets/styles',
+	build_styles_dir    = build_dir + '/assets/styles',
+	source_scripts_dir  = source_dir + '/assets/scripts',
+	build_scripts_dir   = build_dir + '/assets/scripts';
 
 // Utility
 var
 	spawn       = require('child_process').spawn,
 	gulp        = require('gulp'),
-	concat      = require('gulp-concat'),
-	concat      = require('gulp-concat-css'),
+	concatJs    = require('gulp-concat'),
+	concatCss   = require('gulp-concat-css'),
 	imageOpt    = require('gulp-image-optimization'),
 	less        = require('gulp-less'),
 	minifyCSS   = require('gulp-minify-css'),
@@ -62,6 +63,14 @@ var
 	using       = require('gulp-using'),
 	gutil       = require('gulp-util'),
 	runSequence = require('run-sequence');
+
+// Make concat paths relative to their respective directories
+for (i = 0; i < concat_css_list.length; i++) { 
+	concat_css_list[i] = build_styles_dir + '/' + concat_css_list[i];
+}
+for (i = 0; i < concat_js_list.length; i++) { 
+	concat_js_list[i] = build_scripts_dir + '/' + concat_js_list[i];
+}
 
 /**
  * Functions
@@ -98,8 +107,15 @@ function run_cmd(cmd, args) {
 	});
 }
 
+function log(msg) {
+	gutil.log(msg);
+}
+
 function log_event(event) {
-	gutil.log(event.type+': '+event.path);
+	log_type = gutil.colors.bold.cyan('[' + event.type.toUpperCase() + ']');
+	log_path = event.path.substring((cwd + '/' + source_dir + '/').length);
+	
+	log(gutil.colors.bgBlack(log_type + ' ' + log_path));
 }
 
 function help_docs() {
@@ -117,10 +133,10 @@ function help_docs() {
 		y('build-styles') + "   Generate stylesheet files [" + g('/' + source_dir + ' => /' + build_dir) + "]\n  " +
 		y('build-scripts') + "  Generate JavaScript files [" + g('/' + source_dir + ' => /' + build_dir) + "]\n  " +
 		y('build-images') + "   Optimize all images (png|jpg|jpeg|gif) [" + g('/' + source_dir + ' => /' + build_dir) + "]\n  " +
-		y('concat-all') + "     " + r('Not implemented') + " (yet)\n  " +
-		y('concat-styles') + "  " + r('Not implemented') + " (yet)\n  " +
-		y('concat-scripts') + " " + r('Not implemented') + " (yet)\n  " +
-		y('watch') + "          Watch /" + source_dir + " for changes, update /" + build_dir + " on change (no image opt)\n  " +
+		y('concat') + "         Concatinates the predefined scripts and styles (/" + build_dir + " only)\n  " +
+		y('concat-styles') + "  Concatinates the predefined styles (/" + build_dir + " only)\n  " +
+		y('concat-scripts') + " Concatinates the predefined scripts (/" + build_dir + " only)\n  " +
+		y('watch') + "          Watch /" + source_dir + " for changes, update /" + build_dir + " on change\n  " +
 		y('test') + "           Test the current configuration\n  " +
 		y('default') + "        Show these help docs" +
 		"\n\n" +
@@ -156,10 +172,12 @@ gulp.task('build', function() {
 		'build-styles:sass',
 		'build-styles:normal',
 		'build-styles:minified',
+		'concat-styles',
 		'build-scripts:remove-old',
 		'build-scripts:copy',
 		'build-scripts:normal',
 		'build-scripts:minified',
+		'concat-scripts',
 		'build-images'
 	);
 });
@@ -171,7 +189,8 @@ gulp.task('build-styles', function() {
 		'build-styles:less',
 		'build-styles:sass',
 		'build-styles:normal',
-		'build-styles:minified'
+		'build-styles:minified',
+		'concat-styles'
 	);
 });
 
@@ -180,61 +199,131 @@ gulp.task('build-scripts', function() {
 		'build-scripts:remove-old',
 		'build-scripts:copy',
 		'build-scripts:normal',
-		'build-scripts:minified'
+		'build-scripts:minified',
+		'concat-scripts'
 	);
 });
 
 gulp.task('build-images', function() {
 	if (use_image_opt) {
-		return gulp.src([
-			source_dir + '/**/*.png',
-			source_dir + '/**/*.jpg',
-			source_dir + '/**/*.gif',
-			source_dir + '/**/*.jpeg'
-		], {base:source_dir}).pipe(imageOpt({
-			optimizationLevel: 5,
-			progressive: true,
-			interlaced: true
-		})).
+		return gulp.src(source_dir + '/**/*.+(gif|jpeg|jpg|png)', {base:source_dir}).
+			pipe(imageOpt({
+				optimizationLevel: 5,
+				progressive: true,
+				interlaced: true
+			})).
 			pipe(gulp.dest(build_dir));
+	} else {
+		log('use_image_opt must be set to TRUE in your gulpfile in order to optimize images');
+	}
+});
+
+gulp.task('concat', function() {
+	return runSequence(
+		'concat-styles',
+		'concat-scripts'
+	);
+});
+
+gulp.task('concat-styles', function() {
+	if (concat_css) {
+		return gulp.src(concat_css_list).
+			pipe(concatCss('all.min.css')).
+			pipe(minifyCSS()). // because for some (retarded) reason, concatCss unminifies css
+			pipe(gulp.dest(build_styles_dir));
+	} else {
+		log('concat_css must be set to TRUE in your gulpfile in order to concat styles');
+	}
+});
+
+gulp.task('concat-scripts', function() {
+	if (concat_js) {
+		return gulp.src(concat_js_list).
+			pipe(concatJs('all.min.js')).
+			pipe(gulp.dest(build_scripts_dir));
+	} else {
+		log('concat_js must be set to TRUE in your gulpfile in order to concat scripts');
 	}
 });
 
 gulp.task('watch', function() {
 	
+	// Warn about Gulp/Gaze issues
+	log(gutil.colors.bgBlack.white(gutil.colors.bold.red("[IMPORTANT]") + " Watch works very well for MOST things, however it does have some issues, including problems removing directories. (hint: use the 'build' task to compensate) - " + gutil.colors.bold.cyan("https://github.com/gulpjs/gulp/issues/651")));
+	// Notice about 3 second save
+	log(gutil.colors.bgBlack.white(gutil.colors.bold("[NOTICE]") + " Please avoid saving a file more than once within a 3 second period."));
+	
 	// General
 	gulp.watch([
 		source_dir + '/**/*',
 		'!' + source_styles_dir + '/**/*',
-		'!' + source_scripts_dir + '/**/*'
-	], {on:'all'}, function(event) {
+		'!' + source_scripts_dir + '/**/*',
+		'!' + source_dir + '/**/*.+(gif|jpeg|jpg|png)'
+	], function(event) {
 		log_event(event);
-		gulp.src(event.path, {base:'src/'}).
+		// gulp.src ignores paths that don't exist, so renaming works as expected.
+		gulp.src(event.path, {base:source_dir}).
 			pipe(gulp.dest(build_dir));
+		if (event.type === 'deleted') { // update the build dir when a file is deleted
+			gulp.src(build_dir + '/' + event.path.substring((cwd + '/' + source_dir + '/').length), {read: false}).
+				pipe(rimraf());
+		}
 	});
 	
 	// Styles
-	gulp.watch(source_styles_dir + '/**/*', {on:'all'}, function(event) {
+	// NOTE: Avoid saving styles more than once every 3 seconds
+	gulp.watch([source_styles_dir + '/**/*', '!' + source_dir + '/**/*.+(gif|jpeg|jpg|png)'], function(event) {
 		log_event(event);
-		runSequence(
-			'build-styles:remove-old',
-			'build-styles:copy',
-			'build-styles:less',
-			'build-styles:sass',
-			'build-styles:normal',
-			'build-styles:minified'
-		);
+		if (event.type !== 'renamed') { // prevents double run on rename
+			runSequence(
+				'build-styles:remove-old',
+				'build-styles:copy',
+				'build-styles:less',
+				'build-styles:sass',
+				'build-styles:normal',
+				'build-styles:minified',
+				'concat-styles'
+			);
+		}
 	});
 	
 	// Scripts
-	gulp.watch(source_scripts_dir + '/**/*', {on:'all'}, function(event) {
+	// NOTE: Avoid saving scripts more than once every 3 seconds
+	gulp.watch([source_scripts_dir + '/**/*', '!' + source_dir + '/**/*.+(gif|jpeg|jpg|png)'], function(event) {
 		log_event(event);
-		runSequence(
-			'build-scripts:remove-old',
-			'build-scripts:copy',
-			'build-scripts:normal',
-			'build-scripts:minified'
-		);
+		if (event.type !== 'renamed') { // prevents double run on rename
+			runSequence(
+				'build-scripts:remove-old',
+				'build-scripts:copy',
+				'build-scripts:normal',
+				'build-scripts:minified',
+				'concat-scripts'
+			);
+		}
+	});
+	
+	// Images
+	// NOTE: Avoid re-saving the same image more than once every 3 seconds
+	gulp.watch(source_dir + '/**/*.+(gif|jpeg|jpg|png)', function(event) {
+		log_event(event);
+		if (use_image_opt) {
+			// gulp.src ignores paths that don't exist, so renaming works as expected.
+			gulp.src(event.path, {base:source_dir}).
+				pipe(imageOpt({
+					optimizationLevel: 5,
+					progressive: true,
+					interlaced: true
+				})).
+				pipe(gulp.dest(build_dir));
+		} else {
+			// gulp.src ignores paths that don't exist, so renaming works as expected.
+			gulp.src(event.path, {base:source_dir}).
+				pipe(gulp.dest(build_dir));
+		}
+		if (event.type === 'deleted') { // update the build dir when a file is deleted
+			gulp.src(build_dir + '/' + event.path.substring((cwd + '/' + source_dir + '/').length), {read: false}).
+				pipe(rimraf());
+		}
 	});
 });
 
@@ -276,12 +365,14 @@ gulp.task('build-styles:less', function() {
 				path.extname = '.min.css';
 			})).
 			pipe(gulp.dest(build_styles_dir));
+	} else {
+		log('use_less must be set to TRUE in your gulpfile in order to generate CSS files from LESS files');
 	}
 });
 
 gulp.task('build-styles:sass', function() {
 	if (use_sass) {
-		return gulp.src([source_styles_dir + '/**/*.scss', source_styles_dir + '/**/*.sass']).
+		return gulp.src(source_styles_dir + '/**/*.+(sass|scss)').
 			pipe(scss()).
 			pipe(gulp.dest(build_styles_dir)).
 			pipe(minifyCSS()).
@@ -289,6 +380,8 @@ gulp.task('build-styles:sass', function() {
 				path.extname = '.min.css';
 			})).
 			pipe(gulp.dest(build_styles_dir));
+	} else {
+		log('use_sass must be set to TRUE in your gulpfile in order to generate CSS files from SASS or SCSS files');
 	}
 });
 
