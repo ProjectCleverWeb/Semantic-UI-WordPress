@@ -59,6 +59,7 @@ var
 	rename      = require('gulp-rename'),
 	rimraf      = require('gulp-rimraf'),
 	scss        = require('gulp-sass'),
+	svg2png     = require('gulp-svg2png'),
 	uglify      = require('gulp-uglify'),
 	using       = require('gulp-using'),
 	gutil       = require('gulp-util'),
@@ -205,8 +206,16 @@ gulp.task('build-scripts', function() {
 });
 
 gulp.task('build-images', function() {
+	return runSequence(
+		'build-images:optimize',
+		'build-screenshot'
+	);
+});
+
+gulp.task('build-screenshot', function() {
 	if (use_image_opt) {
-		return gulp.src(source_dir + '/**/*.+(gif|jpeg|jpg|png)', {base:source_dir}).
+		return gulp.src(source_dir + '/screenshot.svg').
+			pipe(svg2png()).
 			pipe(imageOpt({
 				optimizationLevel: 5,
 				progressive: true,
@@ -214,7 +223,9 @@ gulp.task('build-images', function() {
 			})).
 			pipe(gulp.dest(build_dir));
 	} else {
-		log('use_image_opt must be set to TRUE in your gulpfile in order to optimize images');
+		return gulp.src(source_dir + '/screenshot.svg').
+			pipe(svg2png()).
+			pipe(gulp.dest(build_dir));
 	}
 });
 
@@ -425,4 +436,20 @@ gulp.task('build-scripts:normal', function() {
 gulp.task('build-scripts:minified', function() {
 	return gulp.src(source_scripts_dir + '/**/*.min.js').
 		pipe(gulp.dest(build_scripts_dir));
+});
+
+/*** Build Images ***/
+
+gulp.task('build-images:optimize', function() {
+	if (use_image_opt) {
+		return gulp.src(source_dir + '/**/*.+(gif|jpeg|jpg|png)', {base:source_dir}).
+			pipe(imageOpt({
+				optimizationLevel: 5,
+				progressive: true,
+				interlaced: true
+			})).
+			pipe(gulp.dest(build_dir));
+	} else {
+		log('use_image_opt must be set to TRUE in your gulpfile in order to optimize images');
+	}
 });
