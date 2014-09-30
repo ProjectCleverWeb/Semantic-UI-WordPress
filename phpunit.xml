@@ -4,4 +4,13 @@
 			<directory>testing/tests</directory>
 		</testsuite>
 	</testsuites>
+	<filter>
+		<whitelist processUncoveredFilesFromWhitelist="true">
+			<directory suffix=".class.php">src/includes</directory>
+			<file>src/includes/custom-functions.php</file>
+		</whitelist>
+	</filter>
+	<logging>
+		<log type="coverage-text" target="php://stdout" />
+	</logging>
 </phpunit>
