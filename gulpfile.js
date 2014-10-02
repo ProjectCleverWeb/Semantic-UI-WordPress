@@ -130,16 +130,17 @@ function help_docs() {
 	gutil.log(
 		"Generating Help Docs...\n" +
 		bgb(w("Available Tasks:\n  " +
-		y('build') + "          Generate All theme files from /" + source_dir + " (recreates /" + build_dir + ")\n  " +
-		y('build-styles') + "   Generate stylesheet files [" + g('/' + source_dir + ' => /' + build_dir) + "]\n  " +
-		y('build-scripts') + "  Generate JavaScript files [" + g('/' + source_dir + ' => /' + build_dir) + "]\n  " +
-		y('build-images') + "   Optimize all images (png|jpg|jpeg|gif) [" + g('/' + source_dir + ' => /' + build_dir) + "]\n  " +
-		y('concat') + "         Concatinates the predefined scripts and styles (/" + build_dir + " only)\n  " +
-		y('concat-styles') + "  Concatinates the predefined styles (/" + build_dir + " only)\n  " +
-		y('concat-scripts') + " Concatinates the predefined scripts (/" + build_dir + " only)\n  " +
-		y('watch') + "          Watch /" + source_dir + " for changes, update /" + build_dir + " on change\n  " +
-		y('test') + "           Test the current configuration\n  " +
-		y('default') + "        Show these help docs" +
+		y('build') + "            Generate All theme files from /" + source_dir + " (recreates /" + build_dir + ")\n  " +
+		y('build-styles') + "     Generate stylesheet files [" + g('/' + source_dir + ' => /' + build_dir) + "]\n  " +
+		y('build-scripts') + "    Generate JavaScript files [" + g('/' + source_dir + ' => /' + build_dir) + "]\n  " +
+		y('build-images') + "     Optimize all images (png|jpg|jpeg|gif) [" + g('/' + source_dir + ' => /' + build_dir) + "]\n  " +
+		y('build-screenshot') + " Generate /" + build_dir + "/screenshot.png from /" + source_dir + "/screenshot.svg\n  " +
+		y('concat') + "           Concatinates the predefined scripts and styles (/" + build_dir + " only)\n  " +
+		y('concat-styles') + "    Concatinates the predefined styles (/" + build_dir + " only)\n  " +
+		y('concat-scripts') + "   Concatinates the predefined scripts (/" + build_dir + " only)\n  " +
+		y('watch') + "            Watch /" + source_dir + " for changes, update /" + build_dir + " on change\n  " +
+		y('test') + "             Test the current configuration\n  " +
+		y('default') + '/' + y('help') + "     Show these help docs" +
 		"\n\n" +
 		"Usage:\n  " +
 		"gulp " + y('<task>') + "\n  " +
@@ -156,6 +157,10 @@ function help_docs() {
  */
 
 gulp.task('default', function() {
+	help_docs();
+});
+
+gulp.task('help', function() {
 	help_docs();
 });
 
@@ -179,7 +184,8 @@ gulp.task('build', function() {
 		'build-scripts:normal',
 		'build-scripts:minified',
 		'concat-scripts',
-		'build-images'
+		'build-images:optimize',
+		'build-screenshot'
 	);
 });
 
