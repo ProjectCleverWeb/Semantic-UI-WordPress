@@ -375,7 +375,7 @@ class wp_integrations {
 		return sprintf(
 			'<img itemprop="image" src="%1$s" alt="%2$s">',
 			$image[0],
-			trim(strip_tags($alt[0]))
+			($alt)?trim(strip_tags($alt[0])):''
 		);
 	}
 	
