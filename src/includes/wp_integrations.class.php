@@ -372,6 +372,11 @@ class wp_integrations {
 	public function post_thumbnail($html, $post_id, $post_image_id) {
 		$image = wp_get_attachment_image_src(get_post_thumbnail_id($post_id), 'single-post-thumbnail');
 		$alt = get_post_meta($post_image_id, '_wp_attachment_image_alt');
+		
+		if (!isset($alt[0])) {
+			$alt = array('');
+		}
+		
 		return sprintf(
 			'<img itemprop="image" src="%1$s" alt="%2$s">',
 			$image[0],
