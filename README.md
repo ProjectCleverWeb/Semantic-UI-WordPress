@@ -61,7 +61,7 @@ You should also have [PHPUnit](https://phpunit.de/) and
 
 1. Download or clone the master branch
 2. Open your command line and navigate to where you deployed the code
-3. Run `sudo npm install && sudo npm install -g gulp` enter your password and then wait for it to finish.
+3. Run `npm install && sudo npm install -g gulp` enter your password and then wait for it to finish.
 4. Run `gulp` to see a list of available tasks. Running `gulp build` will regenerate `/build` from scratch.
 
 **Windows:**
