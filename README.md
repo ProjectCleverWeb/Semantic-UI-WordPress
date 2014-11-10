@@ -57,6 +57,9 @@ and in your `$path` ([win](http://www.computerhope.com/issues/ch000549.htm)/[mac
 You should also have [PHPUnit](https://phpunit.de/) and
 [Composer](https://getcomposer.org/) installed and in your `$path` as well.
 
+&#42;&#42;Please note that when building from source, the `/build` directory
+should be renamed and then put in your `/wp-content/themes` directory
+
 **Mac &amp; Unix:**
 
 1. Download or clone the master branch
