@@ -72,19 +72,19 @@ class wp_integrations {
 	 */
 	public function widgets_init() {
 		register_sidebar(array(
-			'name'          => __('Left Sidebar Widget Area', 'semantic-ui'),
-			'id'            => 'sidebar-widget-area-left',
-			'description'   => 'These widgets are only visible when the siderbar is on the left side of the page',
-			'before_widget' => '<aside id="%1$s" class="wp-widget sidebar-left-widget %2$s ui raised segment">',
+			'name'          => __('Right Sidebar Widget Area', 'semantic-ui'),
+			'id'            => 'sidebar-widget-area-right',
+			'description'   => 'These widgets are only visible when the siderbar is on the right side of the page',
+			'before_widget' => '<aside id="%1$s" class="wp-widget sidebar-right-widget %2$s ui raised segment">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="ui dividing header widget-title">',
 			'after_title'   => '</h4>'
 		));
 		register_sidebar(array(
-			'name'          => __('Right Sidebar Widget Area', 'semantic-ui'),
-			'id'            => 'sidebar-widget-area-right',
-			'description'   => 'These widgets are only visible when the siderbar is on the right side of the page',
-			'before_widget' => '<aside id="%1$s" class="wp-widget sidebar-right-widget %2$s ui raised segment">',
+			'name'          => __('Left Sidebar Widget Area', 'semantic-ui'),
+			'id'            => 'sidebar-widget-area-left',
+			'description'   => 'These widgets are only visible when the siderbar is on the left side of the page',
+			'before_widget' => '<aside id="%1$s" class="wp-widget sidebar-left-widget %2$s ui raised segment">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="ui dividing header widget-title">',
 			'after_title'   => '</h4>'
