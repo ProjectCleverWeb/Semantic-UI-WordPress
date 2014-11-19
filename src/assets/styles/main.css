@@ -218,7 +218,7 @@ img {
 }
 
 .entry, .wp-widget {
-	background-image: url(assets/images/subtle-patterns/snow.png);
+	background-image: url(../images/subtle-patterns/snow.png);
 	background-position: top center;
 	overflow: hidden;
 }
@@ -236,7 +236,7 @@ img {
 
 .entry-media::before {
 	content: "";
-	background-image: url(assets/images/subtle-patterns/diagonal-noise.png);
+	background-image: url(../images/subtle-patterns/diagonal-noise.png);
 	background-position: top center;
 	opacity: 0.45;
 	top: 0;
