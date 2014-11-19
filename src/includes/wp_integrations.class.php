@@ -42,6 +42,13 @@ class wp_integrations {
 			'quote',
 			'video'
 		));
+		add_theme_support('custom-background', array(
+			'default-color'          => 'FFFFFF',
+			'default-image'          => theme::$images_uri.'/subtle-patterns/dark_wall.png',
+			'default-repeat'         => 'repeat',
+			'default-position-x'     => 'center',
+			'default-attachment'     => 'scroll',
+		));
 		
 		// TIP: Use wp_nav_menu(array('theme_location' => 'menu-name')) to fetch these
 		register_nav_menus(array(

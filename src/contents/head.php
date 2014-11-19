@@ -35,4 +35,29 @@ WebFontConfig = {
 	] }
 };
 </script>
-<?php wp_head(); ?>
+<?php
+wp_head();
+
+$background_position = get_theme_mod('background_position_x', get_theme_support('custom-background', 'default-position-x'));
+if (!in_array($background_position, array('center', 'right', 'left'))) {
+	$background_position = 'left';
+}
+
+$background_repeat = get_theme_mod( 'background_repeat', get_theme_support( 'custom-background', 'default-repeat' ) );
+if (!in_array($background_repeat, array('no-repeat', 'repeat-x', 'repeat-y', 'repeat'))) {
+	$background_repeat = 'repeat';
+}
+
+$background_attachment = get_theme_mod( 'background_attachment', get_theme_support( 'custom-background', 'default-attachment' ) );
+if (!in_array($background_attachment, array( 'fixed', 'scroll'))) {
+	$background_attachment = 'scroll';
+}
+
+printf(
+	'<style type="text/css">#main-header-grid, #main-footer-grid { background-image:%1$s; background-position:%2$s; color:%3$s; background-repeat:%4$s; background-attachment:%5$s }</style>',
+	'url("'.get_background_image().'")',
+	"top $background_position",
+	'#'.get_background_color(),
+	$background_repeat,
+	$background_attachment
+);

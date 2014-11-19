@@ -201,11 +201,6 @@ blockquote p {
 	display: inline;
 }
 
-body.public-page {
-	background-image: url(assets/images/subtle-patterns/dark_wall.png);
-	background-position: top center;
-}
-
 figure.gallery-item {
 	display: inline-block;
 }
@@ -372,12 +367,6 @@ img {
 
 #main-content-grid {
 	background-color: #ffffff;
-}
-
-#main-header-grid, #main-footer-grid {
-	background-image: url(assets/images/subtle-patterns/dark_wall.png);
-	background-position: top center;
-	color: #ffffff;
 }
 
 #main-footer-grid {
