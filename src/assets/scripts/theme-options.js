@@ -19,6 +19,9 @@ jQuery(document).ready(function() {
 		jQuery(this).closest('.message').fadeOut();
 	});
 	
+	// Disabled until nag is completed
+	// jQuery('#issue-tracker-nag').nag('show');
+	
 	jQuery('#theme-options-tabs .menu .item').tab({
 		context: jQuery('#theme-options-tabs')
 	});

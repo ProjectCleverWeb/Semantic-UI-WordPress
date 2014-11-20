@@ -363,7 +363,9 @@ class wp_integrations {
 	 * @return void
 	 */
 	public function dashboard_footer() {
-		echo '<b>Thank you for using Semantic UI for WordPress.</b> <br> If you found this WordPress theme useful, please consider <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F3WM94XKJH2LU" rel="nofollow" target="_blank">donating a few dollars</a> to help me pay rent.<br><br>';
+		if (isset($_GET['page']) && ($_GET['page'] != theme::$identifier.'_options')) {
+			echo '<b>Thank you for using Semantic UI for WordPress.</b> <br> If you found this WordPress theme useful, please consider <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F3WM94XKJH2LU" rel="nofollow" target="_blank">donating a few dollars</a> to help me pay rent.<br><br>';
+		}
 	}
 	
 	
