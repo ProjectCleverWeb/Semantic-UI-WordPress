@@ -120,7 +120,7 @@ class wp_integrations {
 		if (!(is_admin() || in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php')))) {
 			// Use a custom version of jQuery
 			wp_deregister_script('jquery');
-			wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', array(), '1.10.2');
+			wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), '1.10.2');
 		}
 		wp_register_script('semantic', theme::$scripts_uri.'/semantic.min.js', array('jquery'), '0.18.0');
 		wp_register_script('highlight', theme::$scripts_uri.'/highlight.pack.min.js', array(), '8.0');
