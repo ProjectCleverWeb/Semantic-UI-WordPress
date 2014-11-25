@@ -112,7 +112,7 @@ class wp_integrations {
 		wp_register_style('semantic', theme::$styles_uri.'/semantic.min.css', array(), '0.18.0');
 		wp_register_style('font-awesome', theme::$styles_uri.'/font-awesome.min.css', array(), '4.1.0');
 		wp_register_style('webicons', theme::$styles_uri.'/webicons.min.css', array(), NULL);
-		wp_register_style('highlightjs', theme::$styles_uri.'/highlight.js/github.css', array(), '8.0');
+		wp_register_style('highlightjs', theme::$styles_uri.'/highlight.js/github.min.css', array(), '8.0');
 		wp_register_style('main', theme::$styles_uri.'/main.css', array('semantic'), NULL);
 		wp_register_style('theme-options', theme::$styles_uri.'/theme-options.css', array('semantic'), NULL);
 		// Scripts
