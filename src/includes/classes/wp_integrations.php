@@ -5,6 +5,8 @@
  * @package Semanitic UI for WordPress
  */
 
+namespace semantic;
+
 /**
  * WordPress Integrations Class
  * 

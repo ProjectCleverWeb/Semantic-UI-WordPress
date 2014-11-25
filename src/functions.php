@@ -5,14 +5,36 @@
  * @package Semanitic UI for WordPress
  */
 
-// Theme Class (fetches/updates theme options)
-require_once __DIR__.'/includes/theme.class.php';
+/**
+ * Simple PSR-4 autoloader for the \semantic namespace
+ * 
+ * Loads files from `includes/classes`
+ * 
+ * @codeCoverageIgnore
+ */
+spl_autoload_register(function ($class) {
+	$prefix = 'semantic';
+	
+	$prefix_len = strlen($prefix);
+	if(strncmp($prefix, $class, $prefix_len) !== 0) {
+		return;
+	}
+	
+	$file = __DIR__.'/includes/classes'.str_replace('\\', DIRECTORY_SEPARATOR, substr($class, $prefix_len)).'.php';
+	
+	if(file_exists($file) && is_file($file)) {
+		require_once $file;
+	}
+});
 
-// Custom Functions
+// Alias classes
+class theme extends \semantic\theme {}
+
+// Run any init methods here
+theme::init();
+
+// Get Custom Functions
 require_once __DIR__.'/includes/custom-functions.php';
-
-// WordPress Integrations
-require_once __DIR__.'/includes/wp_integrations.class.php';
 
 // Initialize WordPress
 require_once __DIR__.'/includes/wp-init.php';

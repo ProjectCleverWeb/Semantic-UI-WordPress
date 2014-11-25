@@ -4,6 +4,8 @@
  * the bottom of this file.
  */
 
+namespace semantic;
+
 /**
  * Theme Class
  * 

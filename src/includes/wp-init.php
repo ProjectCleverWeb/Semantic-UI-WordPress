@@ -8,7 +8,7 @@
  * @package Semanitic UI for WordPress
  */
 
-$integrations = new wp_integrations;
+$integrations = new \semantic\wp_integrations;
 
 // Alphebetical based on the callback (doesn't effect the order they are called)
 add_action('admin_bar_menu',      array($integrations, 'admin_bar_links'), 999);
