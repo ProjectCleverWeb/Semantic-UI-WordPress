@@ -2,6 +2,14 @@
 This file is for styles that should only ever be shown on the Theme Options page.
 */
 
+body.wp-admin * {
+	box-sizing: content-box;
+}
+
+body.wp-admin * .ui, body.wp-admin * .ui * {
+	box-sizing: border-box;
+}
+
 blockquote {
 	background-color: rgba(230, 230, 250, 0.25);
 	border-left: 4px solid rgba(0, 0, 0, 0.15);
@@ -33,7 +41,7 @@ blockquote p {
 }
 
 
-#theme-options-page .button {
+.ui .button {
 	height: auto;
 }
 
@@ -43,4 +51,13 @@ input {
 
 #wpbody-content *.menu {
 	padding-top: 0;
+}
+
+#wpbody-content {
+	padding-bottom: 182px;
+}
+
+/*** Fix blank space in wp dashboard sidebar ***/
+#wpwrap #adminmenuback{
+	z-index:initial;
 }
