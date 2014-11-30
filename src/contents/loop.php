@@ -28,7 +28,7 @@ if (have_posts()) {
 							$cat_array[] = sprintf(
 								'<a href="%1$s" title="%2$s">%3$s</a>',
 								get_category_link($category->term_id),
-								esc_attr(sprintf(__("View all posts in %s", 'semantic-ui'), $category->name)),
+								esc_attr(sprintf(__("View all posts in %s", theme::$text_domain), $category->name)),
 								$category->cat_name
 							);
 						} else {
@@ -56,14 +56,14 @@ if (have_posts()) {
 				the_content();
 				
 				wp_link_pages( array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'semantic-ui' ),
+					'before' => '<div class="page-links">' . __( 'Pages:', theme::$text_domain ),
 					'after'  => '</div>',
 				));
 				
 				?></section><?php
 			} else {
 				if (has_post_thumbnail($post->ID)) {
-					$image = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail');
+					$image = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID), 'single-post-thumbnail');
 					printf(
 						'<div class="entry-media"><img itemprop="image" src="%1$s" alt="%2$s"></div>',
 						$image[0],
@@ -78,7 +78,7 @@ if (have_posts()) {
 			<div class="ui basic segment">
 				<?php
 				if (is_singular()) {
-					edit_post_link( '<span class="ui tiny black right floated button">'.__( 'Edit This', 'semantic-ui' ).'</span>');
+					edit_post_link( '<span class="ui tiny black right floated button">'.__( 'Edit This', theme::$text_domain).'</span>');
 				} else {
 					?><a itemprop="url" href="<?php the_permalink(); ?>" class="ui tiny black right floated button" rel="bookmark">View Post</a><?php
 				}
@@ -120,7 +120,7 @@ if (have_posts()) {
 								'<a href="%2$s" class="fn author-with-link" itemprop="name" title="%3$s" rel="nofollow author external">%1$s</a>',
 								$author,
 								esc_url($author_url),
-								esc_attr(sprintf(__("Visit %s&#8217;s website", 'semantic-ui'), $author))
+								esc_attr(sprintf(__("Visit %s&#8217;s website", theme::$text_domain), $author))
 							);
 						} else {
 							printf(

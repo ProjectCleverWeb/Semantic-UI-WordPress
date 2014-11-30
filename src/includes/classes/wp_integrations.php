@@ -52,13 +52,13 @@ class wp_integrations {
 		
 		// TIP: Use wp_nav_menu(array('theme_location' => 'menu-name')) to fetch these
 		register_nav_menus(array(
-			'main-menu'   => __('Main Menu', 'semantic-ui'),
-			'footer-menu' => __('Footer Menu', 'semantic-ui')
+			'main-menu'   => __('Main Menu', theme::$text_domain),
+			'footer-menu' => __('Footer Menu', theme::$text_domain)
 		));
 		
 		if (in_array($GLOBALS['pagenow'], array('theme-editor.php'))) {
 			if (theme::get_option('theme_editor') == FALSE) {
-				wp_die('<p>'.__('In order to edit this theme, you must first re-enable the theme editor via the <a href="'.theme::options_uri().'">Theme Options</a> page').'</p>');
+				wp_die('<p>'.__('In order to edit this theme, you must first re-enable the theme editor via the <a href="'.theme::options_uri().'">Theme Options</a> page', theme::$text_domain).'</p>');
 			}
 		}
 	}
@@ -72,7 +72,7 @@ class wp_integrations {
 	 */
 	public function widgets_init() {
 		register_sidebar(array(
-			'name'          => __('Right Sidebar Widget Area', 'semantic-ui'),
+			'name'          => __('Right Sidebar Widget Area', theme::$text_domain),
 			'id'            => 'sidebar-widget-area-right',
 			'description'   => 'These widgets are only visible when the siderbar is on the right side of the page',
 			'before_widget' => '<aside id="%1$s" class="wp-widget sidebar-right-widget %2$s ui raised segment">',
@@ -81,7 +81,7 @@ class wp_integrations {
 			'after_title'   => '</h4>'
 		));
 		register_sidebar(array(
-			'name'          => __('Left Sidebar Widget Area', 'semantic-ui'),
+			'name'          => __('Left Sidebar Widget Area', theme::$text_domain),
 			'id'            => 'sidebar-widget-area-left',
 			'description'   => 'These widgets are only visible when the siderbar is on the left side of the page',
 			'before_widget' => '<aside id="%1$s" class="wp-widget sidebar-left-widget %2$s ui raised segment">',
@@ -90,7 +90,7 @@ class wp_integrations {
 			'after_title'   => '</h4>'
 		));
 		register_sidebar(array(
-			'name'          => __('Footer Widget Area', 'semantic-ui'),
+			'name'          => __('Footer Widget Area', theme::$text_domain),
 			'id'            => 'footer-widget-area-footer',
 			'description'   => 'These widgets are visible in the footer',
 			'before_widget' => '<div class="column"><aside id="%1$s" class="wp-widget sidebar-right-widget %2$s ui raised segment">',

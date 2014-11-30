@@ -15,6 +15,7 @@ namespace semantic;
 class theme {
 	// Theme Options
 	public static $identifier;
+	public static $text_domain;
 	public static $options;
 	public static $template_options;
 	// Absolute Paths
@@ -70,6 +71,7 @@ class theme {
 		self::$templates_uri = self::$uri.'/templates';
 		// Theme Options
 		self::$identifier       = 'semantic_ui';
+		self::$text_domain      = 'semantic-ui';
 		self::$options          = self::fetch_options();
 		self::$template_options = array();
 		
