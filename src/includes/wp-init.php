@@ -4,8 +4,6 @@
  * 
  * Keeping these in a seperate file from the function declarations adds a little
  * more organization to the whole process, and makes them easier to find.
- * 
- * @package Semanitic UI for WordPress
  */
 
 $integrations = new \semantic\wp_integrations;

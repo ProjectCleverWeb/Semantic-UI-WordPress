@@ -1,8 +1,6 @@
 <?php
 /**
  * The default content of <head> in the document
- * 
- * @package Semanitic UI for WordPress
  */
 
 ?><meta charset="<?php bloginfo( 'charset' ); ?>">

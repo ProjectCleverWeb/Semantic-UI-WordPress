@@ -2,8 +2,6 @@
 /**
  * This template loads in the WordPress Dashboard, but produces an error any
  * time it is loaded by someone without the permissions to "Edit Theme Options"
- * 
- * @package Semanitic UI for WordPress
  */
 
 if (current_user_can('edit_theme_options')) {

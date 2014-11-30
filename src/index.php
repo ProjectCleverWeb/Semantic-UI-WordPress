@@ -1,8 +1,6 @@
 <?php
 /**
  * Chooses the template to display
- *
- * @package Semanitic UI for WordPress
  */
 
 if (theme::get_option('first_run')) {

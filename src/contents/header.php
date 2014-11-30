@@ -1,8 +1,6 @@
 <?php
 /**
  * The default theme header.
- *
- * @package Semanitic UI for WordPress
  */
 
 $num_to_eng = array(

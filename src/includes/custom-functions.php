@@ -7,8 +7,6 @@
  * specific page or set of pages in a seperate file in the includes directory.
  * That way they can be loaded on the specifc page(s) they were meant for, and
  * not on every page.
- * 
- * @package Semanitic UI for WordPress
  */
 
 

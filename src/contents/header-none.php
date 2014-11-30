@@ -1,8 +1,6 @@
 <?php
 /**
  * The theme header without the visible header.
- *
- * @package Semanitic UI for WordPress
  */
 
 ?><!DOCTYPE html>

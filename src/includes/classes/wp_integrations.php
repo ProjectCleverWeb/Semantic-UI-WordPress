@@ -1,8 +1,6 @@
 <?php
 /**
  * The integrations class
- * 
- * @package Semanitic UI for WordPress
  */
 
 namespace semantic;

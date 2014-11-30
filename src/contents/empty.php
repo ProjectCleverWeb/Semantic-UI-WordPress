@@ -4,6 +4,4 @@
  * exclude any part of the theme that is included via theme::part() (given the
  * part has not already been sent to PHP's buffer). The idea is to repurpose
  * parts instead of just deleting them.
- * 
- * @package Semanitic UI for WordPress
  */

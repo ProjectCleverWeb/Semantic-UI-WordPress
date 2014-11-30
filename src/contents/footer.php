@@ -1,8 +1,6 @@
 <?php
 /**
  * The default footer.
- *
- * @package Semanitic UI for WordPress
  */
 ?>
 				</div>
