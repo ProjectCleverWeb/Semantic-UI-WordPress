@@ -1,7 +1,7 @@
 <div class="ui three column doubling grid">
 	<div class="column">
-		<h4 class="ui center aligned inverted black top attached header">Header</h4>
-		<div class="ui bottom attached secondary segment">
+		<div class="ui secondary stacked segment">
+		<h3 class="ui center aligned dividing header">Header</h3>
 			<div class="ui form">
 				<div class="field">
 					<label>Logo URL</label>
@@ -48,8 +48,8 @@
 		</div>
 	</div>
 	<div class="column">
-		<h4 class="ui center aligned inverted black top attached header">Footer</h4>
-		<div class="ui bottom attached secondary segment">
+		<div class="ui secondary stacked segment">
+		<h3 class="ui center aligned dividing header">Footer</h3>
 			<div class="ui form">
 				<div class="field">
 					<label>Copyright Holder</label>
@@ -114,8 +114,8 @@
 		</div>
 	</div>
 	<div class="column">
-		<h4 class="ui center aligned inverted black top attached header">Misc.</h4>
-		<div class="ui bottom attached secondary segment">
+		<div class="ui secondary stacked segment">
+		<h3 class="ui center aligned dividing header">Misc.</h3>
 			<div class="ui form">
 				<div class="field">
 					<div class="ui toggle checkbox">
@@ -153,8 +153,11 @@
 						<label>Enable Developer Notes</label>
 					</div>
 				</div>
-				<h4 class="ui center aligned top attached red inverted header">WordPress Theme Editor</h4>
-				<div class="ui bottom attached segment">
+				<div class="ui top attached secondary inverted segment">
+					
+					<h4 class="ui center aligned header">WordPress Theme Editor</h4>
+				</div>
+				<div class="ui bottom attached stacked segment">
 					<strong>WARNING:</strong> Editing a theme via WordPress's file editor is <strong>very dangerious!</strong>
 					<br><br>
 					Modifying a theme's files without knowing the proper programming languages can often lead to your site going down.

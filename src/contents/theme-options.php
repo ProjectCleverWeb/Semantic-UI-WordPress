@@ -24,7 +24,7 @@
 		
 		<br>
 		
-		<div class="ui buttons">
+		<div class="ui tiny buttons">
 			<a class="ui button" href="<?php echo theme::options_uri(); ?>">Cancel</a>
 			<button type="submit" class="ui positive submit button">Save All</button>
 		</div>

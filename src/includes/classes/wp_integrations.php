@@ -168,14 +168,14 @@ class wp_integrations {
 	 * @return void
 	 */
 	public function options() {
+		wp_enqueue_style('semantic');
+		wp_enqueue_style('font-awesome');
+		wp_enqueue_style('theme-options');
 		if (current_user_can('edit_theme_options')) {
 			if (isset($_GET['page']) && ($_GET['page'] == theme::$identifier.'_options' || $_GET['page'] == 'dev_notes')) {
 				// Styles
-				wp_enqueue_style('semantic');
-				wp_enqueue_style('font-awesome');
 				wp_enqueue_style('webicons');
 				wp_enqueue_style('highlight');
-				wp_enqueue_style('theme-options');
 				// Scripts
 				wp_enqueue_script('webfont');
 				wp_enqueue_script('semantic');
@@ -365,9 +365,35 @@ class wp_integrations {
 	 * @return void
 	 */
 	public function dashboard_footer() {
-		if (isset($_GET['page']) && ($_GET['page'] != theme::$identifier.'_options')) {
-			echo '<b>Thank you for using Semantic UI for WordPress.</b> <br> If you found this WordPress theme useful, please consider <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F3WM94XKJH2LU" rel="nofollow" target="_blank">donating a few dollars</a> to help me pay rent.<br><br>';
-		}
+		?>
+		<div class="ui center aligned two column grid inverted segment">
+			<div class="column">
+				<h2 class="ui inverted header">
+					Thank You!
+					<div class="sub header">If you found this WordPress theme useful, please consider donating:</div>
+				</h2>
+				
+				<p>
+					<?php
+					$fmt = '<a class="ui tiny basic inverted blue button" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=%2$s">%1$s</a>'.PHP_EOL;
+					
+					printf($fmt, 'Donate $5', '2WLFNB3UMSELN');
+					printf($fmt, 'Donate $10', 'J42MM3FSZTPPQ');
+					printf($fmt, 'Custom Donation', 'DPSN8V5VVMHTA');
+					?>
+				</p>
+			</div>
+			<div class="column">
+				<h2 class="ui inverted header">
+					Having Issues?
+					<div class="sub header">If you have any problems or discover any bugs let us know!</div>
+				</h2>
+				<a class="ui tiny basic inverted blue button" target="_blank" href="https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/issues">Issue Tracker</a>
+				<a class="ui tiny basic inverted blue button" target="_blank" href="http://semantic-ui.com/">Semantic UI Docs</a>
+				<a class="ui tiny basic inverted blue button" target="_blank" href="http://jsfiddle.net/efp8z6Ln/">Test Code</a>
+			</div>
+		</div>
+		<?php
 	}
 	
 	

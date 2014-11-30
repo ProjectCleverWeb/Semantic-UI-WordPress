@@ -24,4 +24,3 @@ add_action('init',                array($integrations, 'register_enqueue'), 10);
 add_filter('get_search_form',     array($integrations, 'search_form'));
 add_action('widgets_init',        array($integrations, 'widgets_init'));
 add_filter('wp_title',            array($integrations, 'wp_title'), 10, 2);
-
