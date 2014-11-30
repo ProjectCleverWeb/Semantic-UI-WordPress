@@ -357,6 +357,10 @@ img {
 	background-color: #ffffff;
 }
 
+#main-header-grid {
+	padding-top: 1.5rem;
+}
+
 #main-footer-grid {
 	background-position: bottom center;
 }
