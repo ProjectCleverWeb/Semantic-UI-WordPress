@@ -304,4 +304,68 @@ class theme {
 			return TRUE;
 		}
 	}
+	
+	/**
+	 * Extends get_the_date()
+	 * 
+	 * @param  string $fmt [optional] The date format to use
+	 * @return string      The date
+	 */
+	public static function get_date($fmt = '') {
+		settype($fmt, 'string');
+		
+		if (empty($fmt)) {
+			$fmt = get_option('date_format');
+		}
+		
+		return get_the_date($fmt);
+	}
+	
+	/**
+	 * Extends get_the_time()
+	 * 
+	 * @param  string $fmt [optional] The time format to use
+	 * @return string      The time
+	 */
+	public static function get_time($fmt = '') {
+		settype($fmt, 'string');
+		
+		if (empty($fmt)) {
+			$fmt = get_option('time_format');
+		}
+		
+		return get_the_time($fmt);
+	}
+	
+	/**
+	 * Extends the_date()
+	 * 
+	 * @param  string $fmt [optional] The date format to use
+	 * @return void
+	 */
+	public static function date($fmt = '') {
+		settype($fmt, 'string');
+		
+		if (empty($fmt)) {
+			$fmt = get_option('date_format');
+		}
+		
+		the_date($fmt);
+	}
+	
+	/**
+	 * Extends the_time()
+	 * 
+	 * @param  string $fmt [optional] The time format to use
+	 * @return void
+	 */
+	public static function time($fmt = '') {
+		settype($fmt, 'string');
+		
+		if (empty($fmt)) {
+			$fmt = get_option('time_format');
+		}
+		
+		the_time($fmt);
+	}
 }

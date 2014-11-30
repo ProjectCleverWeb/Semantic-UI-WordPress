@@ -59,15 +59,15 @@ function get_the_breadcrumb() {
 		single_tag_title();
 	} elseif (is_day()) {
 		$str .= "<li>Archive for ";
-		the_time('F jS, Y');
+		theme::time('F jS, Y');
 		$str .= '</li>';
 	} elseif (is_month()) {
 		$str .= "<li>Archive for ";
-		the_time('F, Y');
+		theme::time('F, Y');
 		$str .= '</li>';
 	} elseif (is_year()) {
 		$str .= "<li>Archive for ";
-		the_time('Y');
+		theme::time('Y');
 		$str .= '</li>';
 	} elseif (is_author()) {
 		$str .= "<li>Author Archive";

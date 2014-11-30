@@ -131,8 +131,8 @@ if (have_posts()) {
 						?>
 					</span>
 					on
-					<time class="updated" datetime="<?php the_time('m-d-Y H:i'); ?>" itemprop="datePublished" content="<?php the_time('c'); ?>">
-						<?php the_time(get_option('date_format')); ?>
+					<time class="updated" datetime="<?php theme::time('m-d-Y H:i'); ?>" itemprop="datePublished" content="<?php theme::time('c'); ?>">
+						<?php theme::time(); ?>
 					</time>
 				</div>
 			</div>
