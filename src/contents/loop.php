@@ -56,7 +56,7 @@ if (have_posts()) {
 				the_content();
 				
 				wp_link_pages( array(
-					'before' => '<div class="page-links">' . __( 'Pages:', theme::$text_domain ),
+					'before' => '<div class="page-links">' . __( 'Pages:', theme::$text_domain),
 					'after'  => '</div>',
 				));
 				
@@ -140,7 +140,7 @@ if (have_posts()) {
 		<?php
 		
 		if (is_singular()) {
-			if ( comments_open() || '0' != get_comments_number() ) :
+			if ( comments_open() || '0' != get_comments_number()) :
 				comments_template();
 			endif;
 		}

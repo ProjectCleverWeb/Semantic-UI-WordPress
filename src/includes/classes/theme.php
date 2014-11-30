@@ -305,5 +305,3 @@ class theme {
 		}
 	}
 }
-
-theme::init();
