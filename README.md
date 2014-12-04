@@ -140,6 +140,9 @@ All problems must be reported via Github's
 
 ## License
 
+**NOTICE:** All included work (aka libraries) are licensed under the MIT license
+**OR** are compatible with the MIT License.
+
 The Semantic UI for WordPress documentation by Nicholas Jordon is licensed
 under the Creative Commons Attribution-ShareAlike 4.0 International License.
 To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/
