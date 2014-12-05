@@ -109,7 +109,7 @@ class wp_integrations {
 	 */
 	public function register_enqueue() {
 		// Styles
-		wp_register_style('semantic', theme::$styles_uri.'/semantic.min.css', array(), '0.18.0');
+		wp_register_style('semantic', theme::$styles_uri.'/semantic.min.css', array(), '1.0.1');
 		wp_register_style('font-awesome', theme::$styles_uri.'/font-awesome.min.css', array(), '4.1.0');
 		wp_register_style('webicons', theme::$styles_uri.'/webicons.min.css', array(), NULL);
 		wp_register_style('highlightjs', theme::$styles_uri.'/highlight.js/github.min.css', array(), '8.0');
@@ -122,11 +122,11 @@ class wp_integrations {
 			wp_deregister_script('jquery');
 			wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), '2.1.1');
 		}
-		wp_register_script('semantic', theme::$scripts_uri.'/semantic.min.js', array('jquery'), '0.18.0');
-		wp_register_script('highlight', theme::$scripts_uri.'/highlight.pack.min.js', array(), '8.0');
-		wp_register_script('mousetrap', theme::$scripts_uri.'/mousetrap.min.js', array(), '1.4.6');
-		wp_register_script('main', theme::$scripts_uri.'/main.js', array('jquery', 'semantic', 'highlight', 'moustrap'), NULL);
-		wp_register_script('theme-options', theme::$scripts_uri.'/theme-options.js', array('jquery', 'semantic'), NULL);
+		wp_register_script('semantic', theme::$scripts_uri.'/semantic.min.js', array(), '1.0.1');
+		wp_register_script('highlight', theme::$scripts_uri.'/highlight.pack.min.js', array('jquery'), '8.0');
+		wp_register_script('mousetrap', theme::$scripts_uri.'/mousetrap.min.js', array('jquery'), '1.4.6');
+		wp_register_script('main', theme::$scripts_uri.'/main.js', array(), NULL);
+		wp_register_script('theme-options', theme::$scripts_uri.'/theme-options.js', array(), NULL);
 
 	}
 	
