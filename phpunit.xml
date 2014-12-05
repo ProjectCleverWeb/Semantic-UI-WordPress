@@ -6,7 +6,7 @@
 	</testsuites>
 	<filter>
 		<whitelist processUncoveredFilesFromWhitelist="true">
-			<directory suffix=".class.php">src/includes</directory>
+			<directory>src/includes/classes</directory>
 			<file>src/includes/custom-functions.php</file>
 		</whitelist>
 	</filter>
