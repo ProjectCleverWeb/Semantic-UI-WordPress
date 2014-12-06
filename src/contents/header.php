@@ -63,26 +63,8 @@ $menu_width = $num_to_eng[(16 - (int) theme::get_option('logo_size'))];
 						</div>
 					</h1>
 					<?php
-					/*
-					 * A simple but effective way to display a menu as a Semantic UI menu
-					 */
-					$main_menu_loc = 'main-menu';
-					if (has_nav_menu($main_menu_loc)) {
-						$main_menu = wp_nav_menu(array(
-							'theme_location'  => $main_menu_loc,
-							'container'       => 'div',
-							'menu_class'      => 'ui secondary inverted pointing centered menu nav-menu',
-							'echo'            => false,
-							'items_wrap'      => '<nav id="%1$s" class="%2$s">%3$s</nav>',
-							'depth'           => 1,
-						));
-						$main_menu = str_replace('menu-item ', 'menu-item item ', $main_menu);
-						$main_menu = str_replace('><a href="', ' href="', $main_menu);
-						$main_menu = str_replace("</a></li>\n<li ", "</a>\n<a ", $main_menu);
-						$main_menu = str_replace('"><li ', '"><a ', $main_menu);
-						$main_menu = str_replace("</li>\n</ul>", "</a>\n</nav>", $main_menu);
-						echo $main_menu;
-					}
+					$menu = new \semantic\menu_walker;
+					$menu->display('main-menu');
 					?>
 				</div>
 			<?php
