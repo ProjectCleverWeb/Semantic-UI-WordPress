@@ -1,9 +1,8 @@
 <h2 class="ui dividing header" id="comments">
 	Comments
-	<div class="sub header"><a href="javascript:" onclick="$('#comment-supported-html').modal('show')">Show Supported HTML <i class="code icon"></i></a></div>
 </h2>
 <div class="ui basic center aligned segment" id="post-comment-button">
-	<button class="ui tiny right labeled icon button" onclick="$('#post-comment-button').transition({animation:'vertical flip',duration:'200ms'});$('#main-comment-reply').transition('slide down');">
+	<button class="ui tiny right labeled icon button" onclick="$('#post-comment-button').transition({animation:'slide',duration:'250ms'});$('#main-comment-reply').transition('slide down');">
 		<i class="comment icon"></i>
 		Post A Comment
 	</button>
@@ -16,6 +15,7 @@
 		<div class="field">
 			<textarea></textarea>
 		</div>
+		<a href="javascript:" onclick="$('#comment-supported-html').modal('show')">Show Supported HTML <i class="code icon"></i></a>
 		<button class="ui labeled submit icon button" onclick="$('#main-comment-form').dimmer('show');">
 			<i class="icon edit"></i> Add Reply
 		</button>
