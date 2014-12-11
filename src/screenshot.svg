@@ -27,7 +27,7 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1.15"
-     inkscape:cx="421.65911"
+     inkscape:cx="308.18085"
      inkscape:cy="319.82959"
      inkscape:document-units="px"
      inkscape:current-layer="layer3"
@@ -66,12 +66,15 @@
           <rdf:Bag>
             <rdf:li>Semantic UI</rdf:li>
             <rdf:li>Semantic</rdf:li>
-            <rdf:li>Word Press</rdf:li>
+            <rdf:li>WordPress</rdf:li>
+            <rdf:li>Theme</rdf:li>
+            <rdf:li>Preview</rdf:li>
           </rdf:Bag>
         </dc:subject>
         <dc:description>A simple image that is meant to be replaced when the the developer finishes making his own theme</dc:description>
         <cc:license
            rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" />
+        <dc:date>12/07/2014</dc:date>
       </cc:Work>
       <cc:License
          rdf:about="http://creativecommons.org/licenses/by-sa/4.0/">
@@ -96,32 +99,46 @@
      inkscape:label="Text">
     <text
        xml:space="preserve"
-       style="font-size:65px;font-style:italic;font-variant:normal;font-weight:300;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans Light Italic"
-       x="439.5874"
-       y="323.05933"
+       style="font-size:64px;font-style:italic;font-variant:normal;font-weight:300;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans Light Italic"
+       x="439.59375"
+       y="290.62454"
        id="text2989"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="439.5874"
-         y="323.05933"
-         id="tspan2991"><tspan
-           x="439.5874"
-           y="323.05933"
-           id="tspan2993">Semantic UI for WordPress</tspan></tspan></text>
+         x="439.59375"
+         y="290.62454"
+         id="tspan2991"
+         style="font-size:64px"><tspan
+           x="439.59375"
+           y="290.62454"
+           id="tspan2993"
+           style="font-size:64px;font-style:italic;-inkscape-font-specification:Open Sans Light Italic">Semantic UI for WordPress</tspan></tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
-       x="172.84717"
-       y="374.72412"
+       style="font-size:19px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       x="209.2771"
+       y="385.41977"
        id="text2995"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="172.84717"
-         y="374.72412"
+         x="209.2771"
+         y="385.41977"
          id="tspan2997"><tspan
-           x="172.84717"
-           y="374.72412"
+           x="209.2771"
+           y="385.41977"
            id="tspan2999"
-           style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Open Sans;-inkscape-font-specification:Open Sans">Replace this image with one that refects your theme</tspan></tspan></text>
+           style="font-size:19px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Open Sans;-inkscape-font-specification:Open Sans">Replace this image with one that refects your theme</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       x="439.63867"
+       y="340.39062"
+       id="text2989-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="439.63867"
+         y="340.39062"
+         id="tspan2991-4"
+         style="font-size:40px;font-style:normal;font-weight:normal;-inkscape-font-specification:Open Sans">Developer Edition</tspan></text>
   </g>
 </svg>

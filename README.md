@@ -1,7 +1,7 @@
-# Semantic UI for WordPress
+# Semantic UI for WordPress: Developer Edition
 
 <p align="center">
-	The Semantic UI WordPress starter theme.<br>
+	The Semantic UI WordPress starter/developer theme.<br>
 	<a target="_blank" href="https://travis-ci.org/ProjectCleverWeb/Semantic-UI-WordPress">
 		<img src="http://img.shields.io/travis/ProjectCleverWeb/Semantic-UI-WordPress.svg?style=flat" alt="Travis CI Badge">
 	</a>
@@ -21,7 +21,7 @@ be used "as-is."*
 
 #### Download:
 
-[![Sheild](http://img.shields.io/badge/release-1.0.0--beta-blue.svg?style=flat)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/1.0.0-beta.zip) [![Sheild](http://img.shields.io/badge/branch-master-orange.svg?style=flat)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/master.zip)
+[![Sheild](http://img.shields.io/badge/release-1.0.0--beta2-brightgreen.svg?style=flat)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/master.zip) [![Sheild](http://img.shields.io/badge/branch-develop-yellowgreen.svg?style=flat)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/develop.zip)
 
 Copyright &copy; 2014 Nicholas Jordon &mdash; All Rights Reserved
 
