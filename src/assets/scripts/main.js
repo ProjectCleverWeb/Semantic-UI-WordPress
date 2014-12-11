@@ -1,8 +1,7 @@
 $(document).ready(function() {
 	// Semantic UI inits
 	$('.ui.accordion').accordion();
-	$('.ui.dropdown').dropdown();
-	$('.ui.hover.dropdown').dropdown({
+	$('.ui.dropdown').dropdown({
 		on: 'hover'
 	});
 	$('.ui.checkbox').checkbox();
