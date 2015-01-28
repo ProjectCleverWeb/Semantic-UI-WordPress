@@ -353,6 +353,11 @@ img {
 	padding: 0;
 }
 
+html, body.mce-content-body {
+	/* Fixes Post Editor */
+	height: inherit !important;
+}
+
 #main-content-grid {
 	background-color: #ffffff;
 }
