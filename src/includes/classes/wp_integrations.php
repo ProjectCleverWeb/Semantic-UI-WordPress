@@ -313,7 +313,7 @@ class wp_integrations {
 		add_editor_style('assets/styles/semantic.min.css');
 		add_editor_style('assets/styles/font-awesome.min.css');
 		add_editor_style('assets/styles/webicons.min.css');
-		add_editor_style('style.css');
+		add_editor_style('assets/styles/main.css');
 	}
 	
 	
