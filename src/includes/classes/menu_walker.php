@@ -185,11 +185,11 @@ class menu_walker {
 				}
 				$classes = trim(sprintf($conf['item_class'], trim($classes)));
 				
-				if (isset($menu_item['children'])) {
-					$classes = trim('ui dropdown item '.$classes);
-				} else {
+				// if (isset($menu_item['children'])) {
+				// 	$classes = trim('ui dropdown item '.$classes);
+				// } else {
 					$classes = trim('item '.$classes);
-				}
+				// }
 				
 				$classes = "class=\"$classes\" ";
 			}
@@ -231,7 +231,7 @@ class menu_walker {
 			// Build item
 			$children = '';
 			if (empty($url)) {
-				$fmt = '<div %1$s%2$s>'.$conf['before_item'].'<span %3$s>%4$s</span>'.$conf['after_item'].'%5$s</div>';
+				$fmt  = '<div %1$s%2$s>'.$conf['before_item'].'<span %3$s>%4$s</span>'.$conf['after_item'].'%5$s</div>';
 				if (isset($menu_item['children'])) {
 					$children = $this->_display_get_children($menu_item['children'],$conf);
 				}
@@ -250,10 +250,12 @@ class menu_walker {
 					'href="'.$url.'"'
 				);
 				
-				$fmt = '<div %1$s%2$s><i class="dropdown icon"></i>'.$conf['before_item'].'<a %3$s>%4$s</a>'.$conf['after_item'].'%5$s</div>';
+				$icon = '';
 				if (isset($menu_item['children'])) {
+					$icon     = '<i class="dropdown icon"></i>';
 					$children = $this->_display_get_children($menu_item['children'],$conf);
 				}
+				$fmt = '<div %1$s%2$s>'.$icon.$conf['before_item'].'<a %3$s>%4$s</a>'.$conf['after_item'].'%5$s</div>';
 				
 				$items .= sprintf($fmt,
 					$classes,
