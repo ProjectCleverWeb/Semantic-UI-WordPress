@@ -158,6 +158,11 @@ a.inverted:hover, a.inverted:focus, a.inverted:active { /* Override */
 
 /*** Tags ***/
 
+html, body.mce-content-body {
+	/* Fixes Post Editor */
+	height: inherit !important;
+}
+
 blockquote {
 	background-color: rgba(230, 230, 250, 0.25);
 	border-left: 4px solid rgba(0, 0, 0, 0.15);
@@ -351,11 +356,6 @@ img {
 	text-align: center;
 	margin: 0;
 	padding: 0;
-}
-
-html, body.mce-content-body {
-	/* Fixes Post Editor */
-	height: inherit !important;
 }
 
 #main-content-grid {
