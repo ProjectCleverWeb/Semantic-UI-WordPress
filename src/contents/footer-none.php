@@ -9,7 +9,7 @@
 	</div>
 	
 	<!-- Modals -->
-	
+	<?php theme::part('modals', 'content', 'modals'); ?>
 	<!-- /Modals -->
 	
 	
