@@ -3,4 +3,4 @@
  * Fetch the comments area
  */
 
-theme::part('comments', 'content', 'comments');
+theme::part('comments', 'content');

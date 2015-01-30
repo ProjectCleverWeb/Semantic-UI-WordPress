@@ -217,9 +217,12 @@ class theme {
 	 * @param  string $sub  [optional] The specific sub part identifier.
 	 * @return bool         True on success, false otherwise.
 	 */
-	public static function part($slug, $type, $part, $sub = '') {
+	public static function part($slug, $type, $part = '', $sub = '') {
 		if (isset(self::$template_options[$slug])) {
 			extract(self::$template_options[$slug]);
+		}
+		if (empty($part)) {
+			$part = $slug;
 		}
 		$path = self::$path.'/';
 		settype($type, 'string');
@@ -292,10 +295,13 @@ class theme {
 	 * @param  string $sub  [optional] The specific sub part identifier.
 	 * @return bool         Returns TRUE on success, FALSE otherwise.
 	 */
-	public static function use_part($slug, $type, $part, $sub = '') {
+	public static function use_part($slug, $type, $part = '', $sub = '') {
 		if (isset(self::$template_options[$slug])) {
 			return FALSE;
 		} else {
+			if (empty($part)) {
+				$part = $slug;
+			}
 			self::$template_options[$slug] = array(
 				'type' => $type,
 				'part' => $part,

@@ -13,7 +13,7 @@ class theme extends \semantic\theme {}
 theme::init();
 
 // Get Custom Functions
-theme::part('custom-functions', 'include', 'custom-functions');
+theme::part('custom-functions', 'include');
 
 // Initialize WordPress
-theme::part('wp-init', 'include', 'wp-init');
+theme::part('wp-init', 'include');

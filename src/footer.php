@@ -4,4 +4,4 @@
  * always correctly called.
  */
 
-theme::part('footer', 'content', 'footer');
+theme::part('footer', 'content');

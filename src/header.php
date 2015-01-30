@@ -4,4 +4,4 @@
  * always correctly called.
  */
 
-theme::part('header', 'content', 'header');
+theme::part('header', 'content');
