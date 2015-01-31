@@ -114,7 +114,7 @@ class wp_integrations {
 		wp_register_style('webicons', theme::$styles_uri.'/webicons.min.css', array(), NULL);
 		wp_register_style('highlightjs', theme::$styles_uri.'/highlight.js/github.min.css', array(), '8.0');
 		wp_register_style('main', theme::$styles_uri.'/main.css', array('semantic'), NULL);
-		wp_register_style('theme-options', theme::$styles_uri.'/theme-options.css', array('semantic'), NULL);
+		wp_register_style('dashboard', theme::$styles_uri.'/dashboard.css', array('semantic'), NULL);
 		// Scripts
 		wp_register_script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', array(), NULL);
 		if (!(is_admin() || in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php')))) {
@@ -168,7 +168,7 @@ class wp_integrations {
 	public function options() {
 		wp_enqueue_style('semantic');
 		wp_enqueue_style('font-awesome');
-		wp_enqueue_style('theme-options');
+		wp_enqueue_style('dashboard');
 		if (current_user_can('edit_theme_options')) {
 			if (isset($_GET['page']) && ($_GET['page'] == theme::$identifier.'_options' || $_GET['page'] == 'dev_notes')) {
 				// Styles
