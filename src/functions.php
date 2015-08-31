@@ -65,6 +65,7 @@ add_action('init',                array($integrations, 'register_enqueue'), 10);
 add_filter('get_search_form',     array($integrations, 'search_form'));
 add_action('widgets_init',        array($integrations, 'widgets_init'));
 add_filter('wp_title',            array($integrations, 'wp_title'), 10, 2);
+add_action('template_include',    array($integrations, 'set_post_type'));
 if ($debug->active) {
 	$debug->runtime_checkpoint('[Theme] Adding Debug WordPress Integrations');
 	template_part($theme->include_sub_path.'/debug_hooks');

@@ -428,6 +428,15 @@ class integrations {
 		);
 	}
 	
-	
-	
+	/**
+	 * Sets theme::$post_type
+	 * 
+	 * @return void
+	 */
+	public function set_post_type($template) {
+		global $debug, $theme;
+		$theme->post_type = get_post_type();
+		$debug->runtime_checkpoint('[Theme] theme::$post_type set to "'.$theme->post_type.'"');
+		return $template;
+	}
 }
