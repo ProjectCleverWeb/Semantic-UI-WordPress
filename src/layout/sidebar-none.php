@@ -5,10 +5,10 @@
  * This layout has no sidebars
  */
 
-get_header();
+theme_header();
 ?>
 <main>
-	<?php theme::part('loop', 'content', 'loop', get_post_format()); ?>
+	<?php template_part($theme->content_sub_path.'/loop', get_post_format()); ?>
 </main>
 <?php
-get_footer();
+theme_footer();

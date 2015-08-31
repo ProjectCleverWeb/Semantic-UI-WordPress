@@ -9,9 +9,8 @@
 	</div>
 	
 	<!-- Modals -->
-	<?php theme::part('modals', 'content', 'modals'); ?>
+	<?php template_part($theme->content_sub_path.'/modals'); ?>
 	<!-- /Modals -->
-	
 	
 	<?php wp_footer(); ?>
 </body>

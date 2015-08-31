@@ -8,8 +8,8 @@
 					<?php
 					printf(
 						'<input type="text" placeholder="http://example.com/logo.png" name="%1$s" value="%2$s">',
-						theme::option_form_name('logo_url'),
-						theme::get_option('logo_url')
+						$theme->option_form_name('logo_url'),
+						$theme->get_option('logo_url')
 					);
 					?>
 				</div>
@@ -20,13 +20,13 @@
 					
 					foreach ($logo_sizes as $value) {
 						$checked = '';
-						if (theme::get_option('logo_size') == (string) $value) {
+						if ($theme->get_option('logo_size') == (string) $value) {
 							$checked = 'checked';
 						}
 						?>
 						<span class="five wide field">
 							<span class="ui radio checkbox">
-								<input id="size-<?php echo $value; ?>" value="<?php echo $value; ?>" type="radio" name="<?php echo theme::option_form_name('logo_size'); ?>" <?php echo $checked; ?>>
+								<input id="size-<?php echo $value; ?>" value="<?php echo $value; ?>" type="radio" name="<?php echo $theme->option_form_name('logo_size'); ?>" <?php echo $checked; ?>>
 								<label for="size-<?php echo $value; ?>">
 									<?php
 									if ($value == 0) {
@@ -56,8 +56,8 @@
 					<?php
 					printf(
 						'<input type="text" placeholder="Person or Company Name" name="%1$s" value="%2$s">',
-						theme::option_form_name('copyright_holder'),
-						theme::get_option('copyright_holder')
+						$theme->option_form_name('copyright_holder'),
+						$theme->get_option('copyright_holder')
 					);
 					?>
 				</div>
@@ -66,8 +66,8 @@
 					<?php
 					printf(
 						'<input type="text" placeholder="http://example.com/" name="%1$s" value="%2$s">',
-						theme::option_form_name('copyright_holder_url'),
-						theme::get_option('copyright_holder_url')
+						$theme->option_form_name('copyright_holder_url'),
+						$theme->get_option('copyright_holder_url')
 					);
 					?>
 				</div>
@@ -76,8 +76,8 @@
 						<?php
 						printf(
 							'<input type="checkbox" value="1" name="%1$s" %2$s>',
-							theme::option_form_name('copyright_extra'),
-							(theme::get_option('copyright_extra') ? 'checked' : '')
+							$theme->option_form_name('copyright_extra'),
+							($theme->get_option('copyright_extra') ? 'checked' : '')
 						);
 						?>
 						<label>Show "All Rights Reserved" <small>(see <a target="_blank" href="http://en.wikipedia.org/wiki/All_rights_reserved">this</a>)</small></label>
@@ -89,19 +89,19 @@
 				</h4>
 				<div class="ui center aligned basic segment">
 					<div class="ui selection dropdown">
-						<input type="hidden" name="<?php echo theme::option_form_name('copyright_year'); ?>" value="<?php echo theme::get_option('copyright_year'); ?>">
+						<input type="hidden" name="<?php echo $theme->option_form_name('copyright_year'); ?>" value="<?php echo $theme->get_option('copyright_year'); ?>">
 						<div class="default text">This Year</div>
 						<i class="dropdown icon"></i>
 						<div class="menu">
 							<?php
 							$selected = '';
-							if ((int) theme::get_option('copyright_year') == 0) {
+							if ((int) $theme->get_option('copyright_year') == 0) {
 								$selected=' active';
 							}
 							printf('<div class="item%2$s" data-value="%1$s">This Year</div>'.PHP_EOL, 0, $selected);
 							foreach (range((int) date("Y"), 1900) as $year) {
 								$selected = '';
-								if ((int) theme::get_option('copyright_year') == $year) {
+								if ((int) $theme->get_option('copyright_year') == $year) {
 									$selected=' active';
 								}
 								printf('<div class="item%2$s" data-value="%1$s">%1$s</div>'.PHP_EOL, $year, $selected);
@@ -122,8 +122,8 @@
 						<?php
 						printf(
 							'<input type="checkbox" value="1" name="%1$s" %2$s>',
-							theme::option_form_name('first_run'),
-							(theme::get_option('first_run') ? 'checked' : '')
+							$theme->option_form_name('first_run'),
+							($theme->get_option('first_run') ? 'checked' : '')
 						);
 						?>
 						<label>Show First-Run</label>
@@ -134,8 +134,8 @@
 						<?php
 						printf(
 							'<input type="checkbox" value="1" name="%1$s" %2$s>',
-							theme::option_form_name('powered_by'),
-							(theme::get_option('powered_by') ? 'checked' : '')
+							$theme->option_form_name('powered_by'),
+							($theme->get_option('powered_by') ? 'checked' : '')
 						);
 						?>
 						<label>Show "Powered By" Message</label>
@@ -146,8 +146,8 @@
 						<?php
 						printf(
 							'<input type="checkbox" value="1" name="%1$s" %2$s>',
-							theme::option_form_name('dev_notes'),
-							(theme::get_option('dev_notes') ? 'checked' : '')
+							$theme->option_form_name('dev_notes'),
+							($theme->get_option('dev_notes') ? 'checked' : '')
 						);
 						?>
 						<label>Enable Developer Notes</label>
@@ -168,8 +168,8 @@
 							<?php
 							printf(
 								'<input type="checkbox" value="1" name="%1$s" %2$s>',
-								theme::option_form_name('theme_editor'),
-								(theme::get_option('theme_editor') ? 'checked' : '')
+								$theme->option_form_name('theme_editor'),
+								($theme->get_option('theme_editor') ? 'checked' : '')
 							);
 							?>
 							<label>Allow Theme Editor</label>

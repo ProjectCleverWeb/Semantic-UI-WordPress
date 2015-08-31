@@ -3,10 +3,10 @@
  * Chooses the template to display
  */
 
-if (theme::get_option('first_run')) {
-	theme::part('template', 'template', 'first-run');
+if ($theme->get_option('first_run')) {
+	template_part($theme->template_sub_path.'/first-run');
 } elseif (is_front_page() || is_home()) {
-	theme::part('template', 'template', 'home');
+	template_part($theme->template_sub_path.'/home');
 } else {
-	theme::part('template', 'template', 'default');
+	template_part($theme->template_sub_path.'/default', get_post_type());
 }

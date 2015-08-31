@@ -12,7 +12,16 @@ namespace semantic;
  * WordPress default functionality and content. Every method here should have
  * a corresponding add_filter() or add_action() in wp-init.php
  */
-class wp_integrations {
+class integrations {
+	
+	public $theme;
+	
+	/**
+	 * For whatever reason, we need to make sure it grabs the "right" theme global
+	 */
+	public function __construct() {
+		$this->theme = $GLOBALS['theme'];
+	}
 	
 	/**
 	 * Registers various WordPress features
@@ -44,7 +53,7 @@ class wp_integrations {
 		));
 		add_theme_support('custom-background', array(
 			'default-color'          => 'FFFFFF',
-			'default-image'          => theme::$images_uri.'/subtle-patterns/dark_wall.png',
+			'default-image'          => $this->theme->image_uri.'/subtle-patterns/dark_wall.png',
 			'default-repeat'         => 'repeat',
 			'default-position-x'     => 'center',
 			'default-attachment'     => 'scroll',
@@ -52,13 +61,13 @@ class wp_integrations {
 		
 		// TIP: Use wp_nav_menu(array('theme_location' => 'menu-name')) to fetch these
 		register_nav_menus(array(
-			'main-menu'   => __('Main Menu', theme::$text_domain),
-			'footer-menu' => __('Footer Menu', theme::$text_domain)
+			'main-menu'   => __('Main Menu', $this->theme->text_domain),
+			'footer-menu' => __('Footer Menu', $this->theme->text_domain)
 		));
 		
 		if (in_array($GLOBALS['pagenow'], array('theme-editor.php'))) {
-			if (theme::get_option('theme_editor') == FALSE) {
-				wp_die('<p>'.__('In order to edit this theme, you must first re-enable the theme editor via the <a href="'.theme::options_uri().'">Theme Options</a> page', theme::$text_domain).'</p>');
+			if ($this->theme->get_option('theme_editor') == FALSE) {
+				wp_die('<p>'.__('In order to edit this theme, you must first re-enable the theme editor via the <a href="'.$this->theme->options_uri().'">Theme Options</a> page', $this->theme->text_domain).'</p>');
 			}
 		}
 	}
@@ -72,7 +81,7 @@ class wp_integrations {
 	 */
 	public function widgets_init() {
 		register_sidebar(array(
-			'name'          => __('Right Sidebar Widget Area', theme::$text_domain),
+			'name'          => __('Right Sidebar Widget Area', $this->theme->text_domain),
 			'id'            => 'sidebar-widget-area-right',
 			'description'   => 'These widgets are only visible when the siderbar is on the right side of the page',
 			'before_widget' => '<aside id="%1$s" class="wp-widget sidebar-right-widget %2$s ui raised segment">',
@@ -81,7 +90,7 @@ class wp_integrations {
 			'after_title'   => '</h4>'
 		));
 		register_sidebar(array(
-			'name'          => __('Left Sidebar Widget Area', theme::$text_domain),
+			'name'          => __('Left Sidebar Widget Area', $this->theme->text_domain),
 			'id'            => 'sidebar-widget-area-left',
 			'description'   => 'These widgets are only visible when the siderbar is on the left side of the page',
 			'before_widget' => '<aside id="%1$s" class="wp-widget sidebar-left-widget %2$s ui raised segment">',
@@ -90,7 +99,7 @@ class wp_integrations {
 			'after_title'   => '</h4>'
 		));
 		register_sidebar(array(
-			'name'          => __('Footer Widget Area', theme::$text_domain),
+			'name'          => __('Footer Widget Area', $this->theme->text_domain),
 			'id'            => 'footer-widget-area-footer',
 			'description'   => 'These widgets are visible in the footer',
 			'before_widget' => '<div class="column"><aside id="%1$s" class="wp-widget sidebar-right-widget %2$s ui raised segment">',
@@ -109,12 +118,12 @@ class wp_integrations {
 	 */
 	public function register_enqueue() {
 		// Styles
-		wp_register_style('semantic', theme::$styles_uri.'/semantic.min.css', array(), '1.0.1');
-		wp_register_style('font-awesome', theme::$styles_uri.'/font-awesome.min.css', array(), '4.1.0');
-		wp_register_style('webicons', theme::$styles_uri.'/webicons.min.css', array(), NULL);
-		wp_register_style('highlightjs', theme::$styles_uri.'/highlight.js/github.min.css', array(), '8.0');
-		wp_register_style('main', theme::$styles_uri.'/main.css', array('semantic'), NULL);
-		wp_register_style('dashboard', theme::$styles_uri.'/dashboard.css', array('semantic'), NULL);
+		wp_register_style('semantic', $this->theme->style_uri.'/semantic.min.css', array(), '1.0.1');
+		wp_register_style('font-awesome', $this->theme->style_uri.'/font-awesome.min.css', array(), '4.1.0');
+		wp_register_style('webicons', $this->theme->style_uri.'/webicons.min.css', array(), NULL);
+		wp_register_style('highlightjs', $this->theme->style_uri.'/highlight.js/github.min.css', array(), '8.0');
+		wp_register_style('main', $this->theme->style_uri.'/main.css', array('semantic'), NULL);
+		wp_register_style('dashboard', $this->theme->style_uri.'/dashboard.css', array('semantic'), NULL);
 		// Scripts
 		wp_register_script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', array(), NULL);
 		if (!(is_admin() || in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php')))) {
@@ -122,11 +131,11 @@ class wp_integrations {
 			wp_deregister_script('jquery');
 			wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), '2.1.1');
 		}
-		wp_register_script('semantic', theme::$scripts_uri.'/semantic.min.js', array(), '1.0.1');
-		wp_register_script('highlight', theme::$scripts_uri.'/highlight.pack.min.js', array('jquery'), '8.0');
-		wp_register_script('mousetrap', theme::$scripts_uri.'/mousetrap.min.js', array('jquery'), '1.4.6');
-		wp_register_script('main', theme::$scripts_uri.'/main.js', array(), NULL);
-		wp_register_script('theme-options', theme::$scripts_uri.'/theme-options.js', array(), NULL);
+		wp_register_script('semantic', $this->theme->script_uri.'/semantic.min.js', array(), '1.0.1');
+		wp_register_script('highlight', $this->theme->script_uri.'/highlight.pack.min.js', array('jquery'), '8.0');
+		wp_register_script('mousetrap', $this->theme->script_uri.'/mousetrap.min.js', array('jquery'), '1.4.6');
+		wp_register_script('main', $this->theme->script_uri.'/main.js', array(), NULL);
+		wp_register_script('theme-options', $this->theme->script_uri.'/theme-options.js', array(), NULL);
 
 	}
 	
@@ -170,7 +179,7 @@ class wp_integrations {
 		wp_enqueue_style('font-awesome');
 		wp_enqueue_style('dashboard');
 		if (current_user_can('edit_theme_options')) {
-			if (isset($_GET['page']) && ($_GET['page'] == theme::$identifier.'_options' || $_GET['page'] == 'dev_notes')) {
+			if (isset($_GET['page']) && ($_GET['page'] == $this->theme->identifier.'_options' || $_GET['page'] == 'dev_notes')) {
 				// Styles
 				wp_enqueue_style('webicons');
 				wp_enqueue_style('highlight');
@@ -189,11 +198,11 @@ class wp_integrations {
 			'Theme Options',
 			'Theme Options',
 			'edit_theme_options',
-			theme::$identifier.'_options',
+			$this->theme->identifier.'_options',
 			array($this, 'options_page')
 		);
 		
-		if (theme::get_option('dev_notes')) {
+		if ($this->theme->get_option('dev_notes')) {
 			add_theme_page(
 				'Theme Dev Notes',
 				'Theme Dev Notes',
@@ -212,7 +221,7 @@ class wp_integrations {
 	 * @return void
 	 */
 	public function options_page() {
-		theme::part('template', 'template', 'theme-options');
+		template_part($this->theme->template_sub_path.'/theme-options');
 	}
 	
 	
@@ -223,7 +232,7 @@ class wp_integrations {
 	 * @return void
 	 */
 	public function dev_notes_page() {
-		theme::part('template', 'template', 'dev-notes');
+		template_part($this->theme->template_sub_path.'/dev-notes');
 	}
 	
 	
@@ -241,7 +250,7 @@ class wp_integrations {
 				'id'     => 'theme-options',
 				'parent' => 'site-name',
 				'title'  => 'Theme Options',
-				'href'   => theme::options_uri()
+				'href'   => $this->theme->options_uri()
 			));
 		}
 	}
@@ -310,10 +319,10 @@ class wp_integrations {
 	 * @return void
 	 */
 	public function editor_styles() {
-		add_editor_style('assets/styles/semantic.min.css');
-		add_editor_style('assets/styles/font-awesome.min.css');
-		add_editor_style('assets/styles/webicons.min.css');
-		add_editor_style('assets/styles/main.css');
+		add_editor_style($this->theme->style_sub_path.'/semantic.min.css');
+		add_editor_style($this->theme->style_sub_path.'/font-awesome.min.css');
+		add_editor_style($this->theme->style_sub_path.'/webicons.min.css');
+		add_editor_style($this->theme->style_sub_path.'/main.css');
 	}
 	
 	

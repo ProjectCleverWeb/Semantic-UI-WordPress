@@ -15,7 +15,7 @@ foreach ($dev_notes as $major => $section) {
 				printf('<h3 class="ui dividing header" id="%2$s">%3$s.%4$s - %1$s</h3>', $subsection, $id, $major, $minor);
 				?>
 				<div class="ui center aligned basic segment">
-					<img src="<?php echo theme::$images_uri.'/dev-notes/'.$info['img']; ?>">
+					<img src="<?php echo $theme->image_uri.'/dev-notes/'.$info['img']; ?>">
 				</div>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae asperiores eum facere repellendus sint ut minus, commodi consequatur porro quam praesentium, rerum error quisquam reiciendis blanditiis vel dignissimos maxime animi incidunt non ex consequuntur modi, veniam ducimus.
 				<br><br>

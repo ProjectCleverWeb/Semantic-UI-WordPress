@@ -12,11 +12,11 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <?php
-if (theme::get_option('mobile_meta')) {
+if ($theme->get_option('mobile_meta')) {
 	?>
 	<!-- Mobile Meta -->
 	<meta name="HandheldFriendly" content="True">
-	<meta name="MobileOptimized" content="<?php echo theme::get_option('mobile_size'); ?>">
+	<meta name="MobileOptimized" content="<?php echo $theme->get_option('mobile_size'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<!-- /Mobile Meta -->
 	<?php
@@ -25,7 +25,7 @@ if (theme::get_option('mobile_meta')) {
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <script type="text/javascript">
 // Use local jQuery if CDN is unavailable
-!window.jQuery && document.write('<script src="<?php echo theme::$scripts_uri.'/jquery-2.1.1.min.js'; ?>"><\/script>');
+!window.jQuery && document.write('<script src="<?php echo $theme->script_uri.'/jquery-2.1.1.min.js'; ?>"><\/script>');
 
 // Google Fonts (async)
 WebFontConfig = {

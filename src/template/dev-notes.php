@@ -3,5 +3,5 @@
 Template Name: Dev Notes
 */
 
-theme::part('notes', 'include', 'dev-notes');
-theme::part('layout', 'layout', 'dev-notes');
+template_part($theme->include_sub_path.'/dev-notes');
+template_part($theme->layout_sub_path.'/dev-notes');

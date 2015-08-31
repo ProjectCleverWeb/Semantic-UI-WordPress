@@ -3,5 +3,5 @@
 		Theme Options
 	</h1>
 	
-	<?php theme::part('content', 'content', 'theme-options'); ?>
+	<?php template_part($theme->content_sub_path.'/theme-options'); ?>
 </div>

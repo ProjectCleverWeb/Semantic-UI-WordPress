@@ -5,7 +5,7 @@
  * This layout has the sidebar on the left side.
  */
 
-get_header();
+theme_header();
 ?>
 <div class="ui stackable grid">
 	<div class="four wide column">
@@ -19,7 +19,7 @@ get_header();
 		?>
 	</div>
 	<main class="eleven wide column">
-		<?php theme::part('loop', 'content', 'loop', get_post_format()); ?>
+		<?php template_part($theme->content_sub_path.'/loop', get_post_format()); ?>
 	</main>
 	<div class="four wide column">
 		<?php
@@ -33,4 +33,4 @@ get_header();
 	</div>
 </div>
 <?php
-get_footer();
+theme_footer();

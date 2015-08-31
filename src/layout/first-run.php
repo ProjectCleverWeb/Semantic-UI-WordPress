@@ -3,7 +3,7 @@
  * The "First-Run" Layout
  */
 
-get_header();
+theme_header('none');
 ?>
 <main>
 	
@@ -14,7 +14,7 @@ get_header();
 		<?php
 		if (current_user_can('edit_theme_options')) {
 			?>
-			<div class="sub header">This is the first-run page, you can disable it from the <a href="<?php echo theme::options_uri(); ?>">Theme Options</a> page.</div>
+			<div class="sub header">This is the first-run page, you can disable it from the <a href="<?php echo $theme->options_uri(); ?>">Theme Options</a> page.</div>
 			<?php
 		} else {
 			?>
@@ -24,8 +24,8 @@ get_header();
 		?>
 	</h1>
 	<div class="ui basic segment">
-		<?php theme::part('content', 'content', 'first-run'); ?>
+		<?php template_part($theme->content_sub_path.'/first-run'); ?>
 	</div>
 </main>
 <?php
-get_footer();
+theme_footer('none');

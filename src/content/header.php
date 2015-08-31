@@ -23,14 +23,14 @@ $num_to_eng = array(
 	16 => 'sixteen',
 );
 
-$logo_width = $num_to_eng[(int) theme::get_option('logo_size')];
-$menu_width = $num_to_eng[(16 - (int) theme::get_option('logo_size'))];
+$logo_width = $num_to_eng[(int) $theme->get_option('logo_size')];
+$menu_width = $num_to_eng[(16 - (int) $theme->get_option('logo_size'))];
 
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<?php theme::part('head', 'content', 'head'); ?>
+<?php template_part($theme->content_sub_path.'/head'); ?>
 </head>
 <body <?php body_class('public-page'); ?>>
 	<div id="page-wrapper">
@@ -41,10 +41,10 @@ $menu_width = $num_to_eng[(16 - (int) theme::get_option('logo_size'))];
 					?>
 				<div class="<?php echo $logo_width; ?> wide center aligned column">
 					<?php
-					if (theme::get_option('logo_url')) {
+					if ($theme->get_option('logo_url')) {
 						?>
 						<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-							<img src="<?php echo theme::get_option('logo_url'); ?>">
+							<img src="<?php echo $theme->get_option('logo_url'); ?>">
 						</a>
 						<?php
 					}

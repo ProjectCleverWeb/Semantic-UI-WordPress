@@ -6,7 +6,7 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<?php theme::part('head', 'content', 'head'); ?>
+<?php template_part($theme->content_sub_path.'/head'); ?>
 </head>
 <body <?php body_class('public-page'); ?>>
 	<div id="page-wrapper">

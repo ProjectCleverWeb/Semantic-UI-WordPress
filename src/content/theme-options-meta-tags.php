@@ -8,8 +8,8 @@
 						<?php
 						printf(
 							'<input type="checkbox" value="1" name="%1$s" %2$s>',
-							theme::option_form_name('mobile_meta'),
-							(theme::get_option('mobile_meta') ? 'checked' : '')
+							$theme->option_form_name('mobile_meta'),
+							($theme->get_option('mobile_meta') ? 'checked' : '')
 						);
 						?>
 						<label>Use Mobile Meta</label>
@@ -20,8 +20,8 @@
 					<?php
 					printf(
 						'<input type="text" placeholder="450" name="%1$s" value="%2$s">',
-						theme::option_form_name('mobile_size'),
-						theme::get_option('mobile_size')
+						$theme->option_form_name('mobile_size'),
+						$theme->get_option('mobile_size')
 					);
 					?>
 				</div>

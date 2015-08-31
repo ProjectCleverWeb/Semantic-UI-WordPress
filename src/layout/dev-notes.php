@@ -88,7 +88,7 @@
 		</div>
 		<div class="twelve wide column">
 			
-			<?php theme::part('content', 'content', 'dev-notes'); ?>
+			<?php template_part($theme->content_sub_path.'/dev-notes'); ?>
 		</div>
 	</div>
 </div>

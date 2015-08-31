@@ -14,69 +14,95 @@ namespace semantic;
  */
 class theme {
 	// Theme Options
-	public static $identifier;
-	public static $text_domain;
-	public static $options;
-	public static $template_options;
+	public $identifier;
+	public $text_domain;
+	public $options;
+	public $template_options;
+	public $inc_var_list;
+	// Base Path/URI
+	public $path;
+	public $uri;
+	// Sub-Paths
+	public $asset_sub_path;
+	public $font_sub_path;
+	public $image_sub_path;
+	public $script_sub_path;
+	public $style_sub_path;
+	public $content_sub_path;
+	public $include_sub_path;
+	public $layout_sub_path;
+	public $template_sub_path;
 	// Absolute Paths
-	public static $path;
-	public static $assets_path;
-	public static $fonts_path;
-	public static $images_path;
-	public static $scripts_path;
-	public static $styles_path;
-	public static $contents_path;
-	public static $includes_path;
-	public static $layouts_path;
-	public static $templates_path;
+	public $asset_path;
+	public $font_path;
+	public $image_path;
+	public $script_path;
+	public $style_path;
+	public $content_path;
+	public $include_path;
+	public $layout_path;
+	public $template_path;
 	// URI Paths
-	public static $uri;
-	public static $assets_uri;
-	public static $fonts_uri;
-	public static $images_uri;
-	public static $scripts_uri;
-	public static $styles_uri;
-	public static $contents_uri;
-	public static $includes_uri;
-	public static $layouts_uri;
-	public static $templates_uri;
+	public $asset_uri;
+	public $font_uri;
+	public $image_uri;
+	public $script_uri;
+	public $style_uri;
+	public $content_uri;
+	public $include_uri;
+	public $layout_uri;
+	public $template_uri;
 	
 	/**
 	 * Sets class vars and calls various setup functions
 	 * 
 	 * @return void
 	 */
-	public static function init() {
+	public function __construct() {
+		// Base path/uri
+		$this->path          = get_template_directory();
+		$this->uri          = get_template_directory_uri();
+		// Sub-Paths
+		$this->asset_sub_path    = 'asset';
+		$this->font_sub_path     = $this->asset_sub_path.'/font';
+		$this->image_sub_path    = $this->asset_sub_path.'/image';
+		$this->script_sub_path   = $this->asset_sub_path.'/script';
+		$this->style_sub_path    = $this->asset_sub_path.'/style';
+		$this->content_sub_path  = 'content';
+		$this->include_sub_path  = 'include';
+		$this->layout_sub_path   = 'layout';
+		$this->template_sub_path = 'template';
 		// Absolute Paths
-		self::$path           = get_template_directory();
-		self::$assets_path    = self::$path.'/asset';
-		self::$fonts_path     = self::$assets_path.'/font';
-		self::$images_path    = self::$assets_path.'/image';
-		self::$scripts_path   = self::$assets_path.'/script';
-		self::$styles_path    = self::$assets_path.'/style';
-		self::$contents_path  = self::$path.'/content';
-		self::$includes_path  = self::$path.'/include';
-		self::$layouts_path   = self::$path.'/layout';
-		self::$templates_path = self::$path.'/template';
+		$this->asset_path    = realpath($this->path.DIRECTORY_SEPARATOR.$this->asset_sub_path);
+		$this->font_path     = realpath($this->path.DIRECTORY_SEPARATOR.$this->font_sub_path);
+		$this->image_path    = realpath($this->path.DIRECTORY_SEPARATOR.$this->image_sub_path);
+		$this->script_path   = realpath($this->path.DIRECTORY_SEPARATOR.$this->script_sub_path);
+		$this->style_path    = realpath($this->path.DIRECTORY_SEPARATOR.$this->style_sub_path);
+		$this->content_path  = realpath($this->path.DIRECTORY_SEPARATOR.$this->content_sub_path);
+		$this->include_path  = realpath($this->path.DIRECTORY_SEPARATOR.$this->include_sub_path);
+		$this->layout_path   = realpath($this->path.DIRECTORY_SEPARATOR.$this->layout_sub_path);
+		$this->template_path = realpath($this->path.DIRECTORY_SEPARATOR.$this->template_sub_path);
 		// URI Paths
-		self::$uri           = get_template_directory_uri();
-		self::$assets_uri    = self::$uri.'/asset';
-		self::$fonts_uri     = self::$assets_uri.'/font';
-		self::$images_uri    = self::$assets_uri.'/image';
-		self::$scripts_uri   = self::$assets_uri.'/script';
-		self::$styles_uri    = self::$assets_uri.'/style';
-		self::$contents_uri  = self::$uri.'/content';
-		self::$includes_uri  = self::$uri.'/include';
-		self::$layouts_uri   = self::$uri.'/layout';
-		self::$templates_uri = self::$uri.'/template';
+		$this->asset_uri    = $this->uri.'/'.$this->asset_sub_path;
+		$this->font_uri     = $this->uri.'/'.$this->font_sub_path;
+		$this->image_uri    = $this->uri.'/'.$this->image_sub_path;
+		$this->script_uri   = $this->uri.'/'.$this->script_sub_path;
+		$this->style_uri    = $this->uri.'/'.$this->style_sub_path;
+		$this->content_uri  = $this->uri.'/'.$this->content_sub_path;
+		$this->include_uri  = $this->uri.'/'.$this->include_sub_path;
+		$this->layout_uri   = $this->uri.'/'.$this->layout_sub_path;
+		$this->template_uri = $this->uri.'/'.$this->template_sub_path;
 		// Theme Options
-		self::$identifier       = 'semantic_ui';
-		self::$text_domain      = 'semantic-ui';
-		self::$options          = self::fetch_options();
-		self::$template_options = array();
+		$this->identifier       = 'semantic_ui';
+		$this->text_domain      = 'semantic-ui';
+		$this->options          = $this->fetch_options();
+		$this->template_options = array();
+		$this->inc_var_list     = array();
 		
 		// Check POST for options update (nonce & user are verified)
-		self::update_options_via_post();
+		$this->update_options_via_post();
+		
+		$GLOBALS['debug']->runtime_checkpoint('[Theme] Theme Class Initialized');
 	}
 	
 	/**
@@ -84,14 +110,14 @@ class theme {
 	 * 
 	 * @return mixed
 	 */
-	private static function fetch_options() {
-		$existing = get_option(self::$identifier.'_options');
+	private function fetch_options() {
+		$existing = get_option($this->identifier.'_options');
 		if ($existing) {
 			$options = json_decode($existing);
 		} else {
 			// Reset and add them to the database
-			$options = self::default_options();
-			self::update_options($options);
+			$options = $this->default_options();
+			$this->update_options($options);
 		}
 		return (array) $options;
 	}
@@ -101,7 +127,7 @@ class theme {
 	 * 
 	 * @return array The options
 	 */
-	private static function default_options() {
+	private function default_options() {
 		return array(
 			'first_run'   => TRUE,
 			'mobile_meta' => TRUE,
@@ -117,8 +143,8 @@ class theme {
 	 * @param  string $name The option name
 	 * @return mixed        The value of the options or FALSE on failure.
 	 */
-	public static function get_option($name) {
-		$options = &self::$options;
+	public function get_option($name) {
+		$options = &$this->options;
 		if (isset($options[$name])) {
 			return $options[$name];
 		}
@@ -132,10 +158,10 @@ class theme {
 	 * @param  array $options The options to store in the database as a JSON array
 	 * @return void
 	 */
-	public static function update_options($options) {
+	public function update_options($options) {
 		if (current_user_can('edit_theme_options')) {
 			$json = json_encode((array) $options);
-			update_option(self::$identifier.'_options', $json);
+			update_option($this->identifier.'_options', $json);
 		}
 	}
 	
@@ -145,13 +171,13 @@ class theme {
 	 * 
 	 * @return void
 	 */
-	private static function update_options_via_post() {
-		$post_id = self::$identifier.'_options';
+	private function update_options_via_post() {
+		$post_id = $this->identifier.'_options';
 		$user_id = get_current_user_id();
 		if (
 			isset($_POST[$post_id.'_verify'])
 			&&
-			wp_verify_nonce($_POST[$post_id.'_verify'], self::$identifier.'_options_'.$user_id)
+			wp_verify_nonce($_POST[$post_id.'_verify'], $this->identifier.'_options_'.$user_id)
 			&&
 			current_user_can('edit_theme_options')
 			&&
@@ -159,10 +185,10 @@ class theme {
 			&&
 			is_array($_POST[$post_id])
 		) {
-			self::update_options($_POST[$post_id]);
+			$this->update_options($_POST[$post_id]);
 			
 			// Now redirect to clear POST and show changes
-			header('Location: '.self::options_uri());
+			header('Location: '.$this->options_uri());
 		}
 	}
 	
@@ -172,10 +198,10 @@ class theme {
 	 * @param  string $name The name to use
 	 * @return void
 	 */
-	public static function option_form_name($name) {
+	public function option_form_name($name) {
 		return sprintf(
 			'%1$s[%2$s]',
-			self::$identifier.'_options',
+			$this->identifier.'_options',
 			$name
 		);
 	}
@@ -184,8 +210,8 @@ class theme {
 	 * Returns the URI of the theme options page in the WordPress Dashboard
 	 * @return string The URI of the theme options page
 	 */
-	public static function options_uri() {
-		return admin_url().'themes.php?page='.self::$identifier.'_options';
+	public function options_uri() {
+		return admin_url().'themes.php?page='.$this->identifier.'_options';
 	}
 	
 	/**
@@ -194,92 +220,177 @@ class theme {
 	 * 
 	 * @return void
 	 */
-	public static function options_update_data() {
+	public function options_update_data() {
 		$user_id = get_current_user_id();
 		if ($user_id) {
 			printf(
 				'<input type="hidden" name="%1$s" value="%2$s">',
-				self::$identifier.'_options_verify',
-				wp_create_nonce(self::$identifier.'_options_'.$user_id)
+				$this->identifier.'_options_verify',
+				wp_create_nonce($this->identifier.'_options_'.$user_id)
 			);
 		}
 	}
 	
 	/**
-	 * Includes a theme part into the current page. Uses slugs to identify which
+	 * Works like `include $theme_dir.'/'.$path`
+	 * 
+	 * @param  String  $path     The path to the file you want to include
+	 * @param  boolean $is_abs   Is this an absolute path? Defaults to FALSE
+	 * @param  array   $var_list List of variables to extract()
+	 * @return mixed             Value of the file included
+	 */
+	public function inc($path, $is_abs = FALSE, $var_list = array()) {
+		if (!$is_abs) {
+			$path = $this->path.DIRECTORY_SEPARATOR.$path;
+		}
+		
+		global $debug;
+		$debug->runtime_checkpoint('[Theme] Include: '.str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $path));
+		
+		$var_list = $var_list + $this->inc_var_list;
+		$this->_inc_path($path);
+		
+		// Undo the variables set by this function
+		unset($path, $is_abs);
+		if (!isset($var_list['var_list'])) {
+			$var_list['var_list'] = NULL;
+		}
+		
+		extract($GLOBALS);
+		extract($var_list);
+		return include $this->_inc_path();
+	}
+	
+	/**
+	 * Works like `include_once $theme_dir.'/'.$path`
+	 * 
+	 * @param  String  $path     The path to the file you want to include
+	 * @param  boolean $is_abs   Is this an absolute path? Defaults to FALSE
+	 * @param  array   $var_list List of variables to extract()
+	 * @return mixed             Value of the file included
+	 */
+	public function inc_once($path, $is_abs = FALSE, $var_list = array()) {
+		if (!$is_abs) {
+			$path = $this->path.DIRECTORY_SEPARATOR.$path;
+		}
+		
+		global $debug;
+		$debug->runtime_checkpoint('[Theme] Include Once: '.str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $path));
+		
+		$var_list = $var_list + $this->inc_var_list;
+		$this->_inc_path($path);
+		
+		// Undo the variables set by this function
+		unset($path, $is_abs);
+		if (!isset($var_list['var_list'])) {
+			$var_list['var_list'] = NULL;
+		}
+		
+		extract($GLOBALS);
+		extract($var_list);
+		return include_once $this->_inc_path();
+	}
+	
+	/**
+	 * Works like `require $theme_dir.'/'.$path`
+	 * 
+	 * @param  String  $path     The path to the file you want to include
+	 * @param  boolean $is_abs   Is this an absolute path? Defaults to FALSE
+	 * @param  array   $var_list List of variables to extract()
+	 * @return mixed             Value of the file included
+	 */
+	public function req($path, $is_abs = FALSE, $var_list = array()) {
+		if (!$is_abs) {
+			$path = $this->path.DIRECTORY_SEPARATOR.$path;
+		}
+		
+		global $debug;
+		$debug->runtime_checkpoint('[Theme] Require: '.str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $path));
+		
+		$var_list = $var_list + $this->inc_var_list;
+		$this->_inc_path($path);
+		
+		// Undo the variables set by this function
+		unset($path, $is_abs);
+		if (!isset($var_list['var_list'])) {
+			$var_list['var_list'] = NULL;
+		}
+		
+		extract($GLOBALS);
+		extract($var_list);
+		return require $this->_inc_path();
+	}
+	
+	/**
+	 * Works like `require_once $theme_dir.'/'.$path`
+	 * 
+	 * @param  String  $path     The path to the file you want to include
+	 * @param  boolean $is_abs   Is this an absolute path? Defaults to FALSE
+	 * @param  array   $var_list List of variables to extract()
+	 * @return mixed             Value of the file included
+	 */
+	public function req_once($path, $is_abs = FALSE, $var_list = array()) {
+		if (!$is_abs) {
+			$path = $this->path.DIRECTORY_SEPARATOR.$path;
+		}
+		
+		global $debug;
+		$debug->runtime_checkpoint('[Theme] Require Once: '.str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $path));
+		
+		$var_list = $var_list + $this->inc_var_list;
+		$this->_inc_path($path);
+		
+		// Undo the variables set by this function
+		unset($path, $is_abs);
+		if (!isset($var_list['var_list'])) {
+			$var_list['var_list'] = NULL;
+		}
+		
+		extract($GLOBALS);
+		extract($var_list);
+		return require_once $this->_inc_path();
+	}
+	
+	/**
+	 * Simple function to temporarily hold a path string. Empties the storage when
+	 * called without a path to store
+	 * 
+	 * @param  string $path Path to store
+	 * @return string       The stored path or an empty string
+	 */
+	private function _inc_path($path = '') {
+		static $spath;
+		if (!empty($path)) {
+			$spath = $path;
+			$tpath = $path;
+		} else {
+			$tpath = $spath;
+			$spath = '';
+		}
+		return $tpath;
+	}
+	
+	/**
+	 * Includes a theme part into the current page. Uses an id to identify which
 	 * part of the theme is currently trying to be included. This allows the
 	 * template file to determine what parts of the page are replaced when the page
-	 * is generated. (via self::use_part())
+	 * is generated. (via $this->use_part())
 	 * 
-	 * @param  string $slug The identifier of the current theme part being included
-	 * @param  string $type Can be: content, include, layout, template (or there plural equivalent)
-	 * @param  string $part The part name, in respect to the part's filename
-	 * @param  string $sub  [optional] The specific sub part identifier.
-	 * @return bool         True on success, false otherwise.
+	 * @param  string  $id       The identifier to check for replacments
+	 * @param  string  $path     The path to use if their is no replacment
+	 * @param  boolean $is_abs   (optional) If the $path is an absolute path, set this to TRUE
+	 * @param  boolean $once     (optional) Set to TRUE to use include_once instead of include
+	 * @param  array   $var_list (optional) The array of variables you want extraced
+	 * @return mixed             (optional) The return value of the file - usually NULL
 	 */
-	public static function part($slug, $type, $part = '', $sub = '') {
-		if (isset(self::$template_options[$slug])) {
-			extract(self::$template_options[$slug]);
+	public function part($id, $path, $is_abs = FALSE, $once = FALSE, $var_list = array()) {
+		if (isset($this->template_options[$id])) {
+			extract($this->template_options[$id]);
 		}
-		if (empty($part)) {
-			$part = $slug;
+		if ($once) {
+			return $this->inc_once($path, $is_abs, $var_list);
 		}
-		$path = self::$path.'/';
-		settype($type, 'string');
-		settype($part, 'string');
-		settype($sub, 'string');
-		$type = strtolower($type);
-		$part = strtolower($part);
-		$sub  = strtolower($sub);
-		$tsub = trim($sub);
-		if (!empty($tsub)) {
-			$dsub = '-'.$sub;
-		} else {
-			$dsub = '';
-		}
-		
-		switch ($type) {
-			case 'content':
-			case 'contents':
-				$type = 'contents';
-				break;
-			
-			case 'include':
-			case 'includes':
-				$type = 'includes';
-				break;
-			
-			case 'layout':
-			case 'layouts':
-				$type = 'layouts';
-				break;
-			
-			case 'template':
-			case 'templates':
-				$type = 'templates';
-				break;
-			
-			default:
-				return FALSE; // invalid type
-		}
-		
-		$full_path = $path.$type.'/'.$part.$dsub;
-		$alt_path  = $path.$type.'/'.$part;
-		
-		// get_template_part() adds hooks
-		if (file_exists($full_path.'.php') && is_file($full_path.'.php')) {
-			get_template_part($type.'/'.$part, $sub);
-		} elseif (file_exists($alt_path.'.php') && is_file($alt_path.'.php')) {
-			get_template_part($type.'/'.$part);
-		} elseif (file_exists($path.$part.$dsub.'.php') && is_file($path.$part.$dsub.'.php')) {
-			get_template_part($part, $sub);
-		} elseif (file_exists($path.$part.'.php') && is_file($path.$part.'.php')) {
-			get_template_part($part);
-		} else {
-			return FALSE; // 404
-		}
-		
-		return TRUE; // Success
+		return $this->inc($path, $is_abs, $var_list);
 	}
 	
 	/**
@@ -287,25 +398,27 @@ class theme {
 	 * page. This method also checks if the theme part has already been replaced.
 	 * If it has already been replaced, then the input is ignored and this method
 	 * returns FALSE. To override this functionallity set the variable manually
-	 * via self::$template_options[$slug].
+	 * via $this->template_options[$id].
 	 * 
-	 * @param  string $slug The identifier of the theme part being replaced
-	 * @param  string $type Can be: content, include, layout, template (or there plural equivalent)
-	 * @param  string $part The part name, in respect to the part's filename
-	 * @param  string $sub  [optional] The specific sub part identifier.
-	 * @return bool         Returns TRUE on success, FALSE otherwise.
+	 * @param  string  $id       The identifier to check for replacments
+	 * @param  string  $path     The path to use if their is no replacment
+	 * @param  boolean $is_abs   (optional) If the $path is an absolute path, set this to TRUE
+	 * @param  boolean $once     (optional) Set to TRUE to use include_once instead of include
+	 * @param  array   $var_list (optional) The array of variables you want extraced
+	 * @return mixed             (optional) The return value of the file - usually NULL
 	 */
-	public static function use_part($slug, $type, $part = '', $sub = '') {
-		if (isset(self::$template_options[$slug])) {
+	public function use_part($id, $path, $is_abs = FALSE, $once = FALSE, $var_list = array()) {
+		global $debug;
+		if (isset($this->template_options[$id])) {
+			$debug->runtime_checkpoint('[Theme] Action: theme::use_part() failed to set "'.$id.'" to "'.$path.'"');
 			return FALSE;
 		} else {
-			if (empty($part)) {
-				$part = $slug;
-			}
-			self::$template_options[$slug] = array(
-				'type' => $type,
-				'part' => $part,
-				'sub'  => $sub
+			$debug->runtime_checkpoint('[Theme] Action: theme::use_part() set "'.$id.'" to "'.$path.'"');
+			$this->template_options[$id] = array(
+				'path'     => $path,
+				'once'     => $once,
+				'is_abs'   => $is_abs,
+				'var_list' => $var_list
 			);
 			return TRUE;
 		}
@@ -317,7 +430,7 @@ class theme {
 	 * @param  string $fmt [optional] The date format to use
 	 * @return string      The date
 	 */
-	public static function get_date($fmt = '') {
+	public function get_date($fmt = '') {
 		settype($fmt, 'string');
 		
 		if (empty($fmt)) {
@@ -333,7 +446,7 @@ class theme {
 	 * @param  string $fmt [optional] The time format to use
 	 * @return string      The time
 	 */
-	public static function get_time($fmt = '') {
+	public function get_time($fmt = '') {
 		settype($fmt, 'string');
 		
 		if (empty($fmt)) {
@@ -349,7 +462,7 @@ class theme {
 	 * @param  string $fmt [optional] The date format to use
 	 * @return void
 	 */
-	public static function date($fmt = '') {
+	public function date($fmt = '') {
 		settype($fmt, 'string');
 		
 		if (empty($fmt)) {
@@ -365,7 +478,7 @@ class theme {
 	 * @param  string $fmt [optional] The time format to use
 	 * @return void
 	 */
-	public static function time($fmt = '') {
+	public function time($fmt = '') {
 		settype($fmt, 'string');
 		
 		if (empty($fmt)) {
