@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Home With Posts
+Template Name: Sidebar: Right
 */
 
 // This just an alias to the default

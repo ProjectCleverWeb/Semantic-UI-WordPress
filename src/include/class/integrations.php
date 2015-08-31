@@ -435,7 +435,10 @@ class integrations {
 	 */
 	public function set_post_type($template) {
 		global $debug, $theme;
-		$theme->post_type = get_post_type();
+		$theme->post_type = get_post_format();
+		if (empty($theme->post_type)) {
+			$theme->post_type = get_post_type();
+		}
 		$debug->runtime_checkpoint('[Theme] theme::$post_type set to "'.$theme->post_type.'"');
 		return $template;
 	}

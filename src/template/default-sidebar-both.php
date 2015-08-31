@@ -1,9 +1,7 @@
 <?php
-/**
- * The "Sidebar: Left" Layout
- * 
- * This layout has the sidebar on the left side.
- */
+/*
+Template Name: Sidebar: Both
+*/
 
 theme_header();
 ?>
@@ -18,8 +16,8 @@ theme_header();
 		}
 		?>
 	</div>
-	<main class="eleven wide column">
-		<?php template_part($theme->content_sub_path.'/loop', get_post_format()); ?>
+	<main class="eight wide column">
+		<?php template_part($theme->content_sub_path.'/loop', $theme->post_type); ?>
 	</main>
 	<div class="four wide column">
 		<?php
