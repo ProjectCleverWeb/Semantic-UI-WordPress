@@ -30,7 +30,6 @@ class theme {
 	public $style_sub_path;
 	public $content_sub_path;
 	public $include_sub_path;
-	public $layout_sub_path;
 	public $template_sub_path;
 	// Absolute Paths
 	public $asset_path;
@@ -40,7 +39,6 @@ class theme {
 	public $style_path;
 	public $content_path;
 	public $include_path;
-	public $layout_path;
 	public $template_path;
 	// URI Paths
 	public $asset_uri;
@@ -50,7 +48,6 @@ class theme {
 	public $style_uri;
 	public $content_uri;
 	public $include_uri;
-	public $layout_uri;
 	public $template_uri;
 	
 	/**
@@ -70,7 +67,6 @@ class theme {
 		$this->style_sub_path    = $this->asset_sub_path.'/style';
 		$this->content_sub_path  = 'content';
 		$this->include_sub_path  = 'include';
-		$this->layout_sub_path   = 'layout';
 		$this->template_sub_path = 'template';
 		// Absolute Paths
 		$this->asset_path    = realpath($this->path.DIRECTORY_SEPARATOR.$this->asset_sub_path);
@@ -80,7 +76,6 @@ class theme {
 		$this->style_path    = realpath($this->path.DIRECTORY_SEPARATOR.$this->style_sub_path);
 		$this->content_path  = realpath($this->path.DIRECTORY_SEPARATOR.$this->content_sub_path);
 		$this->include_path  = realpath($this->path.DIRECTORY_SEPARATOR.$this->include_sub_path);
-		$this->layout_path   = realpath($this->path.DIRECTORY_SEPARATOR.$this->layout_sub_path);
 		$this->template_path = realpath($this->path.DIRECTORY_SEPARATOR.$this->template_sub_path);
 		// URI Paths
 		$this->asset_uri    = $this->uri.'/'.$this->asset_sub_path;
@@ -90,7 +85,6 @@ class theme {
 		$this->style_uri    = $this->uri.'/'.$this->style_sub_path;
 		$this->content_uri  = $this->uri.'/'.$this->content_sub_path;
 		$this->include_uri  = $this->uri.'/'.$this->include_sub_path;
-		$this->layout_uri   = $this->uri.'/'.$this->layout_sub_path;
 		$this->template_uri = $this->uri.'/'.$this->template_sub_path;
 		// Theme Options
 		$this->identifier       = 'semantic_ui';
