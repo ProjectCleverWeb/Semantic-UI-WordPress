@@ -2,6 +2,11 @@
 /**
  * Add debug information to WordPress includes
  */
+add_filter('template_include', function($template) {
+	global $debug;
+	$debug->runtime_checkpoint('[WordPress] Action: Using Template "'.$template.'"');
+	return $template;
+}, 99);
 add_action('wp_head', function() {
 	global $debug;
 	$debug->runtime_checkpoint('[WordPress] Action: Called wp_head()');
