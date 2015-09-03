@@ -13,8 +13,8 @@
 					);
 					?>
 				</div>
-				<div class="fields">
-					<h4 class="ui center aligned header">Logo Size</h4>
+				<label>Logo Size</label>
+				<div class="grouped fields">
 					<?php
 					$logo_sizes = range(0,16);
 					
@@ -24,8 +24,8 @@
 							$checked = 'checked';
 						}
 						?>
-						<span class="five wide field">
-							<span class="ui radio checkbox">
+						<div class="field">
+							<div class="ui radio checkbox">
 								<input id="size-<?php echo $value; ?>" value="<?php echo $value; ?>" type="radio" name="<?php echo $theme->option_form_name('logo_size'); ?>" <?php echo $checked; ?>>
 								<label for="size-<?php echo $value; ?>">
 									<?php
@@ -38,8 +38,9 @@
 									}
 									?>
 								</label>
-							</span>
-						</span>
+							</div>
+						</div>
+						
 						<?php
 					}
 					?>

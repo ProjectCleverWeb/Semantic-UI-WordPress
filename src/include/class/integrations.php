@@ -136,7 +136,6 @@ class integrations {
 		wp_register_script('mousetrap', $this->theme->script_uri.'/mousetrap.min.js', array('jquery'), '1.4.6');
 		wp_register_script('main', $this->theme->script_uri.'/main.js', array(), NULL);
 		wp_register_script('theme-options', $this->theme->script_uri.'/theme-options.js', array(), NULL);
-
 	}
 	
 	
