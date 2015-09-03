@@ -22,7 +22,7 @@ spl_autoload_register(function ($class) {
 		return;
 	}
 	
-	$search_path = str_replace('\\', DIRECTORY_SEPARATOR, substr($class, $prefix_len)).'.php'
+	$search_path = str_replace('\\', DIRECTORY_SEPARATOR, substr($class, $prefix_len)).'.php';
 	$file_alt    = TEMPLATEPATH.$include_path.$search_path;
 	$file        = STYLESHEETPATH.$include_path.$search_path;
 	if(is_file($file_alt)) {
@@ -44,10 +44,12 @@ set_query_var('debug',  $debug);
 $debug->runtime_checkpoint('[Theme] Begin Including Function Files');
 $func_dir = $theme->include_path.'/function';
 $func_alt_dir = STYLESHEETPATH.'/'.$theme->include_sub_path.'/function';
-foreach (scandir($func_alt_dir) as $function_file) {
-	// ignore non-php files, check if the file exists, and that there isn't a function with the same name
-	if (substr($function_file, -4) == '.php' && is_file($func_alt_dir.DIRECTORY_SEPARATOR.$function_file) && !function_exists(substr($function_file, 0, -4))) {
-		$theme->req_once($func_alt_dir.DIRECTORY_SEPARATOR.$function_file, TRUE);
+if (is_dir($func_alt_dir)) {
+	foreach (scandir($func_alt_dir) as $function_file) {
+		// ignore non-php files, check if the file exists, and that there isn't a function with the same name
+		if (substr($function_file, -4) == '.php' && is_file($func_alt_dir.DIRECTORY_SEPARATOR.$function_file) && !function_exists(substr($function_file, 0, -4))) {
+			$theme->req_once($func_alt_dir.DIRECTORY_SEPARATOR.$function_file, TRUE);
+		}
 	}
 }
 if ($func_dir != $func_alt_dir) {
