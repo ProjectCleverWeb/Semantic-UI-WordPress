@@ -118,7 +118,7 @@ class integrations {
 	 */
 	public function register_enqueue() {
 		// Styles
-		wp_register_style('semantic', $this->theme->asset_uri.'/semantic-ui/semantic.min.css', array(), '2.0.8');
+		wp_register_style('semantic', $this->theme->asset_uri.'/semantic-ui/semantic.min.css', array(), '2.1.3');
 		wp_register_style('font-awesome', $this->theme->style_uri.'/font-awesome.min.css', array(), '4.1.0');
 		wp_register_style('webicons', $this->theme->style_uri.'/webicons.min.css', array(), NULL);
 		wp_register_style('highlightjs', $this->theme->style_uri.'/highlight.js/github.min.css', array(), '8.0');
@@ -131,7 +131,7 @@ class integrations {
 			wp_deregister_script('jquery');
 			wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), '2.1.1');
 		}
-		wp_register_script('semantic', $this->theme->asset_uri.'/semantic-ui/semantic.min.js', array(), '2.0.8');
+		wp_register_script('semantic', $this->theme->asset_uri.'/semantic-ui/semantic.min.js', array(), '2.1.3');
 		wp_register_script('highlight', $this->theme->script_uri.'/highlight.pack.min.js', array('jquery'), '8.0');
 		wp_register_script('mousetrap', $this->theme->script_uri.'/mousetrap.min.js', array('jquery'), '1.4.6');
 		wp_register_script('main', $this->theme->script_uri.'/main.js', array(), NULL);
