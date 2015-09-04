@@ -5,7 +5,7 @@
 
 namespace semantic;
 
-class debug {
+class debug extends base_class {
 	public $runtime_checkpoints;
 	public $active;
 	
@@ -28,8 +28,7 @@ class debug {
 				'time' => PHP_START_TIME
 			);
 		}
-		$this->runtime_checkpoint('[Theme] Debug Class Initialized');
-		$this->runtime_checkpoint('[Theme] Begin Page Generation');
+		$this->runtime_checkpoint(sprintf('[Theme] Class "%1$s" Initialized', get_class()));
 	}
 	
 	public function runtime_checkpoint($name = '') {

@@ -12,7 +12,7 @@ namespace semantic;
  * This class handles various parts of the theme, including common variables,
  * fetching/updating options, and how some parts of the page are generated.
  */
-class theme {
+class theme extends base_class {
 	// Theme Options
 	public $identifier;
 	public $text_domain;
@@ -96,7 +96,7 @@ class theme {
 		// Check POST for options update (nonce & user are verified)
 		$this->update_options_via_post();
 		
-		$GLOBALS['debug']->runtime_checkpoint('[Theme] Theme Class Initialized');
+		parent::__construct($this);
 	}
 	
 	/**
