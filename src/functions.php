@@ -41,26 +41,7 @@ set_query_var('theme',  $theme);
 set_query_var('debug',  $debug);
 
 /*** Functions (1 per file) ***/
-$debug->runtime_checkpoint('[Theme] Begin Including Function Files');
-$func_dir = realpath($theme->include_path.'/function');
-$func_alt_dir = realpath(STYLESHEETPATH.'/'.$theme->include_sub_path.'/function');
-if ($func_alt_dir && is_dir($func_alt_dir)) {
-	foreach (scandir($func_alt_dir) as $function_file) {
-		// ignore non-php files, check if the file exists, and that there isn't a function with the same name
-		if (substr($function_file, -4) == '.php' && is_file($func_alt_dir.DIRECTORY_SEPARATOR.$function_file) && !function_exists(substr($function_file, 0, -4))) {
-			$theme->req_once($func_alt_dir.DIRECTORY_SEPARATOR.$function_file, TRUE);
-		}
-	}
-}
-if ($func_dir != $func_alt_dir) {
-	foreach (scandir($func_dir) as $function_file) {
-		// ignore non-php files, check if the file exists, and that there isn't a function with the same name
-		if (substr($function_file, -4) == '.php' && is_file($func_dir.DIRECTORY_SEPARATOR.$function_file) && !function_exists(substr($function_file, -4))) {
-			$theme->req_once($func_dir.DIRECTORY_SEPARATOR.$function_file, TRUE);
-		}
-	}
-}
-$debug->runtime_checkpoint('[Theme] Finished Including Function Files');
+$theme->get_functions();
 
 /*** Initialize all the WordPress integrations */
 $theme->integrations();
