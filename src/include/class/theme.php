@@ -104,7 +104,7 @@ class theme {
 	 * 
 	 * @return void
 	 */
-	public function integrations() {
+	public function do_integrations() {
 		global $debug;
 		$debug->runtime_checkpoint('[Theme] Begin WordPress Integrations');
 		$integrations = new integrations;

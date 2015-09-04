@@ -44,7 +44,7 @@ set_query_var('debug',  $debug);
 $theme->get_functions();
 
 /*** Initialize all the WordPress integrations */
-$theme->integrations();
+$theme->do_integrations();
 
 // Let the debugger know that we finished the functions.php file
 $debug->runtime_checkpoint('[Theme] Finished Functions File');
