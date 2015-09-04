@@ -56,6 +56,9 @@ class theme extends base_class {
 	 * @return void
 	 */
 	public function __construct() {
+		// Setup debug before everything else
+		new debug();
+		
 		// Setup globals and query vars
 		global $theme;
 		$theme = $this;
@@ -100,6 +103,13 @@ class theme extends base_class {
 		
 		// Check POST for options update (nonce & user are verified)
 		$this->update_options_via_post();
+		
+		
+		/*** Functions (1 per file) ***/
+		$this->get_functions();
+		
+		/*** Initialize all the WordPress integrations */
+		$this->do_integrations();
 		
 		parent::__construct($this);
 	}

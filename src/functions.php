@@ -33,14 +33,7 @@ spl_autoload_register(function ($class) {
 });
 
 /*** Run Inits ***/
-new \semantic\debug();
 new \semantic\theme();
-
-/*** Functions (1 per file) ***/
-$theme->get_functions();
-
-/*** Initialize all the WordPress integrations */
-$theme->do_integrations();
 
 // Let the debugger know that we finished the functions.php file
 $debug->runtime_checkpoint('[Theme] Finished Functions File');
