@@ -56,6 +56,11 @@ class theme extends base_class {
 	 * @return void
 	 */
 	public function __construct() {
+		// Setup globals and query vars
+		global $theme;
+		$theme = $this;
+		set_query_var('theme',  $this);
+		
 		// Base path/uri
 		$this->path          = get_template_directory();
 		$this->uri          = get_template_directory_uri();

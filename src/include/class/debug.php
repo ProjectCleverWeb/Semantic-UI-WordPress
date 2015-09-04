@@ -10,6 +10,11 @@ class debug extends base_class {
 	public $active;
 	
 	public function __construct() {
+		// Setup globals and query vars
+		global $debug;
+		$debug = $this;
+		set_query_var('debug',  $this);
+		
 		$this->runtime_checkpoints = array();
 		$this->active = FALSE;
 		if (is_user_logged_in() && current_user_can('manage_options')) {

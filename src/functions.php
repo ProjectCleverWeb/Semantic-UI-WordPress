@@ -32,13 +32,9 @@ spl_autoload_register(function ($class) {
 	}
 });
 
-/*** Set Globals & Run Inits ***/
-global $debug, $theme;
-$debug  = new \semantic\debug();
-$theme  = new \semantic\theme();
-// Make them global in WP includes too
-set_query_var('theme',  $theme);
-set_query_var('debug',  $debug);
+/*** Run Inits ***/
+new \semantic\debug();
+new \semantic\theme();
 
 /*** Functions (1 per file) ***/
 $theme->get_functions();
