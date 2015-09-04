@@ -1,6 +1,6 @@
 <?php
 /**
- * Debug Class
+ * Base Class
  */
 
 namespace semantic;
