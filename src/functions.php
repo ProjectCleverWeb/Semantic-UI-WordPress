@@ -36,4 +36,5 @@ spl_autoload_register(function ($class) {
 new \semantic\theme();
 
 // Let the debugger know that we finished the functions.php file
+global $debug;
 $debug->runtime_checkpoint('[Theme] Finished Functions File');
