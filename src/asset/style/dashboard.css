@@ -6,6 +6,10 @@ body.wp-admin * {
 	box-sizing: content-box;
 }
 
+body.wp-admin {
+	background: none;
+}
+
 body.wp-admin * .ui, body.wp-admin * .ui * {
 	box-sizing: border-box;
 }
