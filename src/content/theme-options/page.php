@@ -13,13 +13,13 @@
 		?>
 		
 		<section class="ui tab active" data-tab="first">
-			<?php template_part($theme->content_sub_path.'/theme-options-general'); ?>
+			<?php template_part($theme->content_sub_path.'/theme-options/general'); ?>
 		</section>
 		<section class="ui tab" data-tab="second">
-			<?php template_part($theme->content_sub_path.'/theme-options-meta-tags'); ?>
+			<?php template_part($theme->content_sub_path.'/theme-options/meta-tags'); ?>
 		</section>
 		<section class="ui tab" data-tab="third">
-			<?php template_part($theme->content_sub_path.'/theme-options-about'); ?>
+			<?php template_part($theme->content_sub_path.'/theme-options/about'); ?>
 		</section>
 		
 		<br>

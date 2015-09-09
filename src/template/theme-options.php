@@ -11,7 +11,7 @@ if (current_user_can('edit_theme_options')) {
 			Theme Options
 		</h1>
 		
-		<?php template_part($theme->content_sub_path.'/theme-options'); ?>
+		<?php template_part($theme->content_sub_path.'/theme-options/page'); ?>
 	</div>
 	<?php
 } else {
