@@ -8,21 +8,15 @@
  */
 
 /**
- * Simple PSR-4 autoloader for the \semantic namespace
+ * PSR-0 autoloader with child theme support
  * 
  * Loads files from `includes/class`
  * 
  * @codeCoverageIgnore
  */
 spl_autoload_register(function ($class) {
-	$prefix       = 'semantic';
 	$include_path = '/include/class';
-	$prefix_len   = strlen($prefix);
-	if(strncmp($prefix, $class, $prefix_len) !== 0) {
-		return;
-	}
-	
-	$search_path = str_replace('\\', DIRECTORY_SEPARATOR, substr($class, $prefix_len)).'.php';
+	$search_path = str_replace('\\', DIRECTORY_SEPARATOR, '\\'.$class).'.php';
 	$file_alt    = realpath(TEMPLATEPATH.$include_path.$search_path);
 	$file        = realpath(STYLESHEETPATH.$include_path.$search_path);
 	if($file_alt && is_file($file_alt)) {
