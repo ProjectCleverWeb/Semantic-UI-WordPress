@@ -13,9 +13,10 @@ namespace semantic;
  * fetching/updating options, and how some parts of the page are generated.
  */
 class theme extends base {
+	const identifier  = 'semantic';
+	const text_domain = 'semantic';
+	
 	// Theme Options
-	public $identifier;
-	public $text_domain;
 	public $options;
 	public $template_options;
 	public $inc_var_list;
@@ -95,8 +96,6 @@ class theme extends base {
 		$this->include_uri  = $this->uri.'/'.$this->include_sub_path;
 		$this->template_uri = $this->uri.'/'.$this->template_sub_path;
 		// Theme Options
-		$this->identifier       = 'semantic_ui';
-		$this->text_domain      = 'semantic-ui';
 		$this->options          = $this->fetch_options();
 		$this->template_options = array();
 		$this->inc_var_list     = array();
@@ -110,6 +109,12 @@ class theme extends base {
 		
 		/*** Initialize all the WordPress integrations */
 		$this->do_integrations();
+		
+		/*** Handle First Run ***/
+		if ($this->get_option('first_run')) {
+			// This is the first run, greet them
+			template_use_part($theme->template_sub_path.'/default', $theme->template_sub_path.'/first-run');
+		}
 		
 		parent::__construct();
 	}
@@ -180,7 +185,7 @@ class theme extends base {
 	 * @return mixed
 	 */
 	private function fetch_options() {
-		$existing = get_option($this->identifier.'_options');
+		$existing = get_option($this::identifier.'_options');
 		if ($existing) {
 			$options = json_decode($existing);
 		} else {
@@ -230,7 +235,7 @@ class theme extends base {
 	public function update_options($options) {
 		if (current_user_can('edit_theme_options')) {
 			$json = json_encode((array) $options);
-			update_option($this->identifier.'_options', $json);
+			update_option($this::identifier.'_options', $json);
 		}
 	}
 	
@@ -241,12 +246,12 @@ class theme extends base {
 	 * @return void
 	 */
 	private function update_options_via_post() {
-		$post_id = $this->identifier.'_options';
+		$post_id = $this::identifier.'_options';
 		$user_id = get_current_user_id();
 		if (
 			isset($_POST[$post_id.'_verify'])
 			&&
-			wp_verify_nonce($_POST[$post_id.'_verify'], $this->identifier.'_options_'.$user_id)
+			wp_verify_nonce($_POST[$post_id.'_verify'], $this::identifier.'_options_'.$user_id)
 			&&
 			current_user_can('edit_theme_options')
 			&&
@@ -270,7 +275,7 @@ class theme extends base {
 	public function option_form_name($name) {
 		return sprintf(
 			'%1$s[%2$s]',
-			$this->identifier.'_options',
+			$this::identifier.'_options',
 			$name
 		);
 	}
@@ -280,7 +285,7 @@ class theme extends base {
 	 * @return string The URI of the theme options page
 	 */
 	public function options_uri() {
-		return admin_url().'themes.php?page='.$this->identifier.'_options';
+		return admin_url().'themes.php?page='.$this::identifier.'_options';
 	}
 	
 	/**
@@ -294,8 +299,8 @@ class theme extends base {
 		if ($user_id) {
 			printf(
 				'<input type="hidden" name="%1$s" value="%2$s">',
-				$this->identifier.'_options_verify',
-				wp_create_nonce($this->identifier.'_options_'.$user_id)
+				$this::identifier.'_options_verify',
+				wp_create_nonce($this::identifier.'_options_'.$user_id)
 			);
 		}
 	}

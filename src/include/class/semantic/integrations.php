@@ -32,6 +32,7 @@ class integrations extends base {
 	public function init() {
 		// Set the max content width (used by wordpress)
 		global $content_width;
+		$theme = $this->theme;
 		$content_width = 1200;
 		
 		// Tell WordPress what this theme supports
@@ -54,7 +55,7 @@ class integrations extends base {
 		));
 		add_theme_support('custom-background', array(
 			'default-color'          => 'FFFFFF',
-			'default-image'          => $this->theme->image_uri.'/subtle-patterns/dark_wall.png',
+			'default-image'          => $theme->image_uri.'/subtle-patterns/dark_wall.png',
 			'default-repeat'         => 'repeat',
 			'default-position-x'     => 'center',
 			'default-attachment'     => 'scroll',
@@ -62,13 +63,13 @@ class integrations extends base {
 		
 		// TIP: Use wp_nav_menu(array('theme_location' => 'menu-name')) to fetch these
 		register_nav_menus(array(
-			'main-menu'   => __('Main Menu', $this->theme->text_domain),
-			'footer-menu' => __('Footer Menu', $this->theme->text_domain)
+			'main-menu'   => __('Main Menu', $theme::text_domain),
+			'footer-menu' => __('Footer Menu', $theme::text_domain)
 		));
 		
 		if (in_array($GLOBALS['pagenow'], array('theme-editor.php'))) {
-			if ($this->theme->get_option('theme_editor') == FALSE) {
-				wp_die('<p>'.__('In order to edit this theme, you must first re-enable the theme editor via the <a href="'.$this->theme->options_uri().'">Theme Options</a> page', $this->theme->text_domain).'</p>');
+			if ($theme->get_option('theme_editor') == FALSE) {
+				wp_die('<p>'.__('In order to edit this theme, you must first re-enable the theme editor via the <a href="'.$theme->options_uri().'">Theme Options</a> page', $theme::text_domain).'</p>');
 			}
 		}
 	}
@@ -81,8 +82,9 @@ class integrations extends base {
 	 * @return void
 	 */
 	public function widgets_init() {
+		$theme = $this->theme;
 		register_sidebar(array(
-			'name'          => __('Right Sidebar Widget Area', $this->theme->text_domain),
+			'name'          => __('Right Sidebar Widget Area', $theme::text_domain),
 			'id'            => 'sidebar-widget-area-right',
 			'description'   => 'These widgets are only visible when the siderbar is on the right side of the page',
 			'before_widget' => '<aside id="%1$s" class="wp-widget sidebar-right-widget %2$s ui raised segment">',
@@ -91,7 +93,7 @@ class integrations extends base {
 			'after_title'   => '</h4>'
 		));
 		register_sidebar(array(
-			'name'          => __('Left Sidebar Widget Area', $this->theme->text_domain),
+			'name'          => __('Left Sidebar Widget Area', $theme::text_domain),
 			'id'            => 'sidebar-widget-area-left',
 			'description'   => 'These widgets are only visible when the siderbar is on the left side of the page',
 			'before_widget' => '<aside id="%1$s" class="wp-widget sidebar-left-widget %2$s ui raised segment">',
@@ -100,7 +102,7 @@ class integrations extends base {
 			'after_title'   => '</h4>'
 		));
 		register_sidebar(array(
-			'name'          => __('Footer Widget Area', $this->theme->text_domain),
+			'name'          => __('Footer Widget Area', $theme::text_domain),
 			'id'            => 'footer-widget-area-footer',
 			'description'   => 'These widgets are visible in the footer',
 			'before_widget' => '<div class="column"><aside id="%1$s" class="wp-widget sidebar-right-widget %2$s ui raised segment">',
@@ -175,11 +177,12 @@ class integrations extends base {
 	 * @return void
 	 */
 	public function options() {
+		$theme = $this->theme;
 		wp_enqueue_style('semantic');
 		wp_enqueue_style('font-awesome');
 		wp_enqueue_style('dashboard');
 		if (current_user_can('edit_theme_options')) {
-			if (isset($_GET['page']) && ($_GET['page'] == $this->theme->identifier.'_options' || $_GET['page'] == 'dev_notes')) {
+			if (isset($_GET['page']) && ($_GET['page'] == $theme::identifier.'_options' || $_GET['page'] == 'dev_notes')) {
 				// Styles
 				wp_enqueue_style('webicons');
 				wp_enqueue_style('highlight');
@@ -198,7 +201,7 @@ class integrations extends base {
 			'Theme Options',
 			'Theme Options',
 			'edit_theme_options',
-			$this->theme->identifier.'_options',
+			$theme::identifier.'_options',
 			array($this, 'options_page')
 		);
 		

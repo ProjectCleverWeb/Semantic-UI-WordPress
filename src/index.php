@@ -3,10 +3,7 @@
  * Chooses the template to display
  */
 
-if ($theme->get_option('first_run')) {
-	// This is the first run, greet them
-	template_part($theme->template_sub_path.'/first-run');
-} elseif (is_404()) {
+if (is_404()) {
 	// There was an error with the request, display the 404 message instead of the normal loop
 	template_use_part($theme->content_sub_path.'/loop', $theme->content_sub_path.'/404');
 	template_part($theme->template_sub_path.'/default', 'page');
