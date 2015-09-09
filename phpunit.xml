@@ -1,4 +1,4 @@
-<phpunit bootstrap="testing/bootstrap.php" colors="true">
+<phpunit bootstrap="testing/bootstrap.php" colors="false">
 	<testsuites>
 		<testsuite name="projectcleverweb\semantic-ui-wordpress">
 			<directory>testing/tests</directory>
@@ -6,8 +6,7 @@
 	</testsuites>
 	<filter>
 		<whitelist processUncoveredFilesFromWhitelist="true">
-			<directory>src/includes/classes</directory>
-			<file>src/includes/custom-functions.php</file>
+			<directory>src/include</directory>
 		</whitelist>
 	</filter>
 	<logging>
