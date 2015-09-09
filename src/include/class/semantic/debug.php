@@ -85,16 +85,20 @@ class debug extends base {
 	
 	public function _runtime_on_shutdown() {
 		global $wp_styles, $wp_scripts;
-		foreach ($wp_styles->queue as $style) {
-			if (wp_style_is($style, 'done')) {
-				$this->runtime_checkpoint('[Theme] Style "'.$style.'" Was Printed');
-			}
-		};
-		foreach ($wp_scripts->queue as $script) {
-			if (wp_style_is($script, 'done')) {
-				$this->runtime_checkpoint('[Theme] Script "'.$script.'" Was Printed');
-			}
-		};
+		if (!empty($wp_styles->queue)) {
+			foreach ($wp_styles->queue as $style) {
+				if (wp_style_is($style, 'done')) {
+					$this->runtime_checkpoint('[Theme] Style "'.$style.'" Was Printed');
+				}
+			};
+		}
+		if (!empty($wp_scripts->queue)) {
+			foreach ($wp_scripts->queue as $script) {
+				if (wp_style_is($script, 'done')) {
+					$this->runtime_checkpoint('[Theme] Script "'.$script.'" Was Printed');
+				}
+			};
+		}
 		$this->runtime_checkpoint('[PHP] Stopped Server-Side Execution');
 		if ($this->active) {
 			if (php_sapi_name() != 'cli') {
