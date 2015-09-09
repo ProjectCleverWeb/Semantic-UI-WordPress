@@ -1,6 +1,5 @@
 ### Unit Testing ###
 /testing/vendor
-/composer.lock
 
 ### Build Process ###
 /build
