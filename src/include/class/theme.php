@@ -12,7 +12,7 @@ namespace semantic;
  * This class handles various parts of the theme, including common variables,
  * fetching/updating options, and how some parts of the page are generated.
  */
-class theme extends base_class {
+class theme extends base {
 	// Theme Options
 	public $identifier;
 	public $text_domain;
@@ -111,7 +111,7 @@ class theme extends base_class {
 		/*** Initialize all the WordPress integrations */
 		$this->do_integrations();
 		
-		parent::__construct($this);
+		parent::__construct();
 	}
 	
 	/**

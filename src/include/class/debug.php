@@ -5,7 +5,7 @@
 
 namespace semantic;
 
-class debug extends base_class {
+class debug extends base {
 	public $runtime_checkpoints;
 	public $active;
 	
@@ -33,7 +33,7 @@ class debug extends base_class {
 				'time' => PHP_START_TIME
 			);
 		}
-		$this->runtime_checkpoint(sprintf('[Theme] Class "%1$s" Initialized', get_class()));
+		parent::__construct();
 	}
 	
 	public function runtime_checkpoint($name = '') {

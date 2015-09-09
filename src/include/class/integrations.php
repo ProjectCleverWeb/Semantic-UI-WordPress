@@ -12,7 +12,7 @@ namespace semantic;
  * WordPress default functionality and content. Every method here should have
  * a corresponding add_filter() or add_action() in wp-init.php
  */
-class integrations extends base_class {
+class integrations extends base {
 	
 	public $theme;
 	
@@ -21,7 +21,7 @@ class integrations extends base_class {
 	 */
 	public function __construct() {
 		$this->theme = $GLOBALS['theme'];
-		parent::__construct($this);
+		parent::__construct();
 	}
 	
 	/**

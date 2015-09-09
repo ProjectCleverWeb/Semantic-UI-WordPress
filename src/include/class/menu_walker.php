@@ -2,9 +2,7 @@
 
 namespace semantic;
 
-class menu_walker {
-	
-	
+class menu_walker extends base {
 	
 	public function display($menu_id, $options = FALSE) {
 		
