@@ -1,9 +1,13 @@
 // Setup Vars
 var
-	gulp  = require('gulp-help')(require('gulp')),
-	spawn = require('child_process').spawn,
-	conf  = require('./config'),
-	util  = require('gulp-util');
+	gulp     = require('gulp-help')(require('gulp')),
+	spawn    = require('child_process').spawn,
+	util     = require('gulp-util'),
+	conf     = require('./config'),
+	// Aliases
+	build    = conf.build,
+	paths    = build.paths,
+	color    = util.colors;
 
 /**
  * Command Line Interface
@@ -20,10 +24,10 @@ module.exports = {
 		util.log(msg);
 	},
 	"log_event": function (event) {
-		log_type = util.colors.bold.cyan('[' + event.type.toUpperCase() + ']');
-		log_path = event.path.substring((this.cwd + '/' + conf.build.paths.source + '/').length);
+		log_type = color.bold.cyan('[' + event.type.toUpperCase() + ']');
+		log_path = event.path.substring((this.cwd + '/' + paths.source + '/').length);
 		
-		util.log(util.colors.bgBlack(log_type + ' ' + log_path));
+		this.log(color.bgBlack(log_type + ' ' + log_path));
 	}
 };
 
