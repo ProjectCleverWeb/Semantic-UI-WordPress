@@ -8,7 +8,7 @@ var
 	conf     = require('./gulp/config'),
 	cli      = require('./gulp/cli'),
 	get_task = require('./gulp/get_task'),
-	rm       = require('del'),
+	rm       = require('gulp-clean'),
 	mv       = require('gulp-rename'),
 	less     = require('gulp-less'),
 	sass     = require('gulp-sass'),
