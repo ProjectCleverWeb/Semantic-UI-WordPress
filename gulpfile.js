@@ -17,7 +17,6 @@ var
 	concat   = require('gulp-concat-util'),
 	svg2png  = require('gulp-svg2png'),
 	img_opt  = require('gulp-image-optimization'),
-	delay    = require('gulp-wait'),
 	sequence = require('run-sequence'),
 	// Aliases
 	build    = conf.build,
