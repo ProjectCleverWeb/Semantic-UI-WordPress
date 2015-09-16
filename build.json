@@ -1,0 +1,36 @@
+{
+	"compile_less": true,
+	"compile_sass": true,
+	"optimize_images": true,
+	"optimize_image_types": ["gif", "jpeg", "jpg", "png"],
+	"optimize_image_options": {
+		"optimizationLevel": 7,
+		"progressive": true,
+		"interlaced": true
+	},
+	"minify_css": true,
+	"concat_css": true,
+	"minify_js": true,
+	"concat_js": true,
+	"concat_css_output": "concat.min.css",
+	"concat_js_output": "concat.min.js",
+	"concat_js_files":[
+		"semantic.min.js",
+		"highlight.pack.min.js",
+		"mousetrap.min.js",
+		"main.min.js"
+	],
+	"concat_css_files":[
+		"font-awesome.min.css",
+		"webicons.min.css",
+		"highlight.js/github.min.css",
+		"semantic.min.css",
+		"main.min.css"
+	],
+	"paths":{
+		"source": "src",
+		"dist": "build",
+		"styles": "asset/style",
+		"scripts": "asset/script"
+	}
+}
