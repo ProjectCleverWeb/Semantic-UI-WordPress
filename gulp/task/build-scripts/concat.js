@@ -2,6 +2,7 @@
 var
 	gulp     = require('gulp-help')(require('gulp')),
 	conf     = require('../../config'),
+	cli      = require('../../cli'),
 	concat   = require('gulp-concat-util'),
 	// Aliases
 	build    = conf.build,
