@@ -321,6 +321,9 @@ class theme extends base {
 		global $debug;
 		$debug->runtime_checkpoint('[Theme] Include: '.str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $path));
 		
+		// Configure Vars
+		$var_list['theme'] = $this;
+		$var_list['debug'] = $debug;
 		$var_list = $var_list + $this->inc_var_list;
 		$this->_inc_path($path);
 		
@@ -330,7 +333,6 @@ class theme extends base {
 			$var_list['var_list'] = NULL;
 		}
 		
-		extract($GLOBALS);
 		extract($var_list);
 		return include $this->_inc_path();
 	}
@@ -351,6 +353,9 @@ class theme extends base {
 		global $debug;
 		$debug->runtime_checkpoint('[Theme] Include Once: '.str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $path));
 		
+		// Configure Vars
+		$var_list['theme'] = $this;
+		$var_list['debug'] = $debug;
 		$var_list = $var_list + $this->inc_var_list;
 		$this->_inc_path($path);
 		
@@ -360,7 +365,6 @@ class theme extends base {
 			$var_list['var_list'] = NULL;
 		}
 		
-		extract($GLOBALS);
 		extract($var_list);
 		return include_once $this->_inc_path();
 	}
@@ -381,6 +385,9 @@ class theme extends base {
 		global $debug;
 		$debug->runtime_checkpoint('[Theme] Require: '.str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $path));
 		
+		// Configure Vars
+		$var_list['theme'] = $this;
+		$var_list['debug'] = $debug;
 		$var_list = $var_list + $this->inc_var_list;
 		$this->_inc_path($path);
 		
@@ -390,7 +397,6 @@ class theme extends base {
 			$var_list['var_list'] = NULL;
 		}
 		
-		extract($GLOBALS);
 		extract($var_list);
 		return require $this->_inc_path();
 	}
@@ -411,6 +417,9 @@ class theme extends base {
 		global $debug;
 		$debug->runtime_checkpoint('[Theme] Require Once: '.str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $path));
 		
+		// Configure Vars
+		$var_list['theme'] = $this;
+		$var_list['debug'] = $debug;
 		$var_list = $var_list + $this->inc_var_list;
 		$this->_inc_path($path);
 		
@@ -420,7 +429,6 @@ class theme extends base {
 			$var_list['var_list'] = NULL;
 		}
 		
-		extract($GLOBALS);
 		extract($var_list);
 		return require_once $this->_inc_path();
 	}

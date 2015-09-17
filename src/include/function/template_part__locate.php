@@ -5,7 +5,6 @@
  * NOTE: This is almost entirely copied from the WordPress 4.2.2 core
  * 
  * Improvements:
- *   - All global variables are available (not just WordPress globals)
  *   - Function variables do not interfere with included file
  *   - wp_query vars override existing global vars (temporary)
  *   - Uses is_file() instead of file_exists()

@@ -78,6 +78,7 @@ class debug extends base {
 				);
 				$previous_time = $checkpoint['time'];
 			}
+			printf('console.log("[PHP] Memory Peak: %1$s MiB");', round(memory_get_peak_usage()/1024/1024, 3));
 			?>
 		</script>
 		<?php

@@ -3,7 +3,6 @@
  * A drop-in replacement for WordPress' load_template()
  * 
  * Improvements:
- *   - All global variables are available (not just WordPress globals)
  *   - Function variables do not interfere with included file
  *   - wp_query vars override existing global vars (temporary)
  *   - Returns the the return value of the file
@@ -15,12 +14,31 @@
  * @param bool   $require_once  Whether to require_once or require. Default true.
  */
 function template_part__load($template_file, $require_once = TRUE, $id = '') {
-	global $theme, $wp_query;
+	global $theme, $posts, $post, $wp_did_header, $wp_query, $wp_rewrite, $wpdb, $wp_version, $wp, $id, $comment, $user_ID;
+	
+	$query_vars = array();
+	if (is_array($wp_query->query_vars)) {
+		$query_vars = $wp_query->query_vars;
+	}
+	$vars = array(
+		'posts'         => $posts,
+		'post'          => $post,
+		'wp_did_header' => $wp_did_header,
+		'wp_query'      => $wp_query,
+		'wp_rewrite'    => $wp_rewrite,
+		'wpdb'          => $wpdb,
+		'wp_version'    => $wp_version,
+		'wp'            => $wp,
+		'id'            => $id,
+		'comment'       => $comment,
+		'user_ID'       => $user_ID
+	) + $query_vars;
+	
 	if (!empty($id)) {
-		return $theme->part($id, $template_file, TRUE, $require_once, $wp_query->query_vars);
+		return $theme->part($id, $template_file, TRUE, $require_once, $vars);
 	} elseif ($require_once) {
-		return $theme->req_once($template_file, TRUE, $wp_query->query_vars);
+		return $theme->req_once($template_file, TRUE, $vars);
 	} else {
-		return $theme->req($template_file, TRUE, $wp_query->query_vars);
+		return $theme->req($template_file, TRUE, $vars);
 	}
 }
