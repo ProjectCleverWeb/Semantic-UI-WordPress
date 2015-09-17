@@ -63,38 +63,25 @@ class theme extends base {
 		// Setup globals and query vars
 		global $theme;
 		$theme = $this;
-		set_query_var('theme',  $this);
+		set_query_var('theme', $this);
 		
 		// Base path/uri
-		$this->path          = get_template_directory();
-		$this->uri          = get_template_directory_uri();
-		// Sub-Paths
-		$this->asset_sub_path    = 'asset';
-		$this->font_sub_path     = $this->asset_sub_path.'/font';
-		$this->image_sub_path    = $this->asset_sub_path.'/image';
-		$this->script_sub_path   = $this->asset_sub_path.'/script';
-		$this->style_sub_path    = $this->asset_sub_path.'/style';
-		$this->content_sub_path  = 'content';
-		$this->include_sub_path  = 'include';
-		$this->template_sub_path = 'template';
-		// Absolute Paths
-		$this->asset_path    = realpath($this->path.DIRECTORY_SEPARATOR.$this->asset_sub_path);
-		$this->font_path     = realpath($this->path.DIRECTORY_SEPARATOR.$this->font_sub_path);
-		$this->image_path    = realpath($this->path.DIRECTORY_SEPARATOR.$this->image_sub_path);
-		$this->script_path   = realpath($this->path.DIRECTORY_SEPARATOR.$this->script_sub_path);
-		$this->style_path    = realpath($this->path.DIRECTORY_SEPARATOR.$this->style_sub_path);
-		$this->content_path  = realpath($this->path.DIRECTORY_SEPARATOR.$this->content_sub_path);
-		$this->include_path  = realpath($this->path.DIRECTORY_SEPARATOR.$this->include_sub_path);
-		$this->template_path = realpath($this->path.DIRECTORY_SEPARATOR.$this->template_sub_path);
-		// URI Paths
-		$this->asset_uri    = $this->uri.'/'.$this->asset_sub_path;
-		$this->font_uri     = $this->uri.'/'.$this->font_sub_path;
-		$this->image_uri    = $this->uri.'/'.$this->image_sub_path;
-		$this->script_uri   = $this->uri.'/'.$this->script_sub_path;
-		$this->style_uri    = $this->uri.'/'.$this->style_sub_path;
-		$this->content_uri  = $this->uri.'/'.$this->content_sub_path;
-		$this->include_uri  = $this->uri.'/'.$this->include_sub_path;
-		$this->template_uri = $this->uri.'/'.$this->template_sub_path;
+		$this->path = realpath(get_template_directory());
+		$this->uri  = get_template_directory_uri();
+		
+		// Build Path Variables
+		$this->generate_paths(array(
+			// var_name => path
+			'asset'     => 'asset',
+			'font'      => 'asset/font',
+			'image'     => 'asset/image',
+			'script'    => 'asset/script',
+			'style'     => 'asset/style',
+			'content'   => 'content',
+			'include'   => 'include',
+			'template'  => 'template'
+		));
+		
 		// Theme Options
 		$this->options          = $this->fetch_options();
 		$this->template_options = array();
@@ -103,11 +90,10 @@ class theme extends base {
 		// Check POST for options update (nonce & user are verified)
 		$this->update_options_via_post();
 		
-		
 		/*** Functions (1 per file) ***/
 		$this->get_functions();
 		
-		/*** Initialize all the WordPress integrations */
+		/*** Initialize all the WordPress integrations ***/
 		$this->do_integrations();
 		
 		/*** Handle First Run ***/
@@ -117,6 +103,33 @@ class theme extends base {
 		}
 		
 		parent::__construct();
+	}
+	
+	/**
+	 * Set all the path variables based on (array) $sub_paths
+	 * 
+	 * @param  array $sub_paths [description]
+	 * @return void
+	 */
+	private function generate_paths($sub_paths) {
+		// Sub-Paths
+		foreach ($sub_paths as $var_name => $path) {
+			$path       = str_replace('\\', '/', $path);
+			$var        = $var_name.'_sub_path';
+			$this->$var = $path;
+		}
+		// Absolute Paths
+		foreach ($sub_paths as $var_name => $path) {
+			$path       = str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $path);
+			$var        = $var_name.'_path';
+			$this->$var = realpath($this->path.DIRECTORY_SEPARATOR.$path);
+		}
+		// URI Paths
+		foreach ($sub_paths as $var_name => $path) {
+			$path       = str_replace('\\', '/', $path);
+			$var        = $var_name.'_uri';
+			$this->$var = $this->uri.'/'.$path;
+		}
 	}
 	
 	/**
