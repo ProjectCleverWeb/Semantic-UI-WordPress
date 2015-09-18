@@ -6,7 +6,6 @@
  * 
  * Improvements:
  *   - Function variables do not interfere with included file
- *   - wp_query vars override existing global vars (temporary)
  *   - Uses is_file() instead of file_exists()
  *   - Better Debugging
  * 

@@ -6,7 +6,6 @@
  * 
  * Improvements:
  *   - Function variables do not interfere with included file
- *   - wp_query vars override existing global vars (temporary)
  *   - Returns the the return value of the file
  *   - Better Debugging
  *   - Support overrides via template_use_part()
