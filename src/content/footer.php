@@ -23,6 +23,14 @@
 				}
 				?>
 				<div class="row">
+					<div class="sixteen wide column">
+						<?php
+						$menu = new \semantic\menu_walker;
+						$menu->display('footer-menu');
+						?>
+					</div>
+				</div>
+				<div class="row">
 					<div class="eight wide column">
 						<div class="ui center aligned basic segment">
 							<?php
