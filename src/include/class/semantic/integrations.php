@@ -121,6 +121,7 @@ class integrations extends base {
 	 */
 	public function register_enqueue() {
 		// Styles
+		wp_register_style('normalize', $this->theme->style_uri.'/normalize.min.css', array(), '3.0.3');
 		wp_register_style('semantic', $this->theme->asset_uri.'/semantic-ui/semantic.min.css', array(), '2.1.3');
 		wp_register_style('font-awesome', $this->theme->style_uri.'/font-awesome.min.css', array(), '4.1.0');
 		wp_register_style('webicons', $this->theme->style_uri.'/webicons.min.css', array(), NULL);
@@ -150,6 +151,7 @@ class integrations extends base {
 	 */
 	public function enqueue() {
 		// Styles
+		wp_enqueue_style('normalize');
 		wp_enqueue_style('semantic');
 		wp_enqueue_style('font-awesome');
 		wp_enqueue_style('webicons');
@@ -178,6 +180,7 @@ class integrations extends base {
 	 */
 	public function options() {
 		$theme = $this->theme;
+		wp_enqueue_style('normalize');
 		wp_enqueue_style('semantic');
 		wp_enqueue_style('font-awesome');
 		wp_enqueue_style('dashboard');
