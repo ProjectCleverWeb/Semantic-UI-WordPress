@@ -72,6 +72,12 @@ class integrations extends base {
 				wp_die('<p>'.__('In order to edit this theme, you must first re-enable the theme editor via the <a href="'.$theme->options_uri().'">Theme Options</a> page', $theme::text_domain).'</p>');
 			}
 		}
+		
+		// Remove WP's emoji (This will be re-added as a theme option)
+		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+		remove_action( 'wp_print_styles', 'print_emoji_styles' );
+		remove_action( 'admin_print_styles', 'print_emoji_styles' );
 	}
 	
 	
