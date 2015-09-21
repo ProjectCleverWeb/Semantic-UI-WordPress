@@ -130,7 +130,6 @@ class integrations extends base {
 		wp_register_style('dashboard', $this->theme->style_uri.'/dashboard.css', array('semantic'), NULL);
 		wp_register_style('base-concat', $this->theme->style_uri.'/base.concat.min.css', array(), NULL);
 		// Scripts
-		wp_register_script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', array(), NULL);
 		if (!(is_admin() || in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php')))) {
 			// Use a custom version of jQuery
 			wp_deregister_script('jquery');
@@ -161,7 +160,6 @@ class integrations extends base {
 		wp_enqueue_style('base-concat'); // has: normalize, font-awesome, webicons, highlightjs, semantic
 		wp_enqueue_style('main');
 		// Scripts
-		wp_enqueue_script('webfont');
 		// wp_enqueue_script('jquery');
 		// wp_enqueue_script('semantic');
 		// wp_enqueue_script('highlight');
