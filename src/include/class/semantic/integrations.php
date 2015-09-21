@@ -128,18 +128,20 @@ class integrations extends base {
 		wp_register_style('highlightjs', $this->theme->style_uri.'/highlight.js/github.min.css', array(), '8.0');
 		wp_register_style('main', $this->theme->style_uri.'/main.css', array('semantic'), NULL);
 		wp_register_style('dashboard', $this->theme->style_uri.'/dashboard.css', array('semantic'), NULL);
+		wp_register_style('base-concat', $this->theme->style_uri.'/base.concat.min.css', array(), NULL);
 		// Scripts
 		wp_register_script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', array(), NULL);
 		if (!(is_admin() || in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php')))) {
 			// Use a custom version of jQuery
 			wp_deregister_script('jquery');
-			wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), '2.1.1');
+			wp_register_script('jquery', $this->theme->script_uri.'/jquery-2.1.1.min.js', array(), '2.1.1');
 		}
 		wp_register_script('semantic', $this->theme->asset_uri.'/semantic-ui/semantic.min.js', array(), '2.1.3');
 		wp_register_script('highlight', $this->theme->script_uri.'/highlight.pack.min.js', array('jquery'), '8.0');
 		wp_register_script('mousetrap', $this->theme->script_uri.'/mousetrap.min.js', array('jquery'), '1.4.6');
 		wp_register_script('main', $this->theme->script_uri.'/main.js', array(), NULL);
 		wp_register_script('theme-options', $this->theme->script_uri.'/theme-options.js', array(), NULL);
+		wp_register_script('base-concat', $this->theme->script_uri.'/base.concat.min.js', array(), NULL);
 	}
 	
 	
@@ -151,18 +153,20 @@ class integrations extends base {
 	 */
 	public function enqueue() {
 		// Styles
-		wp_enqueue_style('normalize');
-		wp_enqueue_style('semantic');
-		wp_enqueue_style('font-awesome');
-		wp_enqueue_style('webicons');
-		wp_enqueue_style('highlightjs');
+		// wp_enqueue_style('normalize');
+		// wp_enqueue_style('font-awesome');
+		// wp_enqueue_style('webicons');
+		// wp_enqueue_style('highlightjs');
+		// wp_enqueue_style('semantic');
+		wp_enqueue_style('base-concat'); // has: normalize, font-awesome, webicons, highlightjs, semantic
 		wp_enqueue_style('main');
 		// Scripts
 		wp_enqueue_script('webfont');
-		wp_enqueue_script('jquery');
-		wp_enqueue_script('semantic');
-		wp_enqueue_script('highlight');
-		wp_enqueue_script('mousetrap');
+		// wp_enqueue_script('jquery');
+		// wp_enqueue_script('semantic');
+		// wp_enqueue_script('highlight');
+		// wp_enqueue_script('mousetrap');
+		wp_enqueue_script('base-concat'); // has: jquery, semantic, highlight, mousetrap
 		wp_enqueue_script('main');
 		if (is_singular()) {
 			wp_enqueue_script('comment-reply');

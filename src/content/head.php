@@ -24,9 +24,6 @@ if ($theme->get_option('mobile_meta')) {
 ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <script type="text/javascript">
-// Use local jQuery if CDN is unavailable
-!window.jQuery && document.write('<script src="<?php echo $theme->script_uri.'/jquery-2.1.1.min.js'; ?>"><\/script>');
-
 // Google Fonts (async)
 WebFontConfig = {
 	google: { families: [

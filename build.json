@@ -12,20 +12,20 @@
 	"concat_css": true,
 	"minify_js": true,
 	"concat_js": true,
-	"concat_css_output": "concat.min.css",
-	"concat_js_output": "concat.min.js",
+	"concat_css_output": "base.concat.min.css",
+	"concat_js_output": "base.concat.min.js",
 	"concat_js_files":[
-		"semantic.min.js",
+		"jquery-2.1.1.min.js",
+		"../semantic-ui/semantic.min.js",
 		"highlight.pack.min.js",
-		"mousetrap.min.js",
-		"main.min.js"
+		"mousetrap.min.js"
 	],
 	"concat_css_files":[
+		"normalize.min.css",
 		"font-awesome.min.css",
 		"webicons.min.css",
 		"highlight.js/github.min.css",
-		"semantic.min.css",
-		"main.min.css"
+		"../semantic-ui/semantic.min.css"
 	],
 	"paths":{
 		"source": "src",
