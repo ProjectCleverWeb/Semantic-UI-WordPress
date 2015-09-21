@@ -1,3 +1,11 @@
+WebFont.load({
+	google: {families: [
+		'Open+Sans:400,600,700,700italic:latin', // General Text
+		'Roboto:400,300,500,700:latin', // Header Text
+		'Droid+Sans+Mono::latin' // Monospace Text
+	]}
+});
+
 $(document).ready(function() {
 	// Semantic UI inits
 	$('.ui.accordion').accordion();

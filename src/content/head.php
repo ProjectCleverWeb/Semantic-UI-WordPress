@@ -23,16 +23,6 @@ if ($theme->get_option('mobile_meta')) {
 }
 ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<script type="text/javascript">
-// Google Fonts (async)
-WebFontConfig = {
-	google: { families: [
-		'Open+Sans:400italic,400,600,700:latin', // Default
-		'Roboto:400,700,300,500:latin', // Header
-		'Droid+Sans+Mono::latin' // Monospace
-	] }
-};
-</script>
 <?php
 wp_head();
 

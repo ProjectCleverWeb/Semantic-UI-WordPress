@@ -126,10 +126,11 @@ class integrations extends base {
 		wp_register_style('font-awesome', $this->theme->style_uri.'/font-awesome.min.css', array(), '4.1.0');
 		wp_register_style('webicons', $this->theme->style_uri.'/webicons.min.css', array(), NULL);
 		wp_register_style('highlightjs', $this->theme->style_uri.'/highlight.js/github.min.css', array(), '8.0');
-		wp_register_style('main', $this->theme->style_uri.'/main.css', array('semantic'), NULL);
-		wp_register_style('dashboard', $this->theme->style_uri.'/dashboard.css', array('semantic'), NULL);
+		wp_register_style('main', $this->theme->style_uri.'/main.css', array(), NULL);
+		wp_register_style('dashboard', $this->theme->style_uri.'/dashboard.css', array(), NULL);
 		wp_register_style('base-concat', $this->theme->style_uri.'/base.concat.min.css', array(), NULL);
 		// Scripts
+		wp_register_script('webfonts', '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', array(), '2.1.3');
 		if (!(is_admin() || in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php')))) {
 			// Use a custom version of jQuery
 			wp_deregister_script('jquery');
@@ -160,6 +161,7 @@ class integrations extends base {
 		wp_enqueue_style('base-concat'); // has: normalize, font-awesome, webicons, highlightjs, semantic
 		wp_enqueue_style('main');
 		// Scripts
+		wp_enqueue_script('webfonts');
 		// wp_enqueue_script('jquery');
 		// wp_enqueue_script('semantic');
 		// wp_enqueue_script('highlight');
@@ -192,7 +194,7 @@ class integrations extends base {
 				wp_enqueue_style('webicons');
 				wp_enqueue_style('highlight');
 				// Scripts
-				wp_enqueue_script('webfont');
+				wp_enqueue_script('webfonts');
 				wp_enqueue_script('semantic');
 				wp_enqueue_script('highlight');
 				wp_enqueue_script('mousetrap');
