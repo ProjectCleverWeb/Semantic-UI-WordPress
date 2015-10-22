@@ -2,7 +2,6 @@
 /testing/vendor
 
 ### Build Process ###
-/build
 /node_modules
 /npm-debug.log
 

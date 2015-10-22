@@ -1,0 +1,408 @@
+/*
+ | Table of Contents
+ |==================
+ |  - Normalize (minified)
+ |  - Typography
+ |  - Tags
+ |  - Classes
+ |  - Utility Classes
+ |  - IDs
+ |  - Media Queries
+*/
+
+/*** normalize.css v3.0.1 | MIT License | git.io/normalize ***/
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:0 0}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+
+
+/* General Rule */
+*:not(#wpadminbar *) {
+	box-sizing: border-box;
+	max-width: 100%;
+	word-wrap: break-word;
+}
+
+
+
+/*** Typography ***/
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1.7em;
+}
+
+code, pre, kbd, samp, tt {
+	font-family: "Droid Sans Mono", "Courier New", monospace;
+	tab-size: 4;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	-webkit-tab-size: 4;
+}
+
+code, kbd, samp, tt {
+	vertical-align: baseline;
+	background-color:#eee;
+	white-space: pre-line;
+	border-radius:2px;
+	border:1px solid #ddd;
+	border-bottom-color:#bbb;
+	border-right-color:#ccc;
+	padding:1px 4px;
+	line-height:1.35em;
+	display: inline-block;
+}
+
+code *, kbd *, samp *, tt * {
+	white-space: pre-line;
+}
+
+h1, h1:not(.ui) *,
+h2, h2:not(.ui) *,
+h3, h3:not(.ui) *,
+h4, h4:not(.ui) *,
+h5, h5:not(.ui) *,
+h6, h6:not(.ui) * {
+	font-family: 'Roboto', 'Open Sans', sans-serif;
+	font-weight: 300;
+	margin-top: 0.4rem;
+	margin-bottom: 0.9rem;
+	color: #333;
+	padding: 2px 0;
+	line-height: normal;
+	clear: both;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 2.1rem;
+}
+
+h3 {
+	font-size: 1.6rem;
+}
+
+h4 {
+	font-size: 1.4rem;
+}
+
+h5 {
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+h6 {
+	font-size: 0.92rem;
+	font-weight: 700;
+}
+
+kbd {
+	background-image:-moz-linear-gradient(#f1f1f1, #ddd);
+	background-image:-webkit-linear-gradient(#f1f1f1, #ddd);
+	background-image:linear-gradient(#f1f1f1, #ddd);
+	background-repeat:repeat-x;
+}
+
+mark, ins {
+	background-color: rgba(250, 250, 0, 0.45);
+	text-decoration: none;
+	padding-left: 0.2em;
+	padding-right: 0.2em;
+}
+
+pre {
+	background-color:#eee;
+	padding: 0.4em 1em;
+	border-radius:4px;
+	border:1px solid #ddd;
+	border-bottom-color:#bbb;
+	border-right-color:#ccc;
+	font-size: 14px;
+	display: block;
+	margin: 0 0 0 auto;
+	white-space: pre-wrap;
+	line-height: 1.6em;
+}
+
+pre code {
+	white-space: pre-wrap;
+	background: none;
+	line-height: inherit;
+	padding: 0;
+	border: none;
+	display: inline;
+}
+
+a { /* Override */
+	color: #616161;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+a:hover, a:focus, a:active { /* Override */
+	color: #333333;
+}
+
+a.inverted { /* Override */
+	color: #cfcfcf;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+a.inverted:hover, a.inverted:focus, a.inverted:active { /* Override */
+	color: #878787;
+}
+
+
+/*** Tags ***/
+
+html, body.mce-content-body {
+	/* Fixes Post Editor */
+	height: inherit !important;
+}
+
+blockquote {
+	background-color: rgba(230, 230, 250, 0.25);
+	border-left: 4px solid rgba(0, 0, 0, 0.15);
+	padding: 0.5em 10px 0.5em 2.2em;
+	quotes: "\201C""\201D""\201C""\201D";
+	z-index: 10;
+}
+
+blockquote:before {
+	font-family: 'Roboto', 'Open Sans', sans-serif;
+	color: rgba(0, 0, 0, 0.15);
+	content: open-quote;
+	vertical-align: middle;
+	position: absolute;
+	margin: 0.45em 0 0 -0.45em;
+	font-size: 64px;
+	line-height: 0px;
+	z-index: 5;
+}
+
+blockquote cite {
+	display: block;
+	margin-top: 0.8em;
+	text-align: right;
+}
+
+blockquote p {
+	display: inline;
+}
+
+figure.gallery-item {
+	display: inline-block;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+	padding: 0.3rem;
+}
+
+/*** Classes ***/
+
+.aligncenter {
+	display: block;
+	margin: 0 auto;
+}
+
+.alignleft {
+	float:left;
+}
+
+.alignright {
+	float:right;
+}
+
+.bypostauthor {
+	/* I think this has to do with a comment's author??? */
+}
+
+.entry, .wp-widget {
+	background-image: url(../image/subtle-patterns/snow.png);
+	background-position: top center;
+	overflow: hidden;
+}
+
+.entry-media {
+	position: relative !important;
+	display: block;
+	width:100%;
+	padding: 0.5em 1em !important;
+	margin: 0 0 0 -1em !important;
+	border: none;
+	box-sizing: content-box !important;
+	z-index: 1;
+}
+
+.entry-media::before {
+	content: "";
+	background-image: url(../image/subtle-patterns/diagonal-noise.png);
+	background-position: top center;
+	opacity: 0.45;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: 5;
+}
+
+.entry-media > img {
+	z-index: 10;
+	display: block;
+	margin: 0 auto;
+	height: auto;
+	width: auto;
+	position: relative;
+	max-height: 400px;
+	max-width: 100%;
+}
+
+.entry-title {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.entry-summery,
+.entry-content,
+.entry-summery p,
+.entry-content p,
+.widget * {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+}
+
+.gallery-caption {
+	/* [todo] style gallery captions */
+}
+
+.pad, td#prev, td#next {
+	border-left: none;
+	border-right: none;
+}
+
+.sticky {
+	/* [todo] make sticky posts stick-out */
+}
+
+.tagcloud {
+	text-align: center;
+}
+
+.ui * {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.wp-caption{
+	max-width: 100%;
+	width: auto !important;
+	text-align: center;
+}
+
+.wp-caption-text{
+	margin: 0 auto;
+	padding: 0.25em 1em 0.25em 1.8em;
+	max-width: 90%;
+	font-size: 0.9em;
+	border-radius: 0.3em;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+
+
+
+/*** Utility Classes ***/
+
+.centered {
+	text-align: center;
+}
+
+.empty {
+	display: block;
+	width: 100%;
+}
+
+.empty.size-5 { height: 5px; }
+.empty.size-10 { height: 10px; }
+.empty.size-15 { height: 15px; }
+.empty.size-20 { height: 20px; }
+.empty.size-25 { height: 25px; }
+.empty.size-30 { height: 30px; }
+.empty.size-35 { height: 35px; }
+.empty.size-40 { height: 40px; }
+.empty.size-45 { height: 45px; }
+.empty.size-50 { height: 50px; }
+.empty.size-60 { height: 60px; }
+.empty.size-70 { height: 70px; }
+.empty.size-80 { height: 80px; }
+.empty.size-90 { height: 90px; }
+.empty.size-100 { height: 100px; }
+
+.hidden {
+	display: none;
+}
+
+
+
+/*** ID's ***/
+
+#calendar_wrap{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+#main-content-grid {
+	background-color: #ffffff;
+}
+
+#main-header-grid {
+	padding-top: 1.5rem;
+}
+
+#main-footer-grid {
+	background-position: bottom center;
+}
+
+#wp-calendar {
+	display: inline-block;
+	font-size: 1.05em;
+}
+
+#wp-calendar, .tagcloud {
+	margin-top: 1em;
+}
+
+
+
+/*** Media Queries ***/
+
+@media only screen and (max-width: 249px) {
+	/* Really small screens */
+}
+
+@media only screen and (min-width: 250px) {
+	/* Older smartphones */
+}
+
+@media only screen and (min-width: 500px) {
+	/* HD smartphones & small tablets */
+}
+
+@media only screen and (min-width: 750px) {
+	/* Old computer screens & most tablets */
+}
+
+@media only screen and (min-width: 1000px) {
+	/* Standard Desktop */
+}
+
+@media only screen and (min-width: 1250px) {
+	/* HD desktop & possibly TV's */
+}

@@ -29,7 +29,7 @@
 	],
 	"paths":{
 		"source": "src",
-		"dist": "build",
+		"dist": "dist",
 		"styles": "asset/style",
 		"scripts": "asset/script"
 	}
