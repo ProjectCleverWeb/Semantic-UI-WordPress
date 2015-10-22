@@ -17,6 +17,9 @@ var
 	concat   = require('gulp-concat-util'),
 	svg2png  = require('gulp-svg2png'),
 	img_opt  = require('gulp-image-optimization'),
+	insert   = require('gulp-insert'),
+	md2html  = require('gulp-markdown'),
+	html2pdf = require('gulp-html-pdf'),
 	sequence = require('run-sequence'),
 	// Aliases
 	build    = conf.build,
@@ -29,6 +32,7 @@ require('./gulp/bootstrap');
 // Get Tasks
 get_task('build');
 get_task('watch');
+get_task('build-readme');
 get_task('build-styles');
 get_task('build-scripts');
 get_task('build-screenshot');
