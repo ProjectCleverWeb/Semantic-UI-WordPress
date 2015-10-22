@@ -8,9 +8,6 @@
 	<a target="_blank" href="https://raw.githubusercontent.com/ProjectCleverWeb/Semantic-UI-WordPress/master/LICENSE">
 		<img src="http://img.shields.io/badge/Licenses-CC--BY--SA%204.0%20and%20MIT-37BF79.svg?style=flat" alt="CC BY SA 4.0 and MIT License Badge">
 	</a>
-	<a target="_blank" href="https://gratipay.com/ProjectCleverWeb/">
-		<img src="http://img.shields.io/gratipay/ProjectCleverWeb.svg?style=flat" alt="Gratipay Badge">
-	</a>
 </p>
 
 This project incorperates Semantic UI into a developer theme for WordPress. This
@@ -25,14 +22,16 @@ be used "as-is."*
 
 Copyright &copy; 2014 Nicholas Jordon &mdash; All Rights Reserved
 
+---
+
 ## Features
 
 <p align="center">
 	<a target="_blank" href="http://semantic-ui.com/">Semantic UI</a><br>
 	<a target="_blank" href="http://en.wikipedia.org/wiki/Responsive_web_design">Responsive Design</a> | <a target="_blank" href="https://www.google.com/fonts">Google Web Fonts</a><br>
 	<a target="_blank" href="https://github.com/firetix/gulp-image-optimization">Image Optimization</a> | <a target="_blank" href="http://codex.wordpress.org/Theme_Development#Theme_Options">Theme Options Page</a> | <a target="_blank" href="http://docs.woothemes.com/document/third-party-custom-theme-compatibility/">Woocommerce Support</a><br>
-	<a target="_blank" href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a> | <a target="_blank" href="https://github.com/adamfairhead/webicons">Webicons</a> | <a target="_blank" href="http://gulpjs.com/">Gulp</a> | <a target="_blank" href="http://sass-lang.com/">LESS/SASS Support</a> | <a target="_blank" href="http://necolas.github.io/normalize.css/">Normalize CSS</a><br>
-	<a target="_blank" href="https://developers.google.com/speed/libraries/devguide">jQuery From CDN</a> | <a target="_blank" href="https://support.google.com/webmasters/answer/176035?hl=en&amp;ref_topic=4600447">Google Microdata</a> | <a target="_blank" href="https://travis-ci.org/ProjectCleverWeb/Semantic-UI-WordPress">Unit Testing</a><br>
+	<a target="_blank" href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a> | <a target="_blank" href="https://github.com/adamfairhead/webicons">Webicons</a> | <a target="_blank" href="http://sass-lang.com/">LESS/SASS Support</a> | <a target="_blank" href="http://necolas.github.io/normalize.css/">Normalize CSS</a><br>
+	<a target="_blank" href="https://developers.google.com/speed/libraries/devguide">jQuery</a> | <a target="_blank" href="http://gulpjs.com/">Gulp</a> | <a target="_blank" href="https://support.google.com/webmasters/answer/176035?hl=en&amp;ref_topic=4600447">Google Microdata</a> | <a target="_blank" href="https://travis-ci.org/ProjectCleverWeb/Semantic-UI-WordPress">Unit Testing</a><br>
 	<a target="_blank" href="https://highlightjs.org/">Highlight.js</a> | <a target="_blank" href="http://craig.is/killing/mice">Keyboard Shortcuts</a><br>
 	Well Commented Code
 </p>
@@ -87,34 +86,28 @@ In this developer theme there are 5 important parts to generate a page:
 
 - Templates
 - Includes
-- Layouts
 - Contents
 - Assets
 
-**A template file** decides which layout to use based on the type of content
-that is being requested. A template file will typically have no HTML or very
-little HTML, but should get all the necessary includes for the page.
+**A template file** generates the general layout of a page. They generally call
+the header and footer functions, get content files, and should call any includes
+the page will need.
 
 **A include file** adds functionality to a page and should have no output unless
-a function or method is called in a template, layout, or content file. Include
-files are usually used for API classes and libararies, but can be used for
-anything related to functionality.
-
-**A layout file** decides where sidebars and other content is inserted. Layout
-files should usually have a fair or large amount of HTML content, as well as a
-few functionality calls; such as calling a comments thread or specific form to
-be generated. The header and footer is usually inserted via the layout file.
+a function or method is called in a template or content file. Include files are 
+usually used for API classes and libararies, but can be used for any kind of
+functionality.
 
 **A content file** generates a group of elements and often has functionality
-calls for specifc elements, such as dynamic text and images. Content files
-typically output the most text, and usually have a large amount of HTML.
+calls for specific elements, such as dynamic text and images. Content files
+typically output the most HTML.
 
 **Assets** are typically static files that are commonly used. These files are
 usually images, stylesheets, fonts, and javascript files, and might also
 include other files that need to be precompiled before they can be used. (such
 as LESS and SASS/SCSS files)
 
-##Contributing
+## Contributing
 
 #### Contributing to Semantic UI
 
