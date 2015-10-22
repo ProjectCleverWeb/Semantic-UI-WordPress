@@ -223,7 +223,7 @@ class integrations extends base {
 				'Theme Dev Notes',
 				'Theme Dev Notes',
 				'edit_theme_options',
-				'dev_notes',
+				$theme::identifier.'_dev_notes',
 				array($this, 'dev_notes_page')
 			);
 		}
