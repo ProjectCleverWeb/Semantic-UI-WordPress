@@ -1,12 +1,12 @@
-// Setup Vars
-var
-	gulp     = require('gulp-help')(require('gulp')),
-	sequence = require('run-sequence');
+var gulp = require('gulp-help')(require('gulp'));
 
 /**
  * Compile, minify, and concat on-page scripting files.
  */
 gulp.task('build-scripts', 'Compile, minify, and concat on-page scripting files.', function() {
+	// Setup Vars
+	var sequence = require('run-sequence');
+	
 	return sequence(
 		'build-scripts/remove-old',
 		'build-scripts/copy',

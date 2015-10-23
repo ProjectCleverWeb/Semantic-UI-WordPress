@@ -1,19 +1,20 @@
-// Setup Vars
-var
-	gulp     = require('gulp-help')(require('gulp')),
-	conf     = require('../../config'),
-	cli      = require('../../cli'),
-	mv       = require('gulp-rename'),
-	sass     = require('gulp-sass'),
-	css_min  = require('gulp-minify-css'),
-	// Aliases
-	build    = conf.build,
-	paths    = build.paths;
+var gulp = require('gulp-help')(require('gulp'));
 
 /**
  * Compile and minify SASS/SCSS files.
  */
 gulp.task('build-styles/sass', false, function() {
+	// Setup Vars
+	var
+		conf    = require('../../config'),
+		cli     = require('../../cli'),
+		mv      = require('gulp-rename'),
+		sass    = require('gulp-sass'),
+		css_min = require('gulp-minify-css'),
+		// Aliases
+		build   = conf.build,
+		paths   = build.paths;
+	
 	if (build.compile_sass) {
 		if (build.minify_css) {
 			return gulp.src(paths.source_styles + '/**/*.+(sass|scss)')

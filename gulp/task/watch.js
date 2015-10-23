@@ -1,22 +1,22 @@
-// Setup Vars
-var
-	gulp     = require('gulp-help')(require('gulp')),
-	util     = require('gulp-util'),
-	conf     = require('../config'),
-	cli      = require('../cli'),
-	rm       = require('gulp-clean'),
-	svg2png  = require('gulp-svg2png'),
-	img_opt  = require('gulp-image-optimization'),
-	sequence = require('run-sequence'),
-	// Aliases
-	build    = conf.build,
-	paths    = build.paths,
-	color    = util.colors;
+var gulp = require('gulp-help')(require('gulp'));
 
 /**
  * Continuously update the dist. directory when changes are made in the source directory
  */
 gulp.task('watch', 'Continuously update the dist. directory when changes are made in the source directory.', function() {
+	// Setup Vars
+	var
+		util     = require('gulp-util'),
+		conf     = require('../config'),
+		cli      = require('../cli'),
+		rm       = require('gulp-clean'),
+		svg2png  = require('gulp-svg2png'),
+		img_opt  = require('gulp-image-optimization'),
+		sequence = require('run-sequence'),
+		// Aliases
+		build    = conf.build,
+		paths    = build.paths,
+		color    = util.colors;
 	
 	// Warn about Gulp/Gaze issues
 	cli.log(color.bgBlack.white(color.bold.red("[IMPORTANT]") + " Watch works very well for MOST things, however it does have some issues, including problems removing directories. (hint: use the 'build' task to compensate) - " + color.bold.cyan("https://github.com/gulpjs/gulp/issues/651")));

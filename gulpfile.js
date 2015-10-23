@@ -1,33 +1,18 @@
-// Check All Requirements and Setup Vars
+// Cached Require
+require('require-cache')();
+
+// Setup Vars
 var
 	// Alias tasks only need to be registered once, so this is the only place we
 	// call gulp/gulp-help like this.
 	gulp     = require('gulp-help')(require('gulp'), { aliases: ['default', '?'] }),
-	spawn    = require('child_process').spawn,
-	util     = require('gulp-util'),
-	conf     = require('./gulp/config'),
-	cli      = require('./gulp/cli'),
-	get_task = require('./gulp/get_task'),
-	rm       = require('gulp-clean'),
-	mv       = require('gulp-rename'),
-	less     = require('gulp-less'),
-	sass     = require('gulp-sass'),
-	css_min  = require('gulp-minify-css'),
-	js_mim   = require('gulp-uglify'),
-	concat   = require('gulp-concat-util'),
-	svg2png  = require('gulp-svg2png'),
-	img_opt  = require('gulp-image-optimization'),
-	insert   = require('gulp-insert'),
-	md2html  = require('gulp-markdown'),
-	html2pdf = require('gulp-html-pdf'),
-	sequence = require('run-sequence'),
-	// Aliases
-	build    = conf.build,
-	paths    = build.paths,
-	color    = util.colors;
+	get_task = require('./gulp/get_task');
+
+// Make sure we have dep-check prior to the bootstrap
+get_task('dep-check');
 
 // Run Bootstrap
-require('./gulp/bootstrap');
+require('./gulp/bootstrap')();
 
 // Get Tasks
 get_task('build');

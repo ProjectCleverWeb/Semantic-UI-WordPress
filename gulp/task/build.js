@@ -1,12 +1,12 @@
-// Setup Vars
-var
-	gulp     = require('gulp-help')(require('gulp')),
-	sequence = require('run-sequence');
+var gulp = require('gulp-help')(require('gulp'));
 
 /**
  * Compile the source into a distribution.
  */
 gulp.task('build', 'Compile the source into a distribution.', function() {
+	// Setup Vars
+	var sequence = require('run-sequence');
+	
 	return sequence(
 		'build/remove-old',
 		'build/copy',

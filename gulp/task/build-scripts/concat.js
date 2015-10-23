@@ -1,17 +1,18 @@
-// Setup Vars
-var
-	gulp     = require('gulp-help')(require('gulp')),
-	conf     = require('../../config'),
-	cli      = require('../../cli'),
-	concat   = require('gulp-concat-util'),
-	// Aliases
-	build    = conf.build,
-	paths    = build.paths;
+var gulp = require('gulp-help')(require('gulp'));
 
 /**
  * Concatenate Scripts
  */
 gulp.task('build-scripts/concat', false, function() {
+	// Setup Vars
+	var
+		conf   = require('../../config'),
+		cli    = require('../../cli'),
+		concat = require('gulp-concat-util'),
+		// Aliases
+		build  = conf.build,
+		paths  = build.paths;
+	
 	if (build.concat_js) {
 		return gulp.src(build.concat_js_files)
 			.pipe(concat(build.concat_js_output))
