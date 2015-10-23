@@ -2,6 +2,7 @@
 /testing/vendor
 
 ### Build Process ###
+/tmp/require.cache.json
 /node_modules
 /npm-debug.log
 
