@@ -56,7 +56,7 @@ and in your `$path` ([win](http://www.computerhope.com/issues/ch000549.htm)/[mac
 You should also have [PHPUnit](https://phpunit.de/) and
 [Composer](https://getcomposer.org/) installed and in your `$path` as well.
 
-&#42;&#42;Please note that when building from source, the `/build` directory
+&#42;&#42;Please note that when building from source, the `/dist` directory
 should be renamed and then put in your `/wp-content/themes` directory
 
 **Mac &amp; Unix:**
@@ -64,14 +64,14 @@ should be renamed and then put in your `/wp-content/themes` directory
 1. Download or clone the master branch
 2. Open your command line and navigate to where you deployed the code
 3. Run `npm install && sudo npm install -g gulp` enter your password and then wait for it to finish.
-4. Run `gulp` to see a list of available tasks. Running `gulp build` will regenerate `/build` from scratch.
+4. Run `gulp` to see a list of available tasks. Running `gulp build` will regenerate `/dist` from scratch.
 
 **Windows:**
 
 1. Download or clone the master branch
 2. Open your command line and navigate to where you deployed the code
 3. Run `npm install && npm install -g gulp` and then wait for it to finish.
-4. Run `gulp` to see a list of available tasks. Running `gulp build` will regenerate `/build` from scratch.
+4. Run `gulp` to see a list of available tasks. Running `gulp build` will regenerate `/dist` from scratch.
 
 ## Usage
 
@@ -82,7 +82,7 @@ white)
 
 ## Designing Pages
 
-In this developer theme there are 5 important parts to generate a page:
+In this developer theme there are 4 important parts to generate a page:
 
 - Templates
 - Includes
@@ -133,7 +133,7 @@ All problems must be reported via Github's
 
 ## License
 
-**NOTICE:** All included work (aka libraries) are licensed under the MIT license
+**NOTICE:** All included works (aka libraries) are licensed under the MIT license
 **OR** are compatible with the MIT License.
 
 The Semantic UI for WordPress documentation by Nicholas Jordon is licensed
