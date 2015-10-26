@@ -13,9 +13,27 @@
 //     "SASS" and files starting with "a" will be used before files that
 //     start with "b", "c", etc.
 
+var
+	cli   = require('./cli'),
+	fs    = require('fs'),
+	util  = require('gulp-util');
+	// Aliases
+	color = util.colors;
+
 // Get Configuration
+if (fs.existsSync(cli.cwd + '/build.json')) {
+	cli.log('Using build config ' + color.magenta(fs.realpathSync(cli.cwd + '/build.json')));
+	var build = require(cli.cwd + '/build.json');
+} else if (fs.existsSync(cli.cwd + '/default_build.json')) {
+	cli.log('Using build config ' + color.magenta(fs.realpathSync(cli.cwd + '/default_build.json')));
+	var build = require(cli.cwd + '/default_build.json');
+} else {
+	cli.log(color.red('[ERROR] No valid build configuration file found in ' + cli.cwd));
+	process.exit();
+}
+
 module.exports = {
-	"build"    : require('../build.json'),
+	"build"    : build,
 	"package"  : require('../package.json'),
 	"composer" : require('../composer.json')
 }

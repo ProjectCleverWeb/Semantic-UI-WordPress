@@ -8,9 +8,6 @@ var
 	gulp     = require('gulp-help')(require('gulp'), { aliases: ['default', '?'] }),
 	get_task = require('./gulp/get_task');
 
-// Make sure we have dep-check prior to the bootstrap
-get_task('dep-check');
-
 // Run Bootstrap
 require('./gulp/bootstrap')();
 
@@ -24,6 +21,7 @@ get_task('build-screenshot');
 get_task('optimize-images');
 get_task('test');
 get_task('version');
+get_task('dep-check');
 
 // Get Sub-Tasks
 get_task('build/copy');
