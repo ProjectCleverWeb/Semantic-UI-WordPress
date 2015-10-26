@@ -163,16 +163,16 @@ class integrations extends base {
 		// wp_enqueue_style('font-awesome');
 		// wp_enqueue_style('webicons');
 		// wp_enqueue_style('highlightjs');
-		// wp_enqueue_style('semantic');
 		wp_enqueue_style('base-concat'); // has: normalize, font-awesome, webicons, highlightjs, semantic
+		wp_enqueue_style('semantic');
 		wp_enqueue_style('main');
 		// Scripts
 		wp_enqueue_script('webfonts');
 		// wp_enqueue_script('jquery');
-		// wp_enqueue_script('semantic');
 		// wp_enqueue_script('highlight');
 		// wp_enqueue_script('mousetrap');
 		wp_enqueue_script('base-concat'); // has: jquery, semantic, highlight, mousetrap
+		wp_enqueue_script('semantic');
 		wp_enqueue_script('main');
 		if (is_singular()) {
 			wp_enqueue_script('comment-reply');

@@ -21,6 +21,7 @@ gulp.task('build-readme', 'Generate HTML & PDF "README" from the project\'s READ
 		.pipe(insert.prepend(
 			'<style type="text/css">' + fs.readFileSync(paths.dist_styles + '/base.concat.min.css', "utf-8") + '</style>'
 			+ '<style type="text/css">' + fs.readFileSync(paths.dist_styles + '/main.min.css', "utf-8") + '</style>'
+			+ '<style type="text/css">' + fs.readFileSync(paths.dist + '/asset/semantic-ui/semantic.min.css', "utf-8") + '</style>'
 		))
 		.pipe(insert.wrap('<html><body>', '</body></html>'))
 		.pipe(gulp.dest(paths.dist))
