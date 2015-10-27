@@ -11,5 +11,5 @@
 <body <?php body_class('public-page'); ?>>
 	<div id="page-wrapper">
 		<div id="page-container">
-			<div class="ui page stackable grid" id="main-content-grid">
+			<div class="ui middle aligned page stackable grid" id="main-content-grid">
 				<div class="sixteen wide column"><?php
