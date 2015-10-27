@@ -14,7 +14,7 @@ if (is_user_logged_in()) {
 
 theme_header('none');
 ?>
-<div class="ui middle aligned center aligned grid" id="login-container">
+<div class="ui middle aligned center aligned stackable grid" id="login-container">
 	<main class="five wide column">
 		<?php
 		template_part($theme->content_sub_path.'/login-form', $theme->post_type);
