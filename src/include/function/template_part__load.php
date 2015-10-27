@@ -9,10 +9,12 @@
  *   - Supports overrides via template_use_part()
  * 
  * @see https://codex.wordpress.org/Function_Reference/load_template
- * @param string $template_file Path to template file.
- * @param bool   $require_once  Whether to require_once or require. Default true.
+ * @param string  $template_file Path to template file.
+ * @param bool    $require_once  Whether to require_once or require. Default true.
+ * @param  string $identifier    The slug/action identifier to load
+ * @return mixed                 The returned value of the loaded file
  */
-function template_part__load($template_file, $require_once = TRUE, $id = '') {
+function template_part__load($template_file, $require_once = TRUE, $identifier = '') {
 	global $theme, $posts, $post, $wp_did_header, $wp_query, $wp_rewrite, $wpdb, $wp_version, $wp, $id, $comment, $user_ID;
 	
 	$query_vars = array();
@@ -33,8 +35,8 @@ function template_part__load($template_file, $require_once = TRUE, $id = '') {
 		'user_ID'       => $user_ID
 	) + $query_vars;
 	
-	if (!empty($id)) {
-		return $theme->part($id, $template_file, TRUE, $require_once, $vars);
+	if (!empty($identifier)) {
+		return $theme->part($identifier, $template_file, TRUE, $require_once, $vars);
 	} elseif ($require_once) {
 		return $theme->req_once($template_file, TRUE, $vars);
 	} else {
