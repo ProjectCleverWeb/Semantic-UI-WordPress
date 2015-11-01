@@ -6,12 +6,12 @@ var gulp = require('gulp-help')(require('gulp'));
 gulp.task('build-scripts/remove-old', false, function() {
 	// Setup Vars
 	var
-		conf  = require('../../config'),
-		rm    = require('gulp-clean'),
+		conf    = require('../../config'),
+		gulp_rm = require('../../function/gulp-rm'),
 		// Aliases
 		build = conf.build,
 		paths = build.paths;
 	
 	return gulp.src(paths.dist_scripts, {read: false})
-		.pipe(rm());
+		.pipe(gulp_rm());
 });

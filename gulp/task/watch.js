@@ -9,7 +9,7 @@ gulp.task('watch', 'Continuously update the dist. directory when changes are mad
 		util     = require('gulp-util'),
 		conf     = require('../config'),
 		cli      = require('../cli'),
-		rm       = require('gulp-clean'),
+		gulp_rm  = require('../function/gulp-rm'),
 		svg2png  = require('gulp-svg2png'),
 		img_opt  = require('gulp-image-optimization'),
 		sequence = require('run-sequence'),
@@ -38,7 +38,7 @@ gulp.task('watch', 'Continuously update the dist. directory when changes are mad
 			pipe(gulp.dest(paths.dist));
 		if (event.type === 'deleted') { // update the build dir when a file is deleted
 			gulp.src(paths.dist + '/' + event.path.substring((cli.cwd + '/' + paths.source + '/').length), {read: false}).
-				pipe(rm());
+				pipe(gulp_rm());
 		}
 	});
 	
@@ -90,7 +90,7 @@ gulp.task('watch', 'Continuously update the dist. directory when changes are mad
 		}
 		if (event.type === 'deleted') { // update the build dir when a file is deleted
 			gulp.src(paths.dist + '/' + event.path.substring((cli.cwd + '/' + paths.source + '/').length), {read: false}).
-				pipe(rm());
+				pipe(gulp_rm());
 		}
 	});
 });

@@ -3,7 +3,8 @@ var
 	// Alias tasks only need to be registered once, so this is the only place we
 	// call gulp/gulp-help like this.
 	gulp     = require('gulp-help')(require('gulp'), { aliases: ['default', '?'] }),
-	get_task = require('./gulp/get_task');
+	get_task = require('./gulp/function/get-task'),
+	get_rm   = require('./gulp/function/gulp-rm');
 
 // Run Bootstrap
 require('./gulp/bootstrap')();

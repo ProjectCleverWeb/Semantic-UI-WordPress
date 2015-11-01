@@ -2,5 +2,6 @@
  * Simple function to get tasks
  */
 module.exports = function(name) {
-	require('./task/' + name);
+	var cli = require('../cli');
+	require(cli.cwd + '/gulp/task/' + name);
 }
