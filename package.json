@@ -37,7 +37,6 @@
 		"gulp-uglify": "^1.4.1",
 		"gulp-util": "^3.0.6",
 		"npm-check": "^4.1.2",
-		"require-cache": "0.0.1",
 		"run-sequence": "^1.1.2"
 	},
 	"engines": {

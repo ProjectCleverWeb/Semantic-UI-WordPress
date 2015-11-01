@@ -1,6 +1,3 @@
-// Cached Require
-require('require-cache')();
-
 // Setup Vars
 var
 	// Alias tasks only need to be registered once, so this is the only place we
