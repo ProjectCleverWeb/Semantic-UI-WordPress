@@ -18,7 +18,8 @@ class theme extends base {
 	
 	// Theme Options
 	public $options;
-	public $template_options;
+	public $template_queue;
+	public $used_templates;
 	public $inc_var_list;
 	// Base Path/URI
 	public $path;
@@ -83,9 +84,10 @@ class theme extends base {
 		));
 		
 		// Theme Options
-		$this->options          = $this->fetch_options();
-		$this->template_options = array();
-		$this->inc_var_list     = array();
+		$this->options        = $this->fetch_options();
+		$this->template_queue = array();
+		$this->used_templates = array(); // This is only populated if debug is active
+		$this->inc_var_list   = array();
 		
 		// Check POST for options update (nonce & user are verified)
 		$this->update_options_via_post();
@@ -479,8 +481,18 @@ class theme extends base {
 	 * @return mixed             (optional) The return value of the file - usually NULL
 	 */
 	public function part($id, $path, $is_abs = FALSE, $once = FALSE, $var_list = array()) {
-		if (isset($this->template_options[$id])) {
-			extract($this->template_options[$id]);
+		if (isset($this->template_queue[$id])) {
+			extract($this->template_queue[$id]);
+			unset($this->template_queue[$id]);
+		}
+		global $debug;
+		if ($debug->active) {
+			$this->used_templates[] = array(
+				'id'       => $id,
+				'path'     => $path,
+				'is_abs'   => $is_abs,
+				'var_list' => array_keys($var_list)
+			);
 		}
 		if ($once) {
 			return $this->inc_once($path, $is_abs, $var_list);
@@ -493,7 +505,7 @@ class theme extends base {
 	 * page. This method also checks if the theme part has already been replaced.
 	 * If it has already been replaced, then the input is ignored and this method
 	 * returns FALSE. To override this functionallity set the variable manually
-	 * via $this->template_options[$id].
+	 * via $this->template_queue[$id].
 	 * 
 	 * @param  string  $id       The identifier to check for replacments
 	 * @param  string  $path     The path to use if their is no replacment
@@ -504,12 +516,12 @@ class theme extends base {
 	 */
 	public function use_part($id, $path, $is_abs = FALSE, $once = FALSE, $var_list = array()) {
 		global $debug;
-		if (isset($this->template_options[$id])) {
+		if (isset($this->template_queue[$id])) {
 			$debug->runtime_checkpoint('[Theme] Action: theme::use_part() failed to set "'.$id.'" to "'.$path.'"');
 			return FALSE;
 		} else {
 			$debug->runtime_checkpoint('[Theme] Action: theme::use_part() set "'.$id.'" to "'.$path.'"');
-			$this->template_options[$id] = array(
+			$this->template_queue[$id] = array(
 				'path'     => $path,
 				'once'     => $once,
 				'is_abs'   => $is_abs,
