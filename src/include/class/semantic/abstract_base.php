@@ -8,7 +8,7 @@
 
 namespace semantic;
 
-abstract class base {
+abstract class abstract_base {
 	
 	/**
 	 * This is the standard constructor
