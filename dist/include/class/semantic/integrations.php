@@ -1,18 +1,8 @@
 <?php
-/**
- * The integrations class
- */
 
 namespace semantic;
 
-/**
- * WordPress Integrations Class
- * 
- * This class interacts with WordPress to add, remove, and/or modify the
- * WordPress default functionality and content. Every method here should have
- * a corresponding add_filter() or add_action() in wp-init.php
- */
-class integrations extends base {
+class integrations extends abstract_base {
 	
 	public $theme;
 	

@@ -12,7 +12,7 @@ namespace semantic;
  * This class handles various parts of the theme, including common variables,
  * fetching/updating options, and how some parts of the page are generated.
  */
-class theme extends base {
+class theme extends abstract_base {
 	const identifier  = 'semantic';
 	const text_domain = 'semantic';
 	

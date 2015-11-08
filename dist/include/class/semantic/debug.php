@@ -5,7 +5,7 @@
 
 namespace semantic;
 
-class debug extends base {
+class debug extends abstract_base {
 	public $runtime_checkpoints;
 	public $active;
 	
