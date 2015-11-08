@@ -14,36 +14,38 @@
 					?>
 				</div>
 				<label>Logo Size</label>
-				<div class="grouped fields">
-					<?php
-					$logo_sizes = range(0,16);
-					
-					foreach ($logo_sizes as $value) {
-						$checked = '';
-						if ($theme->get_option('logo_size') == (string) $value) {
-							$checked = 'checked';
+				<div class="ui stackable grid">
+					<div class="doubling two column row">
+						<?php
+						$logo_sizes = range(0,16);
+						
+						foreach ($logo_sizes as $value) {
+							$checked = '';
+							if ($theme->get_option('logo_size') == (string) $value) {
+								$checked = 'checked';
+							}
+							?>
+							<div class="column">
+								<div class="ui radio checkbox">
+									<input id="size-<?php echo $value; ?>" value="<?php echo $value; ?>" type="radio" name="<?php echo $theme->option_form_name('logo_size'); ?>" <?php echo $checked; ?>>
+									<label for="size-<?php echo $value; ?>">
+										<?php
+										if ($value == 0) {
+											echo 'No Logo';
+										} elseif ($value == 16) {
+											echo 'Full Width';
+										} else {
+											echo $value.'/16';
+										}
+										?>
+									</label>
+								</div>
+							</div>
+							
+							<?php
 						}
 						?>
-						<div class="field">
-							<div class="ui radio checkbox">
-								<input id="size-<?php echo $value; ?>" value="<?php echo $value; ?>" type="radio" name="<?php echo $theme->option_form_name('logo_size'); ?>" <?php echo $checked; ?>>
-								<label for="size-<?php echo $value; ?>">
-									<?php
-									if ($value == 0) {
-										echo 'No Logo';
-									} elseif ($value == 16) {
-										echo 'Full Width';
-									} else {
-										echo $value.'/16';
-									}
-									?>
-								</label>
-							</div>
-						</div>
-						
-						<?php
-					}
-					?>
+					</div>
 				</div>
 			</div>
 		</div>

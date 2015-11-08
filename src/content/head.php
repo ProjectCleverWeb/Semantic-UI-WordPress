@@ -7,16 +7,28 @@
 
 <title><?php wp_title('|'); ?></title>
 
-<meta name="description" content="<?php bloginfo('description'); ?>" />
-<meta name="keywords" content="html5, ui, library, framework, javascript" />
-<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <?php
-if ($theme->get_option('mobile_meta')) {
+if ($theme->get_option('meta_keywords_enabled') && !empty($theme->get_option('meta_keywords'))) {
+	?>
+	<meta name="keywords" content="<?php esc_attr_e($theme->get_option('meta_keywords')); ?>">
+	<?php
+}
+if ($theme->get_option('meta_favicon_enabled') && !empty($theme->get_option('meta_favicon'))) {
+	?>
+	<link rel="shortcut icon" href="<?php esc_attr_e($theme->get_option('meta_favicon')); ?>">
+	<?php
+}
+if ($theme->get_option('meta_x_ua_compatible_enabled') && !empty($theme->get_option('meta_x_ua_compatible'))) {
+	?>
+	<meta http-equiv="X-UA-Compatible" content="<?php esc_attr_e($theme->get_option('meta_x_ua_compatible')); ?>">
+	<?php
+}
+if ($theme->get_option('mobile_meta') && !empty($theme->get_option('mobile_size'))) {
 	?>
 	<!-- Mobile Meta -->
-	<meta name="HandheldFriendly" content="True">
-	<meta name="MobileOptimized" content="<?php echo $theme->get_option('mobile_size'); ?>">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="MobileOptimized" content="<?php esc_attr_e($theme->get_option('mobile_size')); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<!-- /Mobile Meta -->
 	<?php
