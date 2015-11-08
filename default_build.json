@@ -28,6 +28,7 @@
 	"paths":{
 		"source": "src",
 		"dist": "dist",
+		"testing_dist": "testing/vendor/wordpress/wp-content/themes/semantic-ui",
 		"styles": "asset/style",
 		"scripts": "asset/script"
 	}

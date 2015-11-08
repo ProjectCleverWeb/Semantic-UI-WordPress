@@ -5,9 +5,21 @@ module.exports = function() {
 	// Setup Vars
 	var
 		conf  = require('./config'),
+		cli   = require('./cli'),
+		fs    = require('fs'),
+		argv  = require('yargs').argv,
+		util  = require('gulp-util'),
 		// Aliases
 		build = conf.build,
-		paths = build.paths;
+		paths = build.paths,
+		color = util.colors;
+	
+	if (argv.testing) {
+		paths.dist = paths.testing_dist;
+	}
+	
+	cli.log('Source Dir: ' + color.magenta(fs.realpathSync(cli.cwd + '/' + paths.source)));
+	cli.log('Dist Dir: ' + color.magenta(fs.realpathSync(cli.cwd + '/' + paths.dist)));
 	
 	// Expand Source & Dist. Paths
 	paths.source_styles  = paths.source + '/' + paths.styles;

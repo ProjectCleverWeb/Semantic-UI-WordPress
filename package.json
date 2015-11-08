@@ -38,7 +38,8 @@
     "gulp-util": "^3.0.6",
     "npm-check": "^4.1.2",
     "run-sequence": "^1.1.2",
-    "vinyl-paths": "^2.0.0"
+    "vinyl-paths": "^2.0.0",
+    "yargs": "^3.29.0"
   },
   "engines": {
     "node": "~0.10.1"

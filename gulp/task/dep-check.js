@@ -11,8 +11,8 @@ gulp.task('dep-check', 'Check all gulp dependencies.', function() {
 		util      = require('gulp-util'),
 		conf      = require('../config'),
 		cli       = require('../cli'),
-		get_task  = require('../get_task'),
-		rm        = require('gulp-clean'),
+		get_task  = require('../function/get-task'),
+		gulp_rm   = require('../function/gulp-rm'),
 		mv        = require('gulp-rename'),
 		less      = require('gulp-less'),
 		sass      = require('gulp-sass'),
@@ -25,6 +25,7 @@ gulp.task('dep-check', 'Check all gulp dependencies.', function() {
 		md2html   = require('gulp-markdown'),
 		html2pdf  = require('gulp-html-pdf'),
 		sequence  = require('run-sequence'),
+		sequence  = require('yargs'),
 		// Aliases
 		build     = conf.build,
 		paths     = build.paths,
