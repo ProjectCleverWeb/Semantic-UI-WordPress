@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.1.3 - Video
+ * # Semantic UI 2.1.6 - Video
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -656,4 +656,4 @@ $.fn.embed.settings = {
 
 
 
-})( jQuery, window , document );
+})( jQuery, window, document );
