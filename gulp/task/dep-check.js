@@ -25,7 +25,7 @@ gulp.task('dep-check', 'Check all gulp dependencies.', function() {
 		md2html   = require('gulp-markdown'),
 		html2pdf  = require('gulp-html-pdf'),
 		sequence  = require('run-sequence'),
-		sequence  = require('yargs'),
+		yargs     = require('yargs'),
 		// Aliases
 		build     = conf.build,
 		paths     = build.paths,
@@ -35,7 +35,7 @@ gulp.task('dep-check', 'Check all gulp dependencies.', function() {
 		"update": true,
 		"skipUnused": true
 	}).then(function(data) {
-		cli.log(color.yellow('<module>: <installed> == <latest>'))
+		cli.log(color.yellow('<module>: <installed> == <latest>'));
 		for(var index in data) {
 			var dep = data[index];
 			if (dep.latest == dep.installed) {
