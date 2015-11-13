@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.1.3 - Checkbox
+ * # Semantic UI 2.1.6 - Checkbox
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -502,10 +502,15 @@ $.fn.checkbox = function(parameters) {
 
         trigger: {
           change: function() {
-            module.verbose('Triggering change event from programmatic change');
-            $input
-              .trigger('change')
+            var
+              events       = document.createEvent('HTMLEvents'),
+              inputElement = $input[0]
             ;
+            if(inputElement) {
+              module.verbose('Triggering native change event');
+              events.initEvent('change', true, false);
+              inputElement.dispatchEvent(events);
+            }
           }
         },
 
@@ -801,4 +806,4 @@ $.fn.checkbox.settings = {
 
 };
 
-})( jQuery, window , document );
+})( jQuery, window, document );
