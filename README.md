@@ -10,7 +10,7 @@
 	</a>
 </p>
 
-This project incorperates Semantic UI into a developer theme for WordPress. This
+This project incorporates Semantic UI into a developer theme for WordPress. This
 project also includes some of my favorite techniques for creating fast,
 responsive, and easy-to-maintain themes for WordPress. *Please keep in mind this
 theme is meant to be developed for your specific application; and is not meant to
@@ -18,7 +18,7 @@ be used "as-is."*
 
 #### Download:
 
-[![Sheild](http://img.shields.io/badge/release-1.0.0--beta2-brightgreen.svg?style=flat)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/master.zip) [![Sheild](http://img.shields.io/badge/branch-develop-yellowgreen.svg?style=flat)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/develop.zip)
+[![Sheild](http://img.shields.io/badge/release-1.0.0--beta2-yellow.svg?style=flat)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/master.zip) [![Sheild](http://img.shields.io/badge/branch-develop-brightgreen.svg?style=flat)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/develop.zip)
 
 Copyright &copy; 2014 Nicholas Jordon &mdash; All Rights Reserved
 
@@ -95,7 +95,7 @@ the page will need.
 
 **A include file** adds functionality to a page and should have no output unless
 a function or method is called in a template or content file. Include files are 
-usually used for API classes and libararies, but can be used for any kind of
+usually used for API classes and libraries, but can be used for any kind of
 functionality.
 
 **A content file** generates a group of elements and often has functionality
@@ -104,7 +104,7 @@ typically output the most HTML.
 
 **Assets** are typically static files that are commonly used. These files are
 usually images, stylesheets, fonts, and javascript files, and might also
-include other files that need to be precompiled before they can be used. (such
+include other files that need to be pre-compiled before they can be used. (such
 as LESS and SASS/SCSS files)
 
 ## Contributing
