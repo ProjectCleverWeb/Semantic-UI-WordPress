@@ -8,6 +8,7 @@ namespace semantic;
 class debug extends abstract_base {
 	public $runtime_checkpoints;
 	public $active;
+	public $shutdown;
 	
 	public function __construct() {
 		// Setup globals and query vars
@@ -15,12 +16,14 @@ class debug extends abstract_base {
 		$debug = $this;
 		set_query_var('debug',  $this);
 		
+		// Setup the shutdown class
+		$this->shutdown = new shutdown;
+		
 		$this->runtime_checkpoints = array();
 		$this->active = FALSE;
 		if (is_user_logged_in() && current_user_can('manage_options')) {
 			$this->active = TRUE;
 		}
-		register_shutdown_function(array($this, '_runtime_on_shutdown'));
 		if (!empty($_SERVER['REQUEST_TIME_FLOAT'])) {
 			$this->runtime_checkpoints[] = array(
 				'name' => '[PHP] Sent Request To Server',
@@ -33,6 +36,7 @@ class debug extends abstract_base {
 				'time' => PHP_START_TIME
 			);
 		}
+		$this->shutdown->register('debug_output', array($this, '_runtime_on_shutdown'));
 		parent::__construct();
 	}
 	
@@ -47,41 +51,34 @@ class debug extends abstract_base {
 		$checkpoints   = $this->runtime_checkpoints;
 		$first         = array_shift($checkpoints);
 		$previous_time = $first['time'];
-		?>
-		<script type="text/javascript">
-			var debug_checkpoints = <?php
-			foreach ($checkpoints as &$checkpoint) {
-				$checkpoint['offset']    = ($checkpoint['time'] - $first['time']) * 1000;
-				$checkpoint['prev_diff'] = ($checkpoint['time'] - $previous_time) * 1000;
-				$previous_time = $checkpoint['time'];
-			}
-			echo json_encode($checkpoints);
-			?>;
-		</script>
-		<?php
+		echo '<script type="text/javascript">';
+		echo 'var debug_checkpoints =';
+		foreach ($checkpoints as &$checkpoint) {
+			$checkpoint['offset']    = ($checkpoint['time'] - $first['time']) * 1000;
+			$checkpoint['prev_diff'] = ($checkpoint['time'] - $previous_time) * 1000;
+			$previous_time = $checkpoint['time'];
+		}
+		echo json_encode($checkpoints);
+		echo '</script>';
 	}
 	
 	public function runtime_print_js_log() {
 		$checkpoints   = $this->runtime_checkpoints;
 		$first         = array_shift($checkpoints);
 		$previous_time = $first['time'];
-		?>
-		<script type="text/javascript">
-			<?php
-			printf('console.log("%1$s {%2$s}");'.PHP_EOL , $first['name'], $first['time']);
-			foreach ($checkpoints as $checkpoint) {
-				printf(
-					'console.log("%1$s {%2$s/+%3$s}");'.PHP_EOL,
-					addslashes($checkpoint['name']),
-					round(($checkpoint['time'] - $first['time']) * 1000, 2).'ms',
-					round(($checkpoint['time'] - $previous_time) * 1000, 2).'ms'
-				);
-				$previous_time = $checkpoint['time'];
-			}
-			printf('console.log("[PHP] Memory Peak: %1$s MiB");', round(memory_get_peak_usage()/1024/1024, 3));
-			?>
-		</script>
-		<?php
+		echo '<script type="text/javascript">';
+		printf('console.log("%1$s {%2$s}");'.PHP_EOL , addslashes($first['name']), $first['time']);
+		foreach ($checkpoints as $checkpoint) {
+			printf(
+				'console.log("%1$s {%2$s/+%3$s}");'.PHP_EOL,
+				addslashes($checkpoint['name']),
+				round(($checkpoint['time'] - $first['time']) * 1000, 2).'ms',
+				round(($checkpoint['time'] - $previous_time) * 1000, 2).'ms'
+			);
+			$previous_time = $checkpoint['time'];
+		}
+		printf('console.log("[PHP] Memory Peak: %1$s MiB");', round(memory_get_peak_usage()/1024/1024, 3));
+		echo '</script>';
 	}
 	
 	public function _runtime_on_shutdown() {
