@@ -33,7 +33,7 @@ function theme_footer($name = NULL) {
 	$locations[] = $theme->content_sub_path."/footer";
 	
 	foreach ($locations as $loc) {
-		if (!empty(template_part__locate($loc.'.php'))) {
+		if (template_part__locate($loc.'.php')) {
 			return template_part($loc, $name);
 		}
 	}
