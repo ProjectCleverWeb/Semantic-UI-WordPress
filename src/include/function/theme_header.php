@@ -9,6 +9,7 @@
  *   - Returns the the return value of the file
  *   - Better Debugging
  *   - Support overrides via template_use_part()
+ *   - Also checks content directory
  * 
  * @see https://codex.wordpress.org/Function_Reference/get_header
  * @param string $slug The slug name for the generic template.
@@ -22,5 +23,20 @@ function theme_header($name = NULL) {
 	
 	do_action($action, $name);
 	
-	return template_part($theme->content_sub_path.DIRECTORY_SEPARATOR.'header', $name);
+	$locations = array();
+	$name = (string) $name;
+	if (!empty($name)) {
+		$locations[] = "header-{$name}";
+		$locations[] = $theme->content_sub_path."/header-{$name}";
+	}
+	$locations[] = "header";
+	$locations[] = $theme->content_sub_path."/header";
+	
+	foreach ($locations as $loc) {
+		if (!empty(template_part__locate($loc.'.php'))) {
+			return template_part($loc, $name);
+		}
+	}
+	$debug->runtime_checkpoint('[Theme] Failed Action: '.$action);
+	return NULL;
 }
