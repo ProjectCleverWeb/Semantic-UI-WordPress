@@ -21,15 +21,24 @@
 					</div>
 					<?php
 				}
-				?>
-				<div class="row">
-					<div class="sixteen wide column">
-						<?php
-						$menu = new \semantic\menu_walker;
-						$menu->display('footer-menu');
-						?>
+				if (has_nav_menu($menu_loc = 'footer-menu')) {
+					?>
+					<div class="row">
+						<div class="sixteen wide column">
+							<?php
+							wp_nav_menu(array(
+								'theme_location'  => $menu_loc,
+								'menu_class'      => 'ui menu',
+								'items_wrap'      => '<nav id="%1$s" class="%2$s">%3$s</nav>',
+								'depth'           => 2, // currently there is a bug that prevents a depth > 2 from displaying correctly
+								'walker'          => new \semantic\walker\nav_menu
+							));
+							?>
+						</div>
 					</div>
-				</div>
+					<?php
+				}
+				?>
 				<div class="row">
 					<div class="eight wide column">
 						<div class="ui center aligned basic segment">

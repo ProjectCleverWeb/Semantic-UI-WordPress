@@ -63,13 +63,15 @@ $menu_width = $num_to_eng[(16 - (int) $theme->get_option('logo_size'))];
 						</div>
 					</h1>
 					<?php
-					wp_nav_menu(array(
-						'theme_location'  => 'main-menu',
-						'menu_class'      => 'ui menu',
-						'items_wrap'      => '<nav id="%1$s" class="%2$s">%3$s</nav>',
-						'depth'           => 2, // currently there is a bug that prevents a depth > 2 from displaying correctly
-						'walker'          => new \semantic\walker\nav_menu
-					));
+					if (has_nav_menu($menu_loc = 'main-menu')) {
+						wp_nav_menu(array(
+							'theme_location'  => $menu_loc,
+							'menu_class'      => 'ui menu',
+							'items_wrap'      => '<nav id="%1$s" class="%2$s">%3$s</nav>',
+							'depth'           => 2, // currently there is a bug that prevents a depth > 2 from displaying correctly
+							'walker'          => new \semantic\walker\nav_menu
+						));
+					}
 					?>
 				</div>
 			<?php
