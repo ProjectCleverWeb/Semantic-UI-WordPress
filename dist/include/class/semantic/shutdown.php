@@ -84,7 +84,6 @@ class shutdown extends abstract_base {
 	public function _run_shutdown() {
 		global $debug;
 		foreach ($this->jobs as $id => $job) {
-			echo $id;
 			$debug->runtime_checkpoint(sprintf('[Theme] Shutdown - Running "%s"...', $id));
 			call_user_func_array($job['callback'], $job['args']);
 		}
