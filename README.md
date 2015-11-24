@@ -1,6 +1,7 @@
 # Semantic UI for WordPress: Developer Edition
 
 <p align="center">
+	<img src="logo.png" alt="Semantic UI for WordPress: Developer Edition Logo"><br>
 	The Semantic UI WordPress starter/developer theme.<br>
 	<a target="_blank" href="https://travis-ci.org/ProjectCleverWeb/Semantic-UI-WordPress">
 		<img src="http://img.shields.io/travis/ProjectCleverWeb/Semantic-UI-WordPress.svg?style=flat" alt="Travis CI Badge">

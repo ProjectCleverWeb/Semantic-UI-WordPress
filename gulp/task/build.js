@@ -23,6 +23,7 @@ gulp.task('build', 'Compile the source into a distribution.', function() {
 		'build-scripts/minify',
 		'build-scripts/concat',
 		'optimize-images',
+		'build-logo',
 		'build-readme',
 		'build-screenshot'
 	);
