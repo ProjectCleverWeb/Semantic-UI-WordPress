@@ -2,24 +2,20 @@
 
 <p align="center">
 	<img src="logo.png" alt="Semantic UI for WordPress: Developer Edition Logo"><br>
-	The Semantic UI WordPress starter/developer theme.<br>
+	The Semantic UI starter/developer theme for WordPress.<br>
 	<a target="_blank" href="https://travis-ci.org/ProjectCleverWeb/Semantic-UI-WordPress">
-		<img src="http://img.shields.io/travis/ProjectCleverWeb/Semantic-UI-WordPress.svg?style=flat" alt="Travis CI Badge">
+		<img src="http://img.shields.io/travis/ProjectCleverWeb/Semantic-UI-WordPress.svg?style=flat-square" alt="Travis CI Badge">
 	</a>
 	<a target="_blank" href="https://raw.githubusercontent.com/ProjectCleverWeb/Semantic-UI-WordPress/master/LICENSE">
-		<img src="http://img.shields.io/badge/Licenses-CC--BY--SA%204.0%20and%20MIT-37BF79.svg?style=flat" alt="CC BY SA 4.0 and MIT License Badge">
+		<img src="http://img.shields.io/badge/License-MIT-37BF79.svg?style=flat-square" alt="CC BY SA 4.0 and MIT License Badge">
 	</a>
 </p>
 
-This project incorporates Semantic UI into a developer theme for WordPress. This
-project also includes some of my favorite techniques for creating fast,
-responsive, and easy-to-maintain themes for WordPress. *Please keep in mind this
-theme is meant to be developed for your specific application; and is not meant to
-be used "as-is."*
+This project incorporates Semantic UI into a starter (aka developer) theme for WordPress. This project also includes some useful techniques for creating fast, responsive, and easy-to-maintain themes for WordPress. *Please keep in mind this theme is meant to be developed for your specific application; and is not meant to be used "as-is."*
 
 #### Download:
 
-[![Sheild](http://img.shields.io/badge/release-1.0.0--beta2-yellow.svg?style=flat)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/master.zip) [![Sheild](http://img.shields.io/badge/branch-develop-brightgreen.svg?style=flat)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/develop.zip)
+[![Sheild](http://img.shields.io/badge/release-1.0.0--beta2-yellow.svg?style=flat-square)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/master.zip) [![Sheild](http://img.shields.io/badge/branch-develop-brightgreen.svg?style=flat-square)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/develop.zip)
 
 Copyright &copy; 2014 Nicholas Jordon &mdash; All Rights Reserved
 
@@ -84,7 +80,7 @@ white)
 ## Designing Pages
 
 In this developer theme there are 4 important parts to generate a page:
-
+s
 - Templates
 - Includes
 - Contents
