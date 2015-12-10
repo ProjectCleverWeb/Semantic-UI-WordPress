@@ -5,7 +5,7 @@ if (have_posts()) {
 	while (have_posts()) {
 		the_post();
 		?>
-		<article itemscope itemtype="http://schema.org/Article" id="post-<?php the_ID(); ?>" <?php post_class('ui raised segment entry'); ?>>
+		<article itemscope itemtype="http://schema.org/Article" id="post-<?php the_ID(); ?>" <?php post_class('ui basic segment entry'); ?>>
 			<h2 itemprop="name" class="ui large dividing header entry-title">
 				<?php
 				if (is_singular()) {

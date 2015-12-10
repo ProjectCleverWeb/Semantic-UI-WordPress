@@ -144,20 +144,21 @@ class theme extends abstract_base {
 		$debug->runtime_checkpoint('[Theme] Begin WordPress Integrations');
 		$integrations = new integrations;
 		// Alphebetical based on the callback (doesn't effect the order they are called)
-		add_action('admin_bar_menu',      array($integrations, 'admin_bar_links'), 999);
-		add_action('nav_menu_css_class',  array($integrations, 'current_nav'), 10, 1);
-		add_action('admin_footer_text',   array($integrations, 'dashboard_footer'));
-		add_action('init',                array($integrations, 'editor_styles'), 11);
-		add_action('wp_enqueue_scripts',  array($integrations, 'enqueue'));
-		add_action('user_contactmethods', array($integrations, 'google_author'));
-		add_action('after_setup_theme',   array($integrations, 'init'));
-		add_action('admin_menu',          array($integrations, 'options'));
-		add_action('post_thumbnail_html', array($integrations, 'post_thumbnail'), 10, 3);
-		add_action('init',                array($integrations, 'register_enqueue'), 10);
-		add_action('get_search_form',     array($integrations, 'search_form'));
-		add_action('widgets_init',        array($integrations, 'widgets_init'));
-		add_action('wp_title',            array($integrations, 'wp_title'), 10, 2);
-		add_action('template_include',    array($integrations, 'set_post_type'));
+		add_action('admin_bar_menu',        array($integrations, 'admin_bar_links'), 999);
+		add_action('nav_menu_css_class',    array($integrations, 'current_nav'), 10, 1);
+		add_action('admin_footer_text',     array($integrations, 'dashboard_footer'));
+		add_action('init',                  array($integrations, 'editor_styles'), 11);
+		add_action('wp_enqueue_scripts',    array($integrations, 'enqueue'));
+		add_action('user_contactmethods',   array($integrations, 'google_author'));
+		add_action('after_setup_theme',     array($integrations, 'init'));
+		add_action('admin_menu',            array($integrations, 'options'));
+		add_action('login_enqueue_scripts', array($integrations, 'options'));
+		add_action('post_thumbnail_html',   array($integrations, 'post_thumbnail'), 10, 3);
+		add_action('init',                  array($integrations, 'register_enqueue'), 10);
+		add_action('get_search_form',       array($integrations, 'search_form'));
+		add_action('widgets_init',          array($integrations, 'widgets_init'));
+		add_action('wp_title',              array($integrations, 'wp_title'), 10, 2);
+		add_action('template_include',      array($integrations, 'set_post_type'));
 		if ($debug->active) {
 			$debug->runtime_checkpoint('[Theme] Adding Debug WordPress Integrations');
 			template_part($this->include_sub_path.'/debug_hooks');
@@ -218,10 +219,17 @@ class theme extends abstract_base {
 	 */
 	private function default_options() {
 		return array(
-			'first_run'   => TRUE,
-			'mobile_meta' => TRUE,
-			'mobile_size' => '450',
-			'logo_url'    => 'http://placehold.it/200x125.png'
+			'meta_x_ua_compatible_enabled' => TRUE,
+			'meta_x_ua_compatible'         => 'IE=edge,chrome=1',
+			'first_run'                    => TRUE,
+			'header_text'                  => 'Semantic UI for WordPress: Developer Edition',
+			'header_subtext'               => 'The Semantic UI starter/developer theme for WordPress.',
+			'mobile_meta'                  => TRUE,
+			'meta_favicon_enabled'         => TRUE,
+			'meta_favicon'                 => $this->uri.'/logo.png',
+			'mobile_size'                  => '450',
+			'logo_size'                    => 3,
+			'logo_url'                     => $this->uri.'/logo.png'
 		);
 	}
 	

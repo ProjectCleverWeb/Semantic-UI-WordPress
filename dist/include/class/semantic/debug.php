@@ -37,6 +37,12 @@ class debug extends abstract_base {
 			);
 		}
 		$this->shutdown->register('debug_output', array($this, '_runtime_on_shutdown'));
+		$this->shutdown->register('usage_tracker', function() {
+			// This is a simple way for me to track how many people are using my
+			// development theme. This has no positive or negative effect on SEO.
+			// Please only remove this if it causes your application problems.
+			echo '<div id="sui-track" class="ui dimmer"><div class="content"><div class="center">SUIWP s9kjorYIe54NaD6VIK3TF6C792gIKjY0</div></div></div>';
+		});
 		parent::__construct();
 	}
 	
@@ -47,38 +53,55 @@ class debug extends abstract_base {
 		);
 	}
 	
-	public function runtime_print_js_var() {
+	public function runtime_print_html_log() {
 		$checkpoints   = $this->runtime_checkpoints;
 		$first         = array_shift($checkpoints);
 		$previous_time = $first['time'];
-		echo '<script type="text/javascript">';
-		echo 'var debug_checkpoints =';
-		foreach ($checkpoints as &$checkpoint) {
-			$checkpoint['offset']    = ($checkpoint['time'] - $first['time']) * 1000;
-			$checkpoint['prev_diff'] = ($checkpoint['time'] - $previous_time) * 1000;
-			$previous_time = $checkpoint['time'];
-		}
-		echo json_encode($checkpoints);
-		echo '</script>';
-	}
-	
-	public function runtime_print_js_log() {
-		$checkpoints   = $this->runtime_checkpoints;
-		$first         = array_shift($checkpoints);
-		$previous_time = $first['time'];
-		echo '<script type="text/javascript">';
-		printf('console.log("%1$s {%2$s}");'.PHP_EOL , addslashes($first['name']), $first['time']);
-		foreach ($checkpoints as $checkpoint) {
-			printf(
-				'console.log("%1$s {%2$s/+%3$s}");'.PHP_EOL,
-				addslashes($checkpoint['name']),
-				round(($checkpoint['time'] - $first['time']) * 1000, 2).'ms',
-				round(($checkpoint['time'] - $previous_time) * 1000, 2).'ms'
-			);
-			$previous_time = $checkpoint['time'];
-		}
-		printf('console.log("[PHP] Memory Peak: %1$s MiB");', round(memory_get_peak_usage()/1024/1024, 3));
-		echo '</script>';
+		?>
+		<div class="ui basic modal" id="semantic-debug-log">
+			<i class="close icon"></i>
+			<h1 class="ui huge icon header">
+				<i class="bug icon"></i>
+				<div class="content">
+					Debug Log
+					<div class="sub header">Please Use This Log When Reporting Issues</div>
+				</div>
+			</h1>
+			<div class="content">
+				<div class="description">
+					<table class="ui very compact selectable celled table">
+						<thead>
+							<tr>
+								<th>Message</th>
+								<th>Time</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php
+							printf('<tr><td>%1$s</td><td>%2$s</td></tr>'.PHP_EOL , htmlentities($first['name']), $first['time']);
+							foreach ($checkpoints as $checkpoint) {
+								printf(
+									'<tr><td>%1$s</td><td>%2$s/+%3$s</td></tr>'.PHP_EOL,
+									htmlentities($checkpoint['name']),
+									round(($checkpoint['time'] - $first['time']) * 1000, 2).'ms',
+									round(($checkpoint['time'] - $previous_time) * 1000, 2).'ms'
+								);
+								$previous_time = $checkpoint['time'];
+							}
+							printf('<tr><td>[PHP] Memory Peak</td><td>%1$s MiB</td></tr>', round(memory_get_peak_usage()/1024/1024, 3));
+							?>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="actions">
+				<div class="ui red basic inverted cancel button">
+					<i class="remove icon"></i>
+					Close
+				</div>
+			</div>
+		</div>
+		<?php
 	}
 	
 	public function _runtime_on_shutdown() {
@@ -100,7 +123,7 @@ class debug extends abstract_base {
 		$this->runtime_checkpoint('[PHP] Stopped Server-Side Execution');
 		if ($this->active) {
 			if (php_sapi_name() != 'cli') {
-				$this->runtime_print_js_log();
+				$this->runtime_print_html_log();
 			}
 		}
 	}

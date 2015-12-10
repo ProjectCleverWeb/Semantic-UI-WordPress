@@ -44,8 +44,7 @@ class integrations extends abstract_base {
 			'video'
 		));
 		add_theme_support('custom-background', array(
-			'default-color'          => 'FFFFFF',
-			'default-image'          => $theme->image_uri.'/subtle-patterns/dark_wall.png',
+			'default-color'          => '35bdb2',
 			'default-repeat'         => 'repeat',
 			'default-position-x'     => 'center',
 			'default-attachment'     => 'scroll',
@@ -83,7 +82,7 @@ class integrations extends abstract_base {
 			'name'          => __('Right Sidebar Widget Area', $theme::text_domain),
 			'id'            => 'sidebar-widget-area-right',
 			'description'   => 'These widgets are only visible when the siderbar is on the right side of the page',
-			'before_widget' => '<aside id="%1$s" class="wp-widget sidebar-right-widget %2$s ui raised segment">',
+			'before_widget' => '<aside id="%1$s" class="wp-widget sidebar-right-widget %2$s ui basic segment">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="ui dividing header widget-title">',
 			'after_title'   => '</h4>'
@@ -92,7 +91,7 @@ class integrations extends abstract_base {
 			'name'          => __('Left Sidebar Widget Area', $theme::text_domain),
 			'id'            => 'sidebar-widget-area-left',
 			'description'   => 'These widgets are only visible when the siderbar is on the left side of the page',
-			'before_widget' => '<aside id="%1$s" class="wp-widget sidebar-left-widget %2$s ui raised segment">',
+			'before_widget' => '<aside id="%1$s" class="wp-widget sidebar-left-widget %2$s ui basic segment">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="ui dividing header widget-title">',
 			'after_title'   => '</h4>'
@@ -101,7 +100,7 @@ class integrations extends abstract_base {
 			'name'          => __('Footer Widget Area', $theme::text_domain),
 			'id'            => 'footer-widget-area-footer',
 			'description'   => 'These widgets are visible in the footer',
-			'before_widget' => '<div class="column"><aside id="%1$s" class="wp-widget sidebar-right-widget %2$s ui raised segment">',
+			'before_widget' => '<div class="column"><aside id="%1$s" class="wp-widget sidebar-right-widget %2$s ui basic segment">',
 			'after_widget'  => '</aside></div>',
 			'before_title'  => '<h4 class="ui dividing header widget-title">',
 			'after_title'   => '</h4>'
@@ -200,22 +199,24 @@ class integrations extends abstract_base {
 				wp_enqueue_script('theme-options');
 			}
 		}
-		add_theme_page(
-			'Theme Options',
-			'Theme Options',
-			'edit_theme_options',
-			$theme::identifier.'_options',
-			array($this, 'options_page')
-		);
-		
-		if ($this->theme->get_option('dev_notes')) {
+		if (function_exists('add_theme_page')) {
 			add_theme_page(
-				'Theme Dev Notes',
-				'Theme Dev Notes',
+				'Theme Options',
+				'Theme Options',
 				'edit_theme_options',
-				$theme::identifier.'_dev_notes',
-				array($this, 'dev_notes_page')
+				$theme::identifier.'_options',
+				array($this, 'options_page')
 			);
+			
+			if ($this->theme->get_option('dev_notes')) {
+				add_theme_page(
+					'Theme Dev Notes',
+					'Theme Dev Notes',
+					'edit_theme_options',
+					$theme::identifier.'_dev_notes',
+					array($this, 'dev_notes_page')
+				);
+			}
 		}
 	}
 	

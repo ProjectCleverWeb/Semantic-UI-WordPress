@@ -136,7 +136,7 @@ pre code {
 }
 
 a { /* Override */
-	color: #616161;
+	color: #006758;
 	font-weight: 600;
 	text-decoration: none;
 }
@@ -146,7 +146,7 @@ a:hover, a:focus, a:active { /* Override */
 }
 
 a.inverted { /* Override */
-	color: #cfcfcf;
+	color: #FFFFFF;
 	font-weight: 600;
 	text-decoration: none;
 }
@@ -223,8 +223,8 @@ img {
 }
 
 .entry, .wp-widget {
-	background-image: url(../image/subtle-patterns/snow.png);
-	background-position: top center;
+	/*background-image: url(../image/subtle-patterns/snow.png);*/
+	/*background-position: top center;*/
 	overflow: hidden;
 }
 

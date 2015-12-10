@@ -4,6 +4,26 @@
 		<h3 class="ui center aligned dividing header">Header</h3>
 			<div class="ui form">
 				<div class="field">
+					<label>Header Text</label>
+					<?php
+					printf(
+						'<input type="text" placeholder="My Site Name" name="%1$s" value="%2$s">',
+						$theme->option_form_name('header_text'),
+						$theme->get_option('header_text')
+					);
+					?>
+				</div>
+				<div class="field">
+					<label>Header Sub-Text</label>
+					<?php
+					printf(
+						'<input type="text" placeholder="My Slogan" name="%1$s" value="%2$s">',
+						$theme->option_form_name('header_subtext'),
+						$theme->get_option('header_subtext')
+					);
+					?>
+				</div>
+				<div class="field">
 					<label>Logo URL</label>
 					<?php
 					printf(

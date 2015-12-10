@@ -70,7 +70,7 @@
 								}
 							} else {
 								?>
-								<a class="inverted" href="https://github.com/ProjectCleverWeb" >Nicholas Jordon</a>
+								<a href="https://github.com/ProjectCleverWeb" >Nicholas Jordon</a>
 								<?php
 								$copyright_year = 2014;
 							}

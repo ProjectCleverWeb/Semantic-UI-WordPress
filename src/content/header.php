@@ -35,7 +35,7 @@ $menu_width = $num_to_eng[(16 - (int) $theme->get_option('logo_size'))];
 <body <?php body_class('public-page'); ?>>
 	<div id="page-wrapper">
 		<div id="page-container">
-			<header class="ui page stackable grid" id="main-header-grid">
+			<header class="ui middle aligned stackable page grid" id="main-header-grid">
 				<?php
 				if ($logo_width != 'zero') {
 					?>
@@ -56,13 +56,17 @@ $menu_width = $num_to_eng[(16 - (int) $theme->get_option('logo_size'))];
 				if ($menu_width != 'zero') {
 					?>
 				<div class="<?php echo $menu_width; ?> wide column">
-					<h1 class="ui huge inverted center aligned header">
-						<?php echo get_bloginfo('name'); ?>
-						<div class="sub header">
-							<?php echo bloginfo('description'); ?>
-						</div>
-					</h1>
 					<?php
+					if ($theme->get_option('header_text') || $theme->get_option('header_subtext')) {
+						?>
+						<h1 class="ui huge inverted center aligned header">
+							<?php echo $theme->get_option('header_text'); ?>
+							<div class="sub header">
+								<?php echo $theme->get_option('header_subtext'); ?>
+							</div>
+						</h1>
+						<?php
+					}
 					if (has_nav_menu($menu_loc = 'main-menu')) {
 						wp_nav_menu(array(
 							'theme_location'  => $menu_loc,

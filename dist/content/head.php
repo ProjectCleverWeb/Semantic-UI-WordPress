@@ -54,7 +54,7 @@ if (!in_array($background_attachment, array( 'fixed', 'scroll'))) {
 }
 
 printf(
-	'<style type="text/css">#main-header-grid, #main-footer-grid { background-image:%1$s; background-position:%2$s; color:%3$s; background-repeat:%4$s; background-attachment:%5$s }</style>',
+	'<style type="text/css">#main-header-grid, #main-footer-grid { background-image:%1$s; background-position:%2$s; background-color:%3$s; background-repeat:%4$s; background-attachment:%5$s }</style>',
 	'url("'.get_background_image().'")',
 	"top $background_position",
 	'#'.get_background_color(),
