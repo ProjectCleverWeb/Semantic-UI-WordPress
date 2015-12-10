@@ -2,13 +2,7 @@
 
 <p align="center">
 	<img src="logo.png" alt="Semantic UI for WordPress: Developer Edition Logo"><br>
-	The Semantic UI starter/developer theme for WordPress.<br>
-	<a target="_blank" href="https://travis-ci.org/ProjectCleverWeb/Semantic-UI-WordPress">
-		<img src="http://img.shields.io/travis/ProjectCleverWeb/Semantic-UI-WordPress.svg?style=flat-square" alt="Travis CI Badge">
-	</a>
-	<a target="_blank" href="https://raw.githubusercontent.com/ProjectCleverWeb/Semantic-UI-WordPress/master/LICENSE">
-		<img src="http://img.shields.io/badge/License-MIT-37BF79.svg?style=flat-square" alt="CC BY SA 4.0 and MIT License Badge">
-	</a>
+	The Semantic UI starter/developer theme for WordPress.
 </p>
 
 This project incorporates Semantic UI into a starter (aka developer) theme for WordPress. This project also includes some useful techniques for creating fast, responsive, and easy-to-maintain themes for WordPress. *Please keep in mind this theme is meant to be developed for your specific application; and is not meant to be used "as-is."*
