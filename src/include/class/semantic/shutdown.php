@@ -16,7 +16,7 @@ class shutdown extends abstract_base {
 	private $jobs;
 	
 	/**
-	 * Configure this class
+	 * Configure this class and the function to run on PHP shutdown
 	 * 
 	 * @return void
 	 */

@@ -5,11 +5,32 @@
 
 namespace semantic;
 
+/**
+ * This class carries out all the debug functionality
+ */
 class debug extends abstract_base {
+	
+	/**
+	 * Current logged checkpoints
+	 * @var array
+	 */
 	public $runtime_checkpoints;
+	
+	/**
+	 * Sets debugging as either enabled or disabled
+	 * @var boolean
+	 */
 	public $active;
+	
+	/**
+	 * Instance of the shutdown class
+	 * @var shutdown
+	 */
 	public $shutdown;
 	
+	/**
+	 * Configures this class as well as the shutdown class and the $debug global
+	 */
 	public function __construct() {
 		// Setup globals and query vars
 		global $debug;
@@ -46,13 +67,24 @@ class debug extends abstract_base {
 		parent::__construct();
 	}
 	
-	public function runtime_checkpoint($name = '') {
+	/**
+	 * Checkpoint logger
+	 * 
+	 * @param  string $message The message to report back to the logger
+	 * @return void
+	 */
+	public function runtime_checkpoint($message = '') {
 		$this->runtime_checkpoints[] = array(
-			'name' => (string) $name,
+			'name' => (string) $message,
 			'time' => microtime(TRUE)
 		);
 	}
 	
+	/**
+	 * Prints the current log as html (Semantic UI modal)
+	 * 
+	 * @return void
+	 */
 	public function runtime_print_html_log() {
 		$checkpoints   = $this->runtime_checkpoints;
 		$first         = array_shift($checkpoints);
@@ -104,6 +136,11 @@ class debug extends abstract_base {
 		<?php
 	}
 	
+	/**
+	 * Runs all the shutdown functionality for this class
+	 * 
+	 * @return void
+	 */
 	public function _runtime_on_shutdown() {
 		global $wp_styles, $wp_scripts;
 		if (!empty($wp_styles->queue)) {

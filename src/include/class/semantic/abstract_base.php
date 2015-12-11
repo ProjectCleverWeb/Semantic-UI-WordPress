@@ -11,7 +11,7 @@ namespace semantic;
 abstract class abstract_base {
 	
 	/**
-	 * This is the standard constructor
+	 * Just logs that the current class was initialized
 	 */
 	public function __construct() {
 		global $debug;

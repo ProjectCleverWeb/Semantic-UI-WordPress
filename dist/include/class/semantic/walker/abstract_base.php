@@ -3,6 +3,18 @@
 namespace semantic\walker;
 
 abstract class abstract_base extends \Walker {
+	
+	/**
+	 * Array of option to pass to the walker
+	 * @var array
+	 */
+	public $semantic_options;
+	
+	/**
+	 * Simple setup for walker classes.
+	 * 
+	 * @param array $options Custom options to pass to the walker as $this->semantic_options
+	 */
 	public function __construct($options = array()) {
 		$this->seamntic_options = $options;
 		global $debug;

@@ -16,40 +16,184 @@ class theme extends abstract_base {
 	const identifier  = 'semantic';
 	const text_domain = 'semantic';
 	
-	// Theme Options
+	/**
+	 * The current theme settings
+	 * @var array
+	 */
 	public $options;
+	
+	/**
+	 * The current templates configured by $this->use_part()
+	 * @var array
+	 */
 	public $template_queue;
+	
+	/**
+	 * The templates used by $this->part()
+	 * @var array
+	 */
 	public $used_templates;
+	
+	/**
+	 * The list of variables to be extracted when a part is included
+	 * @var array
+	 */
 	public $inc_var_list;
-	// Base Path/URI
+	
+	/**
+	 * Alias to get_template_directory()
+	 * @var string
+	 */
 	public $path;
+	
+	/**
+	 * Alias to get_template_directory_uri()
+	 * @var string
+	 */
 	public $uri;
-	// Sub-Paths
+	
+	/**
+	 * Path to the asset directory, relative to $this->path
+	 * @var string
+	 */
 	public $asset_sub_path;
+	
+	/**
+	 * Path to the font directory, relative to $this->path
+	 * @var string
+	 */
 	public $font_sub_path;
+	
+	/**
+	 * Path to the image directory, relative to $this->path
+	 * @var string
+	 */
 	public $image_sub_path;
+	
+	/**
+	 * Path to the script directory, relative to $this->path
+	 * @var string
+	 */
 	public $script_sub_path;
+	
+	/**
+	 * Path to the style directory, relative to $this->path
+	 * @var string
+	 */
 	public $style_sub_path;
+	
+	/**
+	 * Path to the content directory, relative to $this->path
+	 * @var string
+	 */
 	public $content_sub_path;
+	
+	/**
+	 * Path to the include directory, relative to $this->path
+	 * @var string
+	 */
 	public $include_sub_path;
+	
+	/**
+	 * Path to the template directory, relative to $this->path
+	 * @var string
+	 */
 	public $template_sub_path;
-	// Absolute Paths
+	
+	/**
+	 * Absolute path to the asset directory
+	 * @var string
+	 */
 	public $asset_path;
+	
+	/**
+	 * Absolute path to the font directory
+	 * @var string
+	 */
 	public $font_path;
+	
+	/**
+	 * Absolute path to the image directory
+	 * @var string
+	 */
 	public $image_path;
+	
+	/**
+	 * Absolute path to the script directory
+	 * @var string
+	 */
 	public $script_path;
+	
+	/**
+	 * Absolute path to the style directory
+	 * @var string
+	 */
 	public $style_path;
+	
+	/**
+	 * Absolute path to the content directory
+	 * @var string
+	 */
 	public $content_path;
+	
+	/**
+	 * Absolute path to the include directory
+	 * @var string
+	 */
 	public $include_path;
+	
+	/**
+	 * Absolute path to the template directory
+	 * @var string
+	 */
 	public $template_path;
-	// URI Paths
+	
+	/**
+	 * Full URL/URI to the asset directory
+	 * @var [type]
+	 */
 	public $asset_uri;
+	
+	/**
+	 * Full URL/URI to the font directory
+	 * @var [type]
+	 */
 	public $font_uri;
+	
+	/**
+	 * Full URL/URI to the image directory
+	 * @var [type]
+	 */
 	public $image_uri;
+	
+	/**
+	 * Full URL/URI to the script directory
+	 * @var [type]
+	 */
 	public $script_uri;
+	
+	/**
+	 * Full URL/URI to the style directory
+	 * @var [type]
+	 */
 	public $style_uri;
+	
+	/**
+	 * Full URL/URI to the content directory
+	 * @var [type]
+	 */
 	public $content_uri;
+	
+	/**
+	 * Full URL/URI to the include directory
+	 * @var [type]
+	 */
 	public $include_uri;
+	
+	/**
+	 * Full URL/URI to the template directory
+	 * @var [type]
+	 */
 	public $template_uri;
 	
 	/**

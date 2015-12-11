@@ -4,6 +4,10 @@ namespace semantic;
 
 class integrations extends abstract_base {
 	
+	/**
+	 * Instance of the theme class
+	 * @var theme
+	 */
 	public $theme;
 	
 	/**
@@ -69,8 +73,6 @@ class integrations extends abstract_base {
 		remove_action( 'admin_print_styles', 'print_emoji_styles' );
 	}
 	
-	
-	
 	/**
 	 * Registers the theme widget areas.
 	 * 
@@ -107,8 +109,6 @@ class integrations extends abstract_base {
 		));
 	}
 	
-	
-	
 	/**
 	 * Registers all the theme styles/scripts
 	 * 
@@ -139,8 +139,6 @@ class integrations extends abstract_base {
 		wp_register_script('base-concat', $this->theme->script_uri.'/base.concat.min.js', array(), NULL);
 	}
 	
-	
-	
 	/**
 	 * Enqueues the theme styles/scripts
 	 * 
@@ -167,8 +165,6 @@ class integrations extends abstract_base {
 			wp_enqueue_script('comment-reply');
 		}
 	}
-	
-	
 	
 	/**
 	 * Registers the options page with WordPress, and enqueues style/scripts for
@@ -220,8 +216,6 @@ class integrations extends abstract_base {
 		}
 	}
 	
-	
-	
 	/**
 	 * Displays the options page content when called
 	 * 
@@ -231,8 +225,6 @@ class integrations extends abstract_base {
 		template_part($this->theme->template_sub_path.'/theme-options');
 	}
 	
-	
-	
 	/**
 	 * Displays the options page content when called
 	 * 
@@ -241,8 +233,6 @@ class integrations extends abstract_base {
 	public function dev_notes_page() {
 		template_part($this->theme->template_sub_path.'/dev-notes');
 	}
-	
-	
 	
 	/**
 	 * This adds a "Theme Options" link to the WordPress admin bar under the menu
@@ -261,8 +251,6 @@ class integrations extends abstract_base {
 			));
 		}
 	}
-	
-	
 	
 	/**
 	 * Improve the existing wp_title()
@@ -303,8 +291,6 @@ class integrations extends abstract_base {
 		return implode($sep, $t_arr);
 	}
 	
-	
-	
 	/**
 	 * Adds a field to the user profile page so they can add their Google Plus URL
 	 * and be correctly marked as an author in posts they create
@@ -316,8 +302,6 @@ class integrations extends abstract_base {
 		$profile_fields['gplus'] = 'Google+ URL (for authorship)';
 		return $profile_fields;
 	}
-	
-	
 	
 	/**
 	 * Adds the theme's stylesheets to the post/page editor. This allows the visual
@@ -332,8 +316,6 @@ class integrations extends abstract_base {
 		add_editor_style($this->theme->style_sub_path.'/main.css');
 	}
 	
-	
-	
 	/**
 	 * Adds the class "active" to the current menu item
 	 * 
@@ -346,8 +328,6 @@ class integrations extends abstract_base {
 		}
 		return $classes;
 	}
-	
-	
 	
 	/**
 	 * Replaces the default WordPress search form with one that uses Semantic UI.
@@ -369,8 +349,6 @@ class integrations extends abstract_base {
 			(empty($query) ? 'Search...' : $query)
 		);
 	}
-	
-	
 	
 	/**
 	 * Replaces the default WordPress footer with one that has a paypal donation
@@ -409,8 +387,6 @@ class integrations extends abstract_base {
 		</div>
 		<?php
 	}
-	
-	
 	
 	/**
 	 * Replaces the output of the_post_thumbnail()
