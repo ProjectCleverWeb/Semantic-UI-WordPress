@@ -44,7 +44,7 @@ $menu_width = $num_to_eng[(16 - (int) $theme->get_option('logo_size'))];
 					if ($theme->get_option('logo_url')) {
 						?>
 						<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-							<img src="<?php echo $theme->get_option('logo_url'); ?>">
+							<img src="<?php echo $theme->get_option('logo_url'); ?>" alt="company logo">
 						</a>
 						<?php
 					}
