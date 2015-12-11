@@ -188,7 +188,7 @@ class integrations extends abstract_base {
 		wp_enqueue_style('font-awesome');
 		wp_enqueue_style('dashboard');
 		if (current_user_can('edit_theme_options')) {
-			if (isset($_GET['page']) && ($_GET['page'] == $theme::identifier.'_options' || $_GET['page'] == 'dev_notes')) {
+			if (isset($_GET['page']) && $_GET['page'] == $theme::identifier.'_options') {
 				// Styles
 				wp_enqueue_style('webicons');
 				wp_enqueue_style('highlight');
@@ -211,16 +211,6 @@ class integrations extends abstract_base {
 				$theme::identifier.'_options',
 				array($this, 'options_page')
 			);
-			
-			if ($this->theme->get_option('dev_notes')) {
-				add_theme_page(
-					'Theme Dev Notes',
-					'Theme Dev Notes',
-					'edit_theme_options',
-					$theme::identifier.'_dev_notes',
-					array($this, 'dev_notes_page')
-				);
-			}
 		}
 	}
 	
@@ -231,15 +221,6 @@ class integrations extends abstract_base {
 	 */
 	public function options_page() {
 		template_part($this->theme->template_sub_path.'/theme-options');
-	}
-	
-	/**
-	 * Displays the options page content when called
-	 * 
-	 * @return void
-	 */
-	public function dev_notes_page() {
-		template_part($this->theme->template_sub_path.'/dev-notes');
 	}
 	
 	/**
