@@ -1,7 +1,13 @@
 <?php
+/**
+ * Custom nav menu walker class
+ */
 
 namespace semantic\walker;
 
+/**
+ * Custom nav menu walker class
+ */
 class nav_menu extends abstract_nav_menu {
 	
 	/**

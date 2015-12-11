@@ -6,6 +6,10 @@
 
 namespace semantic\walker;
 
+/**
+ * This class is a 1 for 1 duplicate of `Walker_Nav_Menu` from 4.3.1 except it
+ * extends `semantic\walker\abstract_base` instead of `Walker`
+ */
 abstract class abstract_nav_menu extends abstract_base {
 	/**
 	 * What the class handles.
@@ -21,7 +25,6 @@ abstract class abstract_nav_menu extends abstract_base {
 	 *
 	 * @see Walker::$db_fields
 	 * @since 3.0.0
-	 * @todo Decouple this.
 	 * @var array
 	 */
 	public $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );

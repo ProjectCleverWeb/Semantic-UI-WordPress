@@ -1,5 +1,9 @@
 <?php
 /**
+ * template_part() function
+ */
+
+/**
  * A drop-in replacement for WordPress' get_template_part()
  * 
  * NOTE: This is largely copied from the WordPress 4.2.2 core

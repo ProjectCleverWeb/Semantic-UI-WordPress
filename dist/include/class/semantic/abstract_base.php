@@ -8,6 +8,12 @@
 
 namespace semantic;
 
+/**
+ * Base Class
+ * 
+ * This class allows you to add any common functionality to all the other
+ * classes. In this case we are just adding some debugging info.
+ */
 abstract class abstract_base {
 	
 	/**

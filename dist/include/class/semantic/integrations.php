@@ -1,7 +1,15 @@
 <?php
+/**
+ * WordPress integrations class
+ */
 
 namespace semantic;
 
+/**
+ * WordPress integrations class
+ * 
+ * This class class holds all the functions that integrate directly with WordPress
+ */
 class integrations extends abstract_base {
 	
 	/**
@@ -414,7 +422,8 @@ class integrations extends abstract_base {
 	/**
 	 * Sets theme::$post_type
 	 * 
-	 * @return void
+	 * @param  integer $template The input string (ignored)
+	 * @return string            The input string (ignored)
 	 */
 	public function set_post_type($template) {
 		global $debug, $theme;

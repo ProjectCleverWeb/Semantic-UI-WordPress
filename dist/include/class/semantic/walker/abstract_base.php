@@ -1,7 +1,13 @@
 <?php
+/**
+ * The customer walker base class
+ */
 
 namespace semantic\walker;
 
+/**
+ * The customer walker base class
+ */
 abstract class abstract_base extends \Walker {
 	
 	/**

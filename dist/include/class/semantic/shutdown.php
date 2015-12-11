@@ -13,6 +13,10 @@ namespace semantic;
  */
 class shutdown extends abstract_base {
 	
+	/**
+	 * The current list of jobs to run on shutdown
+	 * @var array
+	 */
 	private $jobs;
 	
 	/**

@@ -1,5 +1,9 @@
 <?php
 /**
+ * template_use_part() function
+ */
+
+/**
  * This allows you to replace anything that hasn't been fetched by template_part()
  * yet, and you know the $slug to.
  * 

@@ -1,5 +1,9 @@
 <?php
 /**
+ * theme_footer() function
+ */
+
+/**
  * A drop-in replacement for WordPress' get_footer()
  * 
  * NOTE: This is largely copied from the WordPress 4.2.2 core

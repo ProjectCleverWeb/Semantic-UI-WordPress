@@ -1,5 +1,9 @@
 <?php
 /**
+ * theme_sidebar() function
+ */
+
+/**
  * A drop-in replacement for WordPress' get_sidebar()
  * 
  * NOTE: This is largely copied from the WordPress 4.2.2 core

@@ -1,5 +1,9 @@
 <?php
 /**
+ * template_part__load() function
+ */
+
+/**
  * A drop-in replacement for WordPress' load_template()
  * 
  * Improvements:

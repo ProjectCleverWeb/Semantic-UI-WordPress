@@ -1,5 +1,9 @@
 <?php
 /**
+ * template_part__locate() function
+ */
+
+/**
  * A drop-in replacement for WordPress' locate_template()
  * 
  * NOTE: This is almost entirely copied from the WordPress 4.2.2 core
