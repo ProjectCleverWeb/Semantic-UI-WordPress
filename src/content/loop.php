@@ -141,7 +141,7 @@ if (have_posts()) {
 		
 		if (is_singular()) {
 			if ( comments_open() || 0 != get_comments_number()) :
-				comments_template($theme->content_sub_path.DIRECTORY_SEPARATOR.'comments');
+				comments_template();
 			endif;
 		}
 		
