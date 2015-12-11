@@ -11,9 +11,21 @@ This project incorporates Semantic UI into a starter (aka developer) theme for W
 
 [![Sheild](http://img.shields.io/badge/release-1.0.0--beta2-yellow.svg?style=flat-square)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/master.zip) [![Sheild](http://img.shields.io/badge/branch-develop-brightgreen.svg?style=flat-square)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/develop.zip)
 
-Copyright &copy; 2014 Nicholas Jordon &mdash; All Rights Reserved
+#### Screenshots
 
----
+<div style="text-align:center; background-color: #ccc">
+<br>
+<a style="display:inline-block; width: 28%" href="http://i.imgur.com/BA1LlF9.png" target="_blank"><img src="http://i.imgur.com/BA1LlF9.png" alt="First Run"></a>
+<a style="display:inline-block; width: 28%" href="http://i.imgur.com/lAtoBgu.png" target="_blank"><img src="http://i.imgur.com/lAtoBgu.png" alt="Blog"></a>
+<a style="display:inline-block; width: 28%" href="http://i.imgur.com/RIY4aZ2.png" target="_blank"><img src="http://i.imgur.com/RIY4aZ2.png" alt="Debug"></a><br><a style="display:inline-block; width: 28%" href="http://i.imgur.com/hUcnrqz.png" target="_blank"><img src="http://i.imgur.com/hUcnrqz.png" alt="Page"></a>
+<a style="display:inline-block; width: 28%" href="http://i.imgur.com/cCmI0Lp.png" target="_blank"><img src="http://i.imgur.com/cCmI0Lp.png" alt="Login"></a>
+<a style="display:inline-block; width: 28%" href="http://i.imgur.com/BqQGSuW.png" target="_blank"><img src="http://i.imgur.com/BqQGSuW.png" alt="404"></a>
+<br>&nbsp;
+</div>
+
+&nbsp;
+
+Copyright &copy; 2014 Nicholas Jordon &mdash; All Rights Reserved
 
 ## Features
 
@@ -67,14 +79,13 @@ should be renamed and then put in your `/wp-content/themes` directory
 ## Usage
 
 This is a developer theme designed to be developed for your specific application.
-The default state of this theme is meant to be plain &amp; organized; while not
-being bias to any particular design. (thus everything defaults to black and
-white)
+The default state of this theme is meant to be minimal &amp; organized; while
+not being bias to any particular design.
 
 ## Designing Pages
 
 In this developer theme there are 4 important parts to generate a page:
-s
+
 - Templates
 - Includes
 - Contents
