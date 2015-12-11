@@ -13,15 +13,7 @@ This project incorporates Semantic UI into a starter (aka developer) theme for W
 
 #### Screenshots
 
-<div style="text-align:center; background-color: #ccc">
-<br>
-<a style="display:inline-block; width: 28%" href="http://i.imgur.com/BA1LlF9.png" target="_blank"><img src="http://i.imgur.com/BA1LlF9.png" alt="First Run"></a>
-<a style="display:inline-block; width: 28%" href="http://i.imgur.com/lAtoBgu.png" target="_blank"><img src="http://i.imgur.com/lAtoBgu.png" alt="Blog"></a>
-<a style="display:inline-block; width: 28%" href="http://i.imgur.com/RIY4aZ2.png" target="_blank"><img src="http://i.imgur.com/RIY4aZ2.png" alt="Debug"></a><br><a style="display:inline-block; width: 28%" href="http://i.imgur.com/hUcnrqz.png" target="_blank"><img src="http://i.imgur.com/hUcnrqz.png" alt="Page"></a>
-<a style="display:inline-block; width: 28%" href="http://i.imgur.com/cCmI0Lp.png" target="_blank"><img src="http://i.imgur.com/cCmI0Lp.png" alt="Login"></a>
-<a style="display:inline-block; width: 28%" href="http://i.imgur.com/BqQGSuW.png" target="_blank"><img src="http://i.imgur.com/BqQGSuW.png" alt="404"></a>
-<br>&nbsp;
-</div>
+[![Screenshots](http://i.imgur.com/467EKwk.png)](http://i.imgur.com/467EKwk.png)
 
 &nbsp;
 
@@ -29,7 +21,15 @@ Copyright &copy; 2014 Nicholas Jordon &mdash; All Rights Reserved
 
 ## Features
 
-[![Screenshots](http://i.imgur.com/467EKwk.png)](http://i.imgur.com/467EKwk.png)
+<p align="center">
+	<a target="_blank" href="http://semantic-ui.com/">Semantic UI</a><br>
+	<a target="_blank" href="http://en.wikipedia.org/wiki/Responsive_web_design">Responsive Design</a> | <a target="_blank" href="https://www.google.com/fonts">Google Web Fonts</a><br>
+	<a target="_blank" href="https://github.com/firetix/gulp-image-optimization">Image Optimization</a> | <a target="_blank" href="http://codex.wordpress.org/Theme_Development#Theme_Options">Theme Options Page</a> | <a target="_blank" href="http://docs.woothemes.com/document/third-party-custom-theme-compatibility/">Woocommerce Support</a><br>
+	<a target="_blank" href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a> | <a target="_blank" href="https://github.com/adamfairhead/webicons">Webicons</a> | <a target="_blank" href="http://sass-lang.com/">LESS/SASS Support</a> | <a target="_blank" href="http://necolas.github.io/normalize.css/">Normalize CSS</a><br>
+	<a target="_blank" href="https://developers.google.com/speed/libraries/devguide">jQuery</a> | <a target="_blank" href="http://gulpjs.com/">Gulp</a> | <a target="_blank" href="https://support.google.com/webmasters/answer/176035?hl=en&amp;ref_topic=4600447">Google Microdata</a> | <a target="_blank" href="https://travis-ci.org/ProjectCleverWeb/Semantic-UI-WordPress">Unit Testing</a><br>
+	<a target="_blank" href="https://highlightjs.org/">Highlight.js</a> | <a target="_blank" href="http://craig.is/killing/mice">Keyboard Shortcuts</a><br>
+	Well Commented Code
+</p>
 
 ## Installation
 
@@ -70,9 +70,7 @@ should be renamed and then put in your `/wp-content/themes` directory
 
 ## Usage
 
-This is a developer theme designed to be developed for your specific application.
-The default state of this theme is meant to be minimal &amp; organized; while
-not being bias to any particular design.
+This is a developer theme designed to be developed for your specific application. The default state of this theme is meant to be minimal &amp; organized; while not being bias to any particular design.
 
 ## Designing Pages
 
