@@ -136,17 +136,18 @@
     
                     <div class="package-indent">
                 <h3><i class="icon-custom icon-function"></i> Functions</h3>
-                                        <div id="template_part" class="element ajax clickable function">
-        <h1>template_part<a href="../namespaces/default.html#function_template_part">¶</a></h1>
-        <p class="short_description">A drop-in replacement for WordPress&#039; get_template_part()</p>
+                                        <div id="theme_footer" class="element ajax clickable function">
+        <h1>theme_footer<a href="../namespaces/default.html#function_theme_footer">¶</a></h1>
+        <p class="short_description">A drop-in replacement for WordPress&#039; get_footer()</p>
         <div class="details collapse">NOTE: This is largely copied from the WordPress 4.2.2 core
 
 Improvements:
   - Function variables do not interfere with included file
   - Returns the the return value of the file
   - Better Debugging
-  - Supports overrides via template_use_part()</div>
-        <a href="../namespaces/default.html#function_template_part" class="more">« More »</a>
+  - Supports overrides via template_use_part()
+  - Also checks content directory</div>
+        <a href="../namespaces/default.html#function_theme_footer" class="more">« More »</a>
     </div>
 
                                         <div id="template_part__load" class="element ajax clickable function">
@@ -160,18 +161,6 @@ Improvements:
         <a href="../namespaces/default.html#function_template_part__load" class="more">« More »</a>
     </div>
 
-                                        <div id="template_part__locate" class="element ajax clickable function">
-        <h1>template_part__locate<a href="../namespaces/default.html#function_template_part__locate">¶</a></h1>
-        <p class="short_description">A drop-in replacement for WordPress&#039; locate_template()</p>
-        <div class="details collapse">NOTE: This is almost entirely copied from the WordPress 4.2.2 core
-
-Improvements:
-  - Function variables do not interfere with included file
-  - Uses is_file() instead of file_exists()
-  - Better Debugging</div>
-        <a href="../namespaces/default.html#function_template_part__locate" class="more">« More »</a>
-    </div>
-
                                         <div id="template_use_part" class="element ajax clickable function">
         <h1>template_use_part<a href="../namespaces/default.html#function_template_use_part">¶</a></h1>
         <p class="short_description">This allows you to replace anything that hasn&#039;t been fetched by template_part()
@@ -180,18 +169,31 @@ yet, and you know the $slug to.</p>
         <a href="../namespaces/default.html#function_template_use_part" class="more">« More »</a>
     </div>
 
-                                        <div id="theme_footer" class="element ajax clickable function">
-        <h1>theme_footer<a href="../namespaces/default.html#function_theme_footer">¶</a></h1>
-        <p class="short_description">A drop-in replacement for WordPress&#039; get_footer()</p>
+                                        <div id="theme_sidebar" class="element ajax clickable function">
+        <h1>theme_sidebar<a href="../namespaces/default.html#function_theme_sidebar">¶</a></h1>
+        <p class="short_description">A drop-in replacement for WordPress&#039; get_sidebar()</p>
         <div class="details collapse">NOTE: This is largely copied from the WordPress 4.2.2 core
 
 Improvements:
   - Function variables do not interfere with included file
   - Returns the the return value of the file
   - Better Debugging
-  - Supports overrides via template_use_part()
+  - Support overrides via template_use_part()
   - Also checks content directory</div>
-        <a href="../namespaces/default.html#function_theme_footer" class="more">« More »</a>
+        <a href="../namespaces/default.html#function_theme_sidebar" class="more">« More »</a>
+    </div>
+
+                                        <div id="template_part" class="element ajax clickable function">
+        <h1>template_part<a href="../namespaces/default.html#function_template_part">¶</a></h1>
+        <p class="short_description">A drop-in replacement for WordPress&#039; get_template_part()</p>
+        <div class="details collapse">NOTE: This is largely copied from the WordPress 4.2.2 core
+
+Improvements:
+  - Function variables do not interfere with included file
+  - Returns the the return value of the file
+  - Better Debugging
+  - Supports overrides via template_use_part()</div>
+        <a href="../namespaces/default.html#function_template_part" class="more">« More »</a>
     </div>
 
                                         <div id="theme_header" class="element ajax clickable function">
@@ -208,18 +210,16 @@ Improvements:
         <a href="../namespaces/default.html#function_theme_header" class="more">« More »</a>
     </div>
 
-                                        <div id="theme_sidebar" class="element ajax clickable function">
-        <h1>theme_sidebar<a href="../namespaces/default.html#function_theme_sidebar">¶</a></h1>
-        <p class="short_description">A drop-in replacement for WordPress&#039; get_sidebar()</p>
-        <div class="details collapse">NOTE: This is largely copied from the WordPress 4.2.2 core
+                                        <div id="template_part__locate" class="element ajax clickable function">
+        <h1>template_part__locate<a href="../namespaces/default.html#function_template_part__locate">¶</a></h1>
+        <p class="short_description">A drop-in replacement for WordPress&#039; locate_template()</p>
+        <div class="details collapse">NOTE: This is almost entirely copied from the WordPress 4.2.2 core
 
 Improvements:
   - Function variables do not interfere with included file
-  - Returns the the return value of the file
-  - Better Debugging
-  - Support overrides via template_use_part()
-  - Also checks content directory</div>
-        <a href="../namespaces/default.html#function_theme_sidebar" class="more">« More »</a>
+  - Uses is_file() instead of file_exists()
+  - Better Debugging</div>
+        <a href="../namespaces/default.html#function_template_part__locate" class="more">« More »</a>
     </div>
 
                             </div>
@@ -301,7 +301,7 @@ fetching/updating options, and how some parts of the page are generated.</div>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Fri, 11 Dec 2015 23:42:44 +0100.<br/>
+            generated on Mon, 14 Dec 2015 22:44:05 +0100.<br/>
     </footer>
     </body>
 </html>
