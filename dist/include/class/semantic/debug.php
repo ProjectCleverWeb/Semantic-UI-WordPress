@@ -57,14 +57,23 @@ class debug extends abstract_base {
 				'time' => PHP_START_TIME
 			);
 		}
+		
+		// Shutdown Actions
 		$this->shutdown->register('debug_output', array($this, '_runtime_on_shutdown'));
-		$this->shutdown->register('usage_tracker', function() {
-			// This is a simple way for me to track how many people are using my
-			// development theme. This has no positive or negative effect on SEO.
-			// Please only remove this if it causes your application problems.
-			echo '<div id="sui-track" class="ui dimmer"><div class="content"><div class="center">SUIWP s9kjorYIe54NaD6VIK3TF6C792gIKjY0</div></div></div>';
-		});
+		$this->shutdown->register('usage_tracker', array($this, 'usage_tracker'));
+		
 		parent::__construct();
+	}
+	
+	/**
+	 * This is a simple way for me to track how many people are using my
+	 * development theme. This has no positive or negative effect on SEO.
+	 * Please only remove this if it causes your application problems.
+	 * 
+	 * @return void
+	 */
+	public function usage_tracker() {
+		echo '<div id="sui-track" class="ui dimmer"><div class="content"><div class="center">SUIWP s9kjorYIe54NaD6VIK3TF6C792gIKjY0</div></div></div>';
 	}
 	
 	/**
