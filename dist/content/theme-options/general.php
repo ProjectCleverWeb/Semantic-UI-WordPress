@@ -164,18 +164,6 @@
 						<label>Show "Powered By" Message</label>
 					</div>
 				</div>
-				<div class="field">
-					<div class="ui toggle checkbox">
-						<?php
-						printf(
-							'<input type="checkbox" value="1" name="%1$s" %2$s>',
-							$theme->option_form_name('dev_notes'),
-							($theme->get_option('dev_notes') ? 'checked' : '')
-						);
-						?>
-						<label>Enable Developer Notes</label>
-					</div>
-				</div>
 				<div class="ui top attached secondary inverted segment">
 					
 					<h4 class="ui center aligned header">WordPress Theme Editor</h4>

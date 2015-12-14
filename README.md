@@ -1,7 +1,7 @@
 # Semantic UI for WordPress: Developer Edition
 
 <p align="center">
-	<img src="logo.png" alt="Semantic UI for WordPress: Developer Edition Logo"><br>
+	<img src="http://i.imgur.com/AEYUA4Q.png" alt="Semantic UI for WordPress: Developer Edition Logo"><br>
 	The Semantic UI starter/developer theme for WordPress.
 </p>
 
