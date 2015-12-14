@@ -68,12 +68,13 @@ class debug extends abstract_base {
 	/**
 	 * This is a simple way for me to track how many people are using my
 	 * development theme. This has no positive or negative effect on SEO.
+	 * 
 	 * Please only remove this if it causes your application problems.
 	 * 
 	 * @return void
 	 */
 	public function usage_tracker() {
-		echo '<div id="sui-track" class="ui dimmer"><div class="content"><div class="center">SUIWP s9kjorYIe54NaD6VIK3TF6C792gIKjY0</div></div></div>';
+		echo '<img id="suiwp-usage-tracker" src="http://i.imgur.com/OZlAOER.png" alt="SUIWP s9kjorYIe54NaD6VIK3TF6C792gIKjY0">';
 	}
 	
 	/**

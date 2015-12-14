@@ -398,6 +398,16 @@ img {
 	background-position: bottom center;
 }
 
+#suiwp-usage-tracker {
+	display: block;
+	z-index: -100;
+	position: relative;
+	margin: -1px 0 0 0;
+	padding: 0;
+	height: 1px;
+	width: 1px;
+}
+
 #wp-calendar {
 	display: inline-block;
 	font-size: 1.05em;
