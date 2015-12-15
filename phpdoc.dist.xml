@@ -2,7 +2,7 @@
 <phpdoc>
 	<title>Semantic UI for WordPress: Developer Edition</title>
 	<parser>
-		<target>dist/asset/docs</target>
+		<target>docs</target>
 		<extensions>
 			<extension>php</extension>
 		</extensions>
