@@ -42,6 +42,9 @@ gulp.task('watch', 'Continuously update the dist. directory when changes are mad
 		}
 	});
 	
+	// README
+	gulp.watch(cli.cwd + '/README.md', ['build-readme']);
+	
 	// Styles
 	// NOTE: Avoid saving styles more than once every 3 seconds
 	gulp.watch([paths.source_styles + '/**/*', '!' + paths.source + '/**/*.+(' + build.optimize_image_types.join('|') + ')'], function(event) {
