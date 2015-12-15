@@ -74,7 +74,9 @@ class debug extends abstract_base {
 	 * @return void
 	 */
 	public function usage_tracker() {
-		echo '<img id="suiwp-usage-tracker" src="http://i.imgur.com/OZlAOER.png" alt="SUIWP s9kjorYIe54NaD6VIK3TF6C792gIKjY0">';
+		if (php_sapi_name() != 'cli') {
+			echo '<img id="suiwp-usage-tracker" src="http://i.imgur.com/OZlAOER.png" alt="SUIWP s9kjorYIe54NaD6VIK3TF6C792gIKjY0">';
+		}
 	}
 	
 	/**
