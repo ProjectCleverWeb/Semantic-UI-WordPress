@@ -223,8 +223,6 @@ img {
 }
 
 .entry, .wp-widget {
-	/*background-image: url(../image/subtle-patterns/snow.png);*/
-	/*background-position: top center;*/
 	overflow: hidden;
 }
 
