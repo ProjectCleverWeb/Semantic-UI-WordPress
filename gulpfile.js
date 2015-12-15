@@ -14,6 +14,7 @@ get_task('build');
 get_task('watch');
 get_task('build-logo');
 get_task('build-readme');
+get_task('build-docs');
 get_task('build-styles');
 get_task('build-scripts');
 get_task('build-screenshot');

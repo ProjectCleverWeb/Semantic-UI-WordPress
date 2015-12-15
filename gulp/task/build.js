@@ -25,6 +25,7 @@ gulp.task('build', 'Compile the source into a distribution.', function() {
 		'optimize-images',
 		'build-logo',
 		'build-readme',
+		'build-docs',
 		'build-screenshot'
 	);
 });
