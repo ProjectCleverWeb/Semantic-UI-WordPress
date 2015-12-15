@@ -2,7 +2,9 @@
 
 <p align="center">
 	<img src="http://i.imgur.com/AEYUA4Q.png" alt="Semantic UI for WordPress: Developer Edition Logo"><br>
-	The Semantic UI starter/developer theme for WordPress.
+	The Semantic UI starter/developer theme for WordPress.<br>
+	<img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License">
+	<img src="https://img.shields.io/travis/ProjectCleverWeb/Semantic-UI-WordPress/develop.svg?style=flat-square" alt="Travis">
 </p>
 
 This project incorporates Semantic UI into a starter (aka developer) theme for WordPress. This project also includes some useful techniques for creating fast, responsive, and easy-to-maintain themes for WordPress. *Please keep in mind this theme is meant to be developed for your specific application; and is not meant to be used "as-is."*
@@ -35,8 +37,8 @@ Copyright &copy; 2014 Nicholas Jordon &mdash; All Rights Reserved
 
 #### Requirements
 
-* PHP 5.4 or later
-* WordPress 3.9.0 or later
+* PHP **5.6**, **7.0**, or **HHVM** <small>(5.4 and 5.5 run, but are not officially supported)</small>
+* WordPress 4.0 or later <small>(3.9 runs, but is not officially supported)</small>
 
 #### Install Guide
 
