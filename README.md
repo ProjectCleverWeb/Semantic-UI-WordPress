@@ -9,6 +9,8 @@
 
 This project incorporates Semantic UI into a starter (aka developer) theme for WordPress. This project also includes some useful techniques for creating fast, responsive, and easy-to-maintain themes for WordPress. *Please keep in mind this theme is meant to be developed for your specific application; and is not meant to be used "as-is."*
 
+Live Demo: [semantic-wordpress.gopagoda.io](http://semantic-wordpress.gopagoda.io/)
+
 #### Download:
 
 [![Sheild](http://img.shields.io/badge/release-1.0.0--beta2-yellow.svg?style=flat-square)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/master.zip) [![Sheild](http://img.shields.io/badge/branch-develop-brightgreen.svg?style=flat-square)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/develop.zip)
