@@ -8,7 +8,6 @@ template_use_part($theme->content_sub_path.'/modals', $theme->content_sub_path.'
 theme_header('none');
 ?>
 <main>
-	
 	<div class="empty size-10">&nbsp;</div>
 	<img src="<?php echo esc_url($theme->uri.'/logo.png'); ?>" class="ui centered image">
 	<h1 class="ui center aligned dividing header">

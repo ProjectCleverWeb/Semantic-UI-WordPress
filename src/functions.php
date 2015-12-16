@@ -16,9 +16,9 @@
  */
 spl_autoload_register(function ($class) {
 	$include_path = '/include/class';
-	$search_path = str_replace('\\', DIRECTORY_SEPARATOR, '\\'.$class).'.php';
-	$file_alt    = realpath(TEMPLATEPATH.$include_path.$search_path);
-	$file        = realpath(STYLESHEETPATH.$include_path.$search_path);
+	$search_path  = str_replace('\\', DIRECTORY_SEPARATOR, '\\'.$class).'.php';
+	$file_alt     = realpath(get_template_directory().$include_path.$search_path);
+	$file         = realpath(get_stylesheet_directory().$include_path.$search_path);
 	if($file_alt && is_file($file_alt)) {
 		require_once $file_alt;
 	} elseif($file && $file != $file_alt && is_file($file)) {
