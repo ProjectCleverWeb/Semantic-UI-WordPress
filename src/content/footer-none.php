@@ -1,6 +1,6 @@
 <?php
 /**
- * The default footer.
+ * The footer without any visible content.
  */
 ?>
 				</div>

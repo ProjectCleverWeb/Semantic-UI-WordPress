@@ -68,13 +68,15 @@ class integrations extends abstract_base {
 			'footer-menu' => __('Footer Menu', $theme::text_domain)
 		));
 		
+		// The WP file editor is an abomination. May God help you if you or anyone
+		// in your company actually uses this.
 		if (in_array($GLOBALS['pagenow'], array('theme-editor.php'))) {
 			if ($theme->get_option('theme_editor') == FALSE) {
 				wp_die('<p>'.__('In order to edit this theme, you must first re-enable the theme editor via the <a href="'.$theme->options_uri().'">Theme Options</a> page', $theme::text_domain).'</p>');
 			}
 		}
 		
-		// Remove WP's emoji (This will be re-added as a theme option)
+		// Remove WP's emoji
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 		remove_action( 'wp_print_styles', 'print_emoji_styles' );

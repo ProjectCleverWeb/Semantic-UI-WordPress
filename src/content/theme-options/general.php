@@ -1,4 +1,10 @@
-<div class="ui three column doubling grid">
+<?php
+/**
+ * Here we are using Semantic UI forms
+ * 
+ * @see http://semantic-ui.com/collections/form.html
+ */
+?><div class="ui three column doubling grid">
 	<div class="column">
 		<div class="ui secondary stacked segment">
 		<h3 class="ui center aligned dividing header">Header</h3>

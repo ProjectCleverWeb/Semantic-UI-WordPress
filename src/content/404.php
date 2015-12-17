@@ -1,4 +1,10 @@
-<div class="ui basic segment entry">
+<?php
+/**
+ * In most cases it is best to give your users at least 2 options on a 404 page:
+ *   - Allow them to search for what they were looking for
+ *   - Give them a link to the home page
+ */
+?><div class="ui basic segment entry">
 	<h2 class="ui large dividing header entry-title">
 		Error 404
 		<div class="sub header">The page you requested could not be found</div>

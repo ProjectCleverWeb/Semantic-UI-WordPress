@@ -34,7 +34,7 @@ if ($theme->get_option('mobile_meta') && !empty($theme->get_option('mobile_size'
 	<?php
 }
 ?>
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <?php
 wp_head();
 

@@ -1,4 +1,8 @@
-<div class="ui center aligned container">
+<?php
+/**
+ * This is a simplified example of how to create a login page for WordPress.
+ */
+?><div class="ui center aligned container">
 	<img src="<?php echo site_url('/wp-admin/images/wordpress-logo.svg'); ?>" class="image">
 </div>
 <form class="ui form" action="<?php echo esc_url(wp_login_url()); ?>" method="post">

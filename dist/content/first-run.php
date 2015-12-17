@@ -1,6 +1,12 @@
-
-
-<h3>Does this theme look plain to you? Good!</h3>
+<?php
+/**
+ * Sometimes a page just needs to display static content that will never change.
+ * There's nothing wrong with coding in pure HTML; but if you do, just make sure
+ * you still use the ".php" file extension. Both WordPress and this theme are
+ * only expecting PHP files. Which could lead to undesired behavior if you don't
+ * use the correct extension.
+ */
+?><h3>Does this theme look plain to you? Good!</h3>
 <i>Semantic UI for WordPress</i> is a developer theme that is meant to be
 molded into <strong>your idea</strong>. Think of this theme as a blank canvas
 that is ready to painted into your idea of a good theme. So go nuts, and

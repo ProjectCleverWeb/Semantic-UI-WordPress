@@ -319,7 +319,7 @@ class theme extends abstract_base {
 		global $debug;
 		$debug->runtime_checkpoint('[Theme] Begin Including Function Files');
 		$func_dir = realpath($this->include_path.'/function');
-		$func_alt_dir = realpath(STYLESHEETPATH.'/'.$this->include_sub_path.'/function');
+		$func_alt_dir = realpath(get_stylesheet_directory().'/'.$this->include_sub_path.'/function');
 		if ($func_alt_dir && is_dir($func_alt_dir)) {
 			foreach (scandir($func_alt_dir) as $function_file) {
 				// ignore non-php files, check if the file exists, and that there isn't a function with the same name
@@ -625,11 +625,11 @@ class theme extends abstract_base {
 	 * template file to determine what parts of the page are replaced when the page
 	 * is generated. (via $this->use_part())
 	 * 
-	 * @param  string  $id       The identifier to check for replacments
-	 * @param  string  $path     The path to use if their is no replacment
+	 * @param  string  $id       The identifier to check for replacements
+	 * @param  string  $path     The path to use if their is no replacement
 	 * @param  boolean $is_abs   (optional) If the $path is an absolute path, set this to TRUE
 	 * @param  boolean $once     (optional) Set to TRUE to use include_once instead of include
-	 * @param  array   $var_list (optional) The array of variables you want extraced
+	 * @param  array   $var_list (optional) The array of variables you want extracted
 	 * @return mixed             (optional) The return value of the file - usually NULL
 	 */
 	public function part($id, $path, $is_abs = FALSE, $once = FALSE, $var_list = array()) {

@@ -1,5 +1,16 @@
 <?php
-
+/**
+ * This is the standard WordPress loop and its relative content.
+ * 
+ * This page handles the following parts of articles and pages:
+ *   - Title
+ *   - Tags
+ *   - Post Thumbnails
+ *   - Content (both the summary and full)
+ *   - Author data
+ *   - Pagination
+ *   - Including the comments section
+ */
 
 if (have_posts()) {
 	while (have_posts()) {

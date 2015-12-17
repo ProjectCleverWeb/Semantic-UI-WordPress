@@ -25,11 +25,11 @@ function template_part__locate($template_names, $load = FALSE, $require_once = T
 		if (!$template_name) {
 			continue;
 		}
-		if (is_file(STYLESHEETPATH.'/'.$template_name)) {
-			$located = STYLESHEETPATH.'/'.$template_name;
+		if (is_file(get_stylesheet_directory().'/'.$template_name)) {
+			$located = get_stylesheet_directory().'/'.$template_name;
 			break;
-		} elseif (is_file(TEMPLATEPATH.'/'.$template_name)) {
-			$located = TEMPLATEPATH.'/'.$template_name;
+		} elseif (is_file(get_template_directory().'/'.$template_name)) {
+			$located = get_template_directory().'/'.$template_name;
 			break;
 		}
 	}
