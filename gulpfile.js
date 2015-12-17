@@ -19,6 +19,7 @@ get_task('build-styles');
 get_task('build-scripts');
 get_task('build-screenshot');
 get_task('optimize-images');
+get_task('fix-line-endings');
 get_task('test');
 get_task('version');
 get_task('dep-check');

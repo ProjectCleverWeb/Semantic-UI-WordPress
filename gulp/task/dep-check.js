@@ -26,6 +26,7 @@ gulp.task('dep-check', 'Check all gulp dependencies.', function() {
 		html2pdf  = require('gulp-html-pdf'),
 		sequence  = require('run-sequence'),
 		yargs     = require('yargs'),
+		line_ends = require('gulp-eol'),
 		// Aliases
 		build     = conf.build,
 		paths     = build.paths,

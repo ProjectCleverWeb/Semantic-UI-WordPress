@@ -24,6 +24,7 @@
     "del": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-concat-util": "^0.5.2",
+    "gulp-eol": "^0.1.1",
     "gulp-help": "^1.6.1",
     "gulp-html-pdf": "^0.2.0",
     "gulp-image-optimization": "^0.1.3",
