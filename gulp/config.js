@@ -36,4 +36,4 @@ module.exports = {
 	"build"    : build,
 	"package"  : require('../package.json'),
 	"composer" : require('../composer.json')
-}
+};

@@ -27,7 +27,9 @@ $(document).ready(function() {
 	
 	// Syntax Highlighter
 	hljs.configure({tabReplace: '\t'}); // Tab size can be controlled in most browsers
-	$('pre code').each(function(i, e) {hljs.highlightBlock(e)});
+	$('pre code').each(function(i, e) {
+		hljs.highlightBlock(e);
+	});
 	
 	Mousetrap.bind(['ctrl+shift+l'], function(e) {
 		$('#semantic-debug-log').modal('show');
