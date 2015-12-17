@@ -13,7 +13,7 @@ Live Demo: [semantic-wordpress.gopagoda.io](http://semantic-wordpress.gopagoda.i
 
 #### Download:
 
-[![Sheild](http://img.shields.io/badge/release-1.0.0--beta2-yellow.svg?style=flat-square)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/master.zip) [![Sheild](http://img.shields.io/badge/branch-develop-brightgreen.svg?style=flat-square)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/develop.zip)
+[![Sheild](https://img.shields.io/badge/Release-1.0.0-blue.svg?style=flat-square)](https://github.com/ProjectCleverWeb/Semantic-UI-WordPress/archive/develop.zip)
 
 #### Screenshots
 
@@ -107,7 +107,7 @@ as LESS and SASS/SCSS files)
 
 #### Contributing to Semantic UI
 
-Visit [this page](http://semantic-ui.com/project/contributing.html#/contributing)
+Visit [this page](https://github.com/Semantic-Org/Semantic-UI/blob/master/CONTRIBUTING.md)
 to learn how to contribute to Semantic UI.
 
 #### Contributing to This WordPress Theme
