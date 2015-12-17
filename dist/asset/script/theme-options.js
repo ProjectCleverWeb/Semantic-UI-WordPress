@@ -34,7 +34,9 @@ jQuery(document).ready(function() {
 	
 	// Syntax Highlighter
 	hljs.configure({tabReplace: '\t'}); // Tab size can be controlled in most browsers
-	jQuery('pre code').each(function(i, e) {hljs.highlightBlock(e)});
+	jQuery('pre code').each(function(i, e) {
+		hljs.highlightBlock(e);
+	});
 	
 	Mousetrap.bind(['ctrl+shift+l'], function(e) {
 		jQuery('#semantic-debug-log').modal('show');
