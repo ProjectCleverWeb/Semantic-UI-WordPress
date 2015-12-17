@@ -1,0 +1,35 @@
+{
+	"compile_less": true,
+	"compile_sass": true,
+	"optimize_images": true,
+	"optimize_image_types": ["gif", "jpeg", "jpg", "png"],
+	"optimize_image_options": {
+		"optimizationLevel": 7,
+		"progressive": true,
+		"interlaced": true
+	},
+	"minify_css": true,
+	"concat_css": true,
+	"minify_js": true,
+	"concat_js": true,
+	"concat_css_output": "base.concat.min.css",
+	"concat_js_output": "base.concat.min.js",
+	"concat_js_files":[
+		"jquery-2.1.1.min.js",
+		"highlight.pack.min.js",
+		"mousetrap.min.js"
+	],
+	"concat_css_files":[
+		"normalize.min.css",
+		"font-awesome.min.css",
+		"webicons.min.css",
+		"highlight.js/github.min.css"
+	],
+	"paths":{
+		"source": "src",
+		"dist": "dist",
+		"testing_dist": "testing/vendor/wordpress/wp-content/themes/semantic-ui",
+		"styles": "asset/style",
+		"scripts": "asset/script"
+	}
+}

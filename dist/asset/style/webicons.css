@@ -1,0 +1,542 @@
+/*!
+Webicons by Adam Fairhead at Fairhead Creative http://fairheadcreative.com
+Webicons by http://fairheadcreative.com is licensed under the Creative Commons
+Attribution 4.0 International License. To view a copy of this license, visit
+http://creativecommons.org/licenses/by/4.0/.
+*/
+.webicon {
+  display: inline-block;
+  background-size: 100%;
+  width: 30px;
+  height: 30px;
+  text-indent: -999em;
+  text-align: left;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px; }
+
+.webicon:hover {
+  margin: -1px 0 1px;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.18); }
+
+.webicon.mini {
+  width: 15px;
+  height: 15px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px; }
+
+.webicon.tiny {
+  width: 20px;
+  height: 20px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px; }
+
+.webicon.small {
+  width: 25px;
+  height: 25px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px; }
+
+.webicon.large {
+  width: 35px;
+  height: 35px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px; }
+
+.webicon.big {
+  width: 40px;
+  height: 40px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px; }
+
+.webicon.huge {
+  width: 45px;
+  height: 45px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px; }
+
+.webicon.massive {
+  width: 48px;
+  height: 48px;
+  -moz-border-radius: 9px;
+  -webkit-border-radius: 9px;
+  border-radius: 9px; }
+
+/* restore webicons accessibility for print */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important; }
+  .webicon {
+    text-indent: 0;
+    width: auto !important;
+    height: auto !important;
+    -moz-border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important; } }
+
+.no-svg .webicon.f500px {
+  background: url("../image/webicons/webicon-f500px.png"); }
+
+.svg .webicon.f500px {
+  background: url("../image/webicons/webicon-f500px.svg"); }
+
+.no-svg .webicon.aboutme {
+  background: url("../image/webicons/webicon-aboutme.png"); }
+
+.svg .webicon.aboutme {
+  background: url("../image/webicons/webicon-aboutme.svg"); }
+
+.no-svg .webicon.adn {
+  background: url("../image/webicons/webicon-adn.png"); }
+
+.svg .webicon.adn {
+  background: url("../image/webicons/webicon-adn.svg"); }
+
+.no-svg .webicon.android {
+  background: url("../image/webicons/webicon-android.png"); }
+
+.svg .webicon.android {
+  background: url("../image/webicons/webicon-android.svg"); }
+
+.no-svg .webicon.apple {
+  background: url("../image/webicons/webicon-apple.png"); }
+
+.svg .webicon.apple {
+  background: url("../image/webicons/webicon-apple.svg"); }
+
+.no-svg .webicon.behance {
+  background: url("../image/webicons/webicon-behance.png"); }
+
+.svg .webicon.behance {
+  background: url("../image/webicons/webicon-behance.svg"); }
+
+.no-svg .webicon.bitbucket {
+  background: url("../image/webicons/webicon-bitbucket.png"); }
+
+.svg .webicon.bitbucket {
+  background: url("../image/webicons/webicon-bitbucket.svg"); }
+
+.no-svg .webicon.blogger {
+  background: url("../image/webicons/webicon-blogger.png"); }
+
+.svg .webicon.blogger {
+  background: url("../image/webicons/webicon-blogger.svg"); }
+
+.no-svg .webicon.branch {
+  background: url("../image/webicons/webicon-branch.png"); }
+
+.svg .webicon.branch {
+  background: url("../image/webicons/webicon-branch.svg"); }
+
+.no-svg .webicon.coderwall {
+  background: url("../image/webicons/webicon-coderwall.png"); }
+
+.svg .webicon.coderwall {
+  background: url("../image/webicons/webicon-coderwall.svg"); }
+
+.no-svg .webicon.creativecloud {
+  background: url("../image/webicons/webicon-creativecloud.png"); }
+
+.svg .webicon.creativecloud {
+  background: url("../image/webicons/webicon-creativecloud.svg"); }
+
+.no-svg .webicon.deviantart {
+  background: url("../image/webicons/webicon-deviantart.png"); }
+
+.svg .webicon.deviantart {
+  background: url("../image/webicons/webicon-deviantart.svg"); }
+
+.no-svg .webicon.dribbble {
+  background: url("../image/webicons/webicon-dribbble.png"); }
+
+.svg .webicon.dribbble {
+  background: url("../image/webicons/webicon-dribbble.svg"); }
+
+.no-svg .webicon.dropbox {
+  background: url("../image/webicons/webicon-dropbox.png"); }
+
+.svg .webicon.dropbox {
+  background: url("../image/webicons/webicon-dropbox.svg"); }
+
+.no-svg .webicon.evernote {
+  background: url("../image/webicons/webicon-evernote.png"); }
+
+.svg .webicon.evernote {
+  background: url("../image/webicons/webicon-evernote.svg"); }
+
+.no-svg .webicon.fairheadcreative {
+  background: url("../image/webicons/webicon-fairheadcreative.png"); }
+
+.svg .webicon.fairheadcreative {
+  background: url("../image/webicons/webicon-fairheadcreative.svg"); }
+
+.no-svg .webicon.facebook {
+  background: url("../image/webicons/webicon-facebook.png"); }
+
+.svg .webicon.facebook {
+  background: url("../image/webicons/webicon-facebook.svg"); }
+
+.no-svg .webicon.flickr {
+  background: url("../image/webicons/webicon-flickr.png"); }
+
+.svg .webicon.flickr {
+  background: url("../image/webicons/webicon-flickr.svg"); }
+
+.no-svg .webicon.foursquare {
+  background: url("../image/webicons/webicon-foursquare.png"); }
+
+.svg .webicon.foursquare {
+  background: url("../image/webicons/webicon-foursquare.svg"); }
+
+.no-svg .webicon.git {
+  background: url("../image/webicons/webicon-git.png"); }
+
+.svg .webicon.git {
+  background: url("../image/webicons/webicon-git.svg"); }
+
+.no-svg .webicon.github {
+  background: url("../image/webicons/webicon-github.png"); }
+
+.svg .webicon.github {
+  background: url("../image/webicons/webicon-github.svg"); }
+
+.no-svg .webicon.goodreads {
+  background: url("../image/webicons/webicon-goodreads.png"); }
+
+.svg .webicon.goodreads {
+  background: url("../image/webicons/webicon-goodreads.svg"); }
+
+.no-svg .webicon.google {
+  background: url("../image/webicons/webicon-google.png"); }
+
+.svg .webicon.google {
+  background: url("../image/webicons/webicon-google.svg"); }
+
+.no-svg .webicon.googleplay {
+  background: url("../image/webicons/webicon-googleplay.png"); }
+
+.svg .webicon.googleplay {
+  background: url("../image/webicons/webicon-googleplay.svg"); }
+
+.no-svg .webicon.googleplus {
+  background: url("../image/webicons/webicon-googleplus.png"); }
+
+.svg .webicon.googleplus {
+  background: url("../image/webicons/webicon-googleplus.svg"); }
+
+.no-svg .webicon.hangouts {
+  background: url("../image/webicons/webicon-hangouts.png"); }
+
+.svg .webicon.hangouts {
+  background: url("../image/webicons/webicon-hangouts.svg"); }
+
+.no-svg .webicon.html5 {
+  background: url("../image/webicons/webicon-html5.png"); }
+
+.svg .webicon.html5 {
+  background: url("../image/webicons/webicon-html5.svg"); }
+
+.no-svg .webicon.icloud {
+  background: url("../image/webicons/webicon-icloud.png"); }
+
+.svg .webicon.icloud {
+  background: url("../image/webicons/webicon-icloud.svg"); }
+
+.no-svg .webicon.indiegogo {
+  background: url("../image/webicons/webicon-indiegogo.png"); }
+
+.svg .webicon.indiegogo {
+  background: url("../image/webicons/webicon-indiegogo.svg"); }
+
+.no-svg .webicon.instagram {
+  background: url("../image/webicons/webicon-instagram.png"); }
+
+.svg .webicon.instagram {
+  background: url("../image/webicons/webicon-instagram.svg"); }
+
+.no-svg .webicon.instapaper {
+  background: url("../image/webicons/webicon-instapaper.png"); }
+
+.svg .webicon.instapaper {
+  background: url("../image/webicons/webicon-instapaper.svg"); }
+
+.no-svg .webicon.kickstarter {
+  background: url("../image/webicons/webicon-kickstarter.png"); }
+
+.svg .webicon.kickstarter {
+  background: url("../image/webicons/webicon-kickstarter.svg"); }
+
+.no-svg .webicon.klout {
+  background: url("../image/webicons/webicon-klout.png"); }
+
+.svg .webicon.klout {
+  background: url("../image/webicons/webicon-klout.svg"); }
+
+.no-svg .webicon.lastfm {
+  background: url("../image/webicons/webicon-lastfm.png"); }
+
+.svg .webicon.lastfm {
+  background: url("../image/webicons/webicon-lastfm.svg"); }
+
+.no-svg .webicon.linkedin {
+  background: url("../image/webicons/webicon-linkedin.png"); }
+
+.svg .webicon.linkedin {
+  background: url("../image/webicons/webicon-linkedin.svg"); }
+
+.no-svg .webicon.mail {
+  background: url("../image/webicons/webicon-mail.png"); }
+
+.svg .webicon.mail {
+  background: url("../image/webicons/webicon-mail.svg"); }
+
+.no-svg .webicon.medium {
+  background: url("../image/webicons/webicon-medium.png"); }
+
+.svg .webicon.medium {
+  background: url("../image/webicons/webicon-medium.svg"); }
+
+.no-svg .webicon.mixi {
+  background: url("../image/webicons/webicon-mixi.png"); }
+
+.svg .webicon.mixi {
+  background: url("../image/webicons/webicon-mixi.svg"); }
+
+.no-svg .webicon.msn {
+  background: url("../image/webicons/webicon-msn.png"); }
+
+.svg .webicon.msn {
+  background: url("../image/webicons/webicon-msn.svg"); }
+
+.no-svg .webicon.openid {
+  background: url("../image/webicons/webicon-openid.png"); }
+
+.svg .webicon.openid {
+  background: url("../image/webicons/webicon-openid.svg"); }
+
+.no-svg .webicon.picasa {
+  background: url("../image/webicons/webicon-picasa.png"); }
+
+.svg .webicon.picasa {
+  background: url("../image/webicons/webicon-picasa.svg"); }
+
+.no-svg .webicon.pinterest {
+  background: url("../image/webicons/webicon-pinterest.png"); }
+
+.svg .webicon.pinterest {
+  background: url("../image/webicons/webicon-pinterest.svg"); }
+
+.no-svg .webicon.pocketapp {
+  background: url("../image/webicons/webicon-pocketapp.png"); }
+
+.svg .webicon.pocketapp {
+  background: url("../image/webicons/webicon-pocketapp.svg"); }
+
+.no-svg .webicon.potluck {
+  background: url("../image/webicons/webicon-potluck.png"); }
+
+.svg .webicon.potluck {
+  background: url("../image/webicons/webicon-potluck.svg"); }
+
+.no-svg .webicon.quora {
+  background: url("../image/webicons/webicon-quora.png"); }
+
+.svg .webicon.quora {
+  background: url("../image/webicons/webicon-quora.svg"); }
+
+.no-svg .webicon.orkut {
+  background: url("../image/webicons/webicon-orkut.png"); }
+
+.svg .webicon.orkut {
+  background: url("../image/webicons/webicon-orkut.svg"); }
+
+.no-svg .webicon.mercurial {
+  background: url("../image/webicons/webicon-mercurial.png"); }
+
+.svg .webicon.mercurial {
+  background: url("../image/webicons/webicon-mercurial.svg"); }
+
+.no-svg .webicon.rdio {
+  background: url("../image/webicons/webicon-rdio.png"); }
+
+.svg .webicon.rdio {
+  background: url("../image/webicons/webicon-rdio.svg"); }
+
+.no-svg .webicon.reddit {
+  background: url("../image/webicons/webicon-reddit.png"); }
+
+.svg .webicon.reddit {
+  background: url("../image/webicons/webicon-reddit.svg"); }
+
+.no-svg .webicon.renren {
+  background: url("../image/webicons/webicon-renren.png"); }
+
+.svg .webicon.renren {
+  background: url("../image/webicons/webicon-renren.svg"); }
+
+.no-svg .webicon.rss {
+  background: url("../image/webicons/webicon-rss.png"); }
+
+.svg .webicon.rss {
+  background: url("../image/webicons/webicon-rss.svg"); }
+
+.no-svg .webicon.skitch {
+  background: url("../image/webicons/webicon-skitch.png"); }
+
+.svg .webicon.skitch {
+  background: url("../image/webicons/webicon-skitch.svg"); }
+
+.no-svg .webicon.skype {
+  background: url("../image/webicons/webicon-skype.png"); }
+
+.svg .webicon.skype {
+  background: url("../image/webicons/webicon-skype.svg"); }
+
+.no-svg .webicon.soundcloud {
+  background: url("../image/webicons/webicon-soundcloud.png"); }
+
+.svg .webicon.soundcloud {
+  background: url("../image/webicons/webicon-soundcloud.svg"); }
+
+.no-svg .webicon.spotify {
+  background: url("../image/webicons/webicon-spotify.png"); }
+
+.svg .webicon.spotify {
+  background: url("../image/webicons/webicon-spotify.svg"); }
+
+.no-svg .webicon.stackoverflow {
+  background: url("../image/webicons/webicon-stackoverflow.png"); }
+
+.svg .webicon.stackoverflow {
+  background: url("../image/webicons/webicon-stackoverflow.svg"); }
+
+.no-svg .webicon.stumbleupon {
+  background: url("../image/webicons/webicon-stumbleupon.png"); }
+
+.svg .webicon.stumbleupon {
+  background: url("../image/webicons/webicon-stumbleupon.svg"); }
+
+.no-svg .webicon.svtle {
+  background: url("../image/webicons/webicon-svtle.png"); }
+
+.svg .webicon.svtle {
+  background: url("../image/webicons/webicon-svtle.svg"); }
+
+.no-svg .webicon.svn {
+  background: url("../image/webicons/webicon-svn.png"); }
+
+.svg .webicon.svn {
+  background: url("../image/webicons/webicon-svn.svg"); }
+
+.no-svg .webicon.tent {
+  background: url("../image/webicons/webicon-tent.png"); }
+
+.svg .webicon.tent {
+  background: url("../image/webicons/webicon-tent.svg"); }
+
+.no-svg .webicon.tripadvisor {
+  background: url("../image/webicons/webicon-tripadvisor.png"); }
+
+.svg .webicon.tripadvisor {
+  background: url("../image/webicons/webicon-tripadvisor.svg"); }
+
+.no-svg .webicon.tumblr {
+  background: url("../image/webicons/webicon-tumblr.png"); }
+
+.svg .webicon.tumblr {
+  background: url("../image/webicons/webicon-tumblr.svg"); }
+
+.no-svg .webicon.twitter {
+  background: url("../image/webicons/webicon-twitter.png"); }
+
+.svg .webicon.twitter {
+  background: url("../image/webicons/webicon-twitter.svg"); }
+
+.no-svg .webicon.viadeo {
+  background: url("../image/webicons/webicon-viadeo.png"); }
+
+.svg .webicon.viadeo {
+  background: url("../image/webicons/webicon-viadeo.svg"); }
+
+.no-svg .webicon.vine {
+  background: url("../image/webicons/webicon-vine.png"); }
+
+.svg .webicon.vine {
+  background: url("../image/webicons/webicon-vine.svg"); }
+
+.no-svg .webicon.vimeo {
+  background: url("../image/webicons/webicon-vimeo.png"); }
+
+.svg .webicon.vimeo {
+  background: url("../image/webicons/webicon-vimeo.svg"); }
+
+.no-svg .webicon.weibo {
+  background: url("../image/webicons/webicon-weibo.png"); }
+
+.svg .webicon.weibo {
+  background: url("../image/webicons/webicon-weibo.svg"); }
+
+.no-svg .webicon.windows {
+  background: url("../image/webicons/webicon-windows.png"); }
+
+.svg .webicon.windows {
+  background: url("../image/webicons/webicon-windows.svg"); }
+
+.no-svg .webicon.wordpress {
+  background: url("../image/webicons/webicon-wordpress.png"); }
+
+.svg .webicon.wordpress {
+  background: url("../image/webicons/webicon-wordpress.svg"); }
+
+.no-svg .webicon.xing {
+  background: url("../image/webicons/webicon-xing.png"); }
+
+.svg .webicon.xing {
+  background: url("../image/webicons/webicon-xing.svg"); }
+
+.no-svg .webicon.yahoo {
+  background: url("../image/webicons/webicon-yahoo.png"); }
+
+.svg .webicon.yahoo {
+  background: url("../image/webicons/webicon-yahoo.svg"); }
+
+.no-svg .webicon.yelp {
+  background: url("../image/webicons/webicon-yelp.png"); }
+
+.svg .webicon.yelp {
+  background: url("../image/webicons/webicon-yelp.svg"); }
+
+.no-svg .webicon.youtube {
+  background: url("../image/webicons/webicon-youtube.png"); }
+
+.svg .webicon.youtube {
+  background: url("../image/webicons/webicon-youtube.svg"); }
+
+.no-svg .webicon.youversion {
+  background: url("../image/webicons/webicon-youversion.png"); }
+
+.svg .webicon.youversion {
+  background: url("../image/webicons/webicon-youversion.svg"); }
+
+.no-svg .webicon.zerply {
+  background: url("../image/webicons/webicon-zerply.png"); }
+
+.svg .webicon.zerply {
+  background: url("../image/webicons/webicon-zerply.svg"); }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+	<title>Semantic UI for WordPress: Developer Edition</title>
+	<parser>
+		<target>docs</target>
+		<extensions>
+			<extension>php</extension>
+		</extensions>
+		<visibility></visibility>
+	</parser>
+	<transformer>
+		<target>dist/asset/docs</target>
+	</transformer>
+	<transformations>
+		<template name="responsive-twig" />
+	</transformations>
+	<files>
+		<directory>src/include</directory>
+	</files>
+</phpdoc>

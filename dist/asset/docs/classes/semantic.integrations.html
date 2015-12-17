@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    Semantic UI for WordPress: Developer Edition &raquo; \semantic\integrations
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">Semantic UI for WordPress: Developer Edition</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/semantic.html">semantic</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public inherited">
+        <a href="#method___construct" title="__construct :: Just logs that the current class was initialized">
+            <span class="description">Just logs that the current class was initialized</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_admin_bar_links" title="admin_bar_links :: This adds a &quot;Theme Options&quot; link to the WordPress admin bar under the menu
+with the site name. Is only visible to users who can edit theme options.">
+            <span class="description">This adds a &quot;Theme Options&quot; link to the WordPress admin bar under the menu
+with the site name. Is only visible to users who can edit theme options.</span><pre>admin_bar_links</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_current_nav" title="current_nav :: Adds the class &quot;active&quot; to the current menu item">
+            <span class="description">Adds the class &quot;active&quot; to the current menu item</span><pre>current_nav</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_dashboard_footer" title="dashboard_footer :: Replaces the default WordPress footer with one that has a paypal donation
+link.">
+            <span class="description">Replaces the default WordPress footer with one that has a paypal donation
+link.</span><pre>dashboard_footer</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_editor_styles" title="editor_styles :: Adds the theme&#039;s stylesheets to the post/page editor. This allows the visual
+editor to more accurately represent what will be shown on the page.">
+            <span class="description">Adds the theme&#039;s stylesheets to the post/page editor. This allows the visual
+editor to more accurately represent what will be shown on the page.</span><pre>editor_styles</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_enqueue" title="enqueue :: Enqueues the theme styles/scripts">
+            <span class="description">Enqueues the theme styles/scripts</span><pre>enqueue</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_google_author" title="google_author :: Adds a field to the user profile page so they can add their Google Plus URL
+and be correctly marked as an author in posts they create">
+            <span class="description">Adds a field to the user profile page so they can add their Google Plus URL
+and be correctly marked as an author in posts they create</span><pre>google_author</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_init" title="init :: Registers various WordPress features">
+            <span class="description">Registers various WordPress features</span><pre>init</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_options" title="options :: Registers the options page with WordPress, and enqueues style/scripts for
+the options page in the dashboard. Only visible to users who can edit theme
+options.">
+            <span class="description">Registers the options page with WordPress, and enqueues style/scripts for
+the options page in the dashboard. Only visible to users who can edit theme
+options.</span><pre>options</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_options_page" title="options_page :: Displays the options page content when called">
+            <span class="description">Displays the options page content when called</span><pre>options_page</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_post_thumbnail" title="post_thumbnail :: Replaces the output of the_post_thumbnail()">
+            <span class="description">Replaces the output of the_post_thumbnail()</span><pre>post_thumbnail</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_register_enqueue" title="register_enqueue :: Registers all the theme styles/scripts">
+            <span class="description">Registers all the theme styles/scripts</span><pre>register_enqueue</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_search_form" title="search_form :: Replaces the default WordPress search form with one that uses Semantic UI.">
+            <span class="description">Replaces the default WordPress search form with one that uses Semantic UI.</span><pre>search_form</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_set_post_type" title="set_post_type :: Sets theme::$post_type">
+            <span class="description">Sets theme::$post_type</span><pre>set_post_type</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_widgets_init" title="widgets_init :: Registers the theme widget areas.">
+            <span class="description">Registers the theme widget areas.</span><pre>widgets_init</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_wp_title" title="wp_title :: Improve the existing wp_title()">
+            <span class="description">Improve the existing wp_title()</span><pre>wp_title</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>integrations</h1>
+                <small style="display: block; text-align: right">
+                                            Extends <a href="../classes/semantic.abstract_base.html">\semantic\abstract_base</a>
+                                                        </small>
+                <p class="short_description">WordPress integrations class</p>
+                <div class="details">
+                    <div class="long_description">
+                        <p>This class class holds all the functions that integrate directly with WordPress</p>
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct inherited" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>Just logs that the current class was initialized</h2>
+                            <pre>__construct() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_admin_bar_links"></a>
+                        <div class="element clickable method public  method_admin_bar_links" data-toggle="collapse" data-target=".method_admin_bar_links .collapse">
+                            <h2>This adds a &quot;Theme Options&quot; link to the WordPress admin bar under the menu
+with the site name. Is only visible to users who can edit theme options.</h2>
+                            <pre>admin_bar_links(object $wp_admin_bar) : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$wp_admin_bar</h4>
+                                                <code>object</code><p><p>The wp_admin_bar object as supplied by WordPress</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_current_nav"></a>
+                        <div class="element clickable method public  method_current_nav" data-toggle="collapse" data-target=".method_current_nav .collapse">
+                            <h2>Adds the class &quot;active&quot; to the current menu item</h2>
+                            <pre>current_nav(array $classes) : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$classes</h4>
+                                                <code>array</code><p><p>The array of classes as given by WordPress</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p><p>The modified array of classes</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_dashboard_footer"></a>
+                        <div class="element clickable method public  method_dashboard_footer" data-toggle="collapse" data-target=".method_dashboard_footer .collapse">
+                            <h2>Replaces the default WordPress footer with one that has a paypal donation
+link.</h2>
+                            <pre>dashboard_footer() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_editor_styles"></a>
+                        <div class="element clickable method public  method_editor_styles" data-toggle="collapse" data-target=".method_editor_styles .collapse">
+                            <h2>Adds the theme&#039;s stylesheets to the post/page editor. This allows the visual
+editor to more accurately represent what will be shown on the page.</h2>
+                            <pre>editor_styles() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_enqueue"></a>
+                        <div class="element clickable method public  method_enqueue" data-toggle="collapse" data-target=".method_enqueue .collapse">
+                            <h2>Enqueues the theme styles/scripts</h2>
+                            <pre>enqueue() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_google_author"></a>
+                        <div class="element clickable method public  method_google_author" data-toggle="collapse" data-target=".method_google_author .collapse">
+                            <h2>Adds a field to the user profile page so they can add their Google Plus URL
+and be correctly marked as an author in posts they create</h2>
+                            <pre>google_author(array $profile_fields) : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$profile_fields</h4>
+                                                <code>array</code><p><p>The contact fields array as provided by wordpress</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p><p>The resulting array after the field has been added.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_init"></a>
+                        <div class="element clickable method public  method_init" data-toggle="collapse" data-target=".method_init .collapse">
+                            <h2>Registers various WordPress features</h2>
+                            <pre>init() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_options"></a>
+                        <div class="element clickable method public  method_options" data-toggle="collapse" data-target=".method_options .collapse">
+                            <h2>Registers the options page with WordPress, and enqueues style/scripts for
+the options page in the dashboard. Only visible to users who can edit theme
+options.</h2>
+                            <pre>options() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_options_page"></a>
+                        <div class="element clickable method public  method_options_page" data-toggle="collapse" data-target=".method_options_page .collapse">
+                            <h2>Displays the options page content when called</h2>
+                            <pre>options_page() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_post_thumbnail"></a>
+                        <div class="element clickable method public  method_post_thumbnail" data-toggle="collapse" data-target=".method_post_thumbnail .collapse">
+                            <h2>Replaces the output of the_post_thumbnail()</h2>
+                            <pre>post_thumbnail(string $html, integer $post_id, integer $post_image_id) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$html</h4>
+                                                <code>string</code><p><p>The orginal HTML (ignored)</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$post_id</h4>
+                                                <code>integer</code><p><p>The Post ID as provided by WordPress</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$post_image_id</h4>
+                                                <code>integer</code><p><p>The Attachment ID as provided by WordPress</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The replacement HTML</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_register_enqueue"></a>
+                        <div class="element clickable method public  method_register_enqueue" data-toggle="collapse" data-target=".method_register_enqueue .collapse">
+                            <h2>Registers all the theme styles/scripts</h2>
+                            <pre>register_enqueue() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_search_form"></a>
+                        <div class="element clickable method public  method_search_form" data-toggle="collapse" data-target=".method_search_form .collapse">
+                            <h2>Replaces the default WordPress search form with one that uses Semantic UI.</h2>
+                            <pre>search_form() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The resulting form</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_set_post_type"></a>
+                        <div class="element clickable method public  method_set_post_type" data-toggle="collapse" data-target=".method_set_post_type .collapse">
+                            <h2>Sets theme::$post_type</h2>
+                            <pre>set_post_type(integer $template) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$template</h4>
+                                                <code>integer</code><p><p>The input string (ignored)</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The input string (ignored)</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_widgets_init"></a>
+                        <div class="element clickable method public  method_widgets_init" data-toggle="collapse" data-target=".method_widgets_init .collapse">
+                            <h2>Registers the theme widget areas.</h2>
+                            <pre>widgets_init() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_wp_title"></a>
+                        <div class="element clickable method public  method_wp_title" data-toggle="collapse" data-target=".method_wp_title .collapse">
+                            <h2>Improve the existing wp_title()</h2>
+                            <pre>wp_title(string $title, string $sep = &#039;&#039;) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$title</h4>
+                                                <code>string</code><p><p>Default HTML page title for current view.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$sep</h4>
+                                                <code>string</code><p><p>[optional] The separator to use.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The resulting title.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_theme"> </a>
+                            <div class="element clickable property  public property_theme" data-toggle="collapse" data-target=".property_theme .collapse">
+                                <h2>Instance of the theme class</h2>
+                                <pre>theme : \semantic\theme</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/semantic.theme.html">\semantic\theme</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\semantic\integrations"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/semantic.html">semantic</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/semantic.integrations.html">integrations</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Mon, 14 Dec 2015 22:44:05 +0100.<br/>
+    </footer>
+    </body>
+</html>

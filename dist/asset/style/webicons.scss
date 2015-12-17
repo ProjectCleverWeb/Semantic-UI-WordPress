@@ -1,0 +1,121 @@
+/*!
+Webicons by Adam Fairhead at Fairhead Creative http://fairheadcreative.com
+Webicons by http://fairheadcreative.com is licensed under the Creative Commons
+Attribution 4.0 International License. To view a copy of this license, visit
+http://creativecommons.org/licenses/by/4.0/.
+*/
+
+.webicon {
+	display: inline-block;
+	background-size: 100%;
+	width: 30px;
+	height: 30px;
+	text-indent: -999em;
+	text-align: left;
+	-moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; margin-bottom: 5px;
+}
+
+.webicon:hover {
+	margin: -1px 0 1px;
+	-moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+	-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+}
+
+.webicon.mini {
+	width: 15px;
+	height: 15px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.webicon.tiny {
+	width: 20px;
+	height: 20px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.webicon.small {
+	width: 25px;
+	height: 25px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.webicon.large {
+	width: 35px;
+	height: 35px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+.webicon.big {
+	width: 40px;
+	height: 40px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+}
+
+.webicon.huge {
+	width: 45px;
+	height: 45px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+}
+
+.webicon.massive {
+	width: 48px;
+	height: 48px;
+	-moz-border-radius: 9px;
+	-webkit-border-radius: 9px;
+	border-radius: 9px;
+}
+
+/* restore webicons accessibility for print */
+@media print {
+	* {
+		background: transparent !important;
+		color: #000 !important;
+		-moz-box-shadow: none !important;
+		-webkit-box-shadow: none !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+	
+	.webicon {
+		text-indent: 0;
+		width: auto !important;
+		height: auto !important;
+		-moz-border-radius: 0 !important;
+		-webkit-border-radius: 0 !important;
+		border-radius: 0 !important;
+	}
+}
+
+// Include or remove the icons you want to use on your site from this list.
+$webicons-icons: f500px aboutme adn android apple behance bitbucket blogger branch coderwall creativecloud deviantart dribbble dropbox evernote fairheadcreative facebook flickr foursquare git github goodreads google googleplay googleplus hangouts html5 icloud indiegogo instagram instapaper kickstarter klout lastfm linkedin mail medium mixi msn openid picasa pinterest pocketapp potluck quora orkut mercurial rdio reddit renren rss skitch skype soundcloud spotify stackoverflow stumbleupon svtle svn tent tripadvisor tumblr twitter viadeo vine vimeo weibo windows wordpress xing yahoo yelp youtube youversion zerply;
+
+// Specify the path to the webicons directory here. Include trailing slash.
+$webicons-url: "../image/webicons/" !default;
+
+@each $webicons-icon in $webicons-icons {
+	.no-svg .webicon.#{$webicons-icon} {
+		background: url("#{$webicons-url}webicon-#{$webicons-icon}.png");
+	}
+	
+	.svg .webicon.#{$webicons-icon} {
+		background: url("#{$webicons-url}webicon-#{$webicons-icon}.svg");
+	}
+}

@@ -1,9 +1,7 @@
 ### Unit Testing ###
 /testing/vendor
-/composer.lock
 
 ### Build Process ###
-/build
 /node_modules
 /npm-debug.log
 

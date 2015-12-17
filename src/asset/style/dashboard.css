@@ -1,0 +1,71 @@
+/*
+These styles are only used in the WordPress dashboard.
+*/
+
+body.wp-admin * {
+	box-sizing: content-box;
+}
+
+body.wp-admin {
+	background: none;
+}
+
+body.wp-admin * .ui, body.wp-admin * .ui * {
+	box-sizing: border-box;
+}
+
+body.login {
+	background: #f1f1f1;
+}
+
+blockquote {
+	background-color: rgba(230, 230, 250, 0.25);
+	border-left: 4px solid rgba(0, 0, 0, 0.15);
+	padding: 0.5em 10px 0.5em 2.2em;
+	quotes: "\201C""\201D""\201C""\201D";
+	z-index: 10;
+}
+
+blockquote:before {
+	font-family: 'Roboto', 'Open Sans', sans-serif;
+	color: rgba(0, 0, 0, 0.15);
+	content: open-quote;
+	vertical-align: middle;
+	position: absolute;
+	margin: 0.45em 0 0 -0.45em;
+	font-size: 64px;
+	line-height: 0px;
+	z-index: 5;
+}
+
+blockquote cite {
+	display: block;
+	margin-top: 0.8em;
+	text-align: right;
+}
+
+blockquote p {
+	display: inline;
+}
+
+
+.ui .button {
+	height: auto;
+}
+
+input {
+	line-height: normal;
+}
+
+#wpbody-content *.menu {
+	padding-top: 0;
+}
+
+#wpbody-content {
+	padding-bottom: 182px;
+}
+
+/*** Fix blank space in wp dashboard sidebar ***/
+#wpwrap #adminmenuback{
+	z-index:initial;
+}
