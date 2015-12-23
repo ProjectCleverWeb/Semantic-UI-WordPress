@@ -345,32 +345,32 @@ img {
 
 /*** Utility Classes ***/
 
-.centered {
+.centered:not(ui):not(ui *) {
 	text-align: center;
 }
 
-.empty {
+.empty:not(ui):not(ui *) {
 	display: block;
 	width: 100%;
 }
 
-.empty.size-5 { height: 5px; }
-.empty.size-10 { height: 10px; }
-.empty.size-15 { height: 15px; }
-.empty.size-20 { height: 20px; }
-.empty.size-25 { height: 25px; }
-.empty.size-30 { height: 30px; }
-.empty.size-35 { height: 35px; }
-.empty.size-40 { height: 40px; }
-.empty.size-45 { height: 45px; }
-.empty.size-50 { height: 50px; }
-.empty.size-60 { height: 60px; }
-.empty.size-70 { height: 70px; }
-.empty.size-80 { height: 80px; }
-.empty.size-90 { height: 90px; }
-.empty.size-100 { height: 100px; }
+.empty.size-5:not(ui):not(ui *) { height: 5px; }
+.empty.size-10:not(ui):not(ui *) { height: 10px; }
+.empty.size-15:not(ui):not(ui *) { height: 15px; }
+.empty.size-20:not(ui):not(ui *) { height: 20px; }
+.empty.size-25:not(ui):not(ui *) { height: 25px; }
+.empty.size-30:not(ui):not(ui *) { height: 30px; }
+.empty.size-35:not(ui):not(ui *) { height: 35px; }
+.empty.size-40:not(ui):not(ui *) { height: 40px; }
+.empty.size-45:not(ui):not(ui *) { height: 45px; }
+.empty.size-50:not(ui):not(ui *) { height: 50px; }
+.empty.size-60:not(ui):not(ui *) { height: 60px; }
+.empty.size-70:not(ui):not(ui *) { height: 70px; }
+.empty.size-80:not(ui):not(ui *) { height: 80px; }
+.empty.size-90:not(ui):not(ui *) { height: 90px; }
+.empty.size-100:not(ui):not(ui *) { height: 100px; }
 
-.hidden {
+.hidden:not(ui):not(ui *) {
 	display: none;
 }
 
@@ -378,7 +378,7 @@ img {
 
 /*** ID's ***/
 
-#calendar_wrap{
+#calendar_wrap {
 	text-align: center;
 	margin: 0;
 	padding: 0;
