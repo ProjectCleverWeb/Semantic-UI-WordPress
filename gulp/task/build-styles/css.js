@@ -1,11 +1,7 @@
-var gulp = require('gulp-help')(require('gulp'));
-
-/**
- * Copy and minify CSS files
- */
-gulp.task('build-styles/css', false, function() {
+module.exports = function() {
 	// Setup Vars
 	var
+		gulp    = require('gulp-help')(require('gulp')),
 		conf    = require('../../config'),
 		mv      = require('gulp-rename'),
 		css_min = require('gulp-minify-css'),
@@ -25,4 +21,4 @@ gulp.task('build-styles/css', false, function() {
 		return gulp.src([paths.source_styles + '/**/*.css', '!' + paths.source_styles + '/**/*.min.css'])
 			.pipe(gulp.dest(paths.dist_styles));
 	}
-});
+};

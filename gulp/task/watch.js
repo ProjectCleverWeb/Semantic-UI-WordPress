@@ -1,11 +1,7 @@
-var gulp = require('gulp-help')(require('gulp'));
-
-/**
- * Continuously update the dist. directory when changes are made in the source directory
- */
-gulp.task('watch', 'Continuously update the dist. directory when changes are made in the source directory.', function() {
+module.exports = function() {
 	// Setup Vars
 	var
+		gulp     = require('gulp-help')(require('gulp')),
 		util     = require('gulp-util'),
 		conf     = require('../config'),
 		cli      = require('../cli'),
@@ -57,7 +53,8 @@ gulp.task('watch', 'Continuously update the dist. directory when changes are mad
 				'build-styles/sass',
 				'build-styles/css',
 				'build-styles/minify',
-				'build-styles/concat'
+				'build-styles/concat',
+				'fix-line-endings'
 			);
 		}
 	});
@@ -72,7 +69,8 @@ gulp.task('watch', 'Continuously update the dist. directory when changes are mad
 				'build-scripts/copy',
 				'build-scripts/js',
 				'build-scripts/minify',
-				'build-scripts/concat'
+				'build-scripts/concat',
+				'fix-line-endings'
 			);
 		}
 	});
@@ -96,4 +94,4 @@ gulp.task('watch', 'Continuously update the dist. directory when changes are mad
 				pipe(gulp_rm());
 		}
 	});
-});
+};

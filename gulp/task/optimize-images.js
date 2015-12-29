@@ -1,11 +1,7 @@
-var gulp = require('gulp-help')(require('gulp'));
-
-/**
- * Attempt to reduce the size of all images.
- */
-gulp.task('optimize-images', 'Attempt to reduce the size of all images.', function() {
+module.exports = function() {
 	// Setup Vars
 	var
+		gulp    = require('gulp-help')(require('gulp')),
 		conf    = require('../config'),
 		cli     = require('../cli'),
 		img_opt = require('gulp-image-optimization'),
@@ -20,4 +16,4 @@ gulp.task('optimize-images', 'Attempt to reduce the size of all images.', functi
 	} else {
 		cli.log('Skipping image optimization');
 	}
-});
+};

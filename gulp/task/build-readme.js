@@ -1,11 +1,7 @@
-var gulp = require('gulp-help')(require('gulp'));
-
-/**
- * Generate HTML & PDF "README" from the project's README.md
- */
-gulp.task('build-readme', 'Generate HTML & PDF "README" from the project\'s README.md', function() {
+module.exports = function() {
 	// Setup Vars
 	var
+		gulp     = require('gulp-help')(require('gulp')),
 		conf     = require('../config'),
 		cli      = require('../cli'),
 		insert   = require('gulp-insert'),
@@ -30,4 +26,4 @@ gulp.task('build-readme', 'Generate HTML & PDF "README" from the project\'s READ
 			"border": "0.5in"
 		}))
 		.pipe(gulp.dest(paths.dist));
-});
+};

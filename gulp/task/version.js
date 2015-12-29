@@ -1,9 +1,4 @@
-var gulp = require('gulp-help')(require('gulp'));
-
-/**
- * Display the current version, copyright, and license
- */
-gulp.task('version', 'Display the current version, copyright, and license info.', function() {
+module.exports = function() {
 	// Setup Vars
 	var
 		conf = require('../config'),
@@ -14,4 +9,4 @@ gulp.task('version', 'Display the current version, copyright, and license info.'
 		+ '\nCopyright: ' + conf.package.author
 		+ '\nLicense: '   + conf.package.license.type
 	);
-});
+};
