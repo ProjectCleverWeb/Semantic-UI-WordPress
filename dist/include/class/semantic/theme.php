@@ -13,7 +13,7 @@ namespace semantic;
  * fetching/updating options, and how some parts of the page are generated.
  */
 class theme extends abstract_base {
-	const IDENTIFIER  = 'semantic';
+	const IDENTIFIER = 'semantic';
 	const TEXT_DOMAIN = 'semantic';
 	
 	/**
@@ -208,8 +208,6 @@ class theme extends abstract_base {
 	
 	/**
 	 * Sets class vars and calls various setup functions
-	 * 
-	 * @return void
 	 */
 	public function __construct() {
 		// Setup debug before everything else
@@ -328,12 +326,16 @@ class theme extends abstract_base {
 	public function get_functions() {
 		global $debug;
 		$debug->runtime_checkpoint('[Theme] Begin Including Function Files');
-		$func_dir = realpath($this->include_path.'/function');
+		$func_dir     = realpath($this->include_path.'/function');
 		$func_alt_dir = realpath(get_stylesheet_directory().'/'.$this->include_sub_path.'/function');
 		if ($func_alt_dir && is_dir($func_alt_dir)) {
 			foreach (scandir($func_alt_dir) as $function_file) {
 				// ignore non-php files, check if the file exists, and that there isn't a function with the same name
-				if (substr($function_file, -4) == '.php' && is_file($func_alt_dir.DIRECTORY_SEPARATOR.$function_file) && !function_exists(substr($function_file, 0, -4))) {
+				if (
+					substr($function_file, -4) == '.php'
+					&& is_file($func_alt_dir.DIRECTORY_SEPARATOR.$function_file)
+					&& !function_exists(substr($function_file, 0, -4))
+				) {
 					$this->req_once($func_alt_dir.DIRECTORY_SEPARATOR.$function_file, TRUE);
 				}
 			}
@@ -341,7 +343,10 @@ class theme extends abstract_base {
 		if ($func_dir != $func_alt_dir) {
 			foreach (scandir($func_dir) as $function_file) {
 				// ignore non-php files, check if the file exists, and that there isn't a function with the same name
-				if (substr($function_file, -4) == '.php' && is_file($func_dir.DIRECTORY_SEPARATOR.$function_file) && !function_exists(substr($function_file, -4))) {
+				if (substr($function_file, -4) == '.php'
+					&& is_file($func_dir.DIRECTORY_SEPARATOR.$function_file)
+					&& !function_exists(substr($function_file, -4))
+				) {
 					$this->req_once($func_dir.DIRECTORY_SEPARATOR.$function_file, TRUE);
 				}
 			}
@@ -369,7 +374,7 @@ class theme extends abstract_base {
 	/**
 	 * Simply returns an array of "default" options for the theme
 	 * 
-	 * @return array The options
+	 * @return array The default theme options
 	 */
 	private function default_options() {
 		return array(
@@ -447,7 +452,7 @@ class theme extends abstract_base {
 	 * Prints the input name for a value on the options page (form)
 	 * 
 	 * @param  string $name The name to use
-	 * @return void
+	 * @return string
 	 */
 	public function option_form_name($name) {
 		return sprintf(
@@ -501,7 +506,7 @@ class theme extends abstract_base {
 		// Configure Vars
 		$var_list['theme'] = $this;
 		$var_list['debug'] = $debug;
-		$var_list = $var_list + $this->inc_var_list;
+		$var_list          = $var_list + $this->inc_var_list;
 		$this->_inc_path($path);
 		
 		// Undo the variables set by this function
@@ -533,7 +538,7 @@ class theme extends abstract_base {
 		// Configure Vars
 		$var_list['theme'] = $this;
 		$var_list['debug'] = $debug;
-		$var_list = $var_list + $this->inc_var_list;
+		$var_list          = $var_list + $this->inc_var_list;
 		$this->_inc_path($path);
 		
 		// Undo the variables set by this function
@@ -565,7 +570,7 @@ class theme extends abstract_base {
 		// Configure Vars
 		$var_list['theme'] = $this;
 		$var_list['debug'] = $debug;
-		$var_list = $var_list + $this->inc_var_list;
+		$var_list          = $var_list + $this->inc_var_list;
 		$this->_inc_path($path);
 		
 		// Undo the variables set by this function
@@ -597,7 +602,7 @@ class theme extends abstract_base {
 		// Configure Vars
 		$var_list['theme'] = $this;
 		$var_list['debug'] = $debug;
-		$var_list = $var_list + $this->inc_var_list;
+		$var_list          = $var_list + $this->inc_var_list;
 		$this->_inc_path($path);
 		
 		// Undo the variables set by this function
@@ -674,7 +679,7 @@ class theme extends abstract_base {
 	 * @param  boolean $is_abs   (optional) If the $path is an absolute path, set this to TRUE
 	 * @param  boolean $once     (optional) Set to TRUE to use include_once instead of include
 	 * @param  array   $var_list (optional) The array of variables you want extraced
-	 * @return mixed             (optional) The return value of the file - usually NULL
+	 * @return boolean           Returns TRUE if the part was successfully added to the queue, FALSE otherwise
 	 */
 	public function use_part($id, $path, $is_abs = FALSE, $once = FALSE, $var_list = array()) {
 		global $debug;
