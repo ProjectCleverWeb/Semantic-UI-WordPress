@@ -22,7 +22,7 @@ abstract class abstract_base extends \Walker {
 	 * @param array $options Custom options to pass to the walker as $this->semantic_options
 	 */
 	public function __construct($options = array()) {
-		$this->seamntic_options = $options;
+		$this->semantic_options = $options;
 		global $debug;
 		$debug->runtime_checkpoint(sprintf('[Theme] Class "%1$s" Initialized', get_class($this)));
 	}
