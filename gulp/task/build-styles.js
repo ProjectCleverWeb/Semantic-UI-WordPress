@@ -9,6 +9,7 @@ module.exports = function() {
 		'build-styles/sass',
 		'build-styles/css',
 		'build-styles/minify',
-		'build-styles/concat'
+		'build-styles/concat',
+		'fix-line-endings'
 	);
 };

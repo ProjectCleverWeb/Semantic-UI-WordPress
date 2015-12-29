@@ -7,6 +7,7 @@ module.exports = function() {
 		'build-scripts/copy',
 		'build-scripts/js',
 		'build-scripts/minify',
-		'build-scripts/concat'
+		'build-scripts/concat',
+		'fix-line-endings'
 	);
 };
