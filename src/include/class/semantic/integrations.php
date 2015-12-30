@@ -34,7 +34,7 @@ class integrations extends abstract_base {
 	public function init() {
 		// Set the max content width (used by wordpress)
 		global $content_width;
-		$theme = $this->theme;
+		$theme         = $this->theme;
 		$content_width = 1200;
 		
 		// Tell WordPress what this theme supports
@@ -72,7 +72,10 @@ class integrations extends abstract_base {
 		// in your company actually uses this.
 		if (in_array($GLOBALS['pagenow'], array('theme-editor.php'))) {
 			if ($theme->get_option('theme_editor') == FALSE) {
-				wp_die('<p>'.__('In order to edit this theme, you must first re-enable the theme editor via the <a href="'.$theme->options_uri().'">Theme Options</a> page', $theme::TEXT_DOMAIN).'</p>');
+				wp_die('<p>'.__(sprintf(
+					'In order to edit this theme, you must first re-enable the theme editor via the <a href="%s">Theme Options</a> page',
+					$theme->options_uri()
+				), $theme::TEXT_DOMAIN).'</p>');
 			}
 		}
 		
@@ -254,10 +257,10 @@ class integrations extends abstract_base {
 		global $page, $paged;
 		settype($title, 'string');
 		settype($sep, 'string');
-		$title = trim(trim(trim($title), $sep));
+		$title    = trim(trim(trim($title), $sep));
 		$real_sep = trim($sep);
-		$sep = ' '.$real_sep.' ';
-		$t_arr = array();
+		$sep      = ' '.$real_sep.' ';
+		$t_arr    = array();
 		
 		if (!empty($title)) {
 			$t_arr[] = $title;
@@ -286,8 +289,8 @@ class integrations extends abstract_base {
 	 * Adds a field to the user profile page so they can add their Google Plus URL
 	 * and be correctly marked as an author in posts they create
 	 * 
-	 * @param  array $profile_fields The contact fields array as provided by wordpress
-	 * @return array                 The resulting array after the field has been added.
+	 * @param  array    $profile_fields The contact fields array as provided by wordpress
+	 * @return string[]                 The resulting array after the field has been added.
 	 */
 	public function google_author($profile_fields) {
 		$profile_fields['gplus'] = 'Google+ URL (for authorship)';
@@ -388,8 +391,8 @@ class integrations extends abstract_base {
 	 * @return string                 The replacement HTML
 	 */
 	public function post_thumbnail($html, $post_id, $post_image_id) {
-		$image = wp_get_attachment_image_src(get_post_thumbnail_id($post_id), 'single-post-thumbnail');
-		$alt = get_post_meta($post_image_id, '_wp_attachment_image_alt');
+		$image = wp_get_attachment_image_src(get_post_thumbnail_id((string) $post_id), 'single-post-thumbnail');
+		$alt   = get_post_meta($post_image_id, '_wp_attachment_image_alt');
 		
 		if (!isset($alt[0])) {
 			$alt = array('');
@@ -405,8 +408,8 @@ class integrations extends abstract_base {
 	/**
 	 * Sets theme::$post_type
 	 * 
-	 * @param  integer $template The input string (ignored)
-	 * @return string            The input string (ignored)
+	 * @param  string $template The input string (ignored)
+	 * @return string           The input string (ignored)
 	 */
 	public function set_post_type($template) {
 		global $debug, $theme;

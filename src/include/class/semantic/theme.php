@@ -13,7 +13,7 @@ namespace semantic;
  * fetching/updating options, and how some parts of the page are generated.
  */
 class theme extends abstract_base {
-	const IDENTIFIER = 'semantic';
+	const IDENTIFIER  = 'semantic';
 	const TEXT_DOMAIN = 'semantic';
 	
 	/**

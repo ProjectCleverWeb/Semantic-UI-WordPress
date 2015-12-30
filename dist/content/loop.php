@@ -31,15 +31,15 @@ if (have_posts()) {
 				
 				
 				$categories = get_the_category();
-				if($categories){
-					$cat_i = 0;
+				if(!empty($categories)){
+					$cat_i     = 0;
 					$cat_array = array();
 					foreach($categories as $category) {
 						if ($cat_i < 3) {
 							$cat_array[] = sprintf(
 								'<a href="%1$s" title="%2$s">%3$s</a>',
 								get_category_link($category->term_id),
-								esc_attr(sprintf(__("View all posts in %s", $theme::TEXT_DOMAIN), $category->name)),
+								esc_attr(sprintf(__('View all posts in %s', $theme::TEXT_DOMAIN), $category->name)),
 								$category->cat_name
 							);
 						} else {
@@ -74,7 +74,7 @@ if (have_posts()) {
 				?></section><?php
 			} else {
 				if (has_post_thumbnail($post->ID)) {
-					$image = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID), 'single-post-thumbnail');
+					$image = wp_get_attachment_image_src(get_post_thumbnail_id((integer) $post->ID), 'single-post-thumbnail');
 					printf(
 						'<div class="entry-media"><img itemprop="image" src="%1$s" alt="%2$s"></div>',
 						$image[0],
@@ -98,9 +98,9 @@ if (have_posts()) {
 					<?php
 					$post_tags = get_the_tags();
 					if ($post_tags) {
-						$tag_i = 0;
+						$tag_i   = 0;
 						$tag_str = '';
-						foreach ($post_tags as $tag) {
+						foreach ((array) $post_tags as $tag) {
 							if ($tag_i < 5) {
 								$tag_str .= sprintf(
 									'<a class="ui label" id="tag-%2$s" href="%3$s">%1$s</a> ',
@@ -121,7 +121,7 @@ if (have_posts()) {
 					Article created by
 					<span class="author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">
 						<?php
-						$author = get_the_author();
+						$author     = get_the_author();
 						$author_url = get_the_author_meta('gplus');
 						if (!$author_url) {
 							$author_url = get_the_author_meta('user_url');
@@ -131,7 +131,7 @@ if (have_posts()) {
 								'<a href="%2$s" class="fn author-with-link" itemprop="name" title="%3$s" rel="nofollow author external">%1$s</a>',
 								$author,
 								esc_url($author_url),
-								esc_attr(sprintf(__("Visit %s&#8217;s website", $theme::TEXT_DOMAIN), $author))
+								esc_attr(sprintf(__('Visit %s&#8217;s website', $theme::TEXT_DOMAIN), $author))
 							);
 						} else {
 							printf(
@@ -173,7 +173,7 @@ if (have_posts()) {
 	));
 	
 	if (!empty($pagination)) {
-		foreach ($pagination as &$link) {
+		foreach ((array) $pagination as &$link) {
 			$link = str_ireplace('page-numbers current', 'item active', $link);
 			$link = str_ireplace('page-numbers dots', 'item active', $link);
 			$link = str_ireplace('page-numbers', 'item', $link);
@@ -184,6 +184,4 @@ if (have_posts()) {
 			implode(' ', $pagination)
 		);
 	}
-	
-	
 }
