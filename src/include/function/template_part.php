@@ -15,23 +15,23 @@
  *   - Supports overrides via template_use_part()
  * 
  * @see https://codex.wordpress.org/Function_Reference/get_template_part
- * @param string $slug The slug name for the generic template.
- * @param string $name The name of the specialized template.
- * @return mixed       The returned value of the file on success, NULL otherwise
+ * @param string      $slug The slug name for the generic template.
+ * @param string|null $name The name of the specialized template.
+ * @return mixed            The returned value of the file on success, NULL otherwise
  */
 function template_part($slug, $name = NULL) {
 	global $debug;
-	$action = str_replace('\\','/',"get_template_part_{$slug}");
+	$action = str_replace('\\', '/', 'get_template_part_'.$slug);
 	$debug->runtime_checkpoint('[Theme] Action: '.$action);
 	
 	do_action($action, $slug, $name);
 	
 	$templates = array();
-	$name = (string) $name;
+	$name      = (string) $name;
 	if ('' !== $name) {
-		$templates[] = "{$slug}-{$name}.php";
+		$templates[] = $slug.'-'.$name.'.php';
 	}
-	$templates[] = "{$slug}.php";
+	$templates[] = $slug.'.php';
 	
 	$located = template_part__locate($templates);
 	if ($located) {

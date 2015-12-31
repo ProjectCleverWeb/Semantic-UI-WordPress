@@ -172,8 +172,8 @@ if (have_posts()) {
 		'type'      => 'array'
 	));
 	
-	if (!empty($pagination)) {
-		foreach ((array) $pagination as &$link) {
+	if (!empty($pagination) && is_array($pagination)) {
+		foreach ($pagination as &$link) {
 			$link = str_ireplace('page-numbers current', 'item active', $link);
 			$link = str_ireplace('page-numbers dots', 'item active', $link);
 			$link = str_ireplace('page-numbers', 'item', $link);
