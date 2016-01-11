@@ -34,7 +34,7 @@ class integrations extends abstract_base {
 	public function init() {
 		// Set the max content width (used by wordpress)
 		global $content_width;
-		$theme = $this->theme;
+		$theme         = $this->theme;
 		$content_width = 1200;
 		
 		// Tell WordPress what this theme supports
@@ -64,15 +64,18 @@ class integrations extends abstract_base {
 		
 		// TIP: Use wp_nav_menu(array('theme_location' => 'menu-name')) to fetch these
 		register_nav_menus(array(
-			'main-menu'   => __('Main Menu', $theme::text_domain),
-			'footer-menu' => __('Footer Menu', $theme::text_domain)
+			'main-menu'   => __('Main Menu', $theme::TEXT_DOMAIN),
+			'footer-menu' => __('Footer Menu', $theme::TEXT_DOMAIN)
 		));
 		
 		// The WP file editor is an abomination. May God help you if you or anyone
 		// in your company actually uses this.
 		if (in_array($GLOBALS['pagenow'], array('theme-editor.php'))) {
 			if ($theme->get_option('theme_editor') == FALSE) {
-				wp_die('<p>'.__('In order to edit this theme, you must first re-enable the theme editor via the <a href="'.$theme->options_uri().'">Theme Options</a> page', $theme::text_domain).'</p>');
+				wp_die('<p>'.__(sprintf(
+					'In order to edit this theme, you must first re-enable the theme editor via the <a href="%s">Theme Options</a> page',
+					$theme->options_uri()
+				), $theme::TEXT_DOMAIN).'</p>');
 			}
 		}
 		
@@ -91,7 +94,7 @@ class integrations extends abstract_base {
 	public function widgets_init() {
 		$theme = $this->theme;
 		register_sidebar(array(
-			'name'          => __('Right Sidebar Widget Area', $theme::text_domain),
+			'name'          => __('Right Sidebar Widget Area', $theme::TEXT_DOMAIN),
 			'id'            => 'sidebar-widget-area-right',
 			'description'   => 'These widgets are only visible when the siderbar is on the right side of the page',
 			'before_widget' => '<aside id="%1$s" class="wp-widget sidebar-right-widget %2$s ui basic segment">',
@@ -100,7 +103,7 @@ class integrations extends abstract_base {
 			'after_title'   => '</h4>'
 		));
 		register_sidebar(array(
-			'name'          => __('Left Sidebar Widget Area', $theme::text_domain),
+			'name'          => __('Left Sidebar Widget Area', $theme::TEXT_DOMAIN),
 			'id'            => 'sidebar-widget-area-left',
 			'description'   => 'These widgets are only visible when the siderbar is on the left side of the page',
 			'before_widget' => '<aside id="%1$s" class="wp-widget sidebar-left-widget %2$s ui basic segment">',
@@ -109,7 +112,7 @@ class integrations extends abstract_base {
 			'after_title'   => '</h4>'
 		));
 		register_sidebar(array(
-			'name'          => __('Footer Widget Area', $theme::text_domain),
+			'name'          => __('Footer Widget Area', $theme::TEXT_DOMAIN),
 			'id'            => 'footer-widget-area-footer',
 			'description'   => 'These widgets are visible in the footer',
 			'before_widget' => '<div class="column"><aside id="%1$s" class="wp-widget sidebar-right-widget %2$s ui basic segment">',
@@ -254,10 +257,10 @@ class integrations extends abstract_base {
 		global $page, $paged;
 		settype($title, 'string');
 		settype($sep, 'string');
-		$title = trim(trim(trim($title), $sep));
+		$title    = trim(trim(trim($title), $sep));
 		$real_sep = trim($sep);
-		$sep = ' '.$real_sep.' ';
-		$t_arr = array();
+		$sep      = ' '.$real_sep.' ';
+		$t_arr    = array();
 		
 		if (!empty($title)) {
 			$t_arr[] = $title;
@@ -286,8 +289,8 @@ class integrations extends abstract_base {
 	 * Adds a field to the user profile page so they can add their Google Plus URL
 	 * and be correctly marked as an author in posts they create
 	 * 
-	 * @param  array $profile_fields The contact fields array as provided by wordpress
-	 * @return array                 The resulting array after the field has been added.
+	 * @param  array    $profile_fields The contact fields array as provided by wordpress
+	 * @return string[]                 The resulting array after the field has been added.
 	 */
 	public function google_author($profile_fields) {
 		$profile_fields['gplus'] = 'Google+ URL (for authorship)';
@@ -383,13 +386,13 @@ class integrations extends abstract_base {
 	 * Replaces the output of the_post_thumbnail()
 	 * 
 	 * @param  string  $html          The orginal HTML (ignored)
-	 * @param  integer $post_id       The Post ID as provided by WordPress
+	 * @param  string  $post_id       The Post ID as provided by WordPress
 	 * @param  integer $post_image_id The Attachment ID as provided by WordPress
 	 * @return string                 The replacement HTML
 	 */
 	public function post_thumbnail($html, $post_id, $post_image_id) {
-		$image = wp_get_attachment_image_src(get_post_thumbnail_id($post_id), 'single-post-thumbnail');
-		$alt = get_post_meta($post_image_id, '_wp_attachment_image_alt');
+		$image = wp_get_attachment_image_src((integer) get_post_thumbnail_id((string) $post_id), 'single-post-thumbnail');
+		$alt   = get_post_meta($post_image_id, '_wp_attachment_image_alt');
 		
 		if (!isset($alt[0])) {
 			$alt = array('');
@@ -405,8 +408,8 @@ class integrations extends abstract_base {
 	/**
 	 * Sets theme::$post_type
 	 * 
-	 * @param  integer $template The input string (ignored)
-	 * @return string            The input string (ignored)
+	 * @param  string $template The input string (ignored)
+	 * @return string           The input string (ignored)
 	 */
 	public function set_post_type($template) {
 		global $debug, $theme;

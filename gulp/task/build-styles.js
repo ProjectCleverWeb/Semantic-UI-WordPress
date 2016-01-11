@@ -1,9 +1,4 @@
-var gulp = require('gulp-help')(require('gulp'));
-
-/**
- * Compile, minify, and concat stylesheets.
- */
-gulp.task('build-styles', 'Compile, minify, and concat stylesheets.', function() {
+module.exports = function() {
 	// Setup Vars
 	var sequence = require('run-sequence');
 	
@@ -14,6 +9,7 @@ gulp.task('build-styles', 'Compile, minify, and concat stylesheets.', function()
 		'build-styles/sass',
 		'build-styles/css',
 		'build-styles/minify',
-		'build-styles/concat'
+		'build-styles/concat',
+		'fix-line-endings'
 	);
-});
+};

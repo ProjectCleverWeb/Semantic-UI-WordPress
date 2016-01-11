@@ -1,11 +1,7 @@
-var gulp = require('gulp-help')(require('gulp'));
-
-/**
- * Remove the old dist. files
- */
-gulp.task('build/remove-old', false, function() {
+module.exports = function() {
 	// Setup Vars
 	var
+		gulp    = require('gulp-help')(require('gulp')),
 		conf    = require('../../config'),
 		gulp_rm = require('../../function/gulp-rm'),
 		// Aliases
@@ -14,4 +10,4 @@ gulp.task('build/remove-old', false, function() {
 	
 	return gulp.src(paths.dist, {read: false})
 		.pipe(gulp_rm());
-});
+};

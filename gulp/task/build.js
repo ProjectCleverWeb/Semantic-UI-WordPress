@@ -1,9 +1,4 @@
-var gulp = require('gulp-help')(require('gulp'));
-
-/**
- * Compile the source into a distribution.
- */
-gulp.task('build', 'Compile the source into a distribution.', function() {
+module.exports = function() {
 	// Setup Vars
 	var sequence = require('run-sequence');
 	
@@ -29,4 +24,4 @@ gulp.task('build', 'Compile the source into a distribution.', function() {
 		'build-screenshot',
 		'fix-line-endings'
 	);
-});
+};

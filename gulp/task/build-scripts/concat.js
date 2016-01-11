@@ -1,11 +1,7 @@
-var gulp = require('gulp-help')(require('gulp'));
-
-/**
- * Concatenate Scripts
- */
-gulp.task('build-scripts/concat', false, function() {
+module.exports = function() {
 	// Setup Vars
 	var
+		gulp   = require('gulp-help')(require('gulp')),
 		conf   = require('../../config'),
 		cli    = require('../../cli'),
 		concat = require('gulp-concat-util'),
@@ -20,4 +16,4 @@ gulp.task('build-scripts/concat', false, function() {
 	} else {
 		cli.log('Skipping JS concat');
 	}
-});
+};

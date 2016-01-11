@@ -1,11 +1,7 @@
-var gulp = require('gulp-help')(require('gulp'));
-
-/**
- * Convert screenshot.svg into a PNG file.
- */
-gulp.task('build-screenshot', 'Convert screenshot.svg into a PNG file.', function() {
+module.exports = function() {
 	// Setup Vars
 	var
+		gulp    = require('gulp-help')(require('gulp')),
 		conf    = require('../config'),
 		svg2png = require('gulp-svg2png'),
 		img_opt = require('gulp-image-optimization'),
@@ -23,4 +19,4 @@ gulp.task('build-screenshot', 'Convert screenshot.svg into a PNG file.', functio
 			.pipe(svg2png())
 			.pipe(gulp.dest(paths.dist));
 	}
-});
+};

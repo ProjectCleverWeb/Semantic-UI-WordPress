@@ -1,22 +1,19 @@
-var gulp = require('gulp-help')(require('gulp'));
-
-/**
- * Continuously update the dist. directory when changes are made in the source directory
- */
-gulp.task('watch', 'Continuously update the dist. directory when changes are made in the source directory.', function() {
+module.exports = function() {
 	// Setup Vars
 	var
-		util     = require('gulp-util'),
-		conf     = require('../config'),
-		cli      = require('../cli'),
-		gulp_rm  = require('../function/gulp-rm'),
-		svg2png  = require('gulp-svg2png'),
-		img_opt  = require('gulp-image-optimization'),
-		sequence = require('run-sequence'),
+		gulp      = require('gulp-help')(require('gulp')),
+		util      = require('gulp-util'),
+		conf      = require('../config'),
+		cli       = require('../cli'),
+		gulp_rm   = require('../function/gulp-rm'),
+		svg2png   = require('gulp-svg2png'),
+		img_opt   = require('gulp-image-optimization'),
+		sequence  = require('run-sequence'),
+		line_ends = require('gulp-eol'),
 		// Aliases
-		build    = conf.build,
-		paths    = build.paths,
-		color    = util.colors;
+		build     = conf.build,
+		paths     = build.paths,
+		color     = util.colors;
 	
 	// Warn about Gulp/Gaze issues
 	cli.log(color.bgBlack.white(color.bold.red("[IMPORTANT]") + " Watch works very well for MOST things, however it does have some issues, including problems removing directories. (hint: use the 'build' task to compensate) - " + color.bold.cyan("https://github.com/gulpjs/gulp/issues/651")));
@@ -34,11 +31,12 @@ gulp.task('watch', 'Continuously update the dist. directory when changes are mad
 	], function(event) {
 		cli.log_event(event);
 		// gulp.src ignores paths that don't exist, so renaming works as expected.
-		gulp.src(event.path, {base:paths.source}).
-			pipe(gulp.dest(paths.dist));
+		gulp.src(event.path, {base:paths.source})
+			.pipe(line_ends('\n'))
+			.pipe(gulp.dest(paths.dist));
 		if (event.type === 'deleted') { // update the build dir when a file is deleted
-			gulp.src(paths.dist + '/' + event.path.substring((cli.cwd + '/' + paths.source + '/').length), {read: false}).
-				pipe(gulp_rm());
+			gulp.src(paths.dist + '/' + event.path.substring((cli.cwd + '/' + paths.source + '/').length), {read: false})
+				.pipe(gulp_rm());
 		}
 	});
 	
@@ -57,7 +55,8 @@ gulp.task('watch', 'Continuously update the dist. directory when changes are mad
 				'build-styles/sass',
 				'build-styles/css',
 				'build-styles/minify',
-				'build-styles/concat'
+				'build-styles/concat',
+				'fix-line-endings'
 			);
 		}
 	});
@@ -72,7 +71,8 @@ gulp.task('watch', 'Continuously update the dist. directory when changes are mad
 				'build-scripts/copy',
 				'build-scripts/js',
 				'build-scripts/minify',
-				'build-scripts/concat'
+				'build-scripts/concat',
+				'fix-line-endings'
 			);
 		}
 	});
@@ -83,17 +83,17 @@ gulp.task('watch', 'Continuously update the dist. directory when changes are mad
 		cli.log_event(event);
 		if (use_image_opt) {
 			// gulp.src ignores paths that don't exist, so renaming works as expected.
-			gulp.src(event.path, {base:paths.source}).
-				pipe(image_opt(build.optimize_image_options)).
-				pipe(gulp.dest(paths.dist));
+			gulp.src(event.path, {base:paths.source})
+				.pipe(image_opt(build.optimize_image_options))
+				.pipe(gulp.dest(paths.dist));
 		} else {
 			// gulp.src ignores paths that don't exist, so renaming works as expected.
-			gulp.src(event.path, {base:paths.source}).
-				pipe(gulp.dest(paths.dist));
+			gulp.src(event.path, {base:paths.source})
+				.pipe(gulp.dest(paths.dist));
 		}
 		if (event.type === 'deleted') { // update the build dir when a file is deleted
-			gulp.src(paths.dist + '/' + event.path.substring((cli.cwd + '/' + paths.source + '/').length), {read: false}).
-				pipe(gulp_rm());
+			gulp.src(paths.dist + '/' + event.path.substring((cli.cwd + '/' + paths.source + '/').length), {read: false})
+				.pipe(gulp_rm());
 		}
 	});
-});
+};

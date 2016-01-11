@@ -1,11 +1,7 @@
-var gulp = require('gulp-help')(require('gulp'));
-
-/**
- * Compile and minify SASS/SCSS files.
- */
-gulp.task('build-styles/sass', false, function() {
+module.exports = function() {
 	// Setup Vars
 	var
+		gulp    = require('gulp-help')(require('gulp')),
 		conf    = require('../../config'),
 		cli     = require('../../cli'),
 		mv      = require('gulp-rename'),
@@ -33,4 +29,4 @@ gulp.task('build-styles/sass', false, function() {
 	} else {
 		cli.log('Skipping SASS/SCSS files');
 	}
-});
+};

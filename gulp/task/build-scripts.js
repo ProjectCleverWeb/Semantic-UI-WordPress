@@ -1,9 +1,4 @@
-var gulp = require('gulp-help')(require('gulp'));
-
-/**
- * Compile, minify, and concat on-page scripting files.
- */
-gulp.task('build-scripts', 'Compile, minify, and concat on-page scripting files.', function() {
+module.exports = function() {
 	// Setup Vars
 	var sequence = require('run-sequence');
 	
@@ -12,6 +7,7 @@ gulp.task('build-scripts', 'Compile, minify, and concat on-page scripting files.
 		'build-scripts/copy',
 		'build-scripts/js',
 		'build-scripts/minify',
-		'build-scripts/concat'
+		'build-scripts/concat',
+		'fix-line-endings'
 	);
-});
+};

@@ -1,17 +1,12 @@
-var gulp = require('gulp-help')(require('gulp'));
-
-/**
- * Check all gulp dependencies.
- */
-gulp.task('dep-check', 'Check all gulp dependencies.', function() {
+module.exports = function() {
 	// Setup Vars
 	var
+		gulp      = require('gulp-help')(require('gulp')),
 		npm_check = require('npm-check'),
 		spawn     = require('child_process').spawn,
 		util      = require('gulp-util'),
 		conf      = require('../config'),
 		cli       = require('../cli'),
-		get_task  = require('../function/get-task'),
 		gulp_rm   = require('../function/gulp-rm'),
 		mv        = require('gulp-rename'),
 		less      = require('gulp-less'),
@@ -46,4 +41,4 @@ gulp.task('dep-check', 'Check all gulp dependencies.', function() {
 			}
 		}
 	});
-});
+};

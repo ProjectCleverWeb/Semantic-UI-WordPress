@@ -1,11 +1,7 @@
-var gulp = require('gulp-help')(require('gulp'));
-
-/**
- * Clone the source styles to dist.
- */
-gulp.task('build-styles/copy', false, function() {
+module.exports = function() {
 	// Setup Vars
 	var
+		gulp  = require('gulp-help')(require('gulp')),
 		conf  = require('../../config'),
 		// Aliases
 		build = conf.build,
@@ -13,4 +9,4 @@ gulp.task('build-styles/copy', false, function() {
 	
 	return gulp.src(paths.source_styles + '/**/*').
 		pipe(gulp.dest(paths.dist_styles));
-});
+};

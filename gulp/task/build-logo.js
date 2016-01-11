@@ -1,11 +1,7 @@
-var gulp = require('gulp-help')(require('gulp'));
-
-/**
- * Add logo to dist.
- */
-gulp.task('build-logo', 'Add logo to dist.', function() {
+module.exports = function() {
 	// Setup Vars
 	var
+		gulp    = require('gulp-help')(require('gulp')),
 		conf    = require('../config'),
 		cli     = require('../cli'),
 		svg2png = require('gulp-svg2png'),
@@ -22,4 +18,4 @@ gulp.task('build-logo', 'Add logo to dist.', function() {
 		return gulp.src(cli.cwd + '/logo.png')
 			.pipe(gulp.dest(paths.dist));
 	}
-});
+};
