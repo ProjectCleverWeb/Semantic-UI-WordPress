@@ -13,7 +13,7 @@ Live Demo: [semantic-wordpress.gopagoda.io](http://semantic-wordpress.gopagoda.i
 
 #### Download:
 
-[![Sheild](https://img.shields.io/badge/Release-1.0.1-blue.svg?style=flat-square)](bit.ly/1mQOExM)
+[![Sheild](https://img.shields.io/badge/Release-1.0.1-blue.svg?style=flat-square)](http://bit.ly/1mQOExM)
 
 #### Screenshots
 
