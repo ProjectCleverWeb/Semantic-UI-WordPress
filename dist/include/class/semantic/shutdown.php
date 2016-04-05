@@ -86,6 +86,10 @@ class shutdown extends abstract_base {
 	 * Loops through and runs each job. Resets job queue after it finishes.
 	 */
 	public function _run_shutdown() {
+		// Any pages listed here should *NEVER* have shutdown behavior
+		if (in_array($GLOBALS['pagenow'], array('admin-ajax.php', 'async-upload.php'))) {
+			return;
+		}
 		global $debug;
 		foreach ($this->jobs as $id => $job) {
 			$debug->runtime_checkpoint(sprintf('[Theme] Shutdown - Running "%s"...', $id));
