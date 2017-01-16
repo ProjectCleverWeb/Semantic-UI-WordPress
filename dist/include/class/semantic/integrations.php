@@ -391,7 +391,7 @@ class integrations extends abstract_base {
 	 * @return string                 The replacement HTML
 	 */
 	public function post_thumbnail($html, $post_id, $post_image_id) {
-		$image = wp_get_attachment_image_src(get_post_thumbnail_id((string) $post_id), 'single-post-thumbnail');
+		$image = wp_get_attachment_image_src((integer) get_post_thumbnail_id((string) $post_id), 'single-post-thumbnail');
 		$alt   = get_post_meta($post_image_id, '_wp_attachment_image_alt');
 		
 		if (!isset($alt[0])) {
