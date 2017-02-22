@@ -48,6 +48,8 @@ Copyright &copy; 2014 Nicholas Jordon &mdash; All Rights Reserved
 2. Unzip to your `wp-content/themes` directory
 3. Set the theme to "active" in your WordPress dashboard
 
+Please notice that when you are building from source, as described below, you should run the build process at least once before activating the theme. This will garantuee that the theme file are loaded from `/build` and not from `/src`.
+
 #### Building From Source
 
 To build from source you need to have [Node.js](http://nodejs.org/) installed
