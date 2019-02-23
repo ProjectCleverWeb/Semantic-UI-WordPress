@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.6 - Transition
+ * # Semantic UI 2.4.1 - Transition
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -10,7 +10,7 @@
 
 ;(function ($, window, document, undefined) {
 
-"use strict";
+'use strict';
 
 window = (typeof window != 'undefined' && window.Math == Math)
   ? window
