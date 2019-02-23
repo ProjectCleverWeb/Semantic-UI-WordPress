@@ -33,7 +33,7 @@
 				"name": "wordpress",
 				"version": "3.9.2",
 				"dist": {
-					"url": "http://wordpress.org/wordpress-3.9.2.zip",
+					"url": "https://wordpress.org/wordpress-3.9.2.zip",
 					"type": "zip"
 				}
 			}
